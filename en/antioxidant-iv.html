@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Antioxidant IV — Mili Clinic Sinchon</title>
+<meta name="description" content="Mili Clinic Sinchon — A private aesthetic clinic in Seoul.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mili Clinic Sinchon">
+<meta property="og:title" content="Mili Clinic Sinchon">
+<meta property="og:image" content="https://miliclinic-sinchon-en.vercel.app/assets/images/og/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mili Clinic Sinchon">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://miliclinic-sinchon-en.vercel.app/antioxidant-iv.html">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mili Clinic Sinchon">
+<meta name="twitter:image" content="https://miliclinic-sinchon-en.vercel.app/assets/images/og/og-image.png">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{--ink:#0F0F10;--bone:#F1F2F5;--paper:#F8F9FB;--white:#FFFFFF;--muted:#8A867F;--line:#DEDAD1;--accent:#4338CA;--gold:#A89668;--pad-x:clamp(24px,5vw,96px);--container:1440px;
+    --display: "SF Pro Display", system-ui, -apple-system, "Inter", sans-serif;
+}
+body{font-family: "SF Pro Text", system-ui, -apple-system, "Inter", sans-serif;color:var(--ink);background:var(--paper);font-weight:400;line-height:1.55;letter-spacing:-0.01em;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
+
+.serif{font-family: var(--display);font-weight:300;letter-spacing:-0.005em}
+
+
+/* Top Bar */
+.top-bar{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line);background:var(--paper)}
+.top-bar-inner{display:flex;justify-content:space-between;align-items:center;padding:12px var(--pad-x)}
+.lang-list{display:flex;gap:14px;list-style:none}
+.lang-list li a{padding:2px 6px;transition:color .2s}
+.lang-list li a:hover{color:var(--ink)}
+.lang-list .active{color:var(--ink);border-bottom:1px solid var(--ink)}
+.top-links{display:flex;gap:24px}
+.top-links a:hover{color:var(--ink)}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:100;background:var(--paper);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.header-inner{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:22px var(--pad-x)}
+.logo{font-size:17px;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;justify-self:start}
+.logo .dot{display:inline-block;width:4px;height:4px;background:var(--ink);border-radius:50%;vertical-align:middle;margin:0 8px 3px}
+.nav ul{display:flex;gap:38px;list-style:none;justify-self:center}
+.nav a{font-size:12px;letter-spacing:0.18em;text-transform:uppercase;padding:8px 0;position:relative}
+.nav a.active{border-bottom:1px solid var(--ink)}
+.nav a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--ink);transition:width .3s ease}
+.nav a:hover::after{width:100%}
+.header-cta{justify-self:end;display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;padding:11px 22px;border:1px solid var(--ink);transition:background .25s,color .25s}
+.header-cta:hover{background:var(--ink);color:var(--paper)}
+@media (max-width:960px){.nav{display:none}.header-inner{grid-template-columns:1fr auto}.logo{grid-column:1}.header-cta{grid-column:2}}
+
+/* Hero */
+.iv-hero{position:relative;min-height:calc(100vh - 70px);overflow:hidden;background:var(--ink)}
+.iv-hero-bg{
+    position: absolute;
+    inset: 0;
+    background-image: url('/assets/images/hero/skin-care.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.iv-hero-bg::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background: linear-gradient(180deg, rgba(15,15,16,.3) 0%, rgba(15,15,16,.15) 45%, rgba(15,15,16,.75) 100%);
+}
+.iv-hero-inner{position:relative;z-index:2;min-height:calc(100vh - 70px);display:flex;flex-direction:column;justify-content:space-between;padding:60px var(--pad-x) 40px;color:var(--paper);box-sizing:border-box}
+.iv-hero-top{display:flex;gap:10px;align-items:center;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;opacity:.75;flex-wrap:wrap}
+.iv-hero-top a:hover{opacity:1}
+.iv-hero-top .sep{opacity:.5}
+.iv-hero-center{margin-top:auto;margin-bottom:auto}
+.iv-hero-eyebrow{font-size:11px;letter-spacing:0.5em;text-transform:uppercase;margin-bottom:36px;opacity:0.85}
+.iv-hero-eyebrow .dot{display:inline-block;width:4px;height:4px;background:var(--paper);border-radius:50%;vertical-align:middle;margin:0 12px 3px;opacity:.5}
+.iv-hero-title{font-family:var(--display);
+    font-size: clamp(64px, 11vw, 180px);
+    font-weight:600;
+    line-height:0.92;
+    letter-spacing:-0.025em;
+    margin-bottom:30px;
+}
+.iv-hero-title .line-2{display:block;padding-left:clamp(20px,5vw,80px)}
+.iv-hero-sub{max-width:520px;font-size:16px;font-weight:300;line-height:1.7;opacity:0.9}
+.iv-hero-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;opacity:.75}
+.iv-hero-meta{display:flex;gap:48px}
+.iv-hero-meta-item .label{opacity:.6;margin-bottom:6px;font-size:10px}
+.iv-hero-meta-item .value{font-size:14px;letter-spacing:0.08em;text-transform:none;font-weight:300}
+.iv-hero-scroll{
+    position:absolute;
+    right:var(--pad-x);
+    bottom:32px;
+    font-size:11px;
+    letter-spacing:0.25em;
+    text-transform:uppercase;
+    color:var(--paper);
+    opacity:0.7;
+    z-index:3;
+}
+@media (max-width:700px){.iv-hero{min-height:calc(60vh - 70px)}.iv-hero-inner{min-height:calc(60vh - 70px);padding:32px var(--pad-x) 24px}.iv-hero-bottom{flex-direction:column;align-items:flex-start}.iv-hero-meta{gap:24px}.iv-hero-scroll{bottom:24px;font-size:10px}}
+@media (max-width:640px){
+    .iv-hero{min-height:calc(60vh - 70px);padding:0}
+    .iv-hero-inner{min-height:calc(60vh - 70px);padding:32px var(--pad-x) 24px;justify-content:space-between;gap:24px}
+    .iv-hero-center{margin-top:0;margin-bottom:0}
+    .iv-hero-bottom{margin-top:0}
+    .iv-hero-title{font-family:var(--display);
+    font-size:clamp(44px,14vw,88px);line-height:0.98;margin-bottom:24px}
+    .iv-hero-eyebrow{font-size:10px;letter-spacing:0.3em;margin-bottom:20px}
+    .iv-hero-sub{display:none}
+    .iv-hero-top{flex-wrap:wrap;gap:6px;font-size:9px;letter-spacing:0.15em}
+    .iv-hero-meta{flex-wrap:wrap;gap:16px}
+    .iv-hero-meta-item .label{font-size:9px}
+    .iv-hero-meta-item .value{font-size:12px}
+}
+
+/* Sticky sub-nav */
+.tx-subnav{position:sticky;top:72px;z-index:40;background:var(--paper);border-bottom:1px solid var(--line);padding:20px 0}
+.tx-subnav-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x);display:flex;gap:32px;align-items:center;overflow-x:auto;scrollbar-width:none}
+.tx-subnav-inner::-webkit-scrollbar{display:none}
+.tx-subnav-label{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.tx-subnav a{font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink);white-space:nowrap;padding:6px 0;border-bottom:1px solid transparent;transition:border-color .2s,color .2s}
+.tx-subnav a:hover,.tx-subnav a.active{border-bottom-color:var(--ink)}
+@media (max-width: 700px) {
+    .tx-subnav { top: 56px; padding: 14px 0; }
+}
+
+
+/* Section common */
+.section-eyebrow{font-family:var(--display);font-weight:400;font-size:12px;letter-spacing:0.4em;text-transform:uppercase;color:var(--muted);display:inline-flex;align-items:center;gap:10px;margin-bottom:28px}
+.section-eyebrow::before{content:'';width:24px;height:1px;background:var(--muted)}
+
+/* Cleanse & Replenish */
+.iv-manifesto{padding:clamp(120px,18vw,200px) 0;text-align:center}
+.iv-manifesto-inner{max-width:1100px;margin:0 auto;padding:0 var(--pad-x)}
+.iv-manifesto-eyebrow{font-size:11px;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:48px;display:inline-flex;align-items:center;gap:14px}
+.iv-manifesto-eyebrow::before,
+.iv-manifesto-eyebrow::after{content:'';width:48px;height:1px;background:var(--gold);opacity:.5}
+.iv-manifesto-words{display:flex;align-items:center;justify-content:center;gap:clamp(20px,4vw,60px);margin-bottom:48px;flex-wrap:wrap}
+.iv-word{font-family: var(--display);font-size:clamp(48px,8vw,120px);font-weight:600;line-height:1;letter-spacing:-0.03em}
+.iv-word em{font-style: normal;font-weight:600}
+.iv-word.gold{color:var(--gold)}
+.iv-word-amp{font-family: var(--display);font-size:clamp(36px,5vw,72px);font-style: normal;font-weight:600;color:var(--muted);line-height:1;opacity:0.7}
+.iv-manifesto-divider{width:60px;height:1px;background:var(--line);margin:48px auto 32px}
+.iv-manifesto-sub{font-size:15px;font-weight:300;color:var(--muted);line-height:1.9;max-width:620px;margin:0 auto}
+.iv-manifesto-sub strong{font-weight:500;color:var(--ink)}
+
+/* Programme */
+.iv-programme{padding:clamp(80px,12vw,160px) 0;background:var(--bone)}
+.iv-programme-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x);display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(40px,6vw,100px);align-items:start}
+.iv-programme-left{position:sticky;top:140px}
+.iv-programme-left .section-eyebrow{color:var(--gold)}
+.iv-programme-left h2{font-family: var(--display);font-size:clamp(32px,4.5vw,52px);font-weight:600;line-height:1.15;letter-spacing:-0.02em;margin-bottom:24px;max-width:11em}
+.iv-programme-left h2 em{font-style: normal;font-weight:600}
+.iv-programme-left .sub{font-size:14px;color:var(--muted);line-height:1.85;font-weight:300;max-width:380px}
+.iv-programme-text .lead{font-family: var(--display);font-size:22px;font-weight:300;line-height:1.5;color:var(--ink);margin-bottom:32px;max-width:560px;letter-spacing:-0.01em;font-style: normal;}
+.iv-programme-text p{font-size:15px;font-weight:300;line-height:1.9;color:var(--ink);max-width:560px;margin-bottom:20px}
+.iv-programme-text p:last-of-type{margin-bottom:0}
+.iv-programme-text p strong{font-weight:500}
+.iv-benefits{margin-top:48px;padding-top:36px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(2,1fr);gap:20px 32px;max-width:560px}
+.iv-benefit{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start}
+.iv-benefit-mark{font-family: var(--display);font-size:18px;font-style: normal;color:var(--gold);line-height:1;padding-top:2px}
+.iv-benefit-text{font-size:14px;color:var(--ink);line-height:1.7;font-weight:300}
+.iv-benefit-text strong{font-weight:500}
+@media (max-width:900px){
+    .iv-programme-inner{grid-template-columns:1fr;gap:40px}
+    .iv-programme-left{position:static}
+    .iv-benefits{grid-template-columns:1fr;max-width:none}
+}
+
+/* Drips */
+.iv-drips{padding:clamp(80px,12vw,160px) 0}
+.iv-drips-head{text-align:center;margin-bottom:80px;padding:0 var(--pad-x)}
+.iv-drips-head .section-eyebrow{justify-content:center;color:var(--gold)}
+.iv-drips-head .section-eyebrow::before{display:none}
+.iv-drips-head h2{font-family: var(--display);font-size:clamp(36px,5vw,64px);font-weight:600;line-height:1.1;letter-spacing:-0.02em;margin:16px auto 20px;max-width:14em}
+.iv-drips-head h2 em{font-style: normal;font-weight:600}
+.iv-drips-head p{font-size:15px;font-weight:300;color:var(--muted);line-height:1.85;max-width:600px;margin:0 auto}
+.iv-drips-grid{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x);display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.5vw,32px)}
+.iv-drip-card{display:flex;flex-direction:column}
+.iv-drip-img{aspect-ratio:4/5;overflow:hidden;background:var(--bone);margin-bottom:24px;position:relative}
+.iv-drip-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease}
+.iv-drip-card:hover .iv-drip-img img{transform:scale(1.05)}
+.iv-drip-num{position:absolute;top:16px;left:16px;font-family: var(--display);font-size:14px;font-style: normal;color:var(--paper);background:rgba(15,15,16,.65);padding:6px 14px;backdrop-filter:blur(8px);z-index:2}
+.iv-drip-purpose{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.iv-drip-name{font-family: var(--display);font-size:22px;font-weight:600;letter-spacing:-0.01em;line-height:1.25;margin-bottom:14px}
+.iv-drip-name em{font-style: normal;font-weight:600}
+.iv-drip-desc{font-size:13px;color:var(--muted);line-height:1.8;font-weight:300;margin-bottom:18px}
+.iv-drip-ingredients{margin-top:auto;padding-top:16px;border-top:1px solid var(--line)}
+.iv-drip-ingredients-label{font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.iv-drip-ingredients-list{font-size:11px;color:var(--ink);line-height:1.7;font-weight:400;letter-spacing:0.02em}
+.iv-drip-ingredients-list em{font-style: normal;color:var(--gold);font-weight:400}
+@media (max-width:900px){.iv-drips-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:540px){.iv-drips-grid{grid-template-columns:1fr}}
+
+/* Customisation Note */
+.iv-custom{padding:clamp(80px,12vw,140px) 0;background:var(--bone);text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.iv-custom-inner{max-width:780px;margin:0 auto;padding:0 var(--pad-x)}
+.iv-custom-quote-mark{font-family: var(--display);font-size:80px;font-style: normal;line-height:1;color:var(--gold);opacity:.4;margin-bottom:8px}
+.iv-custom h2{font-family: var(--display);font-size:clamp(24px,3.2vw,36px);font-weight:600;line-height:1.5;letter-spacing:-0.015em;color:var(--ink);margin-bottom:32px}
+.iv-custom h2 em{font-style: normal;font-weight:600}
+.iv-custom p{font-size:14px;font-weight:300;color:var(--muted);line-height:1.85;max-width:520px;margin:0 auto}
+
+/* Reservation */
+.iv-reserve{padding:clamp(80px,12vw,160px) 0;background:var(--ink);color:var(--paper);text-align:center}
+.iv-reserve-inner{max-width:900px;margin:0 auto;padding:0 var(--pad-x)}
+.iv-reserve-eyebrow{font-size:11px;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:32px}
+.iv-reserve h2{font-family: var(--display);font-size:clamp(32px,4.5vw,56px);font-weight:600;line-height:1.2;letter-spacing:-0.02em;margin-bottom:32px;max-width:18em;margin-left:auto;margin-right:auto}
+.iv-reserve h2 em{font-style: normal;font-weight:600}
+.iv-reserve p{font-size:15px;font-weight:300;line-height:1.85;color:rgba(244,241,235,.75);max-width:560px;margin:0 auto 40px}
+.iv-reserve-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.iv-reserve-btn{display:inline-flex;align-items:center;gap:12px;padding:18px 36px;border:1px solid var(--paper);font-size:11px;letter-spacing:0.3em;text-transform:uppercase;transition:background .25s,color .25s;color:var(--paper)}
+.iv-reserve-btn.primary{background:var(--paper);color:var(--ink)}
+.iv-reserve-btn.primary:hover{background:transparent;color:var(--paper)}
+.iv-reserve-btn.secondary:hover{background:var(--paper);color:var(--ink)}
+.iv-reserve-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5}
+
+.tx-related{
+    padding: clamp(60px, 8vw, 100px) 0 clamp(80px, 12vw, 140px);
+    border-top: 1px solid var(--line);
+}
+.tx-related-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 40px;
+    margin-bottom: 48px;
+}
+.tx-related-head h2{font-family:var(--display);
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight:600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+.tx-related-head a{
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 4px;
+}
+.related-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+.related-card{
+    display: block;
+}
+.related-img{
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: var(--bone);
+    margin-bottom: 18px;
+    position: relative;
+}
+.related-img::after{
+    content: '→';
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 36px;
+    height: 36px;
+    background: var(--paper);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .25s, color .25s;
+}
+.related-card:hover .related-img::after{background: var(--ink); color: var(--paper)}
+.related-img img{width:100%;height:100%;object-fit:cover;transition:transform 1s ease}
+.related-card:hover .related-img img{transform:scale(1.04)}
+.related-cat{
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+}
+.related-name{
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+}
+@media (max-width: 900px){
+    .related-grid{grid-template-columns: 1fr 1fr; gap: 20px}
+}
+@media (max-width: 560px){
+    .related-grid{grid-template-columns: 1fr}
+}
+
+/* Footer */
+.site-footer{background:var(--paper);border-top:1px solid var(--line);padding:80px 0 40px}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:80px}
+.footer-logo{font-size:22px;font-weight:300;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:28px}
+.footer-tagline{font-size:13px;font-weight:300;color:var(--muted);line-height:1.8;max-width:360px}
+.footer-col h5{font-size:11px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:24px}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:10px}
+.footer-col a{font-size:13px;color:var(--muted);font-weight:300;transition:color .2s}
+.footer-col a:hover{color:var(--ink)}
+.footer-bottom{padding-top:36px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);letter-spacing:0.05em;flex-wrap:wrap;gap:20px}
+@media (max-width:960px){.footer-top{grid-template-columns:1fr 1fr;gap:40px}}
+@media (max-width:560px){.footer-top{grid-template-columns:1fr}}
+
+/* Floating */
+.float-actions{position:fixed;bottom:28px;right:28px;z-index:50;display:flex;flex-direction:column;gap:10px}
+.float-btn{width:52px;height:52px;background:var(--ink);color:var(--paper);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:0.12em;transition:transform .25s;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
+.float-btn:hover{transform:translateY(-3px)}
+.float-btn.kakao{background:#FEE500;color:#1A1A1A}
+
+/* === Mili Header Nav with Dropdowns === */
+.mili-header{position:sticky;top:0;z-index:100;background:var(--paper);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.mili-header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px var(--pad-x);gap:24px}
+.mili-logo{display:inline-flex;align-items:center;height:40px;flex-shrink:0;text-decoration:none}.mili-logo img{height:100%;width:auto;object-fit:contain;display:block}
+
+.mili-nav{flex:1;display:flex;justify-content:center}
+.mili-nav-list{display:flex;gap:22px;list-style:none;align-items:center}
+.mili-nav-item{position:relative}
+.mili-nav-link{font-size:11px;letter-spacing:0.13em;text-transform:uppercase;padding:10px 0;display:inline-flex;align-items:center;gap:5px;white-space:nowrap;transition:color .2s;cursor:pointer}
+.mili-nav-link:hover{color:var(--ink)}
+.mili-nav-link.active{border-bottom:1px solid var(--ink)}
+.mili-nav-caret{display:inline-block;width:7px;height:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin-left:2px;margin-bottom:3px;opacity:.6;transition:transform .2s}
+.mili-nav-item:hover .mili-nav-caret{transform:rotate(225deg);margin-bottom:-2px}
+.mili-dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(-8px);background:var(--paper);border:1px solid var(--line);min-width:240px;padding:14px 0;opacity:0;visibility:hidden;transition:opacity .25s,transform .25s,visibility .25s;z-index:120}
+.mili-nav-item:hover .mili-dropdown{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.mili-dropdown a{display:block;padding:9px 24px;font-size:12px;letter-spacing:0.06em;color:var(--ink);transition:background .15s,color .15s;white-space:nowrap}
+.mili-dropdown a:hover{background:var(--bone);color:var(--ink)}
+.mili-cta{flex-shrink:0;display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:10px 20px;border:1px solid var(--ink);transition:background .25s,color .25s;white-space:nowrap}
+.mili-cta:hover{background:var(--ink);color:var(--paper)}
+.mili-cta svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:1.5}
+.mili-burger{display:none;background:none;border:none;cursor:pointer;padding:6px}
+.mili-burger span{display:block;width:22px;height:1px;background:var(--ink);margin:5px 0;transition:transform .3s,opacity .3s}
+.mili-mobile-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100dvh;max-height:100dvh;background:var(--paper);z-index:200;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:80px var(--pad-x) 140px}
+.mili-mobile-nav.open{display:flex;flex-direction:column}
+.mili-mobile-nav-close{position:absolute;top:24px;right:24px;background:none;border:none;cursor:pointer;font-size:24px;color:var(--ink)}
+.mili-mobile-nav-list{list-style:none;flex:1 1 auto;min-height:0;overflow-y:auto}
+.mili-mobile-nav-list>li{border-bottom:1px solid var(--line)}
+.mili-mobile-nav-list>li>a,.mili-mobile-nav-list>li>span{display:block;padding:18px 0;font-size:14px;letter-spacing:0.15em;text-transform:uppercase;font-weight:400;cursor:pointer}
+.mili-mobile-nav-list>li>span{display:flex;justify-content:space-between;align-items:center;position:relative}
+.mili-mobile-nav-list>li>span::after{content:'+';font-size:20px;font-weight:300;transition:transform .25s ease;line-height:1}
+.mili-mobile-nav-list>li.open>span::after{content:'−'}
+.mili-mobile-sub{padding:0 0 0 16px;list-style:none;max-height:0;overflow:hidden;transition:max-height .35s ease}
+.mili-mobile-nav-list>li.open .mili-mobile-sub{max-height:500px;padding-bottom:16px}
+.mili-mobile-sub li a{display:block;padding:8px 0;font-size:13px;color:var(--muted);font-weight:300;letter-spacing:0.04em;text-transform:none}
+@media (max-width:1600px){.mili-nav-list{gap:20px}.mili-nav-link{font-size:11px;letter-spacing:0.1em}.mili-header-inner{gap:16px;padding:18px 28px}.mili-cta{padding:9px 16px;font-size:10px;letter-spacing:0.16em}}
+@media (max-width:1240px){.mili-nav-list{gap:14px}.mili-nav-link{font-size:10px;letter-spacing:0.08em}.mili-header-inner{gap:12px;padding:16px 24px}.mili-cta{padding:8px 14px;font-size:9px}}
+@media (max-width:1100px){.mili-nav-list{gap:11px}.mili-nav-link{font-size:9.5px;letter-spacing:0.06em}.mili-header-inner{gap:10px;padding:14px 20px}.mili-cta{padding:7px 12px;font-size:8.5px}}
+@media (max-width:980px){.mili-nav,.mili-cta,.mili-lang{display:none}.mili-burger{display:block}}@media (max-width:768px){.mili-logo{height:32px}}
+
+/* === Language switcher === */
+.mili-lang{position:relative;margin-right:16px}
+.mili-lang-toggle{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid var(--line);color:var(--ink);padding:9px 14px;font:400 11px/1 var(--display);letter-spacing:0.16em;text-transform:uppercase;border-radius:980px;cursor:pointer;transition:border-color .2s}
+.mili-lang-toggle:hover{border-color:var(--ink)}
+.mili-lang-toggle svg{transition:transform .2s}
+.mili-lang.open .mili-lang-toggle svg{transform:rotate(180deg)}
+.mili-lang-menu{position:absolute;top:calc(100% + 6px);right:0;min-width:100px;background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden;opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .2s,transform .2s,visibility .2s;z-index:50}
+.mili-lang.open .mili-lang-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.mili-lang-item{display:block;padding:10px 14px;font:400 11px/1 var(--display);letter-spacing:0.16em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--line);transition:background .15s;cursor:pointer;text-align:left;width:100%;box-sizing:border-box}
+.mili-lang-item:last-child{border-bottom:none}
+a.mili-lang-item{text-decoration:none}
+.mili-lang-item:hover:not(.disabled){background:var(--bone)}
+.mili-lang-item.active{font-weight:500;background:var(--bone)}
+.mili-lang-item.disabled{color:var(--muted);opacity:0.4;cursor:not-allowed;pointer-events:none}
+.mili-mobile-lang{margin-top:auto;padding-top:32px;border-top:1px solid var(--line);flex-shrink:0}
+.mili-mobile-lang-label{display:block;font:400 10px/1 var(--display);letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.mili-mobile-lang-list{display:flex;gap:12px;flex-wrap:wrap}
+.mili-mobile-lang-item{display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;font:400 12px/1 var(--display);letter-spacing:0.16em;text-transform:uppercase;color:var(--ink);border:1px solid var(--line);border-radius:980px;cursor:pointer;text-decoration:none}
+.mili-mobile-lang-item.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.mili-mobile-lang-item.disabled{color:var(--muted);opacity:0.4;pointer-events:none;cursor:not-allowed}
+
+/* === Mili Footer === */
+.mili-footer{background:var(--paper);border-top:1px solid var(--line);padding:80px 0 40px;font-family:"SF Pro Text",system-ui,-apple-system,"Inter",sans-serif}
+.mili-footer-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
+.mili-footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px}
+.mili-footer-brand .mili-footer-logo{margin-bottom:24px}.mili-footer-logo img{height:32px;width:auto;object-fit:contain;display:block}
+.mili-footer-tagline{font-size:13px;font-weight:300;color:var(--muted);line-height:1.8;max-width:380px;margin-bottom:24px}
+.mili-footer-slogan{font-size:15px;font-weight:300;color:var(--ink);letter-spacing:-0.005em;line-height:1.5;max-width:380px}
+.mili-footer-col h5{font-size:11px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px;color:var(--ink)}
+.mili-footer-col ul{list-style:none}
+.mili-footer-col li{margin-bottom:9px}
+.mili-footer-col a{font-size:13px;color:var(--muted);font-weight:300;transition:color .2s}
+.mili-footer-col a:hover{color:var(--ink)}
+
+.mili-footer-messengers{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:36px}
+.mili-msg{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 12px;border-right:1px solid var(--line);transition:background .2s,color .2s;color:var(--ink);text-align:center;gap:8px}
+.mili-msg:last-child{border-right:none}
+.mili-msg:hover{background:var(--bone)}
+.mili-msg svg{width:22px;height:22px;flex-shrink:0}
+.mili-msg-name{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:400}
+
+.mili-footer-business{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding-top:32px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);line-height:1.85;font-weight:300}
+.mili-footer-business strong{font-weight:500;color:var(--ink);text-transform:uppercase;letter-spacing:0.15em;font-size:10px;display:inline-block;margin-right:8px}
+.mili-footer-business p{margin-bottom:6px}
+.mili-footer-bottom{padding-top:28px;margin-top:32px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);letter-spacing:0.05em;flex-wrap:wrap;gap:20px}
+.mili-footer-policies{display:flex;gap:18px}
+.mili-footer-policies a{color:var(--muted);transition:color .2s}
+.mili-footer-policies a:hover{color:var(--ink)}
+@media (max-width:960px){.mili-footer-top{grid-template-columns:1fr 1fr;gap:40px}.mili-footer-business{grid-template-columns:1fr;gap:24px}}
+@media (max-width:640px){.mili-footer-top{grid-template-columns:1fr}.mili-footer-messengers{grid-template-columns:repeat(5,1fr)}.mili-msg{padding:18px 6px}.mili-msg-name{font-size:9px;letter-spacing:0.1em}.mili-msg svg{width:18px;height:18px}}
+
+/* === Mili Floating Buttons (5) === */
+.mili-float{position:fixed;right:24px;bottom:24px;z-index:90;display:flex;flex-direction:column;gap:8px}
+.mili-float-btn{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--paper);border:1px solid var(--line);box-shadow:0 4px 14px rgba(0,0,0,0.06);transition:transform .25s,background .2s;color:var(--ink)}
+.mili-float-btn:hover{transform:translateY(-3px)}
+.mili-float-btn svg{width:22px;height:22px}
+.mili-float-btn.kakao{background:#FEE500;color:#1A1A1A;border-color:#FEE500}
+.mili-float-btn.whatsapp{background:#25D366;color:#fff;border-color:#25D366}
+.mili-float-btn.line{background:#06C755;color:#fff;border-color:#06C755}
+.mili-float-btn.wechat{background:#7BB32E;color:#fff;border-color:#7BB32E}
+.mili-float-btn.instagram{background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF);color:#fff;border-color:transparent}
+@media (max-width:640px){.mili-float{right:16px;bottom:16px}.mili-float-btn{width:42px;height:42px}.mili-float-btn svg{width:18px;height:18px}}
+
+
+/* ========== MOBILE CONTENT TOGGLES ========== */
+.mobile-only{display:none}
+@media (max-width:640px){
+    .mobile-hide{display:none !important}
+    .desktop-only{display:none !important}
+    .mobile-only{display:block !important}
+}
+
+/* ========== MOBILE OPTIMIZATIONS ========== */
+@media (max-width:640px){
+    :root{--pad-x:20px}
+    body{font-size:15px;line-height:1.65}
+    section{padding-top:clamp(60px,14vw,100px) !important;padding-bottom:clamp(60px,14vw,100px) !important}
+    h2{font-size:clamp(32px,8vw,48px) !important;line-height:1.1 !important;letter-spacing:-0.02em !important}
+    .section-eyebrow{font-size:11px;letter-spacing:0.28em}
+    .tx-area-diagram{max-width:320px}
+    .tx-point{width:10px;height:10px;box-shadow:0 0 0 7px rgba(255,255,255,0.3)}
+    .area-tag{font-size:10px;padding:7px 13px;letter-spacing:0.18em}
+    .faq-q-text{font-size:15px;line-height:1.4}
+    .related-grid{gap:16px}
+
+    /* Footer 컬럼/메신저/배너 모바일 숨김 */
+    .mili-footer-top{display:none}
+    .mili-footer-messengers{display:none}
+    /* Footer 모바일 padding 축소 */
+    footer.mili-footer{padding:48px 0 100px}
+    .mili-footer-business{padding-top:0;border-top:none}
+}
+
+@media (max-width:480px){
+    .tx-hero-title{font-family:var(--display);
+    font-size:clamp(38px,13vw,64px) !important}
+    :root{--pad-x:16px}
+}
+
+em, cite { font-style: normal; }
+</style>
+</head>
+<body>
+
+</div>
+
+<header class="mili-header">
+    <div class="mili-header-inner">
+        <a href="/en/index.html" class="mili-logo" aria-label="Mili Clinic Sinchon"><img src="/assets/images/logo/logo.png" alt="Mili Clinic Sinchon"></a>
+        <nav class="mili-nav">
+            <ul class="mili-nav-list">
+                <li class="mili-nav-item"><a href="/en/about.html" class="mili-nav-link">Mili Clinic Sinchon<span class="mili-nav-caret"></span></a>
+                    <div class="mili-dropdown">
+                        <a href="/en/about.html">About Sinchon</a>
+                        <a href="/en/tour.html">Tour</a>
+                        <a href="/en/equipment.html">Equipment</a>
+                        <a href="/en/location.html">Location</a>
+                        <a href="/en/schedule.html">Schedule</a>
+                    </div>
+                </li>
+                <li class="mili-nav-item"><span class="mili-nav-link">Lifting<span class="mili-nav-caret"></span></span>
+                    <div class="mili-dropdown">
+                        <a href="/en/ulthera.html">Ulthera</a>
+                        <a href="/en/tuneface.html">TuneFace</a>
+                        <a href="/en/oligio-x.html">OligioX</a>
+                        <a href="/en/inmode.html">InMode</a>
+                        <a href="/en/shurink.html">Shurink</a>
+                    </div>
+                </li>
+                <li class="mili-nav-item"><span class="mili-nav-link">Minimal Surgery<span class="mili-nav-caret"></span></span>
+                    <div class="mili-dropdown">
+                        <a href="/en/botox.html">Botox</a>
+                        <a href="/en/filler.html">Filler</a>
+                        <a href="/en/collagen-booster.html">Collagen Booster</a>
+                        <a href="/en/thread-lifting.html">Thread Lifting</a>
+                    </div>
+                </li>
+                <li class="mili-nav-item"><span class="mili-nav-link">Skin Care<span class="mili-nav-caret"></span></span>
+                    <div class="mili-dropdown">
+                        <a href="/en/skin-booster.html">Skin Booster</a>
+                        <a href="/en/acne-pore.html">Acne &amp; Pore</a>
+                        <a href="/en/all-in-one-brightening.html">All-in-One Brightening</a>
+                        <a href="/en/medi-spa.html">Medi-Spa</a>
+                    </div>
+                </li>
+                <li class="mili-nav-item"><a href="/en/laser-hair-removal.html" class="mili-nav-link">Laser Hair Removal</a></li>
+                <li class="mili-nav-item"><a href="/en/body-shaping.html" class="mili-nav-link">Body Shaping</a></li>
+                <li class="mili-nav-item"><a href="/en/antioxidant-iv.html" class="mili-nav-link">Anti-Aging IV</a></li>
+                <li class="mili-nav-item"><a href="/en/promotion.html" class="mili-nav-link">Promotion</a></li>
+            </ul>
+        </nav>
+        <div class="mili-lang">
+            <button type="button" class="mili-lang-toggle" aria-haspopup="true" aria-expanded="false">EN
+                <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="mili-lang-menu">
+                <a href="#" class="mili-lang-item active">EN</a>
+                <a href="https://dosan.miliclinic.co.kr" target="_blank" rel="noopener" class="mili-lang-item">KO</a>
+                <a href="/cn/index.html" class="mili-lang-item">CN</a>
+                <a href="/jp/antioxidant-iv.html" class="mili-lang-item">JP</a>
+            </div>
+        </div>
+        <a href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener" class="mili-cta">Reserve<svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <button class="mili-burger" aria-label="Menu" onclick="document.getElementById('mili-mobile-nav').classList.add('open');document.body.style.overflow='hidden'"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mili-mobile-nav" id="mili-mobile-nav">
+        <button class="mili-mobile-nav-close" onclick="document.getElementById('mili-mobile-nav').classList.remove('open');document.body.style.overflow=''">&times;</button>
+        <ul class="mili-mobile-nav-list">
+            <li><span>Mili Clinic Sinchon</span>
+                <ul class="mili-mobile-sub">
+                    <li><a href="/en/about.html">About Dosan</a></li>
+                    
+                    <li><a href="/en/tour.html">Tour</a></li>
+                    <li><a href="/en/equipment.html">Equipment</a></li>
+                    <li><a href="/en/schedule.html">Schedule</a></li>
+                    <li><a href="/en/location.html">Location</a></li>
+                </ul>
+            </li>
+            <li><span>Lifting</span>
+                <ul class="mili-mobile-sub">
+                    <li><a href="/en/ulthera.html">Ulthera</a></li>
+                    <li><a href="/en/oligio-x.html">OligioX</a></li>
+                    <li><a href="/en/tuneface.html">Tuneface</a></li>
+                </ul>
+            </li>
+            <li><a href="/en/collagen-booster.html">Collagen Booster</a></li>
+            <li><a href="/en/collagen-booster.html">Collagen Booster</a></li>
+            <li><span>Minimal Surgery</span>
+                <ul class="mili-mobile-sub">
+                    <li><a href="/en/thread-lifting.html">Thread Lifting</a></li>
+                    <li><a href="/en/collagen-booster.html">Collagen Booster</a></li>
+                    <li><a href="/en/collagen-booster.html">Collagen Booster</a></li>
+                    <li><a href="/en/filler.html">Filler</a></li>
+                </ul>
+            </li>
+            <li><span>Skin Recovery</span>
+                <ul class="mili-mobile-sub">
+                    <li><a href="/en/skin-booster.html">1:1 Skin Booster</a></li>
+                    <li><a href="/en/all-in-one-brightening.html">All-in-One Brightening</a></li>
+                    <li><a href="/en/acne-pore.html">Acne and Pore</a></li>
+                    <li><a href="/en/acne-pore.html">Acne and Pore</a></li>
+                </ul>
+            </li>
+            <li><a href="/en/laser-hair-removal.html">Laser Hair Removal</a></li>
+            <li><span>Skin Care</span>
+                <ul class="mili-mobile-sub">
+                    <li><a href="/en/medi-spa.html">Medi-Spa</a></li>
+                    <li><a href="/en/medi-spa.html">Medi-Spa</a></li>
+                    <li><a href="/en/antioxidant-iv.html">Premium Antioxidant IV</a></li>
+                </ul>
+            </li>
+            <li><a href="/en/promotion.html">Promotion</a></li>
+            <li><a href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener">Reserve</a></li>
+        </ul>
+        <div class="mili-mobile-lang">
+            <span class="mili-mobile-lang-label">Language</span>
+            <div class="mili-mobile-lang-list">
+                <a href="#" class="mili-mobile-lang-item active">EN</a>
+                <a href="https://dosan.miliclinic.co.kr" target="_blank" rel="noopener" class="mili-mobile-lang-item">KO</a>
+                <a href="/cn/index.html" class="mili-mobile-lang-item">CN</a>
+                <a href="/jp/antioxidant-iv.html" class="mili-mobile-lang-item">JP</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="iv-hero">
+    <div class="iv-hero-bg"></div>
+    <div class="iv-hero-inner">
+        <div class="iv-hero-top">
+            <a href="/">Home</a>
+            <span class="sep">/</span>
+            <a href="/care.html">Care</a>
+            <span class="sep">/</span>
+            <a href="/skin-care.html">Skin Care</a>
+            <span class="sep">/</span>
+            <span>Premium Antioxidant IV</span>
+        </div>
+        <div class="iv-hero-center">
+            <div class="iv-hero-eyebrow">
+                <span>Dosan Mili Clinic</span>
+                <span class="dot"></span>
+                <span>Premium Antioxidant IV</span>
+            </div>
+            <h1 class="iv-hero-title">
+                Cleanse &amp; Replenish
+                <span class="line-2">Premium Antioxidant IV</span>
+            </h1>
+            <p class="iv-hero-sub">
+                An intravenous antioxidant programme — delivering the nutrients that correct cellular imbalance, restoring vitality from within and supporting the immune system at its source.
+            </p>
+        </div>
+        <div class="iv-hero-bottom">
+            <div class="iv-hero-meta">
+                <div class="iv-hero-meta-item">
+                    <div class="label">Category</div>
+                    <div class="value">Care · IV Therapy</div>
+                </div>
+                <div class="iv-hero-meta-item">
+                    <div class="label">Drips</div>
+                    <div class="value">6 Signature</div>
+                </div>
+                <div class="iv-hero-meta-item">
+                    <div class="label">Approach</div>
+                    <div class="value">Customised Blend</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="iv-hero-scroll">Scroll ↓</span>
+</section>
+
+<!-- Sub-nav -->
+<nav class="tx-subnav">
+    <div class="tx-subnav-inner">
+        <span class="tx-subnav-label">— On this page</span>
+        <a href="#manifesto">Cleanse &amp; Replenish</a>
+        <a href="#programme">Programme</a>
+        <a href="#drips">The Drips</a>
+    </div>
+</nav>
+
+<!-- Manifesto -->
+<section id="manifesto" class="iv-manifesto">
+    <div class="iv-manifesto-inner">
+        <div class="iv-manifesto-eyebrow">— Premium Antioxidant IV</div>
+        <div class="iv-manifesto-words">
+            <div class="iv-word"><em>Cleanse</em></div>
+            <div class="iv-word-amp">&amp;</div>
+            <div class="iv-word gold"><em>Replenish</em></div>
+        </div>
+        <div class="iv-manifesto-divider"></div>
+        <div class="iv-manifesto-sub">
+            The Premium Antioxidant IV delivers nutrients for <strong>antioxidant defence and detoxification</strong> — correcting cellular nutritional imbalance and deficiency, supporting vital, resilient skin, and strengthening the body's defence against infection and inflammation.
+        </div>
+    </div>
+</section>
+
+<!-- Programme -->
+<section id="programme" class="iv-programme">
+    <div class="iv-programme-inner">
+        <div class="iv-programme-left">
+            <div class="section-eyebrow"><em>The Programme</em></div>
+            <h2>Empty the body of toxins, <em>awaken</em> the condition.</h2>
+            <p class="sub">An intravenous nutritional programme designed and customised by Mili's medical team — calibrated to your body's specific state on the day.</p>
+        </div>
+        <div class="iv-programme-text">
+            <p class="lead">
+                Mili's antioxidant IV is an intravenous infusion that supplies <em>antioxidant and detoxification compounds</em> — restoring the balance of cellular nutrition.
+            </p>
+            <p>
+                A <strong>1:1 consultation</strong> identifies the appropriate nutrient combination for your current state — yielding safe and effective results, while supporting healthy skin and reinforcing immunity for the prevention of infection and inflammation.
+            </p>
+            <p class="mobile-hide">
+                Each drip is administered in a <strong>private suite</strong> at Mili Sinchon — a quiet, considered environment in which the body can absorb what it needs and the mind can rest.
+            </p>
+            <div class="iv-benefits">
+                <div class="iv-benefit">
+                    <div class="iv-benefit-mark">i.</div>
+                    <div class="iv-benefit-text"><strong>Antioxidant defence</strong> — neutralising free radicals at the cellular level.</div>
+                </div>
+                <div class="iv-benefit">
+                    <div class="iv-benefit-mark">ii.</div>
+                    <div class="iv-benefit-text"><strong>Detoxification</strong> — supporting the liver's natural clearance pathways.</div>
+                </div>
+                <div class="iv-benefit">
+                    <div class="iv-benefit-mark">iii.</div>
+                    <div class="iv-benefit-text"><strong>Skin vitality</strong> — radiance and elasticity restored from within.</div>
+                </div>
+                <div class="iv-benefit">
+                    <div class="iv-benefit-mark">iv.</div>
+                    <div class="iv-benefit-text"><strong>Immunity</strong> — strengthening defence against infection and inflammation.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Drips -->
+<section id="drips" class="iv-drips">
+    <div class="iv-drips-head">
+        <div class="section-eyebrow"><em>Six Signature</em> Drips</div>
+        <h2>The Mili <em>antioxidant</em> drip collection.</h2>
+        <p>Six signature drips — each formulated for a distinct purpose. The right combination is selected together with our medical team through a private consultation.</p>
+    </div>
+    <div class="iv-drips-grid">
+
+        <article class="iv-drip-card">
+            <div class="iv-drip-img">
+                <span class="iv-drip-num"><em>i.</em></span>
+                <img src="/assets/images/antioxidant-iv/drip-01-inner-beauty.jpg" alt="All-in-One Inner Beauty">
+            </div>
+            <div class="iv-drip-purpose">— Antioxidant &middot; Skin Tone</div>
+            <h3 class="iv-drip-name"><em>All-in-One</em> Inner Beauty</h3>
+            <p class="iv-drip-desc">A signature antioxidant cocktail neutralising free radicals at the cellular level &mdash; pairing the master antioxidant with vitamin C and alpha-lipoic acid for fast, visible improvement in tone and texture.</p>
+            <div class="iv-drip-ingredients">
+                <div class="iv-drip-ingredients-label">— Core</div>
+                <div class="iv-drip-ingredients-list"><em>Glutathione</em> &middot; Vitamin C &middot; Alpha-Lipoic Acid</div>
+            </div>
+        </article>
+
+        <article class="iv-drip-card">
+            <div class="iv-drip-img">
+                <span class="iv-drip-num"><em>ii.</em></span>
+                <img src="/assets/images/antioxidant-iv/drip-02-remodelling.jpg" alt="Skin Remodelling Injection">
+            </div>
+            <div class="iv-drip-purpose">— Anti-ageing &middot; Hormonal</div>
+            <h3 class="iv-drip-name"><em>Skin</em> Remodelling Injection</h3>
+            <p class="iv-drip-desc">Placenta extract paired with Rejuris &mdash; addressing chronic fatigue, menopausal symptoms, sarcopenia, and the deeper hormonal dimensions of skin ageing.</p>
+            <div class="iv-drip-ingredients">
+                <div class="iv-drip-ingredients-label">— Core</div>
+                <div class="iv-drip-ingredients-list"><em>Placenta Extract</em> &middot; Rejuris Injection</div>
+            </div>
+        </article>
+
+        <article class="iv-drip-card">
+            <div class="iv-drip-img">
+                <span class="iv-drip-num"><em>iii.</em></span>
+                <img src="/assets/images/antioxidant-iv/drip-03-revitalizing.jpg" alt="Revitalizing Drip">
+            </div>
+            <div class="iv-drip-purpose">— Recovery &middot; Anti-fatigue</div>
+            <h3 class="iv-drip-name"><em>Revitalizing</em> Drip</h3>
+            <p class="iv-drip-desc">For chronic fatigue and persistent muscle ache that hasn&rsquo;t lifted with rest &mdash; relieving fatigue and muscle tension through a balanced infusion of taurine, vitamins, and glucose.</p>
+            <div class="iv-drip-ingredients">
+                <div class="iv-drip-ingredients-label">— Core</div>
+                <div class="iv-drip-ingredients-list"><em>Taurine</em> &middot; Vitamins &middot; Glucose</div>
+            </div>
+        </article>
+
+        <article class="iv-drip-card">
+            <div class="iv-drip-img">
+                <span class="iv-drip-num"><em>iv.</em></span>
+                <img src="/assets/images/antioxidant-iv/drip-04-multi-vitamin.jpg" alt="Multi-Vitamin Drip">
+            </div>
+            <div class="iv-drip-purpose">— Vitality &middot; Daily Restoration</div>
+            <h3 class="iv-drip-name"><em>Multi-Vitamin</em> Drip</h3>
+            <p class="iv-drip-desc">A direct supply of essential vitamins for those running on a busy schedule &mdash; restoring foundational nutritional reserves the body cannot easily replenish through diet alone.</p>
+            <div class="iv-drip-ingredients">
+                <div class="iv-drip-ingredients-label">— Core</div>
+                <div class="iv-drip-ingredients-list"><em>Tiavista</em> Multivitamin Complex</div>
+            </div>
+        </article>
+
+        <article class="iv-drip-card">
+            <div class="iv-drip-img">
+                <span class="iv-drip-num"><em>v.</em></span>
+                <img src="/assets/images/antioxidant-iv/drip-05-mineral-amino.jpg" alt="Multi-Mineral and Amino Acid Injection">
+            </div>
+            <div class="iv-drip-purpose">— Skin Resilience &middot; Regeneration</div>
+            <h3 class="iv-drip-name"><em>Multi-Mineral</em> &amp; Amino Acid</h3>
+            <p class="iv-drip-desc">Replenishing essential mineral and amino-acid reserves the body has run thin on &mdash; supporting healthier, more resilient skin and helping prevent inflammatory and allergic reactions.</p>
+            <div class="iv-drip-ingredients">
+                <div class="iv-drip-ingredients-label">— Core</div>
+                <div class="iv-drip-ingredients-list"><em>Multi-Blue</em> &middot; Mineral &middot; Amino Acid Complex</div>
+            </div>
+        </article>
+
+        <article class="iv-drip-card">
+            <div class="iv-drip-img">
+                <span class="iv-drip-num"><em>vi.</em></span>
+                <img src="/assets/images/antioxidant-iv/drip-06-immunity.jpg" alt="Vitamin Drip for Immunity">
+            </div>
+            <div class="iv-drip-purpose">— Immunity &middot; Energy</div>
+            <h3 class="iv-drip-name"><em>Vitamin</em> Drip</h3>
+            <p class="iv-drip-desc">A focused vitamin infusion for those whose physical activity or daily intake leaves nutritional gaps &mdash; restoring energy and reinforcing the body&rsquo;s natural immune defence.</p>
+            <div class="iv-drip-ingredients">
+                <div class="iv-drip-ingredients-label">— Core</div>
+                <div class="iv-drip-ingredients-list"><em>Vitamin C</em> &middot; B-Complex</div>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<!-- Customisation Note -->
+<section class="iv-custom">
+    <div class="iv-custom-inner">
+        <div class="iv-custom-quote-mark">"</div>
+        <h2>The right drip isn't <em>chosen alone</em> — it's matched to the body in front of us, on the day we meet it.</h2>
+        <p>Every Antioxidant IV begins with a 1:1 consultation. The combination — and the dose — is built around your current condition, recent treatments, and what your body genuinely needs at this moment.</p>
+    </div>
+</section>
+
+<!-- Related treatments -->
+<section class="tx-related">
+    <div class="container">
+        <div class="tx-related-head">
+            <h2>Other skin care treatments.</h2>
+        </div>
+        <div class="related-grid">
+            <a href="/en/medi-spa.html" class="related-card">
+                <div class="related-img"><img src="/assets/images/medispa/before-meeting.png" alt="Medi-Spa for Face"></div>
+                <div class="related-cat">— Skin Care · Signature</div>
+                <div class="related-name">Medi-Spa</div>
+            </a>
+            <a href="/en/medi-spa.html" class="related-card">
+                <div class="related-img"><img src="/assets/images/highend-medispa/course-01-lamer.jpg" alt="High-end Medi-Spa"></div>
+                <div class="related-cat">— Skin Care · Highend</div>
+                <div class="related-name">Medi-Spa</div>
+            </a>
+            <a href="/en/skin-booster.html" class="related-card">
+                <div class="related-img"><img src="/assets/images/skin-booster/feature.png" alt="1:1 Skin Booster"></div>
+                <div class="related-cat">— Skin Recovery · Booster</div>
+                <div class="related-name">1:1 Skin Booster</div>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer class="mili-footer">
+    <div class="mili-footer-inner">
+        <div class="mili-footer-top">
+            <div class="mili-footer-brand">
+                <div class="mili-footer-logo"><img src="/assets/images/logo/logo.png" alt="Mili Clinic Sinchon"></div>
+                <p class="mili-footer-tagline">The flagship of the Mili Clinic brand. Beyond the remedy &mdash; a quiet sanctuary in Dosan for restoration and refinement.</p>
+                <p class="mili-footer-slogan">"Enhancing Beauty with Just a 1mm Change."</p>
+            </div>
+            <div class="mili-footer-col">
+                <h5>Treatments</h5>
+                <ul>
+                    <li><a href="/en/ulthera.html">Ulthera</a></li>
+                    <li><a href="/en/tuneface.html">TuneFace</a></li>
+                    <li><a href="/en/oligio-x.html">OligioX</a></li>
+                    <li><a href="/en/inmode.html">InMode</a></li>
+                    <li><a href="/en/shurink.html">Shurink</a></li>
+                    <li><a href="/en/botox.html">Botox</a></li>
+                    <li><a href="/en/filler.html">Filler</a></li>
+                    <li><a href="/en/collagen-booster.html">Collagen Booster</a></li>
+                    <li><a href="/en/thread-lifting.html">Thread Lifting</a></li>
+                    <li><a href="/en/skin-booster.html">Skin Booster</a></li>
+                    <li><a href="/en/acne-pore.html">Acne &amp; Pore</a></li>
+                    <li><a href="/en/all-in-one-brightening.html">All-in-One Brightening</a></li>
+                    <li><a href="/en/medi-spa.html">Medi-Spa</a></li>
+                    <li><a href="/en/laser-hair-removal.html">Laser Hair Removal</a></li>
+                    <li><a href="/en/body-shaping.html">Body Shaping</a></li>
+                    <li><a href="/en/antioxidant-iv.html">Anti-Aging IV</a></li>
+                </ul>
+            </div>
+            <div class="mili-footer-col">
+                <h5>Visit</h5>
+                <ul>
+                    <li><a href="/en/location.html">Location</a></li>
+                    <li><a href="/en/schedule.html">Schedule</a></li>
+                    <li><a href="https://naver.me/GLAXm15o" target="_blank" rel="noopener">Naver Map</a></li>
+                    <li><a href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener">Naver Booking</a></li>
+                    <li><a href="tel:+82263371212">+82 2&middot;6337&middot;1212</a></li>
+                </ul>
+            </div>
+            <div class="mili-footer-col">
+                <h5>Network</h5>
+                <ul>
+                    <li><a href="/en/promotion.html">Promotion</a></li>
+                    <li><a href="https://www.youtube.com/@Dr.ShinMillimeter" target="_blank" rel="noopener">YouTube</a></li>
+                    <li><a href="https://sinchon.miliclinic.co.kr" target="_blank" rel="noopener">Mili Sinchon</a></li>
+                    <li><a href="http://miliclinic.com" target="_blank" rel="noopener">Mili Global</a></li>
+                    <li><a href="https://dosan.miliclinic.co.kr">&#54620;&#44397;&#50612; &#49324;&#51060;&#53944;</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mili-footer-messengers">
+            <a href="https://wa.me/821058616367" target="_blank" rel="noopener" class="mili-msg" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375c-.99-1.575-1.516-3.391-1.516-5.26 0-5.445 4.455-9.885 9.942-9.885 2.654 0 5.145 1.035 7.021 2.91 1.875 1.875 2.909 4.371 2.909 7.026-.004 5.444-4.46 9.885-9.935 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411"/></svg>
+                <span class="mili-msg-name">WhatsApp</span>
+            </a>
+            <a href="https://mp.weixin.qq.com/s/4ruAKbgP8m5kkttIQ18uvg" target="_blank" rel="noopener" class="mili-msg" aria-label="WeChat">
+                <svg viewBox="0 0 24 24" fill="#7BB32E"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.328.328 0 0 0 .166-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.594-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.475-1.78 5.687.91 2.214 3.337 3.6 6.116 3.6.453 0 .92-.069 1.386-.205a.79.79 0 0 1 .677.069l1.625 1.05a.36.36 0 0 0 .184.061c.16 0 .29-.132.29-.295 0-.071-.027-.142-.038-.213l-.336-1.245a.66.66 0 0 1-.026-.218.625.625 0 0 1 .25-.499C21.546 17.474 22.5 15.852 22.5 13.94c0-3.213-3.045-5.78-6.572-5.85zm-2.379 2.493c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897zm4.625 0c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897z"/></svg>
+                <span class="mili-msg-name">WeChat</span>
+            </a>
+            <a href="https://lin.ee/X7C7bMh" target="_blank" rel="noopener" class="mili-msg" aria-label="LINE">
+                <svg viewBox="0 0 24 24" fill="#06C755"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+                <span class="mili-msg-name">LINE</span>
+            </a>
+            <a href="https://pf.kakao.com/_xehXRG/chat" target="_blank" rel="noopener" class="mili-msg" aria-label="KakaoTalk">
+                <svg viewBox="0 0 24 24" fill="#FEE500"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.7 6.8L5.6 21.4c-.1.3.2.5.5.4l4.4-2.9c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/><path d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.7 6.8L5.6 21.4c-.1.3.2.5.5.4l4.4-2.9c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8s-4.5-8-10-8z" stroke="#1A1A1A" stroke-width="0.4" fill="#FEE500"/></svg>
+                <span class="mili-msg-name">KakaoTalk</span>
+            </a>
+            <a href="https://www.instagram.com/dosan.miliclinic/" target="_blank" rel="noopener" class="mili-msg" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="#1A1A1A"/></svg>
+                <span class="mili-msg-name">Instagram</span>
+            </a>
+        </div>
+
+        <div class="mili-footer-business">
+            <div>
+                <p><strong>Company</strong> Mili Clinic Sinchon (&#48128;&#47532;&#51032;&#50896; &#46020;&#49328;)</p>
+                <p><strong>Director</strong> Shin Dong-ha, M.D.</p>
+                <p><strong>Business No.</strong> 457-47-00860</p>
+                <p><strong>Information Manager</strong> Shin Dong-ha</p>
+            </div>
+            <div>
+                <p><strong>Address</strong> 3F, 104 Sinchon-ro, Mapo-gu, Seoul, Korea</p>
+                <p><strong>Hours</strong> Mon&middot;Wed&middot;Fri 10:00&ndash;19:00 / Tue&middot;Thu 10:00&ndash;21:00 / Sat 10:00&ndash;16:00</p>
+                <p><strong>Closed</strong> Sundays &amp; Public Holidays</p>
+                <p><strong>Lunch</strong> 13:00&ndash;14:00</p>
+            </div>
+        </div>
+
+        <div class="mili-footer-bottom">
+            <div>&copy; 2026 Mili Clinic Sinchon. All Rights Reserved.</div>
+            <div class="mili-footer-policies">
+                <a href="/en/privacy.html">Privacy Policy</a>
+                <a href="/en/non-covered.html">Non-Covered Items</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating -->
+<div class="mili-float">
+    <a href="https://pf.kakao.com/_xehXRG/chat" target="_blank" rel="noopener" class="mili-float-btn kakao" aria-label="KakaoTalk">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.7 6.8L5.6 21.4c-.1.3.2.5.5.4l4.4-2.9c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/></svg>
+    </a>
+    <a href="https://mp.weixin.qq.com/s/4ruAKbgP8m5kkttIQ18uvg" target="_blank" rel="noopener" class="mili-float-btn wechat" aria-label="WeChat">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.328.328 0 0 0 .166-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.594-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.475-1.78 5.687.91 2.214 3.337 3.6 6.116 3.6.453 0 .92-.069 1.386-.205a.79.79 0 0 1 .677.069l1.625 1.05a.36.36 0 0 0 .184.061c.16 0 .29-.132.29-.295 0-.071-.027-.142-.038-.213l-.336-1.245a.66.66 0 0 1-.026-.218.625.625 0 0 1 .25-.499C21.546 17.474 22.5 15.852 22.5 13.94c0-3.213-3.045-5.78-6.572-5.85zm-2.379 2.493c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897zm4.625 0c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897z"/></svg>
+    </a>
+    <a href="https://lin.ee/X7C7bMh" target="_blank" rel="noopener" class="mili-float-btn line" aria-label="LINE">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    </a>
+    <a href="https://wa.me/821058616367" target="_blank" rel="noopener" class="mili-float-btn whatsapp" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375c-.99-1.575-1.516-3.391-1.516-5.26 0-5.445 4.455-9.885 9.942-9.885 2.654 0 5.145 1.035 7.021 2.91 1.875 1.875 2.909 4.371 2.909 7.026-.004 5.444-4.46 9.885-9.935 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411"/></svg>
+    </a>
+    <a href="https://www.instagram.com/dosan.miliclinic/" target="_blank" rel="noopener" class="mili-float-btn instagram" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+    </a>
+</div>
+<script>
+(function(){
+    const links = document.querySelectorAll('.tx-subnav a');
+    const sections = [...links].map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if(e.isIntersecting){
+                links.forEach(l => l.classList.remove('active'));
+                const active = document.querySelector('.tx-subnav a[href="#' + e.target.id + '"]');
+                if(active) active.classList.add('active');
+            }
+        });
+    }, {rootMargin: '-30% 0px -60% 0px'});
+    sections.forEach(s => observer.observe(s));
+})();
+</script>
+
+<script data-mobile-nav-accordion>
+(function(){
+    const items = document.querySelectorAll('.mili-mobile-nav-list > li');
+    items.forEach(li => {
+        const span = li.querySelector(':scope > span');
+        if (!span) return;
+        span.addEventListener('click', (e) => {
+            e.stopPropagation();
+            li.classList.toggle('open');
+        });
+    });
+})();
+</script>
+<script data-mili-lang>
+(function(){
+document.querySelectorAll('.mili-lang-toggle').forEach(function(btn){
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var root = btn.closest('.mili-lang');
+    var open = !root.classList.contains('open');
+    document.querySelectorAll('.mili-lang.open').forEach(function(el){
+      el.classList.remove('open');
+      var t = el.querySelector('.mili-lang-toggle');
+      if (t) t.setAttribute('aria-expanded', 'false');
+    });
+    if (open) {
+      root.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+document.addEventListener('click', function(){
+  document.querySelectorAll('.mili-lang.open').forEach(function(el){
+    el.classList.remove('open');
+    var t = el.querySelector('.mili-lang-toggle');
+    if (t) t.setAttribute('aria-expanded', 'false');
+  });
+});
+})();
+</script>
+
+</body>
+</html>

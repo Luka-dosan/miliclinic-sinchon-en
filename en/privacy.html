@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy &mdash; Mili Clinic Sinchon</title>
+<meta name="description" content="Mili Clinic Sinchon — A private aesthetic clinic in Seoul.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mili Clinic Sinchon">
+<meta property="og:title" content="Mili Clinic Sinchon">
+<meta property="og:image" content="https://miliclinic-sinchon-en.vercel.app/assets/images/og/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mili Clinic Sinchon">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://miliclinic-sinchon-en.vercel.app/privacy.html">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mili Clinic Sinchon">
+<meta name="twitter:image" content="https://miliclinic-sinchon-en.vercel.app/assets/images/og/og-image.png">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+:root{
+    --ink: #0F0F10;
+    --bone: #F1F2F5;
+    --paper: #F8F9FB;
+    --white: #FFFFFF;
+    --muted: #8A867F;
+    --line: #DEDAD1;
+    --gold: #A89668;
+    --pad-x: clamp(24px, 5vw, 96px);
+    --container: 1440px;
+
+    --display: "SF Pro Display", system-ui, -apple-system, "Inter", sans-serif;
+}
+
+body{
+    font-family: "SF Pro Text", system-ui, -apple-system, "Inter", sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+}
+
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
+
+
+/* ——— Page Hero ——— */
+.page-hero{
+    padding: 80px 0 100px;
+    border-bottom: 1px solid var(--line);
+}
+.page-hero-inner{
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+}
+.breadcrumb{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 80px;
+}
+.breadcrumb a{transition: color .2s}
+.breadcrumb a:hover{color: var(--ink)}
+.breadcrumb span.sep{opacity: .5}
+.page-hero-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 8vw, 120px);
+    align-items: end;
+}
+.page-hero-grid .right{padding-bottom: 12px}
+.page-eyebrow{font-family:var(--display);font-weight:400;
+    font-size: 12px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 36px;
+}
+.page-title{font-family:var(--display);
+    font-family: var(--display);
+    font-size: clamp(48px, 8vw, 112px);
+    font-weight:600;
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+}
+.page-title .line-2{display: block;padding-left: clamp(30px, 8vw, 100px)}
+.page-subtitle{
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--muted);
+}
+.page-subtitle strong{font-weight: 500;color: var(--ink)}
+
+@media (max-width: 760px){
+    .page-hero-grid{grid-template-columns: 1fr; gap: 32px}
+    .page-hero-grid .right{padding-bottom: 0}
+}
+
+/* ——— Privacy Body ——— */
+.privacy-body{
+    padding: clamp(60px, 10vw, 120px) 0;
+}
+.privacy-meta{
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(24px, 4vw, 56px);
+    padding-bottom: 32px;
+    margin-bottom: clamp(48px, 8vw, 80px);
+    border-bottom: 1px solid var(--line);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+.privacy-meta-item .label{display: block; font-size: 10px; letter-spacing: 0.22em; margin-bottom: 6px}
+.privacy-meta-item .value{font-size: 13px; letter-spacing: 0.04em; text-transform: none; color: var(--ink); font-weight: 400}
+
+.privacy-section{
+    margin-bottom: clamp(48px, 8vw, 80px);
+    display: grid;
+    grid-template-columns: minmax(180px, 1fr) 3fr;
+    gap: clamp(24px, 5vw, 80px);
+    align-items: start;
+}
+.privacy-section-num{
+    font-family: var(--display);
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 300;
+    color: var(--muted);
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+.privacy-section-title{
+    margin-top: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+}
+.privacy-section-body h3{
+    font-family: var(--display);
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 300;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    margin-bottom: 24px;
+    color: var(--ink);
+}
+.privacy-section-body p{
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--ink);
+    margin-bottom: 18px;
+}
+.privacy-section-body p:last-child{margin-bottom: 0}
+.privacy-section-body strong{font-weight: 500}
+.privacy-section-body em{font-style: normal;font-weight: 300}
+.privacy-section-body ul{
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 24px;
+}
+.privacy-section-body ul li{
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--ink);
+    padding-left: 24px;
+    position: relative;
+    margin-bottom: 8px;
+}
+.privacy-section-body ul li::before{
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--muted);
+}
+.privacy-section-body .sub-label{
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 24px 0 12px;
+    font-weight: 500;
+}
+.privacy-section-body a{
+    border-bottom: 1px solid var(--ink);
+    transition: opacity .2s;
+}
+.privacy-section-body a:hover{opacity: 0.6}
+
+@media (max-width: 760px){
+    .privacy-section{grid-template-columns: 1fr; gap: 16px}
+    .privacy-section-num{font-size: 32px}
+    .privacy-section-title{margin-top: 4px; margin-bottom: 8px}
+}
+
+/* === Mili Header Nav with Dropdowns === */
+.mili-header{position:sticky;top:0;z-index:100;background:var(--paper);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.mili-header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px var(--pad-x);gap:24px}
+.mili-logo{display:inline-flex;align-items:center;height:40px;flex-shrink:0;text-decoration:none}.mili-logo img{height:100%;width:auto;object-fit:contain;display:block}
+
+.mili-nav{flex:1;display:flex;justify-content:center}
+.mili-nav-list{display:flex;gap:22px;list-style:none;align-items:center}
+.mili-nav-item{position:relative}
+.mili-nav-link{font-size:11px;letter-spacing:0.13em;text-transform:uppercase;padding:10px 0;display:inline-flex;align-items:center;gap:5px;white-space:nowrap;transition:color .2s;cursor:pointer}
+.mili-nav-link:hover{color:var(--ink)}
+.mili-nav-link.active{border-bottom:1px solid var(--ink)}
+.mili-nav-caret{display:inline-block;width:7px;height:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin-left:2px;margin-bottom:3px;opacity:.6;transition:transform .2s}
+.mili-nav-item:hover .mili-nav-caret{transform:rotate(225deg);margin-bottom:-2px}
+.mili-dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(-8px);background:var(--paper);border:1px solid var(--line);min-width:240px;padding:14px 0;opacity:0;visibility:hidden;transition:opacity .25s,transform .25s,visibility .25s;z-index:120}
+.mili-nav-item:hover .mili-dropdown{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.mili-dropdown a{display:block;padding:9px 24px;font-size:12px;letter-spacing:0.06em;color:var(--ink);transition:background .15s,color .15s;white-space:nowrap}
+.mili-dropdown a:hover{background:var(--bone);color:var(--ink)}
+.mili-cta{flex-shrink:0;display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:10px 20px;border:1px solid var(--ink);transition:background .25s,color .25s;white-space:nowrap}
+.mili-cta:hover{background:var(--ink);color:var(--paper)}
+.mili-cta svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:1.5}
+.mili-burger{display:none;background:none;border:none;cursor:pointer;padding:6px}
+.mili-burger span{display:block;width:22px;height:1px;background:var(--ink);margin:5px 0;transition:transform .3s,opacity .3s}
+.mili-mobile-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100dvh;max-height:100dvh;background:var(--paper);z-index:200;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:80px var(--pad-x) 140px}
+.mili-mobile-nav.open{display:flex;flex-direction:column}
+.mili-mobile-nav-close{position:absolute;top:24px;right:24px;background:none;border:none;cursor:pointer;font-size:24px;color:var(--ink)}
+.mili-mobile-nav-list{list-style:none;flex:1 1 auto;min-height:0;overflow-y:auto}
+.mili-mobile-nav-list>li{border-bottom:1px solid var(--line)}
+.mili-mobile-nav-list>li>a,.mili-mobile-nav-list>li>span{display:block;padding:18px 0;font-size:14px;letter-spacing:0.15em;text-transform:uppercase;font-weight:400;cursor:pointer}
+.mili-mobile-nav-list>li>span{display:flex;justify-content:space-between;align-items:center;position:relative}
+.mili-mobile-nav-list>li>span::after{content:'+';font-size:20px;font-weight:300;transition:transform .25s ease;line-height:1}
+.mili-mobile-nav-list>li.open>span::after{content:'−'}
+.mili-mobile-sub{padding:0 0 0 16px;list-style:none;max-height:0;overflow:hidden;transition:max-height .35s ease}
+.mili-mobile-nav-list>li.open .mili-mobile-sub{max-height:500px;padding-bottom:16px}
+.mili-mobile-sub li a{display:block;padding:8px 0;font-size:13px;color:var(--muted);font-weight:300;letter-spacing:0.04em;text-transform:none}
+@media (max-width:1100px){.mili-nav-list{gap:14px}.mili-nav-link{font-size:10px}}
+@media (max-width:980px){.mili-nav,.mili-cta,.mili-lang{display:none}.mili-burger{display:block}}@media (max-width:768px){.mili-logo{height:32px}}
+
+/* === Language switcher === */
+.mili-lang{position:relative;margin-right:16px}
+.mili-lang-toggle{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid var(--line);color:var(--ink);padding:9px 14px;font:400 11px/1 var(--display);letter-spacing:0.16em;text-transform:uppercase;border-radius:980px;cursor:pointer;transition:border-color .2s}
+.mili-lang-toggle:hover{border-color:var(--ink)}
+.mili-lang-toggle svg{transition:transform .2s}
+.mili-lang.open .mili-lang-toggle svg{transform:rotate(180deg)}
+.mili-lang-menu{position:absolute;top:calc(100% + 6px);right:0;min-width:100px;background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden;opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .2s,transform .2s,visibility .2s;z-index:50}
+.mili-lang.open .mili-lang-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.mili-lang-item{display:block;padding:10px 14px;font:400 11px/1 var(--display);letter-spacing:0.16em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--line);transition:background .15s;cursor:pointer;text-align:left;width:100%;box-sizing:border-box}
+.mili-lang-item:last-child{border-bottom:none}
+a.mili-lang-item{text-decoration:none}
+.mili-lang-item:hover:not(.disabled){background:var(--bone)}
+.mili-lang-item.active{font-weight:500;background:var(--bone)}
+.mili-lang-item.disabled{color:var(--muted);opacity:0.4;cursor:not-allowed;pointer-events:none}
+.mili-mobile-lang{margin-top:auto;padding-top:32px;border-top:1px solid var(--line);flex-shrink:0}
+.mili-mobile-lang-label{display:block;font:400 10px/1 var(--display);letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.mili-mobile-lang-list{display:flex;gap:12px;flex-wrap:wrap}
+.mili-mobile-lang-item{display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;font:400 12px/1 var(--display);letter-spacing:0.16em;text-transform:uppercase;color:var(--ink);border:1px solid var(--line);border-radius:980px;cursor:pointer;text-decoration:none}
+.mili-mobile-lang-item.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.mili-mobile-lang-item.disabled{color:var(--muted);opacity:0.4;pointer-events:none;cursor:not-allowed}
+
+/* === Mili Footer === */
+.mili-footer{background:var(--paper);border-top:1px solid var(--line);padding:80px 0 40px;font-family:"SF Pro Text",system-ui,-apple-system,"Inter",sans-serif}
+.mili-footer-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
+.mili-footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px}
+.mili-footer-brand .mili-footer-logo{margin-bottom:24px}.mili-footer-logo img{height:32px;width:auto;object-fit:contain;display:block}
+.mili-footer-tagline{font-size:13px;font-weight:300;color:var(--muted);line-height:1.8;max-width:380px;margin-bottom:24px}
+.mili-footer-slogan{font-size:15px;font-weight:300;color:var(--ink);letter-spacing:-0.005em;line-height:1.5;max-width:380px}
+.mili-footer-col h5{font-size:11px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px;color:var(--ink)}
+.mili-footer-col ul{list-style:none}
+.mili-footer-col li{margin-bottom:9px}
+.mili-footer-col a{font-size:13px;color:var(--muted);font-weight:300;transition:color .2s}
+.mili-footer-col a:hover{color:var(--ink)}
+.mili-footer-col p{font-size:13px;color:var(--muted);font-weight:300;line-height:1.8}
+.mili-footer-messengers{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:36px}
+.mili-msg{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px 8px;border:1px solid var(--line);background:var(--white);transition:border-color .2s,background .2s,color .2s}
+.mili-msg:hover{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+.mili-msg svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.5;color:var(--ink);transition:color .2s}
+.mili-msg:hover svg{color:var(--paper)}
+.mili-msg-name{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;font-weight:500}
+.mili-footer-business{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end;padding-top:32px;border-top:1px solid var(--line)}
+.mili-footer-info p{font-size:11px;color:var(--muted);line-height:1.8;font-weight:300}
+.mili-footer-info p strong{color:var(--ink);font-weight:500}
+.mili-footer-meta{font-size:10px;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;text-align:right;line-height:1.8;font-weight:300}
+.mili-footer-meta a{color:var(--muted);transition:color .2s}
+.mili-footer-meta a:hover{color:var(--ink)}
+@media (max-width:980px){.mili-footer-top{grid-template-columns:1fr 1fr;gap:40px}}
+@media (max-width:640px){.mili-footer-top{grid-template-columns:1fr}.mili-footer-messengers{grid-template-columns:repeat(5,1fr)}.mili-msg{padding:18px 6px}.mili-msg-name{font-size:9px;letter-spacing:0.1em}.mili-msg svg{width:18px;height:18px}}
+
+/* === Mili Floating Buttons === */
+.mili-float{position:fixed;right:24px;bottom:24px;display:flex;flex-direction:column;gap:10px;z-index:90}
+.mili-float-btn{width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:var(--ink);color:var(--paper);transition:transform .2s,background .2s}
+.mili-float-btn:hover{transform:translateY(-2px);background:var(--gold)}
+.mili-float-btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.5}
+@media (max-width:640px){.mili-float{right:16px;bottom:16px}.mili-float-btn{width:42px;height:42px}.mili-float-btn svg{width:18px;height:18px}}
+
+/* ========== MOBILE OPTIMIZATIONS ========== */
+@media (max-width:640px){
+    :root{--pad-x:20px}
+    body{font-size:15px;line-height:1.65}
+
+    /* Page Hero 60vh */
+    .page-hero{min-height:60vh;padding:32px 0;display:flex;align-items:center;border-bottom:1px solid var(--line)}
+    .page-hero-inner{width:100%}
+    .breadcrumb{margin-bottom:32px;font-size:10px;letter-spacing:0.2em;flex-wrap:wrap;gap:6px}
+    .page-eyebrow{margin-bottom:20px;font-size:10px;letter-spacing:0.3em}
+    .page-title{font-family:var(--display);
+    font-size:clamp(40px,12vw,68px);line-height:1.05}
+    .page-subtitle{display:none}
+
+    /* Privacy Body 모바일 padding */
+    .privacy-body{padding:48px 0 80px}
+
+    /* Privacy meta 컴팩트 */
+    .privacy-meta{gap:24px;font-size:11px}
+    .privacy-meta-item .value{font-size:12px}
+
+    /* Footer 컬럼/메신저 모바일 숨김 */
+    .mili-footer-top{display:none}
+    .mili-footer-messengers{display:none}
+
+    /* Footer 모바일 padding 축소 */
+    footer.mili-footer{padding:48px 0 100px}
+    .mili-footer-business{padding-top:0;border-top:none}
+}
+
+em, cite { font-style: normal; }
+</style>
+</head>
+<body>
+
+<header class="mili-header">
+    <div class="mili-header-inner">
+        <a href="/en/index.html" class="mili-logo" aria-label="Mili Clinic Sinchon"><img src="/assets/images/logo/logo.png" alt="Mili Clinic Sinchon"></a>
+        <nav class="mili-nav">
+            <ul class="mili-nav-list">
+                <li class="mili-nav-item"><a href="/en/about.html" class="mili-nav-link">Mili Clinic Sinchon<span class="mili-nav-caret"></span></a>
+                    <div class="mili-dropdown">
+                        <a href="/en/about.html">About Sinchon</a>
+                        <a href="/en/tour.html">Tour</a>
+                        <a href="/en/equipment.html">Equipment</a>
+                        <a href="/en/location.html">Location</a>
+                        <a href="/en/schedule.html">Schedule</a>
+                    </div>
+                </li>
+                <li class="mili-nav-item"><span class="mili-nav-link">Lifting<span class="mili-nav-caret"></span></span>
+                    <div class="mili-dropdown">
+                        <a href="/en/ulthera.html">Ulthera</a>
+                        <a href="/en/tuneface.html">TuneFace</a>
+                        <a href="/en/oligio-x.html">OligioX</a>
+                        <a href="/en/inmode.html">InMode</a>
+                        <a href="/en/shurink.html">Shurink</a>
+                    </div>
+                </li>
+                <li class="mili-nav-item"><span class="mili-nav-link">Minimal Surgery<span class="mili-nav-caret"></span></span>
+                    <div class="mili-dropdown">
+                        <a href="/en/botox.html">Botox</a>
+                        <a href="/en/filler.html">Filler</a>
+                        <a href="/en/collagen-booster.html">Collagen Booster</a>
+                        <a href="/en/thread-lifting.html">Thread Lifting</a>
+                    </div>
+                </li>
+                <li class="mili-nav-item"><span class="mili-nav-link">Skin Care<span class="mili-nav-caret"></span></span>
+                    <div class="mili-dropdown">
+                        <a href="/en/skin-booster.html">Skin Booster</a>
+                        <a href="/en/acne-pore.html">Acne &amp; Pore</a>
+                        <a href="/en/all-in-one-brightening.html">All-in-One Brightening</a>
+                        <a href="/en/medi-spa.html">Medi-Spa</a>
+                    </div>
+                </li>
+                <li class="mili-nav-item"><a href="/en/laser-hair-removal.html" class="mili-nav-link">Laser Hair Removal</a></li>
+                <li class="mili-nav-item"><a href="/en/body-shaping.html" class="mili-nav-link">Body Shaping</a></li>
+                <li class="mili-nav-item"><a href="/en/antioxidant-iv.html" class="mili-nav-link">Anti-Aging IV</a></li>
+                <li class="mili-nav-item"><a href="/en/promotion.html" class="mili-nav-link">Promotion</a></li>
+            </ul>
+        </nav>
+        <div class="mili-lang">
+            <button type="button" class="mili-lang-toggle" aria-haspopup="true" aria-expanded="false">EN
+                <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="mili-lang-menu">
+                <a href="#" class="mili-lang-item active">EN</a>
+                <a href="https://dosan.miliclinic.co.kr" target="_blank" rel="noopener" class="mili-lang-item">KO</a>
+                <a href="/cn/index.html" class="mili-lang-item">CN</a>
+                <a href="/jp/privacy.html" class="mili-lang-item">JP</a>
+            </div>
+        </div>
+        <a href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener" class="mili-cta">Reserve<svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <button class="mili-burger" aria-label="Menu" onclick="document.getElementById('mili-mobile-nav').classList.add('open');document.body.style.overflow='hidden'"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mili-mobile-nav" id="mili-mobile-nav">
+        <button class="mili-mobile-nav-close" onclick="document.getElementById('mili-mobile-nav').classList.remove('open');document.body.style.overflow=''">&times;</button>
+        <ul class="mili-mobile-nav-list">
+            <li><span>Mili Clinic Sinchon</span>
+                <ul class="mili-mobile-sub">
+                    <li><a href="/en/about.html">About Dosan</a></li>
+                    
+                    <li><a href="/en/tour.html">Tour</a></li>
+                    <li><a href="/en/equipment.html">Equipment</a></li>
+                    <li><a href="/en/schedule.html">Schedule</a></li>
+                    <li><a href="/en/location.html">Location</a></li>
+                </ul>
+            </li>
+            <li><span>Lifting</span>
+                <ul class="mili-mobile-sub">
+                    <li><a href="/en/ulthera.html">Ulthera</a></li>
+                    <li><a href="/en/oligio-x.html">OligioX</a></li>
+                    <li><a href="/en/tuneface.html">Tuneface</a></li>
+                </ul>
+            </li>
+            <li><a href="/en/collagen-booster.html">Collagen Booster</a></li>
+            <li><a href="/en/collagen-booster.html">Collagen Booster</a></li>
+            <li><span>Minimal Surgery</span>
+                <ul class="mili-mobile-sub">
+                    <li><a href="/en/thread-lifting.html">Thread Lifting</a></li>
+                    <li><a href="/en/collagen-booster.html">Collagen Booster</a></li>
+                    <li><a href="/en/collagen-booster.html">Collagen Booster</a></li>
+                    <li><a href="/en/filler.html">Filler</a></li>
+                </ul>
+            </li>
+            <li><span>Skin Recovery</span>
+                <ul class="mili-mobile-sub">
+                    <li><a href="/en/skin-booster.html">1:1 Skin Booster</a></li>
+                    <li><a href="/en/all-in-one-brightening.html">All-in-One Brightening</a></li>
+                    <li><a href="/en/acne-pore.html">Acne and Pore</a></li>
+                    <li><a href="/en/acne-pore.html">Acne and Pore</a></li>
+                </ul>
+            </li>
+            <li><a href="/en/laser-hair-removal.html">Laser Hair Removal</a></li>
+            <li><span>Skin Care</span>
+                <ul class="mili-mobile-sub">
+                    <li><a href="/en/medi-spa.html">Medi-Spa</a></li>
+                    <li><a href="/en/medi-spa.html">Medi-Spa</a></li>
+                    <li><a href="/en/antioxidant-iv.html">Premium Antioxidant IV</a></li>
+                </ul>
+            </li>
+            <li><a href="/en/promotion.html">Promotion</a></li>
+            <li><a href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener">Reserve</a></li>
+        </ul>
+        <div class="mili-mobile-lang">
+            <span class="mili-mobile-lang-label">Language</span>
+            <div class="mili-mobile-lang-list">
+                <a href="#" class="mili-mobile-lang-item active">EN</a>
+                <a href="https://dosan.miliclinic.co.kr" target="_blank" rel="noopener" class="mili-mobile-lang-item">KO</a>
+                <a href="/cn/index.html" class="mili-mobile-lang-item">CN</a>
+                <a href="/jp/privacy.html" class="mili-mobile-lang-item">JP</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Page Hero -->
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <div class="breadcrumb">
+            <a href="/">Home</a>
+            <span class="sep">/</span>
+            <span>Privacy Policy</span>
+        </div>
+        <div class="page-hero-grid">
+            <div class="left">
+                <div class="page-eyebrow">Personal Information</div>
+                <h1 class="page-title">
+                    Privacy
+                    <span class="line-2">Policy</span>
+                </h1>
+            </div>
+            <div class="right">
+                <p class="page-subtitle">
+                    Mili Clinic Sinchon respects your privacy. This policy explains how we <strong>collect, use, and protect</strong> personal information shared with us through our website and clinic services.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Privacy Body -->
+<section class="privacy-body">
+    <div class="container">
+
+        <!-- Meta -->
+        <div class="privacy-meta">
+            <div class="privacy-meta-item">
+                <div class="label">Version</div>
+                <div class="value">1.0</div>
+            </div>
+            <div class="privacy-meta-item">
+                <div class="label">Effective Date</div>
+                <div class="value">August 1, 2023</div>
+            </div>
+            <div class="privacy-meta-item">
+                <div class="label">Contact</div>
+                <div class="value"><a href="mailto:welcome@miliclinic.com">welcome@miliclinic.com</a></div>
+            </div>
+        </div>
+
+        <!-- Section 01 -->
+        <div class="privacy-section">
+            <div>
+                <div class="privacy-section-num">01</div>
+                <div class="privacy-section-title">Information Collected</div>
+            </div>
+            <div class="privacy-section-body">
+                <h3>Categories of personal information we collect, and how we collect it.</h3>
+                <p>
+                    Where access requires registration, Mili Clinic collects a limited set of personal information from the registrant. The categories collected are as follows.
+                </p>
+                <span class="sub-label">Required Information</span>
+                <ul>
+                    <li>Full name, user ID, password</li>
+                    <li>Address</li>
+                    <li>Email address</li>
+                    <li>Contact details (telephone number, mobile number)</li>
+                </ul>
+                <span class="sub-label">Optional Information</span>
+                <ul>
+                    <li>Email subscription preference</li>
+                    <li>SMS subscription preference</li>
+                </ul>
+                <p>
+                    Additionally, the following information may be generated and collected during the use of our services or in the course of our business operations: <strong>service usage records, access logs, and cookies</strong>.
+                </p>
+                <span class="sub-label">Methods of Collection</span>
+                <p>
+                    Personal information may be collected through the website (membership registration), promotional event entries, delivery requests, modifications to membership information, fax, telephone, and customer enquiries.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 02 -->
+        <div class="privacy-section">
+            <div>
+                <div class="privacy-section-num">02</div>
+                <div class="privacy-section-title">Purpose of Use</div>
+            </div>
+            <div class="privacy-section-body">
+                <h3>How we use the personal information we collect.</h3>
+                <span class="sub-label">Member Management</span>
+                <ul>
+                    <li>Identity verification and personal identification for members-only services</li>
+                    <li>Prevention of unauthorised use and abuse by improper members</li>
+                    <li>Confirmation of intent to register, age verification, complaint handling, and delivery of notices</li>
+                    <li>Statistical analysis of access frequency and member service usage</li>
+                </ul>
+                <span class="sub-label">Service Delivery</span>
+                <ul>
+                    <li>Access to content and event participation reserved for logged-in members</li>
+                </ul>
+                <span class="sub-label">Marketing &amp; Advertising</span>
+                <ul>
+                    <li>Delivery of promotional information including events, and prize delivery for event winners</li>
+                    <li>Development of new services and tailoring services based on demographic characteristics</li>
+                    <li>Statistical analysis of access frequency and member service usage</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 03 -->
+        <div class="privacy-section">
+            <div>
+                <div class="privacy-section-num">03</div>
+                <div class="privacy-section-title">Sharing &amp; Disclosure</div>
+            </div>
+            <div class="privacy-section-body">
+                <h3>When personal information may be shared with third parties.</h3>
+                <p>
+                    As a matter of principle, Mili Clinic <strong>does not provide users' personal information to external parties</strong>. The following are exceptions:
+                </p>
+                <ul>
+                    <li>When users have provided prior consent</li>
+                    <li>When required by law, or when investigative authorities request information in accordance with legally prescribed procedures for investigative purposes</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 04 -->
+        <div class="privacy-section">
+            <div>
+                <div class="privacy-section-num">04</div>
+                <div class="privacy-section-title">Retention Period</div>
+            </div>
+            <div class="privacy-section-body">
+                <h3>How long we keep personal information, and why.</h3>
+                <p>
+                    Mili Clinic destroys personal information without delay once the purpose for which it was collected and used has been achieved. However, the following information is retained for the periods specified below, for the reasons stated.
+                </p>
+                <span class="sub-label">Retention Under Internal Policy &mdash; Post-Withdrawal</span>
+                <ul>
+                    <li>Items retained: Name, gender, region, email, mobile number</li>
+                    <li>Reason: Prevention of confusion in service use; cooperation with relevant authorities in investigations of unlawful use</li>
+                </ul>
+                <span class="sub-label">Retention Under Applicable Law</span>
+                <p>
+                    Where required by relevant laws, Mili Clinic retains member information for the period prescribed by such laws, with possible extensions:
+                </p>
+                <ul>
+                    <li>Items retained: Service usage records, access logs, access IP information</li>
+                    <li>Legal basis: Protection of Communications Secrets Act</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 05 -->
+        <div class="privacy-section">
+            <div>
+                <div class="privacy-section-num">05</div>
+                <div class="privacy-section-title">Destruction Procedure</div>
+            </div>
+            <div class="privacy-section-body">
+                <h3>How personal information is destroyed once no longer needed.</h3>
+                <p>
+                    As a principle, Mili Clinic destroys personal information without delay once the purpose for which it was collected and used has been achieved.
+                </p>
+                <span class="sub-label">Procedure</span>
+                <p>
+                    Information you provide for purposes such as membership registration is, after the purpose has been achieved, transferred to a separate database and stored for a period determined by internal policy or applicable law (refer to "Retention Period") before being destroyed. Such personal information will not be used for any purpose other than that for which it was retained, except as required by law.
+                </p>
+                <span class="sub-label">Method</span>
+                <ul>
+                    <li>Personal information printed on paper is destroyed by shredding or incineration</li>
+                    <li>Personal information stored in electronic file form is deleted using technical methods that prevent the records from being recovered</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 06 -->
+        <div class="privacy-section">
+            <div>
+                <div class="privacy-section-num">06</div>
+                <div class="privacy-section-title">Your Rights</div>
+            </div>
+            <div class="privacy-section-body">
+                <h3>Rights of users and legal representatives, and how to exercise them.</h3>
+                <p>
+                    Users and their legal representatives may at any time view or modify the personal information of themselves or of children under the age of 14 in their care, and may request the withdrawal of membership.
+                </p>
+                <p>
+                    To view or modify personal information, please use the "Modify Personal Information" (or "Edit Member Information") function. To withdraw membership and revoke consent, please use the "Withdraw Membership" function for direct access, correction, or withdrawal.
+                </p>
+                <p>
+                    Alternatively, you may contact our Personal Information Manager in writing, by telephone, or by email. After identity verification, we will take the requested action without delay.
+                </p>
+                <p>
+                    If you request correction of an error in your personal information, the relevant information will not be used or disclosed until the correction has been completed. If incorrect information has already been provided to a third party, we will notify the third party of the correction without delay so that the correction may be made.
+                </p>
+                <p>
+                    Personal information that has been terminated or deleted at the request of a user or legal representative is processed in accordance with the terms set out in "Retention Period", and is handled in such a way that it cannot be accessed or used for any other purpose.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 07 -->
+        <div class="privacy-section">
+            <div>
+                <div class="privacy-section-num">07</div>
+                <div class="privacy-section-title">Personal Information Manager</div>
+            </div>
+            <div class="privacy-section-body">
+                <h3>Who to contact regarding personal information matters.</h3>
+                <p>
+                    Mili Clinic has designated a Personal Information Manager to protect customers' personal information and to handle complaints relating to personal information.
+                </p>
+                <p>
+                    <strong>Email:</strong> <a href="mailto:welcome@miliclinic.com">welcome@miliclinic.com</a>
+                </p>
+                <p>
+                    You may report any personal information protection concerns arising from your use of our services to the Personal Information Manager or the relevant department. Mili Clinic will respond to user reports promptly and thoroughly.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 08 -->
+        <div class="privacy-section">
+            <div>
+                <div class="privacy-section-num">08</div>
+                <div class="privacy-section-title">Notice of Changes</div>
+            </div>
+            <div class="privacy-section-body">
+                <h3>How we communicate updates to this policy.</h3>
+                <p>
+                    Where additions, deletions, or amendments to this policy become necessary in response to changes in government policy or security technology, such changes will be communicated through our website.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="mili-footer">
+    <div class="mili-footer-inner">
+        <div class="mili-footer-top">
+            <div class="mili-footer-brand">
+                <div class="mili-footer-logo"><img src="/assets/images/logo/logo.png" alt="Mili Clinic Sinchon"></div>
+                <p class="mili-footer-tagline">The flagship of the Mili Clinic brand. Beyond the remedy &mdash; a quiet sanctuary in Dosan for restoration and refinement.</p>
+                <p class="mili-footer-slogan">"Enhancing Beauty with Just a 1mm Change."</p>
+            </div>
+            <div class="mili-footer-col">
+                <h5>Treatments</h5>
+                <ul>
+                    <li><a href="/en/ulthera.html">Ulthera</a></li>
+                    <li><a href="/en/tuneface.html">TuneFace</a></li>
+                    <li><a href="/en/oligio-x.html">OligioX</a></li>
+                    <li><a href="/en/inmode.html">InMode</a></li>
+                    <li><a href="/en/shurink.html">Shurink</a></li>
+                    <li><a href="/en/botox.html">Botox</a></li>
+                    <li><a href="/en/filler.html">Filler</a></li>
+                    <li><a href="/en/collagen-booster.html">Collagen Booster</a></li>
+                    <li><a href="/en/thread-lifting.html">Thread Lifting</a></li>
+                    <li><a href="/en/skin-booster.html">Skin Booster</a></li>
+                    <li><a href="/en/acne-pore.html">Acne &amp; Pore</a></li>
+                    <li><a href="/en/all-in-one-brightening.html">All-in-One Brightening</a></li>
+                    <li><a href="/en/medi-spa.html">Medi-Spa</a></li>
+                    <li><a href="/en/laser-hair-removal.html">Laser Hair Removal</a></li>
+                    <li><a href="/en/body-shaping.html">Body Shaping</a></li>
+                    <li><a href="/en/antioxidant-iv.html">Anti-Aging IV</a></li>
+                </ul>
+            </div>
+            <div class="mili-footer-col">
+                <h5>Visit</h5>
+                <ul>
+                    <li><a href="/en/about.html">About Dosan</a></li>
+                    
+                    <li><a href="/en/tour.html">Tour</a></li>
+                    <li><a href="/en/equipment.html">Equipment</a></li>
+                    <li><a href="/en/schedule.html">Schedule</a></li>
+                    <li><a href="/en/location.html">Location</a></li>
+                </ul>
+            </div>
+            <div class="mili-footer-col">
+                <h5>Contact</h5>
+                <p>3F, 17 Sinchon-ro 45-gil,<br>Gangnam-gu, Seoul, Korea</p>
+                <p style="margin-top:14px"><a href="mailto:welcome@miliclinic.com">welcome@miliclinic.com</a></p>
+            </div>
+        </div>
+
+        <div class="mili-footer-messengers">
+            <a href="https://pf.kakao.com/_xehXRG/chat" target="_blank" rel="noopener" class="mili-msg" aria-label="KakaoTalk">
+                <svg viewBox="0 0 24 24"><path d="M12 4C7 4 3 7.2 3 11.2c0 2.5 1.6 4.7 4 6L6 21l4.2-2.5c.6.1 1.2.1 1.8.1 5 0 9-3.2 9-7.4S17 4 12 4z"/></svg>
+                <span class="mili-msg-name">KakaoTalk</span>
+            </a>
+            <a href="https://wa.me/821053556700" target="_blank" rel="noopener" class="mili-msg" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.6 13.7L3 21l4.5-1.4A9 9 0 1 0 12 3z"/><path d="M9 9c0-.5.4-1 1-1h.5c.3 0 .5.2.6.4l.5 1.2c.1.2 0 .5-.2.7l-.5.5c.4 1 1.2 1.8 2.2 2.2l.5-.5c.2-.2.5-.3.7-.2l1.2.5c.2.1.4.3.4.6V14c0 .5-.5 1-1 1-3.3 0-6-2.7-6-6z"/></svg>
+                <span class="mili-msg-name">WhatsApp</span>
+            </a>
+            <a href="https://line.me/R/ti/p/@miliclinic" target="_blank" rel="noopener" class="mili-msg" aria-label="Line">
+                <svg viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.7 2 11.2c0 3.9 3.4 7.2 8.1 7.9.3.1.6.2.7.4.1.2.1.5 0 .7l-.2.7c-.1.4.2.7.6.6 2.6-1 6.4-3.7 8.1-6.5.7-1.1 1.1-2.4 1.1-3.7C20.4 6.7 17.5 3 12 3z"/></svg>
+                <span class="mili-msg-name">Line</span>
+            </a>
+            <a href="https://weixin.qq.com" target="_blank" rel="noopener" class="mili-msg" aria-label="WeChat">
+                <svg viewBox="0 0 24 24"><circle cx="9" cy="10" r="6"/><circle cx="9" cy="9" r=".5" fill="currentColor"/><circle cx="11" cy="9" r=".5" fill="currentColor"/><circle cx="16" cy="14" r="5"/><circle cx="15" cy="13" r=".4" fill="currentColor"/><circle cx="17" cy="13" r=".4" fill="currentColor"/></svg>
+                <span class="mili-msg-name">WeChat</span>
+            </a>
+            <a href="https://instagram.com/miliclinic_dosan" target="_blank" rel="noopener" class="mili-msg" aria-label="Instagram">
+                <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>
+                <span class="mili-msg-name">Instagram</span>
+            </a>
+        </div>
+
+        <div class="mili-footer-business">
+            <div class="mili-footer-info">
+                <p><strong>Mili Clinic Sinchon</strong> &nbsp;&middot;&nbsp; Director: Shin Dong-ha &nbsp;&middot;&nbsp; Business Reg. No. 706-92-02635</p>
+                <p>Tel. 02-535-6700 &nbsp;&middot;&nbsp; 3F, 104 Sinchon-ro, Mapo-gu, Seoul, Korea</p>
+                <p>&copy; 2025 Mili Clinic. All rights reserved.</p>
+            </div>
+            <div class="mili-footer-meta">
+                <div><a href="/en/privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="/en/non-covered.html">Non-Covered Items</a></div>
+                <div style="margin-top:6px">Beyond the Remedy.</div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating Buttons -->
+<div class="mili-float">
+    <a href="https://pf.kakao.com/_xehXRG/chat" target="_blank" rel="noopener" class="mili-float-btn" aria-label="KakaoTalk">
+        <svg viewBox="0 0 24 24"><path d="M12 4C7 4 3 7.2 3 11.2c0 2.5 1.6 4.7 4 6L6 21l4.2-2.5c.6.1 1.2.1 1.8.1 5 0 9-3.2 9-7.4S17 4 12 4z"/></svg>
+    </a>
+    <a href="https://wa.me/821053556700" target="_blank" rel="noopener" class="mili-float-btn" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.6 13.7L3 21l4.5-1.4A9 9 0 1 0 12 3z"/></svg>
+    </a>
+    <a href="tel:+82253556700" class="mili-float-btn" aria-label="Call">
+        <svg viewBox="0 0 24 24"><path d="M5 4h3l2 5-2 1c1 2 3 4 5 5l1-2 5 2v3c0 1-1 2-2 2-7 0-13-6-13-13 0-1 1-2 2-2z"/></svg>
+    </a>
+</div>
+
+<script data-mobile-nav-accordion>
+(function(){
+    const items = document.querySelectorAll('.mili-mobile-nav-list > li');
+    items.forEach(li => {
+        const span = li.querySelector(':scope > span');
+        if (!span) return;
+        span.addEventListener('click', (e) => {
+            e.stopPropagation();
+            li.classList.toggle('open');
+        });
+    });
+})();
+</script>
+
+<script data-mili-lang>
+(function(){
+document.querySelectorAll('.mili-lang-toggle').forEach(function(btn){
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var root = btn.closest('.mili-lang');
+    var open = !root.classList.contains('open');
+    document.querySelectorAll('.mili-lang.open').forEach(function(el){
+      el.classList.remove('open');
+      var t = el.querySelector('.mili-lang-toggle');
+      if (t) t.setAttribute('aria-expanded', 'false');
+    });
+    if (open) {
+      root.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+document.addEventListener('click', function(){
+  document.querySelectorAll('.mili-lang.open').forEach(function(el){
+    el.classList.remove('open');
+    var t = el.querySelector('.mili-lang-toggle');
+    if (t) t.setAttribute('aria-expanded', 'false');
+  });
+});
+})();
+</script>
+
+</body>
+</html>

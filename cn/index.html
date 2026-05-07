@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>密龄皮肤科 道山店 — 首尔江南区私人美学诊所</title>
+<meta name="description" content="密龄皮肤科道山店 — 仅凭1mm的变化焕发美丽。坐落于首尔江南区道山公园畔的私人美学诊所。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mili Clinic Sinchon">
+<meta property="og:title" content="Mili Clinic Sinchon">
+<meta property="og:image" content="https://miliclinic-sinchon-en.vercel.app/assets/images/og/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mili Clinic Sinchon">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:url" content="https://miliclinic-sinchon-en.vercel.app/cn/index.html">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mili Clinic Sinchon">
+<meta name="twitter:image" content="https://miliclinic-sinchon-en.vercel.app/assets/images/og/og-image.png">
+
+<link rel="stylesheet" href="styles.css" />
+    <style>
+        .mili-footer-inner { max-width: 1440px; }
+/* === Mili Header Nav with Dropdowns === */
+.mili-header{position:sticky;top:0;z-index:100;background:var(--paper);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.mili-header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px var(--pad-x);gap:24px}
+.mili-logo{display:inline-flex;align-items:center;height:40px;flex-shrink:0;text-decoration:none}.mili-logo img{height:100%;width:auto;object-fit:contain;display:block}
+
+.mili-nav{flex:1;display:flex;justify-content:center}
+.mili-nav-list{display:flex;gap:22px;list-style:none;align-items:center}
+.mili-nav-item{position:relative}
+.mili-nav-link{font-size:11px;letter-spacing:0.13em;text-transform:uppercase;padding:10px 0;display:inline-flex;align-items:center;gap:5px;white-space:nowrap;transition:color .2s;cursor:pointer}
+.mili-nav-link:hover{color:var(--ink)}
+.mili-nav-link.active{border-bottom:1px solid var(--ink)}
+.mili-nav-caret{display:inline-block;width:7px;height:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin-left:2px;margin-bottom:3px;opacity:.6;transition:transform .2s}
+.mili-nav-item:hover .mili-nav-caret{transform:rotate(225deg);margin-bottom:-2px}
+.mili-dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(-8px);background:var(--paper);border:1px solid var(--line);min-width:240px;padding:14px 0;opacity:0;visibility:hidden;transition:opacity .25s,transform .25s,visibility .25s;z-index:120}
+.mili-nav-item:hover .mili-dropdown{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.mili-dropdown a{display:block;padding:9px 24px;font-size:12px;letter-spacing:0.06em;color:var(--ink);transition:background .15s,color .15s;white-space:nowrap}
+.mili-dropdown a:hover{background:var(--bone);color:var(--ink)}
+.mili-cta{flex-shrink:0;display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:10px 20px;border:1px solid var(--ink);transition:background .25s,color .25s;white-space:nowrap}
+.mili-cta:hover{background:var(--ink);color:var(--paper)}
+.mili-cta svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:1.5}
+.mili-burger{display:none;background:none;border:none;cursor:pointer;padding:6px}
+.mili-burger span{display:block;width:22px;height:1px;background:var(--ink);margin:5px 0;transition:transform .3s,opacity .3s}
+.mili-mobile-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100dvh;max-height:100dvh;background:var(--paper);z-index:200;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:80px var(--pad-x) 140px}
+.mili-mobile-nav.open{display:flex;flex-direction:column}
+.mili-mobile-nav-close{position:absolute;top:24px;right:24px;background:none;border:none;cursor:pointer;font-size:24px;color:var(--ink)}
+.mili-mobile-nav-list{list-style:none;flex:1 1 auto;min-height:0;overflow-y:auto}
+.mili-mobile-nav-list>li{border-bottom:1px solid var(--line)}
+.mili-mobile-nav-list>li>a,.mili-mobile-nav-list>li>span{display:block;padding:18px 0;font-size:14px;letter-spacing:0.15em;text-transform:uppercase;font-weight:400;cursor:pointer}
+.mili-mobile-nav-list>li>span{display:flex;justify-content:space-between;align-items:center;position:relative}
+.mili-mobile-nav-list>li>span::after{content:'+';font-size:20px;font-weight:300;transition:transform .25s ease;line-height:1}
+.mili-mobile-nav-list>li.open>span::after{content:'−'}
+.mili-mobile-sub{padding:0 0 0 16px;list-style:none;max-height:0;overflow:hidden;transition:max-height .35s ease}
+.mili-mobile-nav-list>li.open .mili-mobile-sub{max-height:500px;padding-bottom:16px}
+.mili-mobile-sub li a{display:block;padding:8px 0;font-size:13px;color:var(--muted);font-weight:300;letter-spacing:0.04em;text-transform:none}
+@media (max-width:1600px){.mili-nav-list{gap:20px}.mili-nav-link{font-size:11px;letter-spacing:0.1em}.mili-header-inner{gap:16px;padding:18px 28px}.mili-cta{padding:9px 16px;font-size:10px;letter-spacing:0.16em}}
+@media (max-width:1240px){.mili-nav-list{gap:14px}.mili-nav-link{font-size:10px;letter-spacing:0.08em}.mili-header-inner{gap:12px;padding:16px 24px}.mili-cta{padding:8px 14px;font-size:9px}}
+@media (max-width:1100px){.mili-nav-list{gap:11px}.mili-nav-link{font-size:9.5px;letter-spacing:0.06em}.mili-header-inner{gap:10px;padding:14px 20px}.mili-cta{padding:7px 12px;font-size:8.5px}}
+@media (max-width:980px){.mili-nav,.mili-cta,.mili-lang{display:none}.mili-burger{display:block}}@media (max-width:768px){.mili-logo{height:32px}}
+
+/* === Language switcher === */
+.mili-lang{position:relative;margin-right:16px}
+.mili-lang-toggle{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid var(--line);color:var(--ink);padding:9px 14px;font:400 11px/1 var(--display);letter-spacing:0.16em;text-transform:uppercase;border-radius:980px;cursor:pointer;transition:border-color .2s}
+.mili-lang-toggle:hover{border-color:var(--ink)}
+.mili-lang-toggle svg{transition:transform .2s}
+.mili-lang.open .mili-lang-toggle svg{transform:rotate(180deg)}
+.mili-lang-menu{position:absolute;top:calc(100% + 6px);right:0;min-width:100px;background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden;opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .2s,transform .2s,visibility .2s;z-index:50}
+.mili-lang.open .mili-lang-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.mili-lang-item{display:block;padding:10px 14px;font:400 11px/1 var(--display);letter-spacing:0.16em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--line);transition:background .15s;cursor:pointer;text-align:left;width:100%;box-sizing:border-box}
+.mili-lang-item:last-child{border-bottom:none}
+a.mili-lang-item{text-decoration:none}
+.mili-lang-item:hover:not(.disabled){background:var(--bone)}
+.mili-lang-item.active{font-weight:500;background:var(--bone)}
+.mili-lang-item.disabled{color:var(--muted);opacity:0.4;cursor:not-allowed;pointer-events:none}
+.mili-mobile-lang{margin-top:auto;padding-top:32px;border-top:1px solid var(--line);flex-shrink:0}
+.mili-mobile-lang-label{display:block;font:400 10px/1 var(--display);letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.mili-mobile-lang-list{display:flex;gap:12px;flex-wrap:wrap}
+.mili-mobile-lang-item{display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;font:400 12px/1 var(--display);letter-spacing:0.16em;text-transform:uppercase;color:var(--ink);border:1px solid var(--line);border-radius:980px;cursor:pointer;text-decoration:none}
+.mili-mobile-lang-item.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.mili-mobile-lang-item.disabled{color:var(--muted);opacity:0.4;pointer-events:none;cursor:not-allowed}
+
+/* === Mili Footer === */
+.mili-footer{background:var(--paper);border-top:1px solid var(--line);padding:80px 0 40px;font-family:'Inter','DM Sans',sans-serif}
+.mili-footer-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
+.mili-footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px}
+.mili-footer-brand .mili-footer-logo{margin-bottom:24px}.mili-footer-logo img{height:32px;width:auto;object-fit:contain;display:block}
+.mili-footer-tagline{font-size:13px;font-weight:300;color:var(--muted);line-height:1.8;max-width:380px;margin-bottom:24px}
+.mili-footer-slogan{font-size:15px;font-weight:300;color:var(--ink);letter-spacing:-0.005em;line-height:1.5;max-width:380px}
+.mili-footer-col h5{font-size:11px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px;color:var(--ink)}
+.mili-footer-col ul{list-style:none}
+.mili-footer-col li{margin-bottom:9px}
+.mili-footer-col a{font-size:13px;color:var(--muted);font-weight:300;transition:color .2s}
+.mili-footer-col a:hover{color:var(--ink)}
+
+.mili-footer-messengers{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:36px}
+.mili-msg{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 12px;border-right:1px solid var(--line);transition:background .2s,color .2s;color:var(--ink);text-align:center;gap:8px}
+.mili-msg:last-child{border-right:none}
+.mili-msg:hover{background:var(--bone)}
+.mili-msg svg{width:22px;height:22px;flex-shrink:0}
+.mili-msg-name{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:400}
+
+.mili-footer-business{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding-top:32px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);line-height:1.85;font-weight:300}
+.mili-footer-business strong{font-weight:500;color:var(--ink);text-transform:uppercase;letter-spacing:0.15em;font-size:10px;display:inline-block;margin-right:8px}
+.mili-footer-business p{margin-bottom:6px}
+.mili-footer-bottom{padding-top:28px;margin-top:32px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);letter-spacing:0.05em;flex-wrap:wrap;gap:20px}
+.mili-footer-policies{display:flex;gap:18px}
+.mili-footer-policies a{color:var(--muted);transition:color .2s}
+.mili-footer-policies a:hover{color:var(--ink)}
+@media (max-width:960px){.mili-footer-top{grid-template-columns:1fr 1fr;gap:40px}.mili-footer-business{grid-template-columns:1fr;gap:24px}}
+@media (max-width:640px){.mili-footer-top{grid-template-columns:1fr}.mili-footer-messengers{grid-template-columns:repeat(5,1fr)}.mili-msg{padding:18px 6px}.mili-msg-name{font-size:9px;letter-spacing:0.1em}.mili-msg svg{width:18px;height:18px}}
+
+/* === Mili Floating Buttons (5) === */
+.mili-float{position:fixed;right:24px;bottom:24px;z-index:90;display:flex;flex-direction:column;gap:8px}
+.mili-float-btn{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--paper);border:1px solid var(--line);box-shadow:0 4px 14px rgba(0,0,0,0.06);transition:transform .25s,background .2s;color:var(--ink)}
+.mili-float-btn:hover{transform:translateY(-3px)}
+.mili-float-btn svg{width:22px;height:22px}
+.mili-float-btn.kakao{background:#FEE500;color:#1A1A1A;border-color:#FEE500}
+.mili-float-btn.whatsapp{background:#25D366;color:#fff;border-color:#25D366}
+.mili-float-btn.line{background:#06C755;color:#fff;border-color:#06C755}
+.mili-float-btn.wechat{background:#7BB32E;color:#fff;border-color:#7BB32E}
+.mili-float-btn.instagram{background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF);color:#fff;border-color:transparent}
+@media (max-width:640px){.mili-float{right:16px;bottom:16px}.mili-float-btn{width:42px;height:42px}.mili-float-btn svg{width:18px;height:18px}}
+@media (max-width:640px){
+    :root{--pad-x:20px}
+    body{font-size:15px;line-height:1.65}
+
+    /* Page Hero 60vh */
+
+    /* Footer 컬럼/메신저 모바일 숨김 */
+    .mili-footer-top{display:none}
+    .mili-footer-messengers{display:none}
+
+    /* Footer 모바일 padding 축소 */
+    footer.mili-footer{padding:48px 0 100px}
+    .mili-footer-business{padding-top:0;border-top:none}
+}
+
+em, cite { font-style: normal; }
+</style>
+</head>
+<body data-accent="navy" data-card="flat" data-type="sf">
+<header class="mili-header">
+    <div class="mili-header-inner">
+        <a href="/cn/index.html" class="mili-logo" aria-label="密龄皮肤科 道山店"><img src="/assets/images/logo/logo.png" alt="密龄皮肤科 道山店"></a>
+        <nav class="mili-nav">
+            <ul class="mili-nav-list">
+                <li class="mili-nav-item"><a href="/cn/about.html" class="mili-nav-link">密龄皮肤科<span class="mili-nav-caret"></span></a>
+                    <div class="mili-dropdown">
+                        <a href="/cn/about.html">关于道山</a>
+                        <a href="/cn/brand-story.html">品牌故事</a>
+                        <a href="/cn/tour.html">诊所参观</a>
+                        <a href="/cn/equipment.html">施术设备</a>
+                        <a href="/cn/schedule.html">诊疗时间</a>
+                        <a href="/cn/location.html">来院路线</a>
+                    </div>
+                </li>
+                <li class="mili-nav-item"><span class="mili-nav-link">光电提升<span class="mili-nav-caret"></span></span>
+                    <div class="mili-dropdown">
+                        <a href="/cn/ulthera.html">超声刀</a>
+                        <a href="/cn/thermage.html">热玛吉</a>
+                        <a href="/cn/tuneface.html">TuneFace</a>
+                    </div>
+                </li>
+                <li class="mili-nav-item"><a href="/cn/reborn-cell.html" class="mili-nav-link">重生细胞</a></li>
+                <li class="mili-nav-item"><a href="/cn/fit-culptra.html" class="mili-nav-link">Fit&middot;Culptra</a></li>
+                <li class="mili-nav-item"><span class="mili-nav-link">注射/线雕<span class="mili-nav-caret"></span></span>
+                    <div class="mili-dropdown">
+                        <a href="/cn/silhouette-soft.html">线雕</a>
+                        <a href="/cn/sculptra.html">Sculptra 童颜针</a>
+                        <a href="/cn/juvelook.html">Juvelook</a>
+                        <a href="/cn/juvederm.html">乔雅登</a>
+                    </div>
+                </li>
+                <li class="mili-nav-item"><span class="mili-nav-link">皮肤修复<span class="mili-nav-caret"></span></span>
+                    <div class="mili-dropdown">
+                        <a href="/cn/skin-booster.html">1:1 水光针</a>
+                        <a href="/cn/all-in-one-brightening.html">美白焕肤</a>
+                        <a href="/cn/derma-renewal.html">毛孔 / 疤痕</a>
+                        <a href="/cn/anti-trouble.html">痤疮 / 色斑</a>
+                    </div>
+                </li>
+                <li class="mili-nav-item"><a href="/cn/laser-hair-removal.html" class="mili-nav-link">激光脱毛</a></li>
+                <li class="mili-nav-item"><span class="mili-nav-link">皮肤管理<span class="mili-nav-caret"></span></span>
+                    <div class="mili-dropdown">
+                        <a href="/cn/medispa.html">MEDI-SPA</a>
+                        <a href="/cn/highend-medispa.html">HIGH-END MEDI-SPA</a>
+                        <a href="/cn/antioxidant-iv.html">尊享抗氧化点滴</a>
+                    </div>
+                </li>
+                <li class="mili-nav-item"><a href="/cn/promotion.html" class="mili-nav-link">促销活动</a></li>
+            </ul>
+        </nav>
+        <div class="mili-lang">
+            <button type="button" class="mili-lang-toggle" aria-haspopup="true" aria-expanded="false">CN
+                <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="mili-lang-menu">
+                <a href="/en/index.html" class="mili-lang-item">EN</a>
+                <a href="https://dosan.miliclinic.co.kr" target="_blank" rel="noopener" class="mili-lang-item">KO</a>
+                <a href="#" class="mili-lang-item active">CN</a>
+                <a href="/jp/index.html" class="mili-lang-item">JP</a>
+            </div>
+        </div>
+        <a href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener" class="mili-cta">RESERVE<svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <button class="mili-burger" aria-label="Menu" onclick="document.getElementById('mili-mobile-nav').classList.add('open');document.body.style.overflow='hidden'"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mili-mobile-nav" id="mili-mobile-nav">
+        <button class="mili-mobile-nav-close" onclick="document.getElementById('mili-mobile-nav').classList.remove('open');document.body.style.overflow=''">&times;</button>
+        <ul class="mili-mobile-nav-list">
+            <li><span>密龄皮肤科</span>
+                <ul class="mili-mobile-sub">
+                    <li><a href="/cn/about.html">关于道山</a></li>
+                    <li><a href="/cn/brand-story.html">品牌故事</a></li>
+                    <li><a href="/cn/tour.html">诊所参观</a></li>
+                    <li><a href="/cn/equipment.html">施术设备</a></li>
+                    <li><a href="/cn/schedule.html">诊疗时间</a></li>
+                    <li><a href="/cn/location.html">来院路线</a></li>
+                </ul>
+            </li>
+            <li><span>光电提升</span>
+                <ul class="mili-mobile-sub">
+                    <li><a href="/cn/ulthera.html">超声刀</a></li>
+                    <li><a href="/cn/thermage.html">热玛吉</a></li>
+                    <li><a href="/cn/tuneface.html">TuneFace</a></li>
+                </ul>
+            </li>
+            <li><a href="/cn/reborn-cell.html">重生细胞</a></li>
+            <li><a href="/cn/fit-culptra.html">Fit&middot;Culptra</a></li>
+            <li><span>注射/线雕</span>
+                <ul class="mili-mobile-sub">
+                    <li><a href="/cn/silhouette-soft.html">线雕</a></li>
+                    <li><a href="/cn/sculptra.html">Sculptra 童颜针</a></li>
+                    <li><a href="/cn/juvelook.html">Juvelook</a></li>
+                    <li><a href="/cn/juvederm.html">乔雅登</a></li>
+                </ul>
+            </li>
+            <li><span>皮肤修复</span>
+                <ul class="mili-mobile-sub">
+                    <li><a href="/cn/skin-booster.html">1:1 水光针</a></li>
+                    <li><a href="/cn/all-in-one-brightening.html">美白焕肤</a></li>
+                    <li><a href="/cn/derma-renewal.html">毛孔 / 疤痕</a></li>
+                    <li><a href="/cn/anti-trouble.html">痤疮 / 色斑</a></li>
+                </ul>
+            </li>
+            <li><a href="/cn/laser-hair-removal.html">激光脱毛</a></li>
+            <li><span>皮肤管理</span>
+                <ul class="mili-mobile-sub">
+                    <li><a href="/cn/medispa.html">MEDI-SPA</a></li>
+                    <li><a href="/cn/highend-medispa.html">HIGH-END MEDI-SPA</a></li>
+                    <li><a href="/cn/antioxidant-iv.html">尊享抗氧化点滴</a></li>
+                </ul>
+            </li>
+            <li><a href="/cn/promotion.html">促销活动</a></li>
+            <li><a href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener">RESERVE</a></li>
+        </ul>
+        <div class="mili-mobile-lang">
+            <span class="mili-mobile-lang-label">Language</span>
+            <div class="mili-mobile-lang-list">
+                <a href="/en/index.html" class="mili-mobile-lang-item">EN</a>
+                <a href="https://dosan.miliclinic.co.kr" target="_blank" rel="noopener" class="mili-mobile-lang-item">KO</a>
+                <a href="#" class="mili-mobile-lang-item active">CN</a>
+                <a href="/jp/index.html" class="mili-mobile-lang-item">JP</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<!-- Hero (variant switchable) -->
+<section class="hero" id="hero" data-variant="sequence">
+  <div class="seq-bg" aria-hidden="true">
+    <div class="seq-slide" style="background-image:url(assets/images/hero/intro-01.jpg)"></div>
+    <div class="seq-slide" style="background-image:url(assets/images/hero/intro-02.jpg)"></div>
+    <div class="seq-slide" style="background-image:url(assets/images/hero/intro-03.jpg)"></div>
+    <div class="seq-slide" style="background-image:url(assets/images/hero/intro-04.jpg)"></div>
+    <div class="seq-veil"></div>
+  </div>
+  <div class="hero-eyebrow">密龄皮肤科 — 道山店</div>
+  <h1>精致之美<br/>静谧护肤</h1>
+  <p class="tagline">坐落于首尔市中心的私人美学诊所 — 以家般的优雅与从容款待，为您而设。</p>
+</section>
+
+<!-- Manifesto -->
+<section class="tile bone" id="about">
+  <div class="inner">
+    <span class="eyebrow">我们的承诺</span>
+    <h2 class="title-lg">以毫米为度的款待。</h2>
+    <p class="lead">密龄皮肤科兼具诊所的精准与家般的温度。每一次问诊都从倾听开始 — 以一份专为您而生的护理方案告终。</p>
+  </div>
+</section>
+
+<!-- Treatments grid -->
+<section class="treatments" id="treatments">
+  <div class="inner">
+    <div class="treatments-head">
+      <span class="eyebrow">护理项目</span>
+      <h2 class="title-lg">细致护理，静谧呈现。</h2>
+    </div>
+    <div class="treatments-grid">
+
+      <a class="card" href="/cn/ulthera.html">
+        <div class="img" style="background-image:url(assets/images/ulthera/thumb.png)"></div>
+        <div class="name">超声刀</div>
+        <p class="desc">聚焦超声直达肌肤底层 — 提升、紧致、修复，无需切开。</p>
+        <span class="link">了解更多</span>
+      </a>
+
+      <a class="card" href="/cn/thermage.html">
+        <div class="img" style="background-image:url(assets/images/thermage/thumb.png)"></div>
+        <div class="name">热玛吉</div>
+        <p class="desc">单极射频温和加热深层胶原 — 轮廓更紧致，效果随时间累积。</p>
+        <span class="link">了解更多</span>
+      </a>
+
+      <a class="card" href="/cn/tuneface.html">
+        <div class="img" style="background-image:url(assets/images/tuneface/thumb.png)"></div>
+        <div class="name">TuneFace</div>
+        <p class="desc">高密度单极射频专为细致部位设计 — 以静谧的精准修复肤色与紧致度。</p>
+        <span class="link">了解更多</span>
+      </a>
+
+      <a class="card" href="/cn/sculptra.html">
+        <div class="img" style="background-image:url(assets/images/sculptra/thumb.jpg)"></div>
+        <div class="name">Sculptra 童颜针</div>
+        <p class="desc">由内重塑容量的胶原再生剂 — 效果缓慢浮现，自然成型。</p>
+        <span class="link">了解更多</span>
+      </a>
+
+      <a class="card" href="/cn/skin-booster.html">
+        <div class="img" style="background-image:url(assets/images/skin-booster/thumb.png)"></div>
+        <div class="name">1:1 水光针</div>
+        <p class="desc">为单一肌肤量身订制的水光方案 — 由专家诊断、调配、注入，一对一定制。</p>
+        <span class="link">了解更多</span>
+      </a>
+
+      <a class="card" href="/cn/medispa.html">
+        <div class="img" style="background-image:url(assets/images/medispa/thumb.png)"></div>
+        <div class="name">MEDI-SPA</div>
+        <p class="desc">修复型护肤与恢复仪式 — 每一阶段都由从容、细致的双手完成。</p>
+        <span class="link">了解更多</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- Brand story 2-up panes -->
+<section class="story" id="story">
+  <div class="pane bone">
+    <span class="eyebrow">第一章</span>
+    <h3>家般的设计，诊所的运营。</h3>
+    <p>道山店的每一个房间都以毫米为度雕琢 — 从灯光的温度，到座椅的进深。这份静谧，让护理本身呈现。</p>
+  </div>
+  <div class="pane image" style="background-image:url(assets/images/hero/story-01.jpg)"></div>
+
+  <div class="pane image" style="background-image:url(assets/images/hero/story-02.jpg)"></div>
+  <div class="pane">
+    <span class="eyebrow">第二章</span>
+    <h3>超越服务的款待。</h3>
+    <p>我们以您的名字相迎。记得您偏爱的茶。在房门开启之前，您的诊疗记录已被细读。我们设计的，是整个就诊体验 — 而非仅仅是一次施术。</p>
+  </div>
+
+  <div class="pane dark">
+    <span class="eyebrow">第三章</span>
+    <h3>私密，理所当然。</h3>
+    <p>低调的入口、独立的恢复间、独立的离开通道。这是真正意义上的、值得托付的护理。</p>
+  </div>
+  <div class="pane image" style="background-image:url(assets/images/hero/story-03.jpg)"></div>
+</section>
+
+<!-- Tour strip -->
+<section class="tile" style="padding-bottom: 0;">
+  <div class="inner">
+    <span class="eyebrow">空间</span>
+    <h2 class="title-lg">走进密龄道山。</h2>
+    <p class="lead" style="margin-bottom: 56px;">六间施术间、两处休息区、一座私人庭院 — 横跨道山公园畔联排住宅的两个楼层。</p>
+  </div>
+  <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; max-width: 100%;">
+    <div style="aspect-ratio: 1/1; background:url(assets/images/hero/space-01.jpg) center/cover;"></div>
+    <div style="aspect-ratio: 1/1; background:url(assets/images/hero/space-02.jpg) center/cover;"></div>
+    <div style="aspect-ratio: 1/1; background:url(assets/images/hero/space-03.jpg) center/cover;"></div>
+  </div>
+</section>
+
+<!-- Location -->
+<section class="location" id="location">
+  <span class="eyebrow">来访</span>
+  <h2>首尔，道山公园。</h2>
+  <p class="addr">首尔江南区岛山大路45街17号 3楼<br>密龄皮肤科 道山店</p>
+  <div class="visit-actions">
+    <a href="tel:+82263671212" class="visit-phone">+82 2-6367-1212</a>
+    <div class="visit-buttons">
+      <a class="pill" href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener">立即预约</a>
+      <a class="pill ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Mili+Clinic+Dosan+17+Dosan-daero+45-gil+Gangnam-gu+Seoul" target="_blank" rel="noopener" style="background:transparent; color:var(--paper); border-color: rgba(255,255,255,0.3);">查看路线</a>
+    </div>
+  </div>
+</section>
+
+<footer class="mili-footer">
+    <div class="mili-footer-inner">
+        <div class="mili-footer-top">
+            <div class="mili-footer-brand">
+                <div class="mili-footer-logo"><img src="/assets/images/logo/logo.png" alt="密龄皮肤科道山店"></div>
+                <p class="mili-footer-tagline">密龄皮肤科道山店旗舰院区 — 超越治疗本身，于静谧中完成修复与焕新。</p>
+                <p class="mili-footer-slogan">"仅凭1mm的变化焕发美丽。"</p>
+            </div>
+            <div class="mili-footer-col">
+                <h5>核心项目</h5>
+                <ul>
+                    <li><a href="/cn/ulthera.html">超声刀</a></li>
+                    <li><a href="/cn/thermage.html">热玛吉</a></li>
+                    <li><a href="/cn/tuneface.html">TuneFace</a></li>
+                    <li><a href="/cn/reborn-cell.html">重生细胞</a></li>
+                    <li><a href="/cn/fit-culptra.html">Fit&middot;Culptra</a></li>
+                    <li><a href="/cn/sculptra.html">注射/线雕</a></li>
+                    <li><a href="/cn/skin-booster.html">皮肤修复</a></li>
+                    <li><a href="/cn/laser-hair-removal.html">激光脱毛</a></li>
+                    <li><a href="/cn/medispa.html">皮肤管理</a></li>
+                </ul>
+            </div>
+            <div class="mili-footer-col">
+                <h5>来访信息</h5>
+                <ul>
+                    <li><a href="/cn/location.html">来院路线</a></li>
+                    <li><a href="/cn/schedule.html">诊疗时间</a></li>
+                    <li><a href="https://naver.me/GLAXm15o" target="_blank" rel="noopener">Naver Map</a></li>
+                    <li><a href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener">立即预约</a></li>
+                    <li><a href="tel:+82263671212">+82 2&middot;6367&middot;1212</a></li>
+                </ul>
+            </div>
+            <div class="mili-footer-col">
+                <h5>资讯渠道</h5>
+                <ul>
+                    <li><a href="/cn/promotion.html">促销活动</a></li>
+                    <li><a href="https://www.youtube.com/@Dr.ShinMillimeter" target="_blank" rel="noopener">YouTube</a></li>
+                    <li><a href="https://sinchon.miliclinic.co.kr" target="_blank" rel="noopener">Mili 新村</a></li>
+                    <li><a href="http://miliclinic.com" target="_blank" rel="noopener">Mili Global</a></li>
+                    <li><a href="https://dosan.miliclinic.co.kr">韩文官网</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mili-footer-messengers">
+            <a href="https://wa.me/821058616367" target="_blank" rel="noopener" class="mili-msg" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375c-.99-1.575-1.516-3.391-1.516-5.26 0-5.445 4.455-9.885 9.942-9.885 2.654 0 5.145 1.035 7.021 2.91 1.875 1.875 2.909 4.371 2.909 7.026-.004 5.444-4.46 9.885-9.935 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411"/></svg>
+                <span class="mili-msg-name">WhatsApp</span>
+            </a>
+            <a href="https://mp.weixin.qq.com/s/4ruAKbgP8m5kkttIQ18uvg" target="_blank" rel="noopener" class="mili-msg" aria-label="WeChat">
+                <svg viewBox="0 0 24 24" fill="#7BB32E"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.328.328 0 0 0 .166-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.594-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.475-1.78 5.687.91 2.214 3.337 3.6 6.116 3.6.453 0 .92-.069 1.386-.205a.79.79 0 0 1 .677.069l1.625 1.05a.36.36 0 0 0 .184.061c.16 0 .29-.132.29-.295 0-.071-.027-.142-.038-.213l-.336-1.245a.66.66 0 0 1-.026-.218.625.625 0 0 1 .25-.499C21.546 17.474 22.5 15.852 22.5 13.94c0-3.213-3.045-5.78-6.572-5.85zm-2.379 2.493c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897zm4.625 0c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897z"/></svg>
+                <span class="mili-msg-name">WeChat</span>
+            </a>
+            <a href="https://lin.ee/X7C7bMh" target="_blank" rel="noopener" class="mili-msg" aria-label="LINE">
+                <svg viewBox="0 0 24 24" fill="#06C755"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+                <span class="mili-msg-name">LINE</span>
+            </a>
+            <a href="https://pf.kakao.com/_xehXRG/chat" target="_blank" rel="noopener" class="mili-msg" aria-label="KakaoTalk">
+                <svg viewBox="0 0 24 24" fill="#FEE500"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.7 6.8L5.6 21.4c-.1.3.2.5.5.4l4.4-2.9c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/><path d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.7 6.8L5.6 21.4c-.1.3.2.5.5.4l4.4-2.9c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8s-4.5-8-10-8z" stroke="#1A1A1A" stroke-width="0.4" fill="#FEE500"/></svg>
+                <span class="mili-msg-name">KakaoTalk</span>
+            </a>
+            <a href="https://www.instagram.com/dosan.miliclinic/" target="_blank" rel="noopener" class="mili-msg" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="#1A1A1A"/></svg>
+                <span class="mili-msg-name">Instagram</span>
+            </a>
+        </div>
+
+        <div class="mili-footer-business">
+            <div>
+                <p><strong>商号名</strong> MiliClinic, 岛山</p>
+                <p><strong>营业执照编号</strong> 457-47-00860</p>
+                <p><strong>代表</strong> 申东河</p>
+                <p><strong>个人信息保护负责人</strong> 申东河, jungyi@mlcl.co.kr</p>
+            </div>
+            <div>
+                <p><strong>地址</strong> 首尔江南区岛山大路45街17号 3楼</p>
+                <p><strong>诊疗时间</strong> [周一·周三·周五] AM 10:00 – PM 07:00<br>[周二·周四] AM 10:00 – PM 09:00<br>[周六] AM 10:00 – PM 04:00<br>周日休诊</p>
+                <p><strong>午休</strong> 13:00–14:00</p>
+            </div>
+        </div>
+
+        <div class="mili-footer-bottom">
+            <div>&copy; 2026 Mili Clinic Sinchon. 版权所有。</div>
+            <div class="mili-footer-policies">
+                <a href="/cn/privacy.html">隐私政策</a>
+                <a href="/cn/non-covered.html">非医保项目</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script data-mobile-nav-accordion>
+(function(){
+    const items = document.querySelectorAll('.mili-mobile-nav-list > li');
+    items.forEach(li => {
+        const span = li.querySelector(':scope > span');
+        if (!span) return;
+        span.addEventListener('click', (e) => {
+            e.stopPropagation();
+            li.classList.toggle('open');
+        });
+    });
+})();
+</script>
+
+<script>
+(function() {
+    const slides = document.querySelectorAll('.hero .seq-slide');
+    if (!slides.length) return;
+    let i = 0;
+    slides[0].classList.add('active');
+    setInterval(() => {
+        slides[i].classList.remove('active');
+        i = (i + 1) % slides.length;
+        slides[i].classList.add('active');
+    }, 4500);
+})();
+</script>
+<script data-mili-lang>
+(function(){
+document.querySelectorAll('.mili-lang-toggle').forEach(function(btn){
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var root = btn.closest('.mili-lang');
+    var open = !root.classList.contains('open');
+    document.querySelectorAll('.mili-lang.open').forEach(function(el){
+      el.classList.remove('open');
+      var t = el.querySelector('.mili-lang-toggle');
+      if (t) t.setAttribute('aria-expanded', 'false');
+    });
+    if (open) {
+      root.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+document.addEventListener('click', function(){
+  document.querySelectorAll('.mili-lang.open').forEach(function(el){
+    el.classList.remove('open');
+    var t = el.querySelector('.mili-lang-toggle');
+    if (t) t.setAttribute('aria-expanded', 'false');
+  });
+});
+})();
+</script>
+
+</body>
+</html>

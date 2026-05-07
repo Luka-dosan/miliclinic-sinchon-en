@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>品牌故事 — 密龄皮肤科 道山店</title>
+<meta name="description" content="密龄皮肤科道山店的品牌哲学 — 设计、款待、声学、寝具、香氛、私密、正直、卫生、时间。九则细节，一个意图。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mili Clinic Sinchon">
+<meta property="og:title" content="Mili Clinic Sinchon">
+<meta property="og:image" content="https://miliclinic-sinchon-en.vercel.app/assets/images/og/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mili Clinic Sinchon">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:url" content="https://miliclinic-sinchon-en.vercel.app/cn/brand-story.html">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mili Clinic Sinchon">
+<meta name="twitter:image" content="https://miliclinic-sinchon-en.vercel.app/assets/images/og/og-image.png">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+:root{
+    --ink: #0F0F10;
+    --bone: #F4F1EB;
+    --paper: #FAF8F4;
+    --white: #FFFFFF;
+    --muted: #8A867F;
+    --line: #DEDAD1;
+    --accent: #4338CA;
+    --pad-x: clamp(24px, 5vw, 96px);
+    --container: 1440px;
+
+    --display: "SF Pro Display", system-ui, -apple-system, "Inter", sans-serif;
+}
+
+body{
+    font-family: "SF Pro Text", system-ui, -apple-system, "Inter", sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    font-weight: 400;
+    line-height: 1.55;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+}
+
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
+
+
+/* ——— Top Bar ——— */
+.top-bar{
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+}
+.top-bar-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px var(--pad-x);
+}
+.lang-list{display:flex;gap:14px;list-style:none}
+.lang-list li a{padding:2px 6px;transition:color .2s}
+.lang-list li a:hover{color:var(--ink)}
+.lang-list .active{color:var(--ink);border-bottom:1px solid var(--ink)}
+.top-links{display:flex;gap:24px}
+.top-links a:hover{color:var(--ink)}
+
+/* ——— Header ——— */
+.site-header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(10px);
+}
+.header-inner{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 22px var(--pad-x);
+}
+.logo{
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    justify-self: start;
+}
+.logo .dot{display:inline-block;width:4px;height:4px;background:var(--ink);border-radius:50%;vertical-align:middle;margin:0 8px 3px}
+.nav ul{display:flex;gap:38px;list-style:none;justify-self:center}
+.nav a{
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 8px 0;
+    position: relative;
+}
+.nav a.active{border-bottom: 1px solid var(--ink)}
+.nav a::after{
+    content:'';
+    position:absolute;
+    left:0;bottom:0;
+    width:0;height:1px;
+    background:var(--ink);
+    transition:width .3s ease;
+}
+.nav a:hover::after{width:100%}
+.header-cta{
+    justify-self:end;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 11px 22px;
+    border: 1px solid var(--ink);
+    transition: background .25s, color .25s;
+}
+.header-cta:hover{background:var(--ink);color:var(--paper)}
+@media (max-width: 960px){
+    .nav{display:none}
+    .header-inner{grid-template-columns:1fr auto}
+    .logo{grid-column:1}
+    .header-cta{grid-column:2}
+}
+
+/* ——— Page Hero ——— */
+.page-hero{
+    min-height: 100vh;
+    padding: 80px 0 120px;
+    border-bottom: 1px solid var(--line);
+}
+.page-hero-inner{
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+}
+.breadcrumb{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 80px;
+}
+.breadcrumb a{transition: color .2s}
+.breadcrumb a:hover{color: var(--ink)}
+.breadcrumb span.sep{opacity: .5}
+.page-eyebrow{font-family:var(--display);font-weight:400;
+    font-size: 12px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 36px;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+}
+.page-eyebrow::before{
+    content:'';
+    width: 32px;
+    height: 1px;
+    background: var(--muted);
+}
+.page-title{font-family:var(--display);
+    font-size: clamp(48px, 8vw, 128px);
+    font-weight:600;
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+}
+.page-title .line-2{
+    display: block;
+    padding-left: clamp(30px, 8vw, 140px);
+}
+.page-subtitle{
+    margin-top: 48px;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--ink);
+    max-width: 620px;
+    letter-spacing: -0.005em;
+}
+
+/* ——— Chapters Table of Contents ——— */
+.chapters{
+    padding: clamp(96px, 12vw, 120px) 0 clamp(80px, 10vw, 140px);
+    border-bottom: 1px solid var(--line);
+}
+.chapters-head{
+    margin-bottom: 80px;
+}
+.chapters-eyebrow{
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 32px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+.chapters-eyebrow::before{
+    content:'';
+    width: 24px;
+    height: 1px;
+    background: var(--muted);
+}
+.chapters-title{
+    font-family: var(--display);
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    max-width: 14em;
+}
+.chapters-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px 0;
+}
+.chapter-link{
+    display: grid;
+    grid-template-columns: 40px 1fr auto;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 20px;
+    border-bottom: 1px solid var(--line);
+    transition: background .25s, color .25s, padding .25s;
+}
+.chapter-link:hover{
+    background: var(--ink);
+    color: var(--paper);
+    padding-left: 28px;
+}
+.chapter-link:hover .ch-sub{color: rgba(244,241,235,.65)}
+.chapter-link:hover .ch-arrow svg{stroke: var(--paper)}
+.ch-num{
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    transition: color .25s;
+}
+.chapter-link:hover .ch-num{color: rgba(244,241,235,.6)}
+.ch-title{
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+}
+.ch-sub{
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    transition: color .25s;
+}
+.ch-arrow svg{
+    width: 14px;
+    height: 14px;
+    stroke: var(--ink);
+    fill: none;
+    stroke-width: 1.5;
+    transition: stroke .25s;
+}
+@media (max-width: 900px){
+    .chapters-grid{grid-template-columns: 1fr}
+    .chapter-link{grid-template-columns: 40px 1fr auto; gap: 16px}
+    .ch-sub{display: none}
+}
+
+/* ——— Chapter Rows (alternating) ——— */
+.chapter{
+    padding: clamp(80px, 12vw, 160px) 0;
+    border-bottom: 1px solid var(--line);
+}
+#ch-01.chapter{
+    padding: clamp(96px, 14vw, 120px) 0 clamp(80px, 12vw, 160px);
+}
+.chapter-inner{
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 6vw, 100px);
+    align-items: center;
+}
+.chapter.reverse .chapter-inner{
+    grid-template-columns: 1fr 1fr;
+}
+.chapter.reverse .chapter-media{
+    order: 2;
+}
+.chapter-media{
+    overflow: hidden;
+    aspect-ratio: 1/1;
+}
+.chapter-media img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.5s ease;
+}
+.chapter-media:hover img{transform: scale(1.04)}
+.chapter-content .ch-num-big{
+    font-size: 13px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 36px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+    max-width: 180px;
+}
+.chapter-content .ch-tag{
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+.chapter-content h2{font-family:var(--display);
+    font-size: clamp(36px, 5vw, 68px);
+    font-weight:600;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    margin-bottom: 28px;
+}
+.chapter-content p{
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--ink);
+    max-width: 480px;
+}
+.chapter-content p em{
+    font-style: normal;
+    color: var(--muted);
+}
+@media (max-width: 900px){
+    .chapter-inner{grid-template-columns: 1fr; gap: 40px}
+    .chapter.reverse .chapter-media{order: 0}
+    .chapter-media{aspect-ratio: 4/3}
+}
+
+/* ——— Middle marquee ——— */
+.mid-marquee{
+    padding: 40px 0;
+    background: var(--ink);
+    color: var(--paper);
+    overflow: hidden;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+.mid-marquee-inner{
+    font-family: var(--display);
+    display: flex;
+    gap: 80px;
+    animation: marquee 38s linear infinite;
+    white-space: nowrap;
+    font-size: clamp(32px, 5vw, 64px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+}
+.mid-marquee-inner > span{
+    display: inline-flex;
+    align-items: center;
+}
+.mid-marquee-inner > span::after{
+    content: '◦';
+    font-size: 0.5em;
+    opacity: .5;
+    margin-left: 80px;
+}
+@keyframes marquee{
+    0%{transform: translateX(0)}
+    100%{transform: translateX(-50%)}
+}
+
+/* ——— Closing Statement ——— */
+.closing{
+    padding: clamp(100px, 15vw, 200px) 0;
+    text-align: center;
+    background: var(--bone);
+}
+.closing-inner{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+}
+.closing-mark{
+    font-size: clamp(40px, 6vw, 72px);
+    font-style: normal;
+    font-weight: 300;
+    color: var(--muted);
+    margin-bottom: 24px;
+    opacity: 0.6;
+    line-height: 1;
+}
+.closing-text{
+    font-family: var(--display);
+    font-size: clamp(28px, 4vw, 54px);
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+}
+.closing-text em{font-style: normal; font-weight: 300}
+
+/* ——— CTA ——— */
+.cta-band{
+    padding: clamp(80px, 12vw, 140px) 0;
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+}
+.cta-eyebrow{
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(244,241,235,.55);
+    margin-bottom: 28px;
+}
+.cta-title{
+    font-family: var(--display);
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    max-width: 16em;
+    margin: 0 auto 48px;
+}
+.cta-buttons{
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.cta-btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 28px;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    border: 1px solid rgba(244,241,235,.3);
+    transition: background .25s, color .25s, border-color .25s;
+}
+.cta-btn:hover{background: var(--paper); color: var(--ink); border-color: var(--paper)}
+.cta-btn svg{width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 1.5}
+.cta-btn.primary{background: var(--paper); color: var(--ink); border-color: var(--paper)}
+.cta-btn.primary:hover{background: transparent; color: var(--paper); border-color: rgba(244,241,235,.3)}
+
+/* ——— Footer ——— */
+.site-footer{
+    background: var(--paper);
+    border-top: 1px solid var(--line);
+    padding: 80px 0 40px;
+}
+.footer-top{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+.footer-logo{
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+}
+.footer-tagline{
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 360px;
+}
+.footer-col h5{
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+.footer-col ul{list-style: none}
+.footer-col li{margin-bottom: 10px}
+.footer-col a{
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 300;
+    transition: color .2s;
+}
+.footer-col a:hover{color: var(--ink)}
+.footer-bottom{
+    padding-top: 36px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+@media (max-width: 960px){
+    .footer-top{grid-template-columns: 1fr 1fr; gap: 40px}
+}
+@media (max-width: 560px){
+    .footer-top{grid-template-columns: 1fr}
+}
+
+/* ——— Floating ——— */
+.float-actions{
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.float-btn{
+    width: 52px;
+    height: 52px;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    transition: transform .25s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+.float-btn:hover{transform: translateY(-3px)}
+.float-btn.kakao{background:#FEE500;color:#1A1A1A}
+
+/* === Mili Header Nav with Dropdowns === */
+.mili-header{position:sticky;top:0;z-index:100;background:var(--paper);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.mili-header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px var(--pad-x);gap:24px}
+.mili-logo{display:inline-flex;align-items:center;height:40px;flex-shrink:0;text-decoration:none}.mili-logo img{height:100%;width:auto;object-fit:contain;display:block}
+
+.mili-nav{flex:1;display:flex;justify-content:center}
+.mili-nav-list{display:flex;gap:22px;list-style:none;align-items:center}
+.mili-nav-item{position:relative}
+.mili-nav-link{font-size:11px;letter-spacing:0.13em;text-transform:uppercase;padding:10px 0;display:inline-flex;align-items:center;gap:5px;white-space:nowrap;transition:color .2s;cursor:pointer}
+.mili-nav-link:hover{color:var(--ink)}
+.mili-nav-link.active{border-bottom:1px solid var(--ink)}
+.mili-nav-caret{display:inline-block;width:7px;height:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin-left:2px;margin-bottom:3px;opacity:.6;transition:transform .2s}
+.mili-nav-item:hover .mili-nav-caret{transform:rotate(225deg);margin-bottom:-2px}
+.mili-dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(-8px);background:var(--paper);border:1px solid var(--line);min-width:240px;padding:14px 0;opacity:0;visibility:hidden;transition:opacity .25s,transform .25s,visibility .25s;z-index:120}
+.mili-nav-item:hover .mili-dropdown{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.mili-dropdown a{display:block;padding:9px 24px;font-size:12px;letter-spacing:0.06em;color:var(--ink);transition:background .15s,color .15s;white-space:nowrap}
+.mili-dropdown a:hover{background:var(--bone);color:var(--ink)}
+.mili-cta{flex-shrink:0;display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:10px 20px;border:1px solid var(--ink);transition:background .25s,color .25s;white-space:nowrap}
+.mili-cta:hover{background:var(--ink);color:var(--paper)}
+.mili-cta svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:1.5}
+.mili-burger{display:none;background:none;border:none;cursor:pointer;padding:6px}
+.mili-burger span{display:block;width:22px;height:1px;background:var(--ink);margin:5px 0;transition:transform .3s,opacity .3s}
+.mili-mobile-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100dvh;max-height:100dvh;background:var(--paper);z-index:200;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:80px var(--pad-x) 140px}
+.mili-mobile-nav.open{display:flex;flex-direction:column}
+.mili-mobile-nav-close{position:absolute;top:24px;right:24px;background:none;border:none;cursor:pointer;font-size:24px;color:var(--ink)}
+.mili-mobile-nav-list{list-style:none;flex:1 1 auto;min-height:0;overflow-y:auto}
+.mili-mobile-nav-list>li{border-bottom:1px solid var(--line)}
+.mili-mobile-nav-list>li>a,.mili-mobile-nav-list>li>span{display:block;padding:18px 0;font-size:14px;letter-spacing:0.15em;text-transform:uppercase;font-weight:400;cursor:pointer}
+.mili-mobile-nav-list>li>span{display:flex;justify-content:space-between;align-items:center;position:relative}
+.mili-mobile-nav-list>li>span::after{content:'+';font-size:20px;font-weight:300;transition:transform .25s ease;line-height:1}
+.mili-mobile-nav-list>li.open>span::after{content:'−'}
+.mili-mobile-sub{padding:0 0 0 16px;list-style:none;max-height:0;overflow:hidden;transition:max-height .35s ease}
+.mili-mobile-nav-list>li.open .mili-mobile-sub{max-height:500px;padding-bottom:16px}
+.mili-mobile-sub li a{display:block;padding:8px 0;font-size:13px;color:var(--muted);font-weight:300;letter-spacing:0.04em;text-transform:none}
+@media (max-width:1100px){.mili-nav-list{gap:14px}.mili-nav-link{font-size:10px}}
+@media (max-width:980px){.mili-nav,.mili-cta,.mili-lang{display:none}.mili-burger{display:block}}@media (max-width:768px){.mili-logo{height:32px}}
+
+/* === Language switcher === */
+.mili-lang{position:relative;margin-right:16px}
+.mili-lang-toggle{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid var(--line);color:var(--ink);padding:9px 14px;font:400 11px/1 var(--display);letter-spacing:0.16em;text-transform:uppercase;border-radius:980px;cursor:pointer;transition:border-color .2s}
+.mili-lang-toggle:hover{border-color:var(--ink)}
+.mili-lang-toggle svg{transition:transform .2s}
+.mili-lang.open .mili-lang-toggle svg{transform:rotate(180deg)}
+.mili-lang-menu{position:absolute;top:calc(100% + 6px);right:0;min-width:100px;background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden;opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .2s,transform .2s,visibility .2s;z-index:50}
+.mili-lang.open .mili-lang-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.mili-lang-item{display:block;padding:10px 14px;font:400 11px/1 var(--display);letter-spacing:0.16em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--line);transition:background .15s;cursor:pointer;text-align:left;width:100%;box-sizing:border-box}
+.mili-lang-item:last-child{border-bottom:none}
+a.mili-lang-item{text-decoration:none}
+.mili-lang-item:hover:not(.disabled){background:var(--bone)}
+.mili-lang-item.active{font-weight:500;background:var(--bone)}
+.mili-lang-item.disabled{color:var(--muted);opacity:0.4;cursor:not-allowed;pointer-events:none}
+.mili-mobile-lang{margin-top:auto;padding-top:32px;border-top:1px solid var(--line);flex-shrink:0}
+.mili-mobile-lang-label{display:block;font:400 10px/1 var(--display);letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.mili-mobile-lang-list{display:flex;gap:12px;flex-wrap:wrap}
+.mili-mobile-lang-item{display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;font:400 12px/1 var(--display);letter-spacing:0.16em;text-transform:uppercase;color:var(--ink);border:1px solid var(--line);border-radius:980px;cursor:pointer;text-decoration:none}
+.mili-mobile-lang-item.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.mili-mobile-lang-item.disabled{color:var(--muted);opacity:0.4;pointer-events:none;cursor:not-allowed}
+
+/* === Mili Footer === */
+.mili-footer{background:var(--paper);border-top:1px solid var(--line);padding:80px 0 40px;font-family:"SF Pro Text",system-ui,-apple-system,"Inter",sans-serif}
+.mili-footer-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
+.mili-footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px}
+.mili-footer-brand .mili-footer-logo{margin-bottom:24px}.mili-footer-logo img{height:32px;width:auto;object-fit:contain;display:block}
+.mili-footer-tagline{font-size:13px;font-weight:300;color:var(--muted);line-height:1.8;max-width:380px;margin-bottom:24px}
+.mili-footer-slogan{font-size:15px;font-weight:300;color:var(--ink);letter-spacing:-0.005em;line-height:1.5;max-width:380px}
+.mili-footer-col h5{font-size:11px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px;color:var(--ink)}
+.mili-footer-col ul{list-style:none}
+.mili-footer-col li{margin-bottom:9px}
+.mili-footer-col a{font-size:13px;color:var(--muted);font-weight:300;transition:color .2s}
+.mili-footer-col a:hover{color:var(--ink)}
+
+.mili-footer-messengers{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:36px}
+.mili-msg{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 12px;border-right:1px solid var(--line);transition:background .2s,color .2s;color:var(--ink);text-align:center;gap:8px}
+.mili-msg:last-child{border-right:none}
+.mili-msg:hover{background:var(--bone)}
+.mili-msg svg{width:22px;height:22px;flex-shrink:0}
+.mili-msg-name{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:400}
+
+.mili-footer-business{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding-top:32px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);line-height:1.85;font-weight:300}
+.mili-footer-business strong{font-weight:500;color:var(--ink);text-transform:uppercase;letter-spacing:0.15em;font-size:10px;display:inline-block;margin-right:8px}
+.mili-footer-business p{margin-bottom:6px}
+.mili-footer-bottom{padding-top:28px;margin-top:32px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);letter-spacing:0.05em;flex-wrap:wrap;gap:20px}
+.mili-footer-policies{display:flex;gap:18px}
+.mili-footer-policies a{color:var(--muted);transition:color .2s}
+.mili-footer-policies a:hover{color:var(--ink)}
+@media (max-width:960px){.mili-footer-top{grid-template-columns:1fr 1fr;gap:40px}.mili-footer-business{grid-template-columns:1fr;gap:24px}}
+@media (max-width:640px){.mili-footer-top{grid-template-columns:1fr}.mili-footer-messengers{grid-template-columns:repeat(5,1fr)}.mili-msg{padding:18px 6px}.mili-msg-name{font-size:9px;letter-spacing:0.1em}.mili-msg svg{width:18px;height:18px}}
+
+/* === Mili Floating Buttons (5) === */
+.mili-float{position:fixed;right:24px;bottom:24px;z-index:90;display:flex;flex-direction:column;gap:8px}
+.mili-float-btn{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--paper);border:1px solid var(--line);box-shadow:0 4px 14px rgba(0,0,0,0.06);transition:transform .25s,background .2s;color:var(--ink)}
+.mili-float-btn:hover{transform:translateY(-3px)}
+.mili-float-btn svg{width:22px;height:22px}
+.mili-float-btn.kakao{background:#FEE500;color:#1A1A1A;border-color:#FEE500}
+.mili-float-btn.whatsapp{background:#25D366;color:#fff;border-color:#25D366}
+.mili-float-btn.line{background:#06C755;color:#fff;border-color:#06C755}
+.mili-float-btn.wechat{background:#7BB32E;color:#fff;border-color:#7BB32E}
+.mili-float-btn.instagram{background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF);color:#fff;border-color:transparent}
+@media (max-width:640px){.mili-float{right:16px;bottom:16px}.mili-float-btn{width:42px;height:42px}.mili-float-btn svg{width:18px;height:18px}}
+
+/* ========== MOBILE OPTIMIZATIONS ========== */
+@media (max-width:640px){
+    :root{--pad-x:20px}
+    body{font-size:15px;line-height:1.65}
+
+    /* Page Hero 60vh */
+    .page-hero{min-height:60vh;padding:32px 0;display:flex;align-items:center;border-bottom:1px solid var(--line)}
+    .page-hero-inner{width:100%}
+    .breadcrumb{margin-bottom:32px;font-size:10px;letter-spacing:0.2em;flex-wrap:wrap;gap:6px}
+    .page-eyebrow{margin-bottom:20px;font-size:10px;letter-spacing:0.3em}
+    .page-title{font-family:var(--display);
+    font-size:clamp(40px,12vw,68px);line-height:1.05}
+    .page-subtitle{display:none}
+
+    /* 섹션 padding 완화 */
+    .chapters,
+    .chapter,
+    .closing{padding-top:clamp(60px,14vw,100px) !important;padding-bottom:clamp(60px,14vw,100px) !important}
+
+    /* Chapters TOC grid 모바일 2열 (3x3 → 2 cols) */
+    .chapters-grid{grid-template-columns:1fr;gap:0}
+    .chapter-link{padding:18px 0}
+
+    /* Chapter inner 모바일 1열 (image 위, text 아래) */
+    .chapter-inner{grid-template-columns:1fr;gap:32px}
+    .chapter.reverse .chapter-inner{direction:ltr}
+
+    /* Closing 모바일 폰트 축소 */
+    .closing-text{font-size:clamp(20px,5.5vw,32px);line-height:1.45}
+    .closing-mark{font-size:48px}
+
+    /* Footer 컬럼/메신저 모바일 숨김 */
+    .mili-footer-top{display:none}
+    .mili-footer-messengers{display:none}
+
+    /* Footer 모바일 padding 축소 */
+    footer.mili-footer{padding:48px 0 100px}
+    .mili-footer-business{padding-top:0;border-top:none}
+}
+
+em, cite { font-style: normal; }
+</style>
+</head>
+<body>
+<header class="mili-header">
+    <div class="mili-header-inner">
+        <a href="/cn/index.html" class="mili-logo" aria-label="密龄皮肤科 道山店"><img src="/assets/images/logo/logo.png" alt="密龄皮肤科 道山店"></a>
+        <nav class="mili-nav">
+            <ul class="mili-nav-list">
+                <li class="mili-nav-item"><a href="/cn/about.html" class="mili-nav-link active">密龄皮肤科<span class="mili-nav-caret"></span></a>
+                    <div class="mili-dropdown">
+                        <a href="/cn/about.html">关于道山</a>
+                        <a href="/cn/brand-story.html" class="active-sub">品牌故事</a>
+                        <a href="/cn/tour.html">诊所参观</a>
+                        <a href="/cn/equipment.html">施术设备</a>
+                        <a href="/cn/schedule.html">诊疗时间</a>
+                        <a href="/cn/location.html">来院路线</a>
+                    </div>
+                </li>
+                <li class="mili-nav-item"><span class="mili-nav-link">光电提升<span class="mili-nav-caret"></span></span>
+                    <div class="mili-dropdown">
+                        <a href="/cn/ulthera.html">超声刀</a>
+                        <a href="/cn/thermage.html">热玛吉</a>
+                        <a href="/cn/tuneface.html">TuneFace</a>
+                    </div>
+                </li>
+                <li class="mili-nav-item"><a href="/cn/reborn-cell.html" class="mili-nav-link">重生细胞</a></li>
+                <li class="mili-nav-item"><a href="/cn/fit-culptra.html" class="mili-nav-link">Fit&middot;Culptra</a></li>
+                <li class="mili-nav-item"><span class="mili-nav-link">注射/线雕<span class="mili-nav-caret"></span></span>
+                    <div class="mili-dropdown">
+                        <a href="/cn/silhouette-soft.html">线雕</a>
+                        <a href="/cn/sculptra.html">Sculptra 童颜针</a>
+                        <a href="/cn/juvelook.html">Juvelook</a>
+                        <a href="/cn/juvederm.html">乔雅登</a>
+                    </div>
+                </li>
+                <li class="mili-nav-item"><span class="mili-nav-link">皮肤修复<span class="mili-nav-caret"></span></span>
+                    <div class="mili-dropdown">
+                        <a href="/cn/skin-booster.html">1:1 水光针</a>
+                        <a href="/cn/all-in-one-brightening.html">美白焕肤</a>
+                        <a href="/cn/derma-renewal.html">毛孔 / 疤痕</a>
+                        <a href="/cn/anti-trouble.html">痤疮 / 色斑</a>
+                    </div>
+                </li>
+                <li class="mili-nav-item"><a href="/cn/laser-hair-removal.html" class="mili-nav-link">激光脱毛</a></li>
+                <li class="mili-nav-item"><span class="mili-nav-link">皮肤管理<span class="mili-nav-caret"></span></span>
+                    <div class="mili-dropdown">
+                        <a href="/cn/medispa.html">MEDI-SPA</a>
+                        <a href="/cn/highend-medispa.html">HIGH-END MEDI-SPA</a>
+                        <a href="/cn/antioxidant-iv.html">尊享抗氧化点滴</a>
+                    </div>
+                </li>
+                <li class="mili-nav-item"><a href="/cn/promotion.html" class="mili-nav-link">促销活动</a></li>
+            </ul>
+        </nav>
+        <div class="mili-lang">
+            <button type="button" class="mili-lang-toggle" aria-haspopup="true" aria-expanded="false">CN
+                <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="mili-lang-menu">
+                <a href="/en/brand-story.html" class="mili-lang-item">EN</a>
+                <a href="https://dosan.miliclinic.co.kr" target="_blank" rel="noopener" class="mili-lang-item">KO</a>
+                <a href="#" class="mili-lang-item active">CN</a>
+                <a href="/jp/brand-story.html" class="mili-lang-item">JP</a>
+            </div>
+        </div>
+        <a href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener" class="mili-cta">RESERVE<svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <button class="mili-burger" aria-label="Menu" onclick="document.getElementById('mili-mobile-nav').classList.add('open');document.body.style.overflow='hidden'"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mili-mobile-nav" id="mili-mobile-nav">
+        <button class="mili-mobile-nav-close" onclick="document.getElementById('mili-mobile-nav').classList.remove('open');document.body.style.overflow=''">&times;</button>
+        <ul class="mili-mobile-nav-list">
+            <li><span>密龄皮肤科</span>
+                <ul class="mili-mobile-sub">
+                    <li><a href="/cn/about.html">关于道山</a></li>
+                    <li><a href="/cn/brand-story.html">品牌故事</a></li>
+                    <li><a href="/cn/tour.html">诊所参观</a></li>
+                    <li><a href="/cn/equipment.html">施术设备</a></li>
+                    <li><a href="/cn/schedule.html">诊疗时间</a></li>
+                    <li><a href="/cn/location.html">来院路线</a></li>
+                </ul>
+            </li>
+            <li><span>光电提升</span>
+                <ul class="mili-mobile-sub">
+                    <li><a href="/cn/ulthera.html">超声刀</a></li>
+                    <li><a href="/cn/thermage.html">热玛吉</a></li>
+                    <li><a href="/cn/tuneface.html">TuneFace</a></li>
+                </ul>
+            </li>
+            <li><a href="/cn/reborn-cell.html">重生细胞</a></li>
+            <li><a href="/cn/fit-culptra.html">Fit&middot;Culptra</a></li>
+            <li><span>注射/线雕</span>
+                <ul class="mili-mobile-sub">
+                    <li><a href="/cn/silhouette-soft.html">线雕</a></li>
+                    <li><a href="/cn/sculptra.html">Sculptra 童颜针</a></li>
+                    <li><a href="/cn/juvelook.html">Juvelook</a></li>
+                    <li><a href="/cn/juvederm.html">乔雅登</a></li>
+                </ul>
+            </li>
+            <li><span>皮肤修复</span>
+                <ul class="mili-mobile-sub">
+                    <li><a href="/cn/skin-booster.html">1:1 水光针</a></li>
+                    <li><a href="/cn/all-in-one-brightening.html">美白焕肤</a></li>
+                    <li><a href="/cn/derma-renewal.html">毛孔 / 疤痕</a></li>
+                    <li><a href="/cn/anti-trouble.html">痤疮 / 色斑</a></li>
+                </ul>
+            </li>
+            <li><a href="/cn/laser-hair-removal.html">激光脱毛</a></li>
+            <li><span>皮肤管理</span>
+                <ul class="mili-mobile-sub">
+                    <li><a href="/cn/medispa.html">MEDI-SPA</a></li>
+                    <li><a href="/cn/highend-medispa.html">HIGH-END MEDI-SPA</a></li>
+                    <li><a href="/cn/antioxidant-iv.html">尊享抗氧化点滴</a></li>
+                </ul>
+            </li>
+            <li><a href="/cn/promotion.html">促销活动</a></li>
+            <li><a href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener">RESERVE</a></li>
+        </ul>
+        <div class="mili-mobile-lang">
+            <span class="mili-mobile-lang-label">Language</span>
+            <div class="mili-mobile-lang-list">
+                <a href="/en/brand-story.html" class="mili-mobile-lang-item">EN</a>
+                <a href="https://dosan.miliclinic.co.kr" target="_blank" rel="noopener" class="mili-mobile-lang-item">KO</a>
+                <a href="#" class="mili-mobile-lang-item active">CN</a>
+                <a href="/jp/brand-story.html" class="mili-mobile-lang-item">JP</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<!-- Chapter 01 -->
+<section id="ch-01" class="chapter">
+    <div class="chapter-inner">
+        <div class="chapter-media">
+            <img src="/assets/images/brand-story/ch-01-design.jpg" alt="当代设计">
+        </div>
+        <div class="chapter-content">
+            <div class="ch-num-big">— Chapter 01</div>
+            <div class="ch-tag">设计</div>
+            <h2>当代之美。</h2>
+            <p>引领，而非追随。密龄道山店为追求当代美学的求美者所设 — 精致、考究、独立鲜明。一份与众不同的服务，搭配与之匹配的体验。</p>
+        </div>
+    </div>
+</section>
+
+<!-- Chapter 02 -->
+<section id="ch-02" class="chapter reverse">
+    <div class="chapter-inner">
+        <div class="chapter-media">
+            <img src="/assets/images/brand-story/ch-02-hospitality.jpg" alt="优雅栖居">
+        </div>
+        <div class="chapter-content">
+            <div class="ch-num-big">— Chapter 02</div>
+            <div class="ch-tag">款待</div>
+            <h2>优雅栖居。</h2>
+            <p>一处只为您而设的空间。密龄道山店不仅是诊所 — 更是一间从日常喧嚣中独立出来的静室，舒适与优雅，本身就是疗愈的一部分。</p>
+        </div>
+    </div>
+</section>
+
+<!-- Chapter 03 -->
+<section id="ch-03" class="chapter">
+    <div class="chapter-inner">
+        <div class="chapter-media">
+            <img src="/assets/images/brand-story/ch-03-acoustics.jpg" alt="音响系统">
+        </div>
+        <div class="chapter-content">
+            <div class="ch-num-big">— Chapter 03</div>
+            <div class="ch-tag">声学</div>
+            <h2>声音。</h2>
+            <p>私人空间的氛围，由声音与寂静共同承载。精心调校的音响系统让空气中盈满从容 — 让每一次施术伴随平静、每一次恢复伴随安宁。</p>
+        </div>
+    </div>
+</section>
+
+<!-- Chapter 04 -->
+<section id="ch-04" class="chapter reverse">
+    <div class="chapter-inner">
+        <div class="chapter-media">
+            <img src="/assets/images/brand-story/ch-04-bedding.jpg" alt="高级寝具">
+        </div>
+        <div class="chapter-content">
+            <div class="ch-num-big">— Chapter 04</div>
+            <div class="ch-tag">寝具</div>
+            <h2>高级寝具。</h2>
+            <p>轻盈透气的鹅绒寝具，与精心挑选的备品 — 将精品酒店清晨的小确幸，融入施术的节奏之中。</p>
+        </div>
+    </div>
+</section>
+
+<!-- Middle Marquee -->
+<div class="mid-marquee">
+    <div class="mid-marquee-inner">
+        <span>细节</span>
+        <span>克制</span>
+        <span>尊严</span>
+        <span>深度</span>
+        <span>细节</span>
+        <span>克制</span>
+        <span>尊严</span>
+        <span>深度</span>
+    </div>
+</div>
+
+<!-- Chapter 05 -->
+<section id="ch-05" class="chapter">
+    <div class="chapter-inner">
+        <div class="chapter-media">
+            <img src="/assets/images/brand-story/ch-05-scent.jpg" alt="香氛">
+        </div>
+        <div class="chapter-content">
+            <div class="ch-num-big">— Chapter 05</div>
+            <div class="ch-tag">香氛</div>
+            <h2>香氛。</h2>
+            <p>由 Petit Marteau 为密龄量身调制的专属香氛，呼应密龄的哲学与建筑。温暖、静谧、留香悠长 — 让人愿意多停留一刻的气息。</p>
+        </div>
+    </div>
+</section>
+
+<!-- Chapter 06 -->
+<section id="ch-06" class="chapter reverse">
+    <div class="chapter-inner">
+        <div class="chapter-media">
+            <img src="/assets/images/brand-story/ch-06-privacy.jpg" alt="私密空间">
+        </div>
+        <div class="chapter-content">
+            <div class="ch-num-big">— Chapter 06</div>
+            <div class="ch-tag">私密</div>
+            <h2>独立施术间。</h2>
+            <p>一间只为一位求美者准备的独立空间。每一次施术都是只属于您的旅程 — 全程私密进行，整个体验只在您与您的医生之间共享。</p>
+        </div>
+    </div>
+</section>
+
+<!-- Chapter 07 -->
+<section id="ch-07" class="chapter">
+    <div class="chapter-inner">
+        <div class="chapter-media">
+            <img src="/assets/images/brand-story/ch-07-integrity.jpg" alt="正品与精准">
+        </div>
+        <div class="chapter-content">
+            <div class="ch-num-big">— Chapter 07</div>
+            <div class="ch-tag">正直</div>
+            <h2>正品 &amp; 标准剂量。</h2>
+            <p>仅采用正式渠道引进的正品设备与药品 — 严格按标准剂量施治，绝不缩水。<em>在密龄道山店，正直不是一句承诺，而是治疗的第一前提。</em></p>
+        </div>
+    </div>
+</section>
+
+<!-- Chapter 08 -->
+<section id="ch-08" class="chapter reverse">
+    <div class="chapter-inner">
+        <div class="chapter-media">
+            <img src="/assets/images/brand-story/ch-08-hygiene.jpg" alt="清洁系统">
+        </div>
+        <div class="chapter-content">
+            <div class="ch-num-big">— Chapter 08</div>
+            <div class="ch-tag">卫生</div>
+            <h2>清洁系统。</h2>
+            <p>如同首次启用一般。灭菌海绵与耗材均为一次性使用，所有器械按严格规范进行灭菌与保管 — 每一次施术都从绝对洁净的起点开始。</p>
+        </div>
+    </div>
+</section>
+
+<!-- Chapter 09 -->
+<section id="ch-09" class="chapter">
+    <div class="chapter-inner">
+        <div class="chapter-media">
+            <img src="/assets/images/brand-story/ch-09-time.jpg" alt="时间被尊重">
+        </div>
+        <div class="chapter-content">
+            <div class="ch-num-big">— Chapter 09</div>
+            <div class="ch-tag">时间</div>
+            <h2>时间，被尊重。</h2>
+            <p>100% 全预约制。无等待、无重叠 — 您的时间始终属于您自己，从入门到离开。在密龄道山店，您留给自己的每一小时，都被全然尊重。</p>
+        </div>
+    </div>
+</section>
+
+<!-- Closing Statement -->
+<section class="closing">
+    <div class="closing-inner">
+        <div class="closing-mark">"</div>
+        <div class="closing-text">
+            九则细节。<em>一个意图</em> — 让您到访密龄道山店，不仅是一次施术，更成为一段静谧的 <em>休憩之章</em>。
+        </div>
+    </div>
+</section>
+
+
+<footer class="mili-footer">
+    <div class="mili-footer-inner">
+        <div class="mili-footer-top">
+            <div class="mili-footer-brand">
+                <div class="mili-footer-logo"><img src="/assets/images/logo/logo.png" alt="密龄皮肤科道山店"></div>
+                <p class="mili-footer-tagline">密龄皮肤科道山店旗舰院区 — 超越治疗本身，于静谧中完成修复与焕新。</p>
+                <p class="mili-footer-slogan">“仅凭1mm的变化焕发美丽。”</p>
+            </div>
+            <div class="mili-footer-col">
+                <h5>核心项目</h5>
+                <ul>
+                    <li><a href="/cn/ulthera.html">超声刀</a></li>
+                    <li><a href="/cn/thermage.html">热玛吉</a></li>
+                    <li><a href="/cn/tuneface.html">TuneFace</a></li>
+                    <li><a href="/cn/reborn-cell.html">重生细胞</a></li>
+                    <li><a href="/cn/fit-culptra.html">Fit&middot;Culptra</a></li>
+                    <li><a href="/cn/sculptra.html">注射/线雕</a></li>
+                    <li><a href="/cn/skin-booster.html">皮肤修复</a></li>
+                    <li><a href="/cn/laser-hair-removal.html">激光脱毛</a></li>
+                    <li><a href="/cn/medispa.html">皮肤管理</a></li>
+                </ul>
+            </div>
+            <div class="mili-footer-col">
+                <h5>来访信息</h5>
+                <ul>
+                    <li><a href="/cn/location.html">来院路线</a></li>
+                    <li><a href="/cn/schedule.html">诊疗时间</a></li>
+                    <li><a href="https://naver.me/GLAXm15o" target="_blank" rel="noopener">Naver Map</a></li>
+                    <li><a href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener">立即预约</a></li>
+                    <li><a href="tel:+82263671212">+82 2&middot;6367&middot;1212</a></li>
+                </ul>
+            </div>
+            <div class="mili-footer-col">
+                <h5>资讯渠道</h5>
+                <ul>
+                    <li><a href="/cn/promotion.html">促销活动</a></li>
+                    <li><a href="https://www.youtube.com/@Dr.ShinMillimeter" target="_blank" rel="noopener">YouTube</a></li>
+                    <li><a href="https://sinchon.miliclinic.co.kr" target="_blank" rel="noopener">Mili 新村</a></li>
+                    <li><a href="http://miliclinic.com" target="_blank" rel="noopener">Mili Global</a></li>
+                    <li><a href="https://dosan.miliclinic.co.kr">韩文官网</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mili-footer-messengers">
+            <a href="https://wa.me/821058616367" target="_blank" rel="noopener" class="mili-msg" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375c-.99-1.575-1.516-3.391-1.516-5.26 0-5.445 4.455-9.885 9.942-9.885 2.654 0 5.145 1.035 7.021 2.91 1.875 1.875 2.909 4.371 2.909 7.026-.004 5.444-4.46 9.885-9.935 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411"/></svg>
+                <span class="mili-msg-name">WhatsApp</span>
+            </a>
+            <a href="https://mp.weixin.qq.com/s/4ruAKbgP8m5kkttIQ18uvg" target="_blank" rel="noopener" class="mili-msg" aria-label="WeChat">
+                <svg viewBox="0 0 24 24" fill="#7BB32E"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.328.328 0 0 0 .166-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.594-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.475-1.78 5.687.91 2.214 3.337 3.6 6.116 3.6.453 0 .92-.069 1.386-.205a.79.79 0 0 1 .677.069l1.625 1.05a.36.36 0 0 0 .184.061c.16 0 .29-.132.29-.295 0-.071-.027-.142-.038-.213l-.336-1.245a.66.66 0 0 1-.026-.218.625.625 0 0 1 .25-.499C21.546 17.474 22.5 15.852 22.5 13.94c0-3.213-3.045-5.78-6.572-5.85zm-2.379 2.493c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897zm4.625 0c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897z"/></svg>
+                <span class="mili-msg-name">WeChat</span>
+            </a>
+            <a href="https://lin.ee/X7C7bMh" target="_blank" rel="noopener" class="mili-msg" aria-label="LINE">
+                <svg viewBox="0 0 24 24" fill="#06C755"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+                <span class="mili-msg-name">LINE</span>
+            </a>
+            <a href="https://pf.kakao.com/_xehXRG/chat" target="_blank" rel="noopener" class="mili-msg" aria-label="KakaoTalk">
+                <svg viewBox="0 0 24 24" fill="#FEE500"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.7 6.8L5.6 21.4c-.1.3.2.5.5.4l4.4-2.9c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/><path d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.7 6.8L5.6 21.4c-.1.3.2.5.5.4l4.4-2.9c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8s-4.5-8-10-8z" stroke="#1A1A1A" stroke-width="0.4" fill="#FEE500"/></svg>
+                <span class="mili-msg-name">KakaoTalk</span>
+            </a>
+            <a href="https://www.instagram.com/dosan.miliclinic/" target="_blank" rel="noopener" class="mili-msg" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="#1A1A1A"/></svg>
+                <span class="mili-msg-name">Instagram</span>
+            </a>
+        </div>
+
+        <div class="mili-footer-business">
+            <div>
+                <p><strong>商号名</strong> MiliClinic, 岛山</p>
+                <p><strong>营业执照编号</strong> 457-47-00860</p>
+                <p><strong>代表</strong> 申东河</p>
+                <p><strong>个人信息保护负责人</strong> 申东河, jungyi@mlcl.co.kr</p>
+            </div>
+            <div>
+                <p><strong>地址</strong> 首尔江南区岛山大路45街17号 3楼</p>
+                <p><strong>诊疗时间</strong> [周一·周三·周五] AM 10:00 – PM 07:00<br>[周二·周四] AM 10:00 – PM 09:00<br>[周六] AM 10:00 – PM 04:00<br>周日休诊</p>
+                <p><strong>午休</strong> 13:00–14:00</p>
+            </div>
+        </div>
+
+        <div class="mili-footer-bottom">
+            <div>&copy; 2026 Mili Clinic Sinchon. 版权所有。</div>
+            <div class="mili-footer-policies">
+                <a href="/cn/privacy.html">隐私政策</a>
+                <a href="/cn/non-covered.html">非医保项目</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script data-mobile-nav-accordion>
+(function(){
+    const items = document.querySelectorAll('.mili-mobile-nav-list > li');
+    items.forEach(li => {
+        const span = li.querySelector(':scope > span');
+        if (!span) return;
+        span.addEventListener('click', (e) => {
+            e.stopPropagation();
+            li.classList.toggle('open');
+        });
+    });
+})();
+</script>
+<script data-mili-lang>
+(function(){
+document.querySelectorAll('.mili-lang-toggle').forEach(function(btn){
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var root = btn.closest('.mili-lang');
+    var open = !root.classList.contains('open');
+    document.querySelectorAll('.mili-lang.open').forEach(function(el){
+      el.classList.remove('open');
+      var t = el.querySelector('.mili-lang-toggle');
+      if (t) t.setAttribute('aria-expanded', 'false');
+    });
+    if (open) {
+      root.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+document.addEventListener('click', function(){
+  document.querySelectorAll('.mili-lang.open').forEach(function(el){
+    el.classList.remove('open');
+    var t = el.querySelector('.mili-lang-toggle');
+    if (t) t.setAttribute('aria-expanded', 'false');
+  });
+});
+})();
+</script>
+
+</body>
+</html>
