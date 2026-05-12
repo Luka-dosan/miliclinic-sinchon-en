@@ -301,6 +301,7 @@ a.tx-feature-video{color:inherit}
 
 /* Benefits (ink band) — replaces Collagen for Thermage */
 .tx-benefits{padding:clamp(80px,12vw,160px) 0;background:var(--ink);color:var(--paper)}
+.tx-benefits-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
 .tx-benefits .section-eyebrow{color:rgba(244,241,235,.5)}
 .tx-benefits .section-eyebrow::before{background:rgba(244,241,235,.3)}
 .tx-benefits-head{max-width:var(--container);margin:0 auto 80px;padding:0 var(--pad-x);display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end}
@@ -851,25 +852,27 @@ em, cite { font-style: normal; }
 
 <!-- System / 3-image feature -->
 <section id="system" class="tx-system">
-    <div class="tx-system-head">
-        <div class="section-eyebrow">System</div>
-        <h2>The technology that makes it work.</h2>
-    </div>
-    <div class="tx-system-grid">
-        <div class="tx-system-card">
-            <div class="card-num">01</div>
-            <h3>Monopolar RF Energy</h3>
-            <p>Radiofrequency energy delivered deep into the dermis stimulates fibroblasts to contract and remodel aging collagen — inducing the production of new collagen fibers and promoting natural healing from within.</p>
+    <div class="tx-system-inner">
+        <div class="tx-system-head">
+            <div class="section-eyebrow">System</div>
+            <h2>The technology that makes it work.</h2>
         </div>
-        <div class="tx-system-card">
-            <div class="card-num">02</div>
-            <h3>Intelligent Cooling System</h3>
-            <p>Gas-based contact cooling protects the epidermis while RF energy reaches deep into the skin. The vibrating tip synchronizes precisely with ON/OFF pulse timing — minimizing discomfort and ensuring smooth, effective delivery.</p>
-        </div>
-        <div class="tx-system-card">
-            <div class="card-num">03</div>
-            <h3>Real-Time Safety Monitoring</h3>
-            <p>The system continuously monitors skin surface temperature in real time and only activates when consistent pressure is applied. This prevents overheating and accidental non-contact burns — for a safe, comfortable, pain-free experience.</p>
+        <div class="tx-system-grid">
+            <div class="tx-system-card">
+                <div class="card-num">01</div>
+                <h3>Monopolar RF Energy</h3>
+                <p>Radiofrequency energy delivered deep into the dermis stimulates fibroblasts to contract and remodel aging collagen — inducing the production of new collagen fibers and promoting natural healing from within.</p>
+            </div>
+            <div class="tx-system-card">
+                <div class="card-num">02</div>
+                <h3>Intelligent Cooling System</h3>
+                <p>Gas-based contact cooling protects the epidermis while RF energy reaches deep into the skin. The vibrating tip synchronizes precisely with ON/OFF pulse timing — minimizing discomfort and ensuring smooth, effective delivery.</p>
+            </div>
+            <div class="tx-system-card">
+                <div class="card-num">03</div>
+                <h3>Real-Time Safety Monitoring</h3>
+                <p>The system continuously monitors skin surface temperature in real time and only activates when consistent pressure is applied. This prevents overheating and accidental non-contact burns — for a safe, comfortable, pain-free experience.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -891,30 +894,32 @@ em, cite { font-style: normal; }
 
 <!-- Benefits -->
 <section id="benefits" class="tx-benefits">
-    <div class="tx-benefits-head">
-        <div class="section-eyebrow">Benefits</div>
-        <h2>Why patients choose Oligio X.</h2>
-    </div>
-    <div class="tx-benefits-grid">
-        <div class="benefit-item">
-            <div class="benefit-num">01</div>
-            <h3>Fine Wrinkle Improvement</h3>
-            <p>Ideal for effectively treating fine lines around the eyes and mouth — areas where surface treatments often fall short.</p>
+    <div class="tx-benefits-inner">
+        <div class="tx-benefits-head">
+            <div class="section-eyebrow">Benefits</div>
+            <h2>Why patients choose Oligio X.</h2>
         </div>
-        <div class="benefit-item">
-            <div class="benefit-num">02</div>
-            <h3>Enhanced Elasticity &amp; Hydration</h3>
-            <p>For those seeking both lifting and deep hydration. Collagen regeneration improves firmness from within while the skin holds moisture better.</p>
-        </div>
-        <div class="benefit-item">
-            <div class="benefit-num">03</div>
-            <h3>Fast &amp; Gentle Lifting</h3>
-            <p>Achieves visible lifting results in a short procedure time using radiofrequency energy. Pain-free without anesthesia — return to daily activities immediately.</p>
-        </div>
-        <div class="benefit-item">
-            <div class="benefit-num">04</div>
-            <h3>Cost-Effective Repeat Care</h3>
-            <p>Faster and more affordable than Thermage, while delivering comparable collagen regeneration — making consistent maintenance accessible.</p>
+        <div class="tx-benefits-grid">
+            <div class="benefit-item">
+                <div class="benefit-num">01</div>
+                <h3>Fine Wrinkle Improvement</h3>
+                <p>Ideal for effectively treating fine lines around the eyes and mouth — areas where surface treatments often fall short.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-num">02</div>
+                <h3>Enhanced Elasticity &amp; Hydration</h3>
+                <p>For those seeking both lifting and deep hydration. Collagen regeneration improves firmness from within while the skin holds moisture better.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-num">03</div>
+                <h3>Fast &amp; Gentle Lifting</h3>
+                <p>Achieves visible lifting results in a short procedure time using radiofrequency energy. Pain-free without anesthesia — return to daily activities immediately.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-num">04</div>
+                <h3>Cost-Effective Repeat Care</h3>
+                <p>Faster and more affordable than Thermage, while delivering comparable collagen regeneration — making consistent maintenance accessible.</p>
+            </div>
         </div>
     </div>
 </section>

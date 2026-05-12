@@ -301,6 +301,7 @@ a.tx-feature-video{color:inherit}
 
 /* Benefits (ink band) — replaces Collagen for Thermage */
 .tx-benefits{padding:clamp(80px,12vw,160px) 0;background:var(--ink);color:var(--paper)}
+.tx-benefits-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
 .tx-benefits .section-eyebrow{color:rgba(244,241,235,.5)}
 .tx-benefits .section-eyebrow::before{background:rgba(244,241,235,.3)}
 .tx-benefits-head{max-width:var(--container);margin:0 auto 80px;padding:0 var(--pad-x);display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end}
@@ -851,25 +852,27 @@ em, cite { font-style: normal; }
 
 <!-- System / 3-image feature -->
 <section id="system" class="tx-system">
-    <div class="tx-system-head">
-        <div class="section-eyebrow">System</div>
-        <h2>Three-phase lifting through skin depth precision.</h2>
-    </div>
-    <div class="tx-system-grid">
-        <div class="tx-system-card">
-            <div class="card-num">01</div>
-            <h3>1.5mm — Superficial Dermis</h3>
-            <p>The shallowest cartridge addresses fine wrinkles and surface texture. Stimulates collagen at the upper dermal layer for smoother, more refined skin quality.</p>
+    <div class="tx-system-inner">
+        <div class="tx-system-head">
+            <div class="section-eyebrow">System</div>
+            <h2>Three-phase lifting through skin depth precision.</h2>
         </div>
-        <div class="tx-system-card">
-            <div class="card-num">02</div>
-            <h3>3.0mm — Mid Dermis</h3>
-            <p>Mid-depth energy targets the dermal collagen layer where firmness originates. Builds the foundation for elasticity that holds over time.</p>
-        </div>
-        <div class="tx-system-card">
-            <div class="card-num">03</div>
-            <h3>4.5mm — SMAS Layer</h3>
-            <p>Deepest energy reaches the SMAS (Superficial Musculoaponeurotic System) layer — the foundational tissue that surgical facelifts address. The lift comes from beneath.</p>
+        <div class="tx-system-grid">
+            <div class="tx-system-card">
+                <div class="card-num">01</div>
+                <h3>1.5mm — Superficial Dermis</h3>
+                <p>The shallowest cartridge addresses fine wrinkles and surface texture. Stimulates collagen at the upper dermal layer for smoother, more refined skin quality.</p>
+            </div>
+            <div class="tx-system-card">
+                <div class="card-num">02</div>
+                <h3>3.0mm — Mid Dermis</h3>
+                <p>Mid-depth energy targets the dermal collagen layer where firmness originates. Builds the foundation for elasticity that holds over time.</p>
+            </div>
+            <div class="tx-system-card">
+                <div class="card-num">03</div>
+                <h3>4.5mm — SMAS Layer</h3>
+                <p>Deepest energy reaches the SMAS (Superficial Musculoaponeurotic System) layer — the foundational tissue that surgical facelifts address. The lift comes from beneath.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -891,30 +894,32 @@ em, cite { font-style: normal; }
 
 <!-- Benefits -->
 <section id="benefits" class="tx-benefits">
-    <div class="tx-benefits-head">
-        <div class="section-eyebrow">Benefits</div>
-        <h2>Why patients choose Shurink.</h2>
-    </div>
-    <div class="tx-benefits-grid">
-        <div class="benefit-item">
-            <div class="benefit-num">01</div>
-            <h3>Cost-Effective Lifting</h3>
-            <p>Ideal for those seeking ultrasound lifting effects at an accessible cost — making consistent maintenance practical.</p>
+    <div class="tx-benefits-inner">
+        <div class="tx-benefits-head">
+            <div class="section-eyebrow">Benefits</div>
+            <h2>Why patients choose Shurink.</h2>
         </div>
-        <div class="benefit-item">
-            <div class="benefit-num">02</div>
-            <h3>Volume Preservation</h3>
-            <p>Targets sagging at the SMAS layer without affecting facial volume — youthful contour, not gaunt.</p>
-        </div>
-        <div class="benefit-item">
-            <div class="benefit-num">03</div>
-            <h3>Thin &amp; Sensitive Skin</h3>
-            <p>Safe and gentle elasticity improvement with minimal discomfort — cartridge-customized to skin thickness.</p>
-        </div>
-        <div class="benefit-item">
-            <div class="benefit-num">04</div>
-            <h3>Targeted Lifting</h3>
-            <p>Focused lifting for specific concerns like chin, jowls, and cheeks — without unnecessary treatment elsewhere.</p>
+        <div class="tx-benefits-grid">
+            <div class="benefit-item">
+                <div class="benefit-num">01</div>
+                <h3>Cost-Effective Lifting</h3>
+                <p>Ideal for those seeking ultrasound lifting effects at an accessible cost — making consistent maintenance practical.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-num">02</div>
+                <h3>Volume Preservation</h3>
+                <p>Targets sagging at the SMAS layer without affecting facial volume — youthful contour, not gaunt.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-num">03</div>
+                <h3>Thin &amp; Sensitive Skin</h3>
+                <p>Safe and gentle elasticity improvement with minimal discomfort — cartridge-customized to skin thickness.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-num">04</div>
+                <h3>Targeted Lifting</h3>
+                <p>Focused lifting for specific concerns like chin, jowls, and cheeks — without unnecessary treatment elsewhere.</p>
+            </div>
         </div>
     </div>
 </section>
