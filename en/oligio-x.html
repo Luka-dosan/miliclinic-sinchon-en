@@ -84,7 +84,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     will-change:transform,opacity;
     animation:slideInRightTh 1.4s cubic-bezier(0.2,0.8,0.2,1) 0.3s forwards;
 }
-.tx-hero-device{right: clamp(40px, 6vw, 120px); height: 90%;}
 @keyframes slideInRightTh{
     to{opacity:1;transform:translateX(0);}
 }
@@ -240,10 +239,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     align-items: center;
     gap: 48px;
 }
-.tx-area-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
-.tx-tip-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
-.tx-faq-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
-.tx-related-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
 .tx-cert-mark{
     width: 88px;
     height: 88px;
@@ -306,7 +301,6 @@ a.tx-feature-video{color:inherit}
 
 /* Benefits (ink band) — replaces Collagen for Thermage */
 .tx-benefits{padding:clamp(80px,12vw,160px) 0;background:var(--ink);color:var(--paper)}
-.tx-benefits-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
 .tx-benefits .section-eyebrow{color:rgba(244,241,235,.5)}
 .tx-benefits .section-eyebrow::before{background:rgba(244,241,235,.3)}
 .tx-benefits-head{max-width:var(--container);margin:0 auto 80px;padding:0 var(--pad-x);display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end}
@@ -774,16 +768,17 @@ em, cite { font-style: normal; }
             <span>Oligio X</span>
         </div>
         <div class="tx-hero-center">
-            <div class="tx-hero-eyebrow">— Monopolar RF Lifting · Jeisys</div>
+            <div class="tx-hero-eyebrow">— Radiofrequency Tightening · Solta Medical</div>
             <div class="tx-hero-badge">
                 <div class="tx-hero-badge-mark">✦</div>
-                <div class="tx-hero-badge-text">Authentic Oligio X · Genuine Tips</div>
+                <div class="tx-hero-badge-text">Officially Certified Oligio X Clinic</div>
             </div>
             <h1 class="tx-hero-title">
                 Oligio X<span class="reg">®</span>
+                <span class="line-2">FLX</span>
             </h1>
             <p class="tx-hero-sub">
-                Lifting elasticity while stimulating collagen formation — <strong>RF radiofrequency lifting optimized for you</strong>. Monopolar energy delivered deep to the dermis, with intelligent cooling that keeps the skin comfortable.
+                The Mili Sinchon Oligio X system — <strong>consultation-led, data-informed, meticulously recorded</strong>. Monopolar radiofrequency, carried through the layers that shape a jawline.
             </p>
         </div>
         <div class="tx-hero-bottom">
@@ -798,7 +793,7 @@ em, cite { font-style: normal; }
                 </div>
                 <div class="tx-hero-meta-item">
                     <div class="label">Duration</div>
-                    <div class="value">~ 15 min</div>
+                    <div class="value">~ 40–60 min</div>
                 </div>
             </div>
         </div>
@@ -826,18 +821,32 @@ em, cite { font-style: normal; }
     <div class="tx-principle-inner">
         <div class="tx-principle-left">
             <div class="section-eyebrow">Principle</div>
-            <h2>Mili's exclusive Oligio X lifting.</h2>
+            <h2>The Mili Sinchon Oligio<span style="font-size:0.4em;vertical-align:super">®</span> X system.</h2>
         </div>
         <div class="tx-principle-right">
             <p class="lead">
-                Before the consultation, we use a state-of-the-art skin analyzer to assess each individual's level of skin aging. This is followed by a personalized one-on-one consultation, through which we develop a comprehensive treatment plan to help restore firm, healthy skin.
+                A dedicated consultation record. A dedicated treatment log. A protocol built on detail.
             </p>
-            <p>
-                Oligio Lifting is a monopolar RF energy treatment that delivers radiofrequency energy deep into the dermis to stimulate fibroblasts to contract and remodel aging collagen layers. This process induces the production of new collagen fibers, promoting the skin's natural healing from within.
+            <p class="mobile-hide">
+                At Mili Clinic, every Oligio X session begins with a <strong>dedicated consultation form</strong> and is recorded on a <strong>Oligio X-specific treatment log</strong> — a small but deliberate practice that keeps each patient's needs clearly in focus across visits.
             </p>
-            <p>
-                By regenerating the collagen layer and promoting long-term dermal remodeling, Oligio effectively improves skin elasticity and reduces wrinkles — with visible results in a short procedure time.
+            <p class="mobile-hide">
+                A 3D facial analysis precisely diagnoses the contour variations unique to each individual, and the result is an optimised Oligio X experience — attentive consultation, meticulous recording, and careful aftercare across every step.
             </p>
+            <div class="pillars-inline">
+                <div class="pillar-mini">
+                    <h4>Consultation</h4>
+                    <p>A dedicated Oligio X consultation form to understand each individual goal.</p>
+                </div>
+                <div class="pillar-mini">
+                    <h4>Record</h4>
+                    <p>A treatment log kept across sessions so details are never lost.</p>
+                </div>
+                <div class="pillar-mini">
+                    <h4>3D Analysis</h4>
+                    <p>Contour mapping that informs the specific areas requiring energy.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -845,11 +854,14 @@ em, cite { font-style: normal; }
 <!-- Certified Strip -->
 <section id="certified" class="tx-cert">
     <div class="tx-cert-inner">
-        <div class="tx-cert-mark">✦</div>
-        <div class="tx-cert-text">
-            <div class="tx-cert-title">Authentic Oligio X with genuine tips, every session.</div>
-            <p>Mili Clinic uses only authentic Oligio X devices and genuine handpiece tips imported through official channels — calibrated regularly and operated only by trained physicians. A faster and more cost-effective radiofrequency treatment compared to Thermage.</p>
+        <div class="tx-cert-mark">
+            <span>Oligio X<br>Certified</span>
         </div>
+        <div class="tx-cert-text">
+            <h3>An officially certified Oligio X clinic.</h3>
+            <p>Verified through Jeisys Medical's authorised channel — using only genuine Oligio X systems and tips.</p>
+        </div>
+        <div class="tx-cert-tag">— Authentic Partner</div>
     </div>
 </section>
 
@@ -857,24 +869,31 @@ em, cite { font-style: normal; }
 <section id="system" class="tx-system">
     <div class="tx-system-inner">
         <div class="tx-system-head">
-            <div class="section-eyebrow">System</div>
-            <h2>The technology that makes it work.</h2>
+            <div class="section-eyebrow" style="justify-content:center">System</div>
+            <h2>A Oligio<span style="font-size:0.4em;vertical-align:super">®</span> X shaped around you.</h2>
         </div>
-        <div class="tx-system-grid">
+        <div class="tx-system-row">
             <div class="tx-system-card">
-                <div class="card-num">01</div>
-                <h3>Monopolar RF Energy</h3>
-                <p>Radiofrequency energy delivered deep into the dermis stimulates fibroblasts to contract and remodel aging collagen — inducing the production of new collagen fibers and promoting natural healing from within.</p>
+                <div class="tx-system-img"><img src="/assets/images/oligio-x/system-01.jpg" alt="Consultation"></div>
+                <div class="tx-system-num">— 01</div>
+                <h3 class="tx-system-title">Dedicated Consultation</h3>
+                <p class="tx-system-desc">A Oligio X-specific consultation form ensures no concern is overlooked, and that your goals translate clearly into the treatment plan.</p>
             </div>
             <div class="tx-system-card">
-                <div class="card-num">02</div>
-                <h3>Intelligent Cooling System</h3>
-                <p>Gas-based contact cooling protects the epidermis while RF energy reaches deep into the skin. The vibrating tip synchronizes precisely with ON/OFF pulse timing — minimizing discomfort and ensuring smooth, effective delivery.</p>
+                <a href="https://www.oligio-x.co.kr/#page7" target="_blank" rel="noopener">
+                    <div class="tx-system-img"><img src="/assets/images/oligio-x/system-02.png" alt="Authentic"></div>
+                </a>
+                <div class="tx-system-num">— 02</div>
+                <h3 class="tx-system-title">Authentic Device</h3>
+                <p class="tx-system-desc">Only the officially imported Oligio X system is used — verified through Jeisys Medical's authorised channel.</p>
             </div>
             <div class="tx-system-card">
-                <div class="card-num">03</div>
-                <h3>Real-Time Safety Monitoring</h3>
-                <p>The system continuously monitors skin surface temperature in real time and only activates when consistent pressure is applied. This prevents overheating and accidental non-contact burns — for a safe, comfortable, pain-free experience.</p>
+                <a href="https://www.oligio-x.co.kr/#page7" target="_blank" rel="noopener">
+                    <div class="tx-system-img"><img src="/assets/images/oligio-x/system-03.jpg" alt="Verified"></div>
+                </a>
+                <div class="tx-system-num">— 03</div>
+                <h3 class="tx-system-title">Treatment Log</h3>
+                <p class="tx-system-desc">Each session is logged in detail, so the areas, energy levels, and response are tracked precisely from visit to visit.</p>
             </div>
         </div>
     </div>
@@ -883,144 +902,182 @@ em, cite { font-style: normal; }
 <!-- Detail / Video -->
 <section id="detail" class="tx-feature">
     <div class="tx-feature-inner">
-        <div class="tx-feature-left">
-            <div class="section-eyebrow">In Detail</div>
-            <h2>Faster, gentler, and built for repeat care.</h2>
-            <p>Oligio X delivers concentrated radiofrequency energy that contracts existing collagen immediately and triggers long-term collagen remodeling. Unlike older RF systems, the integrated cooling and vibration technology keeps the experience comfortable enough that most patients require no topical anesthesia.</p>
-            <p>For full-face treatment with 600 shots, the procedure takes approximately 15 minutes. For specific areas like the double chin, 300 shots takes about 8 minutes — fast enough to fit into a lunch break, with no recovery time needed.</p>
+        <div class="tx-feature-head">
+            <div class="section-eyebrow" style="justify-content:center">Detail</div>
+            <h2>A Oligio<span style="font-size:0.4em;vertical-align:super">®</span> X that's different in the details.</h2>
         </div>
-        <div class="tx-feature-right">
-            <img src="/assets/images/oligio-x/feature.jpg" alt="Oligio X Treatment Detail">
+        <div class="tx-feature-video" style="background:#000;">
+            <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
+                <source src="https://oligio.com/assets/videos/video_pc.mp4" type="video/mp4">
+            </video>
         </div>
     </div>
 </section>
 
 <!-- Benefits -->
 <section id="benefits" class="tx-benefits">
-    <div class="tx-benefits-inner">
-        <div class="tx-benefits-head">
+    <div class="tx-benefits-head">
+        <div>
             <div class="section-eyebrow">Benefits</div>
-            <h2>Why patients choose Oligio X.</h2>
+            <h2>A single session. A cumulative result.</h2>
         </div>
-        <div class="tx-benefits-grid">
-            <div class="benefit-item">
-                <div class="benefit-num">01</div>
-                <h3>Fine Wrinkle Improvement</h3>
-                <p>Ideal for effectively treating fine lines around the eyes and mouth — areas where surface treatments often fall short.</p>
-            </div>
-            <div class="benefit-item">
-                <div class="benefit-num">02</div>
-                <h3>Enhanced Elasticity &amp; Hydration</h3>
-                <p>For those seeking both lifting and deep hydration. Collagen regeneration improves firmness from within while the skin holds moisture better.</p>
-            </div>
-            <div class="benefit-item">
-                <div class="benefit-num">03</div>
-                <h3>Fast &amp; Gentle Lifting</h3>
-                <p>Achieves visible lifting results in a short procedure time using radiofrequency energy. Pain-free without anesthesia — return to daily activities immediately.</p>
-            </div>
-            <div class="benefit-item">
-                <div class="benefit-num">04</div>
-                <h3>Cost-Effective Repeat Care</h3>
-                <p>Faster and more affordable than Thermage, while delivering comparable collagen regeneration — making consistent maintenance accessible.</p>
-            </div>
+        <p>Oligio X works by heating deep-layer collagen to induce immediate contraction and long-term remodelling — a single session that continues to refine over months.</p>
+    </div>
+    <div class="benefits-grid">
+        <div class="benefit-card">
+            <div class="benefit-num">— 01</div>
+            <h3 class="benefit-title">Single Session</h3>
+            <p class="benefit-desc">One annual session is typically sufficient, making Oligio X one of the most efficient lifting protocols available.</p>
+        </div>
+        <div class="benefit-card">
+            <div class="benefit-num">— 02</div>
+            <h3 class="benefit-title">FDA Cleared</h3>
+            <p class="benefit-desc">Cleared by the US FDA and the Korean MFDS, with demonstrated safety and efficacy across global clinical use.</p>
+        </div>
+        <div class="benefit-card">
+            <div class="benefit-num">— 03</div>
+            <h3 class="benefit-title">No Downtime</h3>
+            <p class="benefit-desc">Mild warmth and brief redness may occur; same-day makeup and normal daily activity are unaffected.</p>
+        </div>
+        <div class="benefit-card">
+            <div class="benefit-num">— 04</div>
+            <h3 class="benefit-title">Progressive Lift</h3>
+            <p class="benefit-desc">Results appear gradually from two to six months, with a firmer, more defined contour that lasts six to twelve months.</p>
         </div>
     </div>
 </section>
 
 <!-- Area -->
 <section id="area" class="tx-area">
-    <div class="tx-area-inner">
-        <div class="tx-area-left">
-            <div class="section-eyebrow">Treatment Areas</div>
-            <h2>Where Oligio X works best.</h2>
-            <p>We are committed to your beauty — from one-on-one consultation to personalized treatment. Each session is calibrated to your skin's structure and the area being addressed.</p>
+    <div class="tx-area-grid">
+        <div class="tx-area-diagram">
+            <img class="tx-area-photo" src="/assets/images/area/woman.png" alt="Treatment areas">
+            <div class="tx-area-overlay">
+                <div class="tx-point-wrap" data-area="forehead" style="top:25%;left:50%"><div class="tx-point"></div></div>
+                <div class="tx-point-wrap" data-area="eyelid" style="top:34%;left:42%"><div class="tx-point"></div></div>
+                <div class="tx-point-wrap" data-area="under-eye" style="top:40%;left:56%"><div class="tx-point"></div></div>
+                <div class="tx-point-wrap" data-area="cheek" style="top:48%;left:40%"><div class="tx-point"></div></div>
+                <div class="tx-point-wrap" data-area="jawline" style="top:55%;left:37%"><div class="tx-point"></div></div>
+                <div class="tx-point-wrap" data-area="neck" style="top:70%;left:58%"><div class="tx-point"></div></div>
+            </div>
         </div>
-        <div class="tx-area-tags">
-            <span class="area-tag">Above eyebrows</span>
-            <span class="area-tag">Around eyes</span>
-            <span class="area-tag">Under eyes</span>
-            <span class="area-tag">Fine wrinkles (full face)</span>
-            <span class="area-tag">Neck</span>
+        <div class="tx-area-text">
+            <div class="section-eyebrow">Areas</div>
+            <h2>Where Oligio X works.</h2>
+            <p>
+                For your beauty, we take full responsibility from <strong>a personal 1:1 consultation through to a customised procedure</strong> — designing each session around the specific areas that matter to you.
+            </p>
+            <div class="area-tags">
+                <span class="area-tag" data-area="forehead">Forehead</span>
+                <span class="area-tag" data-area="eyelid">Eyelid</span>
+                <span class="area-tag" data-area="under-eye">Under Eye</span>
+                <span class="area-tag" data-area="cheek">Cheek</span>
+                <span class="area-tag" data-area="jawline">Jawline</span>
+                <span class="area-tag" data-area="neck">Neck</span>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- Tips -->
 <section id="tip" class="tx-tip">
-    <div class="tx-tip-inner">
-        <div class="section-eyebrow">Aftercare</div>
-        <h2>How to care for your skin after.</h2>
-        <div class="tip-grid">
-            <div class="tip-item">
-                <div class="tip-num">01</div>
-                <p>Avoid washing your face with cold water immediately after the procedure. Use lukewarm water for the first few days.</p>
-            </div>
-            <div class="tip-item">
-                <div class="tip-num">02</div>
-                <p>Ensure adequate hydration and apply moisturizing care — collagen regeneration is supported by well-hydrated skin.</p>
-            </div>
-            <div class="tip-item">
-                <div class="tip-num">03</div>
-                <p>Some redness or mild irritation may occur depending on individual skin conditions. This typically subsides within 2–3 days, or up to a week in rare cases.</p>
-            </div>
-            <div class="tip-item">
-                <div class="tip-num">04</div>
-                <p>Apply daily sunscreen. UV exposure can compromise the collagen remodeling process.</p>
-            </div>
+    <div class="tx-tip-head">
+        <div class="section-eyebrow" style="justify-content:center">Tips</div>
+        <h2>The Oligio<span style="font-size:0.4em;vertical-align:super">®</span> X specialised tips.</h2>
+    </div>
+    <div class="tip-grid">
+        <div class="tip-card">
+            <div class="tip-card-img"><img src="/assets/images/oligio-x/tips-01.png" alt="Face tip"></div>
+            <div class="tip-num">— Tip 01</div>
+            <h3 class="tip-title">Face Tip · 4.0 cm²</h3>
+            <div class="tip-depth">Designed for facial contouring and jawline definition</div>
+        </div>
+        <div class="tip-card">
+            <div class="tip-card-img"><img src="/assets/images/oligio-x/tips-02.png" alt="Eye tip"></div>
+            <div class="tip-num">— Tip 02</div>
+            <h3 class="tip-title">Eye Tip · 0.25 cm²</h3>
+            <div class="tip-depth">Smaller tip for delicate periorbital treatment</div>
         </div>
     </div>
 </section>
 
 <!-- FAQ -->
 <section id="faq" class="tx-faq">
-    <div class="tx-faq-inner">
-        <div class="section-eyebrow">FAQ</div>
-        <h2>Frequently asked questions.</h2>
-        <div class="faq-list">
-            <details>
-                <summary>What are the effects after the procedure?</summary>
-                <p>As collagen regeneration occurs in the deeper layers of the skin, it helps improve skin sagging, wrinkles, and pores — maintaining healthy and youthful skin. Full results develop over 2–3 months.</p>
-            </details>
-            <details>
-                <summary>How painful is the procedure?</summary>
-                <p>Oligio's Intelligent Cooling System and Vibration Mode minimize discomfort during the procedure, allowing for pain-free treatment without anesthesia.</p>
-            </details>
-            <details>
-                <summary>How long does the procedure take?</summary>
-                <p>Full face (600 shots) takes approximately 15 minutes. Specific areas such as the double chin (300 shots) take about 8 minutes.</p>
-            </details>
-            <details>
-                <summary>How should I care for my skin after the procedure?</summary>
-                <p>Avoid washing your face with cold water, and ensure adequate hydration and moisturizing care for the first few days.</p>
-            </details>
-            <details>
-                <summary>Are there any precautions after the procedure?</summary>
-                <p>Some redness or mild irritation may occur depending on individual skin conditions, but it typically subsides within 2–3 days (up to a week in rare cases). There is no recovery period — resume daily activities immediately.</p>
-            </details>
+    <div class="tx-faq-head">
+        <div>
+            <div class="section-eyebrow">Frequently Asked</div>
+            <h2>Oligio<span style="font-size:0.4em;vertical-align:super">®</span> X Q&amp;A.</h2>
+        </div>
+        <p>Questions we hear most often from patients considering Oligio X. For anything not covered here, please reach out via KakaoTalk or phone.</p>
+    </div>
+    <div class="faq-list">
+        <div class="faq-item">
+            <div class="faq-q">
+                <div class="faq-q-num">Q 01</div>
+                <div class="faq-q-text">How long do Oligio X results last?</div>
+                <div class="faq-q-toggle">+</div>
+            </div>
+            <div class="faq-a">
+                <p>Results develop gradually between two and six months after a single session, with variation depending on individual skin condition and the natural pace of ageing.</p>
+                <p>In general, the effect of Oligio X is maintained for six to twelve months.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">
+                <div class="faq-q-num">Q 02</div>
+                <div class="faq-q-text">How long does the procedure take?</div>
+                <div class="faq-q-toggle">+</div>
+            </div>
+            <div class="faq-a">
+                <p>Excluding anaesthesia time, a Oligio X session typically takes between 40 and 60 minutes.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">
+                <div class="faq-q-num">Q 03</div>
+                <div class="faq-q-text">Is Oligio X safe?</div>
+                <div class="faq-q-toggle">+</div>
+            </div>
+            <div class="faq-a">
+                <p>Oligio X has received both US FDA approval and Korean MFDS clearance, with safety and efficacy verified through extensive clinical use.</p>
+                <p>At Mili Clinic, Oligio X is carried out carefully on the basis of extensive clinical experience — pursuing the highest standards of both safety and result.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">
+                <div class="faq-q-num">Q 04</div>
+                <div class="faq-q-text">Is there downtime after the procedure?</div>
+                <div class="faq-q-toggle">+</div>
+            </div>
+            <div class="faq-a">
+                <p>Some warmth and mild redness may occur on the day of treatment, but these fade gradually and normal daily activity is unaffected.</p>
+                <p>Same-day makeup is possible.</p>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- Related treatments -->
 <section class="tx-related">
-    <div class="tx-related-inner">
-        <div class="section-eyebrow">— Related Treatments</div>
-        <h2>Layered, complementary lifting.</h2>
+    <div class="container">
+        <div class="tx-related-head">
+            <h2>Other lifting treatments.</h2>
+        </div>
         <div class="related-grid">
             <a href="/en/ulthera.html" class="related-card">
-                <div class="related-card-eyebrow">HIFU Lifting</div>
-                <h3>Ulthera</h3>
-                <p>The gold-standard HIFU lifting targeting the SMAS layer — an ideal companion to Oligio X for layered, multi-depth care.</p>
+                <div class="related-img"><img src="/assets/images/equipment/ulthera.png" alt="Ulthera"></div>
+                <div class="related-cat">— Lifting · HIFU</div>
+                <div class="related-name">Ulthera</div>
             </a>
             <a href="/en/tuneface.html" class="related-card">
-                <div class="related-card-eyebrow">Tune Lifting</div>
-                <h3>TuneFace</h3>
-                <p>RF and ultrasound combined with vacuum technology — for those seeking a different RF approach or combination treatment.</p>
+                <div class="related-img"><img src="/assets/images/equipment/tuneface.jpg" alt="TuneFace"></div>
+                <div class="related-cat">— Lifting · Multi-Modal</div>
+                <div class="related-name">TuneFace</div>
             </a>
-            <a href="/en/inmode.html" class="related-card">
-                <div class="related-card-eyebrow">Bipolar RF</div>
-                <h3>InMode</h3>
-                <p>Bipolar RF with high-pressure pulses for fat reduction and contour refinement — complementary to Oligio X's lifting effect.</p>
+            <a href="/en/thread-lifting.html" class="related-card">
+                <div class="related-img"><img src="/assets/images/equipment/titanium.png" alt="Thread Lifting"></div>
+                <div class="related-cat">— Lifting · Thread</div>
+                <div class="related-name">Thread Lifting</div>
             </a>
         </div>
     </div>
