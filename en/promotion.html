@@ -113,6 +113,25 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .promo-card-title em{font-style: normal;font-weight:300}
 .promo-card-divider{width:32px;height:1px;background:var(--gold);margin-bottom:20px}
 .promo-card-desc{font-size:14px;font-weight:300;line-height:1.75;color:var(--ink);opacity:.85;margin-bottom:28px;flex-grow:1}
+.promo-hero{padding:clamp(80px,12vw,140px) 0 clamp(60px,8vw,100px);text-align:center}
+.promo-hero-inner{max-width:880px;margin:0 auto;padding:0 var(--pad-x)}
+.promo-hero-eyebrow{font-size:12px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-bottom:24px}
+.promo-hero-title{font-family:var(--display);font-size:clamp(40px,5.5vw,72px);font-weight:300;line-height:1.1;letter-spacing:-0.02em;margin-bottom:32px;color:var(--ink)}
+.promo-hero-title em{font-style:normal;font-weight:300}
+.promo-hero-desc{font-size:16px;font-weight:300;line-height:1.8;color:var(--ink);opacity:0.85}
+.promo-grid-head{margin-bottom:clamp(48px,6vw,72px)}
+.promo-card-price{margin-top:20px;padding-top:18px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:4px}
+.price-now{font-size:18px;font-weight:400;color:var(--ink);letter-spacing:-0.01em}
+.price-was{font-size:13px;font-weight:300;color:var(--muted);text-decoration:line-through}
+.promo-reserve-inner{max-width:900px;margin:0 auto;padding:0 var(--pad-x);text-align:center}
+.promo-reserve h2{font-family:var(--display);font-size:clamp(28px,3.5vw,42px);font-weight:300;line-height:1.25;letter-spacing:-0.015em;margin-bottom:24px}
+.promo-reserve h2 em{font-style:normal;font-weight:300}
+.promo-reserve-desc{font-size:14px;font-weight:300;line-height:1.7;color:var(--ink);opacity:0.75;margin-bottom:40px;max-width:680px;margin-left:auto;margin-right:auto}
+.promo-reserve-actions{display:flex;gap:32px;justify-content:center;flex-wrap:wrap}
+.promo-reserve-actions a{font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);padding-bottom:6px;border-bottom:1px solid var(--ink);transition:opacity .25s}
+.promo-reserve-actions a:hover{opacity:0.6}
+@media (max-width:900px){.promo-grid{grid-template-columns:1fr}}
+@media (min-width:901px) and (max-width:1200px){.promo-grid{grid-template-columns:repeat(2,1fr)}}
 .promo-card-cta{display:inline-flex;align-items:center;justify-content:space-between;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;font-weight:500;color:var(--ink);padding-top:18px;border-top:1px solid var(--line);width:100%}
 .promo-card-cta svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5;transition:transform .3s}
 .promo-card.active .promo-card-cta svg{transform:rotate(180deg)}
@@ -398,318 +417,159 @@ em, cite { font-style: normal; }
     </div>
 </header>
 
-<!-- Promotion Grid - 3 Cards -->
+<!-- Hero -->
+<section class="promo-hero">
+    <div class="promo-hero-inner">
+        <div class="promo-hero-eyebrow">— 2026.01.26 ~</div>
+        <h1 class="promo-hero-title">
+            Red Luck Unfolds —<br>
+            <em>Full Line Up Package.</em>
+        </h1>
+        <p class="promo-hero-desc">
+            In 2026, a crimson steed rises in flame, awakening the world. As we welcome Seollal — the year's most meaningful celebration — may your year unfold in radiant brilliance. At this special beginning where everything feels possible, Mili Clinic Sinchon is with you in your most luminous moments.
+        </p>
+    </div>
+</section>
+
+<!-- Promotion Packages Grid -->
 <section class="promo-grid-section">
     <div class="promo-grid-inner">
+        <div class="promo-grid-head">
+            <div class="section-eyebrow">— Promotion Treatments</div>
+            <h2 class="promo-details-title">Nine packages, <em>shaped for your moment</em>.</h2>
+        </div>
         <div class="promo-grid">
 
-            <!-- 01 Aligned Beauty -->
-            <div class="promo-card" data-target="details-aligned">
-                <div class="promo-card-image">
-                    <img src="/assets/images/promotion/aligned-beauty.jpg" alt="Aligned Beauty">
-                </div>
+            <article class="promo-card">
                 <div class="promo-card-body">
-                    <div class="promo-card-period">2026.02 —</div>
-                    <h3 class="promo-card-title"><em>Aligned</em> Beauty</h3>
+                    <div class="promo-card-period">— Water Glow Lifting</div>
+                    <h3 class="promo-card-title">Water Glow <em>Lifting Package</em></h3>
                     <div class="promo-card-divider"></div>
-                    <p class="promo-card-desc">Not about changing the face — but refining natural balance. TuneFace, Ultherapy, and signature boosters curated to restore quiet harmony.</p>
-                    <span class="promo-card-cta">
-                        View Details
-                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-                    </span>
+                    <p class="promo-card-desc">TuneFace 60kJ + Titanium 40kJ + Water Botox + LDM Water-Drop Lifting</p>
+                    <div class="promo-card-price">
+                        <span class="price-now">1,530,000 KRW</span>
+                        <span class="price-was">1,750,000</span>
+                    </div>
                 </div>
-            </div>
+            </article>
 
-            <!-- 02 MILI REBORN CELL -->
-            <div class="promo-card" data-target="details-reborn">
-                <div class="promo-card-image">
-                    <img src="/assets/images/promotion/reborn-cell.jpg" alt="MILI Reborn Cell">
-                </div>
+            <article class="promo-card">
                 <div class="promo-card-body">
-                    <div class="promo-card-period">2025.09 —</div>
-                    <h3 class="promo-card-title"><em>MILI</em> Reborn Cell</h3>
+                    <div class="promo-card-period">— Mid-Face Tightening</div>
+                    <h3 class="promo-card-title">Mid-Face <em>Tightening Package</em></h3>
                     <div class="promo-card-divider"></div>
-                    <p class="promo-card-desc">Restoring the skin's natural regenerative power through stem cell therapy — awakening the body's own capacity for renewal.</p>
-                    <span class="promo-card-cta">
-                        View Details
-                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-                    </span>
+                    <p class="promo-card-desc">Ulthera 300 shots + Titanium 40kJ + Fasella Meridian Massage</p>
+                    <div class="promo-card-price">
+                        <span class="price-now">1,770,000 KRW</span>
+                        <span class="price-was">1,950,000</span>
+                    </div>
                 </div>
-            </div>
+            </article>
 
-            <!-- 03 Safe Sedation -->
-            <div class="promo-card" data-target="details-sedation">
-                <div class="promo-card-image">
-                    <img src="/assets/images/promotion/safe-sedation.png" alt="Safe Sedation">
-                </div>
+            <article class="promo-card">
                 <div class="promo-card-body">
-                    <div class="promo-card-period">2025.01 —</div>
-                    <h3 class="promo-card-title"><em>Fides</em> Care.</h3>
+                    <div class="promo-card-period">— Pore Care</div>
+                    <h3 class="promo-card-title">Pore <em>Care Package</em></h3>
                     <div class="promo-card-divider"></div>
-                    <p class="promo-card-desc">Trust that stays awake while you rest. A safe sedation program designed around your comfort and absolute safety during every procedure.</p>
-                    <span class="promo-card-cta">
-                        View Details
-                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-                    </span>
+                    <p class="promo-card-desc">Oligio X 300 shots + Rejuran Skin Booster + DermaShine + LHALA Peel + LDM Calming &amp; Regeneration</p>
+                    <div class="promo-card-price">
+                        <span class="price-now">1,200,000 KRW</span>
+                        <span class="price-was">1,370,000</span>
+                    </div>
                 </div>
-            </div>
+            </article>
+
+            <article class="promo-card">
+                <div class="promo-card-body">
+                    <div class="promo-card-period">— Injection-Free Eye</div>
+                    <h3 class="promo-card-title">Injection-Free <em>Eye Package</em></h3>
+                    <div class="promo-card-divider"></div>
+                    <p class="promo-card-desc">Eye Ulthera 200 shots + TuneEyes + Fasella Eye Contouring</p>
+                    <div class="promo-card-price">
+                        <span class="price-now">1,100,000 KRW</span>
+                        <span class="price-was">1,360,000</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="promo-card">
+                <div class="promo-card-body">
+                    <div class="promo-card-period">— Porcelain Skin</div>
+                    <h3 class="promo-card-title">Porcelain <em>Skin Package</em></h3>
+                    <div class="promo-card-divider"></div>
+                    <p class="promo-card-desc">Dual Hyaluronic Acid + DermaShine + Oxygen Peel + Pico Toning + Genesis Laser + Brightening Iontophoresis</p>
+                    <div class="promo-card-price">
+                        <span class="price-now">550,000 KRW</span>
+                        <span class="price-was">690,000</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="promo-card">
+                <div class="promo-card-body">
+                    <div class="promo-card-period">— Cold-Weather Redness</div>
+                    <h3 class="promo-card-title">Cold-Weather <em>Redness Care</em></h3>
+                    <div class="promo-card-divider"></div>
+                    <p class="promo-card-desc">Pink Peel + Astrodome + Genesis Laser + LDM Redness Care</p>
+                    <div class="promo-card-price">
+                        <span class="price-now">540,000 KRW</span>
+                        <span class="price-was">570,000</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="promo-card">
+                <div class="promo-card-body">
+                    <div class="promo-card-period">— Inflammatory Acne</div>
+                    <h3 class="promo-card-title">Emergency <em>Inflammatory Acne Care</em></h3>
+                    <div class="promo-card-divider"></div>
+                    <p class="promo-card-desc">Potenza + ExoHealer + Acne Peel + Extraction + Plasonic + Sono Calming Care</p>
+                    <div class="promo-card-price">
+                        <span class="price-now">710,000 KRW</span>
+                        <span class="price-was">790,000</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="promo-card">
+                <div class="promo-card-body">
+                    <div class="promo-card-period">— Premium Barrier</div>
+                    <h3 class="promo-card-title">Premium <em>Skin Barrier Care</em></h3>
+                    <div class="promo-card-divider"></div>
+                    <p class="promo-card-desc">YF Peel + Full-Face Extraction + Gold PTT &amp; Genesis + LDM</p>
+                    <div class="promo-card-price">
+                        <span class="price-now">490,000 KRW</span>
+                        <span class="price-was">600,000</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="promo-card">
+                <div class="promo-card-body">
+                    <div class="promo-card-period">— 5-Session Pass</div>
+                    <h3 class="promo-card-title">MILI Signature <em>Premium Care 5-Session Pass</em></h3>
+                    <div class="promo-card-divider"></div>
+                    <p class="promo-card-desc">Premium signature care across five sessions, customized to your skin's evolving condition.</p>
+                    <div class="promo-card-price">
+                        <span class="price-now">800,000 KRW</span>
+                        <span class="price-was">1,000,000</span>
+                    </div>
+                </div>
+            </article>
 
         </div>
     </div>
 </section>
 
-<!-- Accordion Details: 01 Aligned Beauty -->
-<div class="promo-details" id="details-aligned">
-    <div class="promo-details-inner">
-        <div class="promo-details-head">
-            <div class="promo-details-eyebrow">— Aligned Beauty · 2026.02 —</div>
-            <h2 class="promo-details-title">Twelve programs for <em>quiet alignment</em>.</h2>
-            <p class="promo-details-desc">Aligned Beauty is not about changing the face, but about respecting your natural balance and calmly refining the skin and overall impression. TuneFace, Ultherapy, Whitening, Botox &amp; Fillers, and Skin Boosters focus on completing natural harmony.</p>
-            <p class="promo-details-note">* All procedures are subject to an additional 10% VAT.</p>
-        </div>
-        <div class="promo-packages">
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Tune Body + MiliFit 200 + AccuCurve or NobleShape</div>
-                    <div class="promo-package-sub">Tune Body (1 area) · MiliFit 200 · choose 1 of AccuCurve or NobleShape</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">1,020,000 KRW</span>
-                    <span class="promo-package-final">900,000 KRW</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Tune Dual + Sculptra 1 vial</div>
-                    <div class="promo-package-sub">Dual lifting with collagen biostimulator</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">2,100,000 KRW</span>
-                    <span class="promo-package-final">1,700,000 KRW</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Tune Triple + Potenza + Sono Styler</div>
-                    <div class="promo-package-sub">Triple tuning · Potenza (Pore Tip) · Sono Styler</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">2,250,000 KRW</span>
-                    <span class="promo-package-final">1,800,000 KRW</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Tune Triple + Skin Booster + Sono Styler</div>
-                    <div class="promo-package-sub">Rejuran, Exosome, Filorga, or Juvelook · Sono Styler</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">2,500,000 KRW</span>
-                    <span class="promo-package-final">2,000,000 KRW</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Tune Triple + Juvelook Volume + Potenza + Skin Booster</div>
-                    <div class="promo-package-sub">Juvelook Volume 1 vial · Potenza · additional Skin Booster</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">3,250,000 KRW</span>
-                    <span class="promo-package-final">2,700,000 KRW</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Tune Triple + Stem Cell Therapy + Sono Styler</div>
-                    <div class="promo-package-sub">Stem Cell Therapy 30cc · Sono Styler</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">3,500,000 KRW</span>
-                    <span class="promo-package-final">3,100,000 KRW</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Ultherapy 300 shots + Millicut 12cc + Medical Meridian Therapy</div>
-                    <div class="promo-package-sub">Deep lifting · detox-focused body care</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">1,860,000 KRW</span>
-                    <span class="promo-package-final">1,700,000 KRW</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Lorien / Filorga Skin Booster + 1-Day Toning + Rejuran Tone-Up + Rejuran Pack</div>
-                    <div class="promo-package-sub">Full skin booster journey with toning and pack</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">1,000,000 KRW</span>
-                    <span class="promo-package-final">700,000 KRW</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Neck Line Filler (Belotero) + Tune Red or Coaxipolar</div>
-                    <div class="promo-package-sub">Belotero 2cc · choose 1 of Tune Red or Coaxipolar</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">1,500,000 KRW</span>
-                    <span class="promo-package-final">1,200,000 KRW</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Wrinkle Botox + Skin Botox</div>
-                    <div class="promo-package-sub">3 areas Wrinkle Botox · Full Face Skin Botox · Xeomin</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">660,000 KRW</span>
-                    <span class="promo-package-final">450,000 KRW</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Rejuran Full Set + Sono Styler</div>
-                    <div class="promo-package-sub">Rejuran 4cc · Eye Rejuran 2cc · Lip Rejuran 1cc · Sono Styler</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">2,000,000 KRW</span>
-                    <span class="promo-package-final">1,500,000 KRW</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Juvelook Skin Booster + Juvelook Volume</div>
-                    <div class="promo-package-sub">Juvelook Skin Booster · Juvelook Volume 1 vial</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">1,000,000 KRW</span>
-                    <span class="promo-package-final">890,000 KRW</span>
-                </div>
-            </div>
-
-        </div>
-        <div class="promo-details-cta">
-            <a href="https://pf.kakao.com/_mxadwxb/chat" target="_blank" rel="noopener">
-                Inquire via KakaoTalk
-                <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-            </a>
-        </div>
-    </div>
-</div>
-
-<!-- Accordion Details: 02 MILI Reborn Cell -->
-<div class="promo-details" id="details-reborn">
-    <div class="promo-details-inner">
-        <div class="promo-details-head">
-            <div class="promo-details-eyebrow">— MILI Reborn Cell · 2025.09 —</div>
-            <h2 class="promo-details-title">Born again, <em>from the origin</em>.</h2>
-            <p class="promo-details-desc">The body continues through the endless cycle of cells. Within the flow of death and rebirth, stem cells hold the power of the deepest origin. Stem cell treatment awakens that hidden force, restoring the skin's natural regenerative power.</p>
-            <p class="promo-details-note">* All procedures are subject to an additional 10% VAT.</p>
-        </div>
-        <div class="promo-packages">
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Basic</div>
-                    <div class="promo-package-sub">REBORN CELL 30cc (Full Face) · Placenta Injection · REBORN CELL Amenity Gift · Stem Cell 3cc + Skin Booster 2cc Full Face Dermashine 5cc · PRP Sono Absorption Care · LED Regeneration Laser · Modeling Pack</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">1,650,000 KRW</span>
-                    <span class="promo-package-final">1,400,000 KRW</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Standard</div>
-                    <div class="promo-package-sub">REBORN CELL 120cc (Full Face + IV Infusion) · Tune Triple Lifting · Placenta Injection · REBORN CELL Amenity Gift · Stem Cell 3cc + Skin Booster 2cc Full Face Dermashine 5cc · IV Infusion 9cc · PRP Sono Absorption Care · LED Regeneration Laser · Modeling Pack</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">6,150,000 KRW</span>
-                    <span class="promo-package-final">4,000,000 KRW</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">High-end</div>
-                    <div class="promo-package-sub">REBORN CELL 240cc (Full Face + Neck + IV Infusion) · Thermage 900 shots · Skin Botox · Sedation Anesthesia · Placenta Injection · REBORN CELL Amenity Gift · Stem Cell 6cc + Skin Booster 4cc Full Face Dermashine 10cc · IV Infusion 18cc · PRP Sono Absorption Care · LED Regeneration Laser · Modeling Pack</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">11,900,000 KRW</span>
-                    <span class="promo-package-final">9,000,000 KRW</span>
-                </div>
-            </div>
-
-        </div>
-        <div class="promo-details-cta">
-            <a href="https://pf.kakao.com/_mxadwxb/chat" target="_blank" rel="noopener">
-                Inquire via KakaoTalk
-                <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-            </a>
-        </div>
-    </div>
-</div>
-
-<!-- Accordion Details: 03 Fides Care -->
-<div class="promo-details" id="details-sedation">
-    <div class="promo-details-inner">
-        <div class="promo-details-head">
-            <div class="promo-details-eyebrow">— Fides Care · 2025.01 —</div>
-            <h2 class="promo-details-title">Trust that stays <em>awake while you rest</em>.</h2>
-            <p class="promo-details-desc">MILI CLINIC presents its Safe Sedation Program, putting your comfort and safety first. Every procedure is individually calibrated with anesthesia specialists, ensuring a quiet, controlled experience from start to finish.</p>
-        </div>
-        <div class="promo-packages">
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Fides Care : Safe Sedation Program</div>
-                    <div class="promo-package-sub">Comfort-first sedation protocol designed around each patient's physiology and procedure scope</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-final">200,000 KRW</span>
-                </div>
-            </div>
-
-        </div>
-        <div class="promo-details-cta">
-            <a href="https://pf.kakao.com/_mxadwxb/chat" target="_blank" rel="noopener">
-                Inquire via KakaoTalk
-                <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-            </a>
-        </div>
-    </div>
-</div>
-
-<!-- Reservation CTA -->
+<!-- Reserve CTA -->
 <section class="promo-reserve">
     <div class="promo-reserve-inner">
-        <div class="promo-reserve-eyebrow">— Inquire</div>
         <h2>For current pricing and availability, <em>reach out directly</em>.</h2>
-        <p>The fastest route to current program details is through KakaoTalk or by phone. Our team will respond with the latest information and help you find the right consultation time.</p>
+        <p class="promo-reserve-desc">Promotion pricing reflects current period rates. Final pricing may vary based on consultation outcomes. For details and to reserve your visit, please contact Mili Clinic Sinchon.</p>
         <div class="promo-reserve-actions">
-            <a href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener" class="promo-reserve-btn primary">
-                Reserve a Consultation
-                <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-            </a>
-            <a href="https://pf.kakao.com/_mxadwxb/chat" target="_blank" rel="noopener" class="promo-reserve-btn secondary">
-                KakaoTalk Inquiry
-                <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-            </a>
+            <a href="https://pf.kakao.com/_mxadwxb" target="_blank" rel="noopener">KakaoTalk &rarr;</a>
+            <a href="https://api.whatsapp.com/send/?phone=821023834697&amp;text&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">WhatsApp &rarr;</a>
+            <a href="mailto:sinchon@miliclinic.com">Email &rarr;</a>
         </div>
     </div>
 </section>
