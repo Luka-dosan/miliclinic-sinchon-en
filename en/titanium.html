@@ -27,17 +27,38 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-:root{--ink:#0F0F10;--bone:#F4F1EB;--paper:#FAF8F4;--white:#FFFFFF;--muted:#8A867F;--line:#DEDAD1;--accent:#1C2438;--pad-x:clamp(24px,5vw,96px);--container:1440px;
+
+:root{
+    --ink: #0F0F10;
+    --bone: #F4F1EB;
+    --paper: #FAF8F4;
+    --white: #FFFFFF;
+    --muted: #8A867F;
+    --line: #DEDAD1;
+    --accent: #1C2438;
+    --pad-x: clamp(24px, 5vw, 96px);
+    --container: 1440px;
+
     --display: "SF Pro Display", system-ui, -apple-system, "Inter", sans-serif;
 }
-body{font-family: "SF Pro Text", system-ui, -apple-system, "Inter", sans-serif;color:var(--ink);background:var(--paper);font-weight:400;line-height:1.55;letter-spacing:-0.01em;-webkit-font-smoothing:antialiased}
+
+body{
+    font-family: "SF Pro Text", system-ui, -apple-system, "Inter", sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    font-weight: 400;
+    line-height: 1.55;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+}
+
 img{max-width:100%;height:auto;display:block}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
 .container{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
 
 
-/* Top Bar */
+/* ——— Top Bar ——— */
 .top-bar{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line);background:var(--paper)}
 .top-bar-inner{display:flex;justify-content:space-between;align-items:center;padding:12px var(--pad-x)}
 .lang-list{display:flex;gap:14px;list-style:none}
@@ -47,7 +68,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .top-links{display:flex;gap:24px}
 .top-links a:hover{color:var(--ink)}
 
-/* Header */
+/* ——— Header ——— */
 .site-header{position:sticky;top:0;z-index:100;background:var(--paper);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
 .header-inner{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:22px var(--pad-x)}
 .logo{font-size:17px;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;justify-self:start}
@@ -61,44 +82,79 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .header-cta:hover{background:var(--ink);color:var(--paper)}
 @media (max-width:960px){.nav{display:none}.header-inner{grid-template-columns:1fr auto}.logo{grid-column:1}.header-cta{grid-column:2}}
 
-/* Hero — wave bg + device (same pattern as ulthera; tx-hero namespace) */
-.tx-hero{position:relative;min-height:calc(100vh - 70px);overflow:hidden}
-.tx-hero-visual{position:absolute;inset:0;z-index:0;pointer-events:none}
+/* ——— Hero ——— */
+.tx-hero{
+    position: relative;
+    min-height: calc(100vh - 70px);
+    overflow: hidden;
+}
+.tx-hero-visual{
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
 .tx-hero-bg{
-    position:absolute;
-    inset:0;
-    background-image:url('/assets/images/titanium/bg.jpg');
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+    position: absolute;
+    inset: 0;
+    background-image: url('/assets/images/titanium/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .tx-hero-device{
-    position:absolute;
-    right:0;
-    bottom:0;
-    height:80%;
-    width:auto;
-    object-fit:contain;
-    opacity:0;
-    transform:translateX(30%);
-    will-change:transform,opacity;
-    animation:slideInRightTh 1.4s cubic-bezier(0.2,0.8,0.2,1) 0.3s forwards;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 80%;
+    width: auto;
+    object-fit: contain;
+    opacity: 0;
+    transform: translateX(30%);
+    will-change: transform, opacity;
+    animation: slideInRight 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
 }
-.tx-hero-device{right: clamp(40px, 6vw, 120px); height: 90%;}
-@keyframes slideInRightTh{
-    to{opacity:1;transform:translateX(0);}
+@keyframes slideInRight{
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
-.tx-hero > *:not(.tx-hero-visual){
-    position:relative;
-    z-index:2;
-    max-width:60%;
+
+.tx-hero > *:not(.tx-hero-visual):not(.tx-hero-scroll){
+    position: relative;
+    z-index: 2;
+    max-width: 60%;
 }
-.tx-hero-inner{position:relative;z-index:2;min-height:calc(100vh - 70px);display:flex;flex-direction:column;justify-content:space-between;padding:60px var(--pad-x) 40px;color:var(--ink);box-sizing:border-box}
-.tx-hero-top{display:flex;gap:10px;align-items:center;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);opacity:.75}
-.tx-hero-top a{transition:opacity .2s}
-.tx-hero-top a:hover{opacity:1}
-.tx-hero-top .sep{opacity:.5}
-.tx-hero-center{margin-top:auto;margin-bottom:auto}
+
+.tx-hero-inner{
+    position: relative;
+    z-index: 2;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px var(--pad-x) 40px;
+    color: var(--ink);
+    box-sizing: border-box;
+}
+.tx-hero-top{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink);
+    opacity: .75;
+}
+.tx-hero-top a{transition: opacity .2s}
+.tx-hero-top a:hover{opacity: 1}
+.tx-hero-top .sep{opacity: .5}
+.tx-hero-center{
+    margin-top: auto;
+    margin-bottom: auto;
+}
 .tx-hero-eyebrow{font-family:var(--display);font-weight:400;
     font-size: 12px;
     letter-spacing: 0.45em;
@@ -136,17 +192,64 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     opacity: 0.9;
 }
 .tx-hero-title{font-family:var(--display);
-    font-size:clamp(54px,10vw,160px);font-weight:600;line-height:0.92;letter-spacing:-0.025em;margin-bottom:30px;color:var(--ink)}
-.tx-hero-title .reg{font-size:0.35em;vertical-align:super;opacity:.7;margin-left:8px;font-weight:300;letter-spacing:0;color:var(--ink)}
-.tx-hero-title .line-2{display:block;padding-left:clamp(20px,5vw,80px)}
-.tx-hero-sub{max-width:520px;font-size:16px;font-weight:300;line-height:1.7;opacity:0.9;color:var(--ink)}
-.tx-hero-sub strong{font-weight:500}
-.tx-hero-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink);opacity:.75}
-.tx-hero-meta{display:flex;gap:48px}
-.tx-hero-meta-item .label{color:var(--muted);opacity:1;margin-bottom:6px;font-size:10px}
-.tx-hero-meta-item .value{font-size:14px;letter-spacing:0.08em;text-transform:none;font-weight:300;color:var(--ink)}
+    font-size: clamp(64px, 11vw, 180px);
+    font-weight:600;
+    line-height: 0.92;
+    letter-spacing: -0.025em;
+    margin-bottom: 30px;
+    color: var(--ink);
+}
+.tx-hero-title .reg{
+    font-size: 0.35em;
+    vertical-align: super;
+    opacity: .7;
+    margin-left: 8px;
+    font-weight: 300;
+    letter-spacing: 0;
+    color: var(--ink);
+}
+.tx-hero-sub{
+    max-width: 520px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--ink);
+    opacity: 0.9;
+}
+.tx-hero-sub strong{font-weight: 500}
+.tx-hero-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 32px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink);
+    opacity: .75;
+}
+.tx-hero-meta{
+    display: flex;
+    gap: 48px;
+}
+.tx-hero-meta-item .label{
+    color: var(--muted);
+    opacity: 1;
+    margin-bottom: 6px;
+    font-size: 10px;
+}
+.tx-hero-meta-item .value{
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: none;
+    font-weight: 300;
+    color: var(--ink);
+}
 .tx-hero .tx-hero-cta-primary,
-.tx-hero .tx-hero-cta-secondary{color:var(--ink);border-color:var(--ink)}
+.tx-hero .tx-hero-cta-secondary{
+    color: var(--ink);
+    border-color: var(--ink);
+}
 .tx-hero-scroll{
     position:absolute;
     right:var(--pad-x);
@@ -158,7 +261,13 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     opacity:0.7;
     z-index:3;
 }
-@media (max-width:700px){.tx-hero{min-height:calc(60vh - 70px)}.tx-hero-inner{min-height:calc(60vh - 70px);padding:32px var(--pad-x) 24px}.tx-hero-bottom{flex-direction:column;align-items:flex-start}.tx-hero-meta{gap:24px}.tx-hero-scroll{bottom:24px;font-size:10px}}
+@media (max-width: 700px){
+    .tx-hero{min-height: calc(60vh - 70px)}
+    .tx-hero-inner{min-height: calc(60vh - 70px); padding: 32px var(--pad-x) 24px}
+    .tx-hero-bottom{flex-direction: column; align-items: flex-start}
+    .tx-hero-meta{gap: 24px}
+    .tx-hero-scroll{bottom: 24px; font-size: 10px}
+}
 @media (max-width:640px){
     .tx-hero{min-height:calc(60vh - 70px);padding:0}
     .tx-hero-inner{min-height:calc(60vh - 70px);padding:32px var(--pad-x) 24px;justify-content:space-between;gap:24px}
@@ -174,57 +283,224 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     .tx-hero-meta-item .label{font-size:9px}
     .tx-hero-meta-item .value{font-size:12px}
 }
-@media (max-width:768px){
-    .tx-hero-device{height:45%;opacity:0.2;animation:none;transform:translateX(20%)}
-    .tx-hero > *:not(.tx-hero-visual){max-width:100%}
+
+@media (max-width: 768px){
+    .tx-hero-device{
+        height: 45%;
+        opacity: 0.2;
+        animation: none;
+        transform: translateX(20%);
+    }
+    .tx-hero > *:not(.tx-hero-visual):not(.tx-hero-scroll){
+        max-width: 100%;
+    }
 }
 
 
-/* Sticky sub-nav */
-.tx-subnav{position:sticky;top:72px;z-index:40;background:var(--paper);border-bottom:1px solid var(--line);padding:20px 0}
-.tx-subnav-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x);display:flex;gap:32px;align-items:center;overflow-x:auto;scrollbar-width:none}
-.tx-subnav-inner::-webkit-scrollbar{display:none}
-.tx-subnav-label{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
-.tx-subnav a{font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink);white-space:nowrap;padding:6px 0;border-bottom:1px solid transparent;transition:border-color .2s,color .2s}
-.tx-subnav a:hover,.tx-subnav a.active{border-bottom-color:var(--ink)}
+/* ——— Sticky sub-nav ——— */
+.tx-subnav{
+    position: sticky;
+    top: 72px;
+    z-index: 40;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    padding: 20px 0;
+}
+.tx-subnav-inner{
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+.tx-subnav-inner::-webkit-scrollbar{display: none}
+.tx-subnav-label{
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+}
+.tx-subnav a{
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink);
+    white-space: nowrap;
+    padding: 6px 0;
+    border-bottom: 1px solid transparent;
+    transition: border-color .2s, color .2s;
+}
+.tx-subnav a:hover, .tx-subnav a.active{
+    border-bottom-color: var(--ink);
+}
 @media (max-width: 700px) {
     .tx-subnav { top: 56px; padding: 14px 0; }
 }
 
 
-/* Section common */
-.section-eyebrow{font-family:var(--display);font-weight:400;font-size:12px;letter-spacing:0.4em;text-transform:uppercase;color:var(--muted);display:inline-flex;align-items:center;gap:10px;margin-bottom:28px}
-.section-eyebrow::before{content:'';width:24px;height:1px;background:var(--muted)}
-
-/* Principle / System */
-.tx-principle{padding:clamp(80px,12vw,160px) 0}
-.tx-principle-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x);display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(40px,6vw,120px);align-items:start}
-.tx-principle-left{position:sticky;top:140px}
+/* ——— Philosophy / Principle ——— */
+.tx-principle{
+    padding: clamp(80px, 12vw, 160px) 0;
+}
+.tx-principle-inner{
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: clamp(40px, 6vw, 120px);
+    align-items: start;
+}
+.tx-principle-left{
+    position: sticky;
+    top: 140px;
+}
+.section-eyebrow{font-family:var(--display);font-weight:400;
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+.section-eyebrow::before{
+    content:'';
+    width: 24px;
+    height: 1px;
+    background: var(--muted);
+}
 .tx-principle-left h2{font-family:var(--display);
-    font-size:clamp(32px,4.5vw,56px);font-weight:600;line-height:1.1;letter-spacing:-0.02em;max-width:8em}
-.tx-principle-right .lead{font-size:20px;font-weight:300;line-height:1.7;margin-bottom:32px;color:var(--ink);letter-spacing:-0.005em}
-.tx-principle-right p{font-size:16px;font-weight:300;line-height:1.9;color:var(--ink);max-width:640px}
-.tx-principle-right p strong{font-weight:500}
-.pillars-inline{margin-top:60px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;padding-top:40px;border-top:1px solid var(--line)}
-.pillar-mini h4{font-size:13px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px}
-.pillar-mini p{font-size:13px;color:var(--muted);line-height:1.75;font-weight:300}
-@media (max-width:900px){.tx-principle-inner{grid-template-columns:1fr;gap:40px}.tx-principle-left{position:static}.pillars-inline{grid-template-columns:1fr;gap:24px}}
+    font-size: clamp(32px, 4.5vw, 56px);
+    font-weight:600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    max-width: 8em;
+}
+.tx-principle-right .lead{
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 32px;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+}
+.tx-principle-right p{
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--ink);
+    max-width: 640px;
+}
+.tx-principle-right p strong{font-weight: 500}
 
-/* System feature block — thermage specific 3-image row */
-.tx-system{padding:clamp(60px,10vw,120px) 0;background:var(--bone)}
-.tx-system-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
-.tx-system-head{text-align:center;margin-bottom:72px}
-.tx-system-head h2{font-family:var(--display);
-    font-size:clamp(32px,4.5vw,56px);font-weight:600;line-height:1.1;letter-spacing:-0.02em;max-width:16em;margin:16px auto 0}
-.tx-system-row{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
-.tx-system-card{display:block;overflow:hidden;background:var(--paper);border:1px solid var(--line);padding:28px}
-.tx-system-img{aspect-ratio:4/5;overflow:hidden;margin:-28px -28px 24px;background:var(--bone)}
-.tx-system-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
-.tx-system-card:hover .tx-system-img img{transform:scale(1.04)}
-.tx-system-num{font-size:11px;letter-spacing:0.3em;color:var(--muted);margin-bottom:12px}
-.tx-system-title{font-size:18px;font-weight:400;letter-spacing:-0.005em;margin-bottom:8px;line-height:1.3}
-.tx-system-desc{font-size:13px;color:var(--muted);line-height:1.75;font-weight:300}
-@media (max-width:900px){.tx-system-row{grid-template-columns:1fr;gap:28px}}
+/* Three pillars row */
+.pillars-inline{
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+}
+.pillar-mini h4{
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.pillar-mini p{
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.75;
+    font-weight: 300;
+}
+@media (max-width: 900px){
+    .tx-principle-inner{grid-template-columns: 1fr; gap: 40px}
+    .tx-principle-left{position: static}
+    .pillars-inline{grid-template-columns: 1fr; gap: 24px}
+}
+
+/* ——— Process Section (4-step) ——— */
+.process-section{
+    padding: clamp(80px, 12vw, 160px) 0;
+    background: var(--bone);
+}
+.process-head{
+    text-align: center;
+    margin-bottom: 80px;
+}
+.process-head .section-eyebrow{
+    justify-content: center;
+}
+.process-head .section-eyebrow::before{display: none}
+.process-head h2{font-family:var(--display);
+    font-size: clamp(32px, 4.5vw, 60px);
+    font-weight:600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    max-width: 15em;
+    margin: 0 auto;
+}
+.process-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    max-width: var(--container);
+    margin: 0 auto;
+}
+.process-card{
+    background: var(--bone);
+    padding: 32px 28px 40px;
+    display: flex;
+    flex-direction: column;
+}
+.process-card-img{
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    margin: -32px -28px 28px;
+    background: var(--line);
+}
+.process-card-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s ease;
+}
+.process-card:hover .process-card-img img{transform: scale(1.04)}
+.process-step{
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--muted);
+    margin-bottom: 14px;
+}
+.process-title{
+    font-size: 17px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    line-height: 1.3;
+    letter-spacing: -0.005em;
+}
+.process-desc{
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.7;
+}
+@media (max-width: 1000px){
+    .process-grid{grid-template-columns: repeat(2, 1fr)}
+}
+@media (max-width: 560px){
+    .process-grid{grid-template-columns: 1fr}
+}
 
 .tx-cert{
     padding: clamp(60px, 8vw, 100px) 0;
@@ -240,10 +516,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     align-items: center;
     gap: 48px;
 }
-.tx-area-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
-.tx-tip-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
-.tx-faq-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
-.tx-related-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
 .tx-cert-mark{
     width: 88px;
     height: 88px;
@@ -285,43 +557,242 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     .tx-cert-tag{display: none}
 }
 
-/* Detail / video feature */
-.tx-feature{padding:clamp(80px,12vw,160px) 0}
-.tx-feature-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
-.tx-feature-head{text-align:center;margin-bottom:64px}
+/* ——— Detail Feature (big image + text) ——— */
+.tx-feature{
+    padding: clamp(80px, 12vw, 160px) 0;
+}
+.tx-feature-inner{
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+}
+.tx-feature-head{
+    text-align: center;
+    margin-bottom: 64px;
+}
 .tx-feature-head h2{font-family:var(--display);
-    font-size:clamp(36px,5vw,64px);font-weight:600;line-height:1.1;letter-spacing:-0.025em;max-width:16em;margin:20px auto 0}
-.tx-feature-video{aspect-ratio:16/9;background:var(--ink);position:relative;overflow:hidden;cursor:pointer;margin-bottom:32px;display:block}
-a.tx-feature-video{color:inherit}
-.tx-feature-video::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 0%,rgba(15,15,16,.4) 100%);z-index:1}
-.tx-feature-video::after{content:'▶';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--paper);font-size:32px;z-index:2;width:88px;height:88px;border:1px solid rgba(244,241,235,.5);border-radius:50%;display:flex;align-items:center;justify-content:center;padding-left:6px;transition:background .25s,transform .25s}
-.tx-feature-video:hover::after{background:var(--paper);color:var(--ink);transform:translate(-50%,-50%) scale(1.05)}
-.tx-feature-video .placeholder-text{position:absolute;bottom:40px;left:40px;color:var(--paper);font-size:11px;letter-spacing:0.3em;text-transform:uppercase;opacity:.7;z-index:2}
-.tx-feature-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight:600;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    max-width: 16em;
+    margin: 20px auto 0;
+}
+.tx-feature-video{
+    aspect-ratio: 16/9;
+    background: var(--ink);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    margin-bottom: 32px;
+    display: block;
+}
+a.tx-feature-video{color: inherit}
+.tx-feature-video::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background: radial-gradient(ellipse at center, transparent 0%, rgba(15,15,16,.4) 100%);
+    z-index: 1;
+}
+.tx-feature-video::after{
+    content: '▶';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--paper);
+    font-size: 32px;
+    z-index: 2;
+    width: 88px;
+    height: 88px;
+    border: 1px solid rgba(244,241,235,.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 6px;
+    transition: background .25s, transform .25s;
+}
+.tx-feature-video:hover::after{background: var(--paper); color: var(--ink); transform: translate(-50%, -50%) scale(1.05)}
+.tx-feature-video .placeholder-text{
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    color: var(--paper);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: .7;
+    z-index: 2;
+}
+.tx-feature-video iframe{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
 .tx-feature-video.playing{cursor:default}
 .tx-feature-video.playing::before{display:none}
 .tx-feature-video.playing::after{display:none}
 .tx-feature-video.playing .placeholder-text{display:none}
 .tx-feature-video.playing{background-image:none !important}
 
-/* Benefits (ink band) — replaces Collagen for Thermage */
-.tx-benefits{padding:clamp(80px,12vw,160px) 0;background:var(--ink);color:var(--paper)}
-.tx-benefits-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
-.tx-benefits .section-eyebrow{color:rgba(244,241,235,.5)}
-.tx-benefits .section-eyebrow::before{background:rgba(244,241,235,.3)}
-.tx-benefits-head{max-width:var(--container);margin:0 auto 80px;padding:0 var(--pad-x);display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end}
-.tx-benefits-head h2{font-family:var(--display);
-    font-size:clamp(32px,4.5vw,60px);font-weight:600;line-height:1.1;letter-spacing:-0.02em;max-width:11em}
-.tx-benefits-head p{font-size:15px;font-weight:300;line-height:1.85;color:rgba(244,241,235,.75);max-width:480px;padding-bottom:8px}
-.benefits-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(244,241,235,.12);border-top:1px solid rgba(244,241,235,.12);border-bottom:1px solid rgba(244,241,235,.12);max-width:var(--container);margin:0 auto}
-.benefit-card{background:var(--ink);padding:48px 28px 56px;min-height:280px;display:flex;flex-direction:column}
-.benefit-num{font-size:11px;letter-spacing:0.35em;color:rgba(244,241,235,.5);margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid rgba(244,241,235,.15)}
-.benefit-title{font-size:19px;font-weight:300;margin-bottom:14px;letter-spacing:-0.01em;line-height:1.3}
-.benefit-desc{font-size:13px;font-weight:300;color:rgba(244,241,235,.7);line-height:1.75;margin-top:auto}
-@media (max-width:1000px){.benefits-grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:560px){.benefits-grid{grid-template-columns:1fr}.tx-benefits-head{grid-template-columns:1fr;gap:24px}}
+/* ——— Collagen / 3-card grid ——— */
+.tx-collagen{
+    padding: clamp(80px, 12vw, 160px) 0;
+    background: var(--ink);
+    color: var(--paper);
+}
+.tx-collagen .section-eyebrow{color: rgba(244,241,235,.5)}
+.tx-collagen .section-eyebrow::before{background: rgba(244,241,235,.3)}
+.tx-collagen-head{
+    max-width: var(--container);
+    margin: 0 auto 80px;
+    padding: 0 var(--pad-x);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: end;
+}
+.tx-collagen-head h2{font-family:var(--display);
+    font-size: clamp(32px, 4.5vw, 60px);
+    font-weight:600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    max-width: 10em;
+}
+.tx-collagen-head p{
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.85;
+    color: rgba(244,241,235,.75);
+    max-width: 480px;
+    padding-bottom: 8px;
+}
+.collagen-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+}
+.collagen-card{
+    display: flex;
+    flex-direction: column;
+}
+.collagen-card-img{
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+.collagen-card-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s ease;
+}
+.collagen-card:hover .collagen-card-img img{transform: scale(1.04)}
+.collagen-step{
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: rgba(244,241,235,.5);
+    margin-bottom: 14px;
+}
+.collagen-title{
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+}
+.collagen-desc{
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(244,241,235,.7);
+    line-height: 1.75;
+}
+@media (max-width: 900px){
+    .tx-collagen-head{grid-template-columns: 1fr; gap: 24px}
+    .collagen-grid{grid-template-columns: 1fr; gap: 40px}
+}
 
-/* Treatment area */
+/* ——— Protocol (multi-layer infographic) ——— */
+.tx-protocol{
+    padding: clamp(80px, 12vw, 160px) 0;
+}
+.tx-protocol-head{
+    text-align: center;
+    margin-bottom: 80px;
+}
+.tx-protocol-head h2{font-family:var(--display);
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight:600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-top: 16px;
+    max-width: 14em;
+    margin-left: auto;
+    margin-right: auto;
+}
+.protocol-layers{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+}
+.protocol-layer{
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    align-items: center;
+    gap: 40px;
+    padding: 32px 0;
+    border-top: 1px solid var(--line);
+}
+.protocol-layer:last-child{border-bottom: 1px solid var(--line)}
+.protocol-depth{
+    font-family: var(--display);
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+}
+.protocol-depth .unit{
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    margin-left: 4px;
+}
+.protocol-layer-name{
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    margin-bottom: 4px;
+}
+.protocol-layer-desc{
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+}
+.protocol-bar{
+    width: 160px;
+    height: 6px;
+    background: var(--line);
+    position: relative;
+    overflow: hidden;
+}
+.protocol-bar-fill{
+    position: absolute;
+    left: 0; top: 0;
+    bottom: 0;
+    background: var(--ink);
+}
+@media (max-width: 700px){
+    .protocol-layer{grid-template-columns: 70px 1fr; gap: 20px}
+    .protocol-bar{grid-column: 1 / -1; width: 100%; margin-top: 8px}
+    .protocol-depth{font-size: 24px}
+}
+
+/* ——— Area (treatment zones) ——— */
 .tx-area{
     padding: clamp(80px, 12vw, 160px) 0;
     background: var(--bone);
@@ -370,7 +841,9 @@ a.tx-feature-video{color:inherit}
     transform: scale(1.3);
     box-shadow: 0 0 0 9px rgba(255, 255, 255, 0.4);
 }
-.tx-point-ring{display: none}
+.tx-point-ring{
+    display: none;
+}
 .tx-area-text h2{font-family:var(--display);
     font-size: clamp(32px, 4.5vw, 56px);
     font-weight:600;
@@ -415,58 +888,242 @@ a.tx-feature-video{color:inherit}
     .tx-area-diagram{max-width: 360px}
 }
 
-/* Tips */
-.tx-tip{padding:clamp(80px,12vw,160px) 0;background:var(--bone)}
-.tx-tip-head{text-align:center;margin-bottom:80px}
+/* ——— Tip (specialized tips) ——— */
+.tx-tip{
+    padding: clamp(80px, 12vw, 160px) 0;
+}
+.tx-tip-head{
+    text-align: center;
+    margin-bottom: 80px;
+}
 .tx-tip-head h2{font-family:var(--display);
-    font-size:clamp(32px,4.5vw,60px);font-weight:600;line-height:1.1;letter-spacing:-0.02em;max-width:14em;margin:16px auto 0}
-.tip-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;max-width:1100px;margin:0 auto;padding:0 var(--pad-x)}
-.tip-card{border:1px solid var(--line);background:var(--paper);padding:32px 28px 40px}
-.tip-card-img{aspect-ratio:4/3;overflow:hidden;margin:-32px -28px 28px;background:var(--bone)}
+    font-size: clamp(32px, 4.5vw, 60px);
+    font-weight:600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    max-width: 14em;
+    margin: 16px auto 0;
+}
+.tip-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+}
+.tip-card{
+    border: 1px solid var(--line);
+    background: var(--paper);
+    padding: 32px 28px 40px;
+}
+.tip-card-img{
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    margin: -32px -28px 28px;
+    background: var(--bone);
+}
 .tip-card-img img{width:100%;height:100%;object-fit:cover}
-.tip-num{font-size:11px;letter-spacing:0.3em;color:var(--muted);margin-bottom:14px}
-.tip-title{font-size:20px;font-weight:400;letter-spacing:-0.005em;margin-bottom:10px}
-.tip-depth{font-size:13px;color:var(--muted);letter-spacing:0.05em}
-@media (max-width:700px){.tip-grid{grid-template-columns:1fr}}
+.tip-num{
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--muted);
+    margin-bottom: 14px;
+}
+.tip-title{
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    margin-bottom: 10px;
+}
+.tip-depth{
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+}
+@media (max-width: 900px){
+    .tip-grid{grid-template-columns: 1fr}
+}
 
-/* FAQ */
-.tx-faq{padding:clamp(80px,12vw,160px) 0;border-top:1px solid var(--line)}
-.tx-faq-head{max-width:var(--container);margin:0 auto 64px;padding:0 var(--pad-x);display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end}
+/* ——— FAQ ——— */
+.tx-faq{
+    padding: clamp(80px, 12vw, 160px) 0;
+    border-top: 1px solid var(--line);
+}
+.tx-faq-head{
+    max-width: var(--container);
+    margin: 0 auto 64px;
+    padding: 0 var(--pad-x);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: end;
+}
 .tx-faq-head h2{font-family:var(--display);
-    font-size:clamp(32px,4.5vw,60px);font-weight:600;line-height:1.1;letter-spacing:-0.02em}
-.tx-faq-head p{font-size:14px;font-weight:300;color:var(--muted);line-height:1.8;max-width:420px}
-.faq-list{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
-.faq-item{border-top:1px solid var(--line);padding:28px 0;cursor:pointer}
-.faq-item:last-child{border-bottom:1px solid var(--line)}
-.faq-q{display:grid;grid-template-columns:60px 1fr auto;align-items:start;gap:20px}
-.faq-q-num{font-size:12px;letter-spacing:0.25em;color:var(--muted);padding-top:4px}
-.faq-q-text{font-size:19px;font-weight:300;line-height:1.45;letter-spacing:-0.01em;color:var(--ink)}
-.faq-q-toggle{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .25s,color .25s,transform .3s;font-size:18px;font-weight:200;line-height:1}
-.faq-item.open .faq-q-toggle{background:var(--ink);color:var(--paper);transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .5s ease,padding .3s ease;padding-left:80px;padding-right:60px;color:var(--muted)}
-.faq-item.open .faq-a{max-height:600px;padding-top:20px;padding-bottom:8px}
-.faq-a p{font-size:15px;font-weight:300;line-height:1.85;margin-bottom:14px}
-.faq-a p:last-child{margin-bottom:0}
-@media (max-width:700px){.tx-faq-head{grid-template-columns:1fr;gap:24px}.faq-q{grid-template-columns:1fr auto;gap:16px}.faq-q-num{grid-column:1 / -1;padding-top:0;margin-bottom:4px}.faq-a{padding-left:0;padding-right:0}}
+    font-size: clamp(32px, 4.5vw, 60px);
+    font-weight:600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+.tx-faq-head p{
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 420px;
+}
+.faq-list{
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+}
+.faq-item{
+    border-top: 1px solid var(--line);
+    padding: 28px 0;
+    cursor: pointer;
+}
+.faq-item:last-child{border-bottom: 1px solid var(--line)}
+.faq-q{
+    display: grid;
+    grid-template-columns: 60px 1fr auto;
+    align-items: start;
+    gap: 20px;
+}
+.faq-q-num{
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    color: var(--muted);
+    padding-top: 4px;
+}
+.faq-q-text{
+    font-size: 19px;
+    font-weight: 300;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+}
+.faq-q-toggle{
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background .25s, color .25s, transform .3s;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 1;
+}
+.faq-item.open .faq-q-toggle{
+    background: var(--ink);
+    color: var(--paper);
+    transform: rotate(45deg);
+}
+.faq-a{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s ease, padding .3s ease;
+    padding-left: 80px;
+    padding-right: 60px;
+    color: var(--muted);
+}
+.faq-item.open .faq-a{
+    max-height: 600px;
+    padding-top: 20px;
+    padding-bottom: 8px;
+}
+.faq-a p{
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.85;
+    margin-bottom: 14px;
+}
+.faq-a p:last-child{margin-bottom: 0}
+@media (max-width: 700px){
+    .tx-faq-head{grid-template-columns: 1fr; gap: 24px}
+    .faq-q{grid-template-columns: 1fr auto; gap: 16px}
+    .faq-q-num{grid-column: 1 / -1; padding-top: 0; margin-bottom: 4px}
+    .faq-a{padding-left: 0; padding-right: 0}
+}
 
-.tx-related{padding:clamp(60px,8vw,100px) 0 clamp(80px,12vw,140px);border-top:1px solid var(--line)}
-.tx-related-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:48px}
+.tx-related{
+    padding: clamp(60px, 8vw, 100px) 0 clamp(80px, 12vw, 140px);
+    border-top: 1px solid var(--line);
+}
+.tx-related-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 40px;
+    margin-bottom: 48px;
+}
 .tx-related-head h2{font-family:var(--display);
-    font-size:clamp(28px,3.5vw,44px);font-weight:600;line-height:1.1;letter-spacing:-0.02em}
-.tx-related-head a{font-size:11px;letter-spacing:0.25em;text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:4px}
-.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.related-card{display:block}
-.related-img{aspect-ratio:4/3;overflow:hidden;background:var(--bone);margin-bottom:18px;position:relative}
-.related-img::after{content:'→';position:absolute;right:20px;bottom:20px;width:36px;height:36px;background:var(--paper);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .25s,color .25s}
-.related-card:hover .related-img::after{background:var(--ink);color:var(--paper)}
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight:600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+.tx-related-head a{
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 4px;
+}
+.related-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+.related-card{
+    display: block;
+}
+.related-img{
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: var(--bone);
+    margin-bottom: 18px;
+    position: relative;
+}
+.related-img::after{
+    content: '→';
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 36px;
+    height: 36px;
+    background: var(--paper);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .25s, color .25s;
+}
+.related-card:hover .related-img::after{background: var(--ink); color: var(--paper)}
 .related-img img{width:100%;height:100%;object-fit:cover;transition:transform 1s ease}
 .related-card:hover .related-img img{transform:scale(1.04)}
-.related-cat{font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-.related-name{font-size:17px;font-weight:400;letter-spacing:-0.005em}
-@media (max-width:900px){.related-grid{grid-template-columns:1fr 1fr;gap:20px}}
-@media (max-width:560px){.related-grid{grid-template-columns:1fr}}
+.related-cat{
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+}
+.related-name{
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+}
+@media (max-width: 900px){
+    .related-grid{grid-template-columns: 1fr 1fr; gap: 20px}
+}
+@media (max-width: 560px){
+    .related-grid{grid-template-columns: 1fr}
+}
 
-/* Footer */
+/* ——— Footer ——— */
 .site-footer{background:var(--paper);border-top:1px solid var(--line);padding:80px 0 40px}
 .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:80px}
 .footer-logo{font-size:22px;font-weight:300;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:28px}
@@ -480,7 +1137,7 @@ a.tx-feature-video{color:inherit}
 @media (max-width:960px){.footer-top{grid-template-columns:1fr 1fr;gap:40px}}
 @media (max-width:560px){.footer-top{grid-template-columns:1fr}}
 
-/* Floating */
+/* ——— Floating ——— */
 .float-actions{position:fixed;bottom:28px;right:28px;z-index:50;display:flex;flex-direction:column;gap:10px}
 .float-btn{width:52px;height:52px;background:var(--ink);color:var(--paper);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:0.12em;transition:transform .25s;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
 .float-btn:hover{transform:translateY(-3px)}
@@ -613,7 +1270,6 @@ a.mili-lang-item{text-decoration:none}
     /* Footer 컬럼/메신저/배너 모바일 숨김 */
     .mili-footer-top{display:none}
     .mili-footer-messengers{display:none}
-
     /* Footer 모바일 padding 축소 */
     footer.mili-footer{padding:48px 0 100px}
     .mili-footer-business{padding-top:0;border-top:none}
@@ -774,16 +1430,16 @@ em, cite { font-style: normal; }
             <span>Titanium</span>
         </div>
         <div class="tx-hero-center">
-            <div class="tx-hero-eyebrow">— 3-Wavelength Laser Lifting · Alma</div>
+            <div class="tx-hero-eyebrow">— 3-Wavelength Laser · Alma</div>
             <div class="tx-hero-badge">
                 <div class="tx-hero-badge-mark">✦</div>
-                <div class="tx-hero-badge-text">Authentic Alma · Original Soprano Titanium</div>
+                <div class="tx-hero-badge-text">Authentic Alma Titanium</div>
             </div>
             <h1 class="tx-hero-title">
                 Titanium<span class="reg">®</span>
             </h1>
             <p class="tx-hero-sub">
-                A new paradigm of laser lifting — <strong>three wavelengths fired simultaneously through a single applicator</strong>. Powerful, comfortable, and shaped for the day before a moment that matters.
+                The foundational lifting treatment — <strong>authentic device, exact energy, precise technique</strong>. Focused ultrasound, carried to the layer where structure begins.
             </p>
         </div>
         <div class="tx-hero-bottom">
@@ -794,11 +1450,11 @@ em, cite { font-style: normal; }
                 </div>
                 <div class="tx-hero-meta-item">
                     <div class="label">Technology</div>
-                    <div class="value">3-Wavelength Diode Laser</div>
+                    <div class="value">HIFU · MMFU</div>
                 </div>
                 <div class="tx-hero-meta-item">
-                    <div class="label">Downtime</div>
-                    <div class="value">None</div>
+                    <div class="label">Duration</div>
+                    <div class="value">~ 30 min</div>
                 </div>
             </div>
         </div>
@@ -812,11 +1468,11 @@ em, cite { font-style: normal; }
         <span class="tx-subnav-label">— On this page</span>
         <a href="#principle">Principle</a>
         <a href="#certified">Certified</a>
-        <a href="#system">System</a>
+        <a href="#process">Process</a>
         <a href="#detail">Detail</a>
-        <a href="#benefits">Benefits</a>
+        <a href="#collagen">Collagen</a>
         <a href="#area">Areas</a>
-        <a href="#tip">Tips</a>
+        <a href="#tip">Wavelengths</a>
         <a href="#faq">FAQ</a>
     </div>
 </nav>
@@ -826,18 +1482,32 @@ em, cite { font-style: normal; }
     <div class="tx-principle-inner">
         <div class="tx-principle-left">
             <div class="section-eyebrow">Principle</div>
-            <h2>Mili's exclusive Titanium lifting.</h2>
+            <h2>The foundation of a safe treatment.</h2>
         </div>
         <div class="tx-principle-right">
             <p class="lead">
-                Titanium is Alma Lasers' next-generation lifting platform — the only system in the world that fires three laser wavelengths simultaneously through a single applicator. Mili Clinic Sinchon is proud to offer the authentic Soprano Titanium from Alma Korea.
+                Authentic device. Exact energy. Precise delivery.
             </p>
-            <p>
-                The three wavelengths — 755nm Alexandrite, 810nm Diode, and 1064nm Nd:YAG — each target a different skin depth. When fired together, they deliver layered thermal stimulation from the epidermis through the dermis, building collagen at every level at once.
+            <p class="mobile-hide">
+                Mili Clinic strictly observes the protocol required by Titanium — using only the <strong>authentic Titanium device</strong>, delivering the <strong>exact energy dose</strong> defined by the manufacturer, and carrying it to the treatment layer with <strong>precise, individualised technique</strong>.
             </p>
-            <p>
-                Before every consultation, we use a skin analyzer to assess each individual's level of skin aging. Through a personalized one-on-one consultation with our chief doctor, we design a treatment plan that makes the most of Titanium's depth coverage — calibrated to your skin's structure.
+            <p class="mobile-hide">
+                Before every procedure, a 3D facial-analysis scan and a detailed consultation with the director together inform a design plan tailored to your own anatomy — so that the result is a natural, firm contour, drawn specifically to your face.
             </p>
+            <div class="pillars-inline">
+                <div class="pillar-mini">
+                    <h4>Authentic</h4>
+                    <p>Only officially imported Titanium devices, verified by Alma.</p>
+                </div>
+                <div class="pillar-mini">
+                    <h4>Exact</h4>
+                    <p>Manufacturer-specified energy dose, never abridged.</p>
+                </div>
+                <div class="pillar-mini">
+                    <h4>Precise</h4>
+                    <p>3D facial analysis informs every layer and every line.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -845,128 +1515,125 @@ em, cite { font-style: normal; }
 <!-- Certified Strip -->
 <section id="certified" class="tx-cert">
     <div class="tx-cert-inner">
-        <div class="tx-cert-mark">✦</div>
+        <div class="tx-cert-mark">
+            <span>Titanium<br>Certified</span>
+        </div>
         <div class="tx-cert-text">
-            <div class="tx-cert-title">Authentic Alma Titanium, verified by official mark.</div>
-            <p>Original Titanium is provided exclusively by Alma Korea. Mili Clinic Sinchon uses only authentic devices that can be verified by Alma's official authenticity mark — calibrated regularly and operated only by trained physicians.</p>
+            <h3>An officially certified Titanium clinic.</h3>
+            <p>Using only authentic Titanium devices and tips supplied through the official Korean distributor — Mili Clinic Sinchon.</p>
+        </div>
+        <div class="tx-cert-tag">— Authentic Partner</div>
+    </div>
+</section>
+
+<!-- Process -->
+<section id="process" class="process-section">
+    <div class="process-head">
+        <div class="section-eyebrow">Process</div>
+        <h2>The Titanium<span style="font-size:0.5em;vertical-align:super">®</span> procedure at Mili Sinchon.</h2>
+    </div>
+    <div class="process-grid">
+        <div class="process-card">
+            <div class="process-card-img"><img src="/assets/images/titanium/step-01.jpg" alt="Step 01"></div>
+            <div class="process-step">— Step 01</div>
+            <h3 class="process-title">Consultation &amp; Scan</h3>
+            <p class="process-desc">A detailed 1:1 consultation with the director, paired with a 3D facial analysis that informs your treatment plan.</p>
+        </div>
+        <div class="process-card">
+            <div class="process-card-img"><img src="/assets/images/titanium/step-02.jpg" alt="Step 02"></div>
+            <div class="process-step">— Step 02</div>
+            <h3 class="process-title">Design &amp; Preparation</h3>
+            <p class="process-desc">Customised design marking, followed by anaesthesia selected to suit your pain threshold.</p>
+        </div>
+        <div class="process-card">
+            <div class="process-card-img"><img src="/assets/images/titanium/step-03.jpg" alt="Step 03"></div>
+            <div class="process-step">— Step 03</div>
+            <h3 class="process-title">Precision Procedure</h3>
+            <p class="process-desc">Authentic Titanium energy is delivered exactly to the planned depth, across three layers of the skin.</p>
+        </div>
+        <div class="process-card">
+            <div class="process-card-img"><img src="/assets/images/titanium/step-04.jpg" alt="Step 04"></div>
+            <div class="process-step">— Step 04</div>
+            <h3 class="process-title">Aftercare &amp; Rest</h3>
+            <p class="process-desc">Cooling, calming aftercare in our private recovery suite, followed by guidance on skin care over the weeks ahead.</p>
         </div>
     </div>
 </section>
 
-<!-- System / 3-image feature -->
-<section id="system" class="tx-system">
-    <div class="tx-system-inner">
-        <div class="tx-system-head">
-            <div class="section-eyebrow">System</div>
-            <h2>Three wavelengths, three effects, three zeros.</h2>
-        </div>
-        <div class="tx-system-grid">
-            <div class="tx-system-card">
-                <div class="card-num">01</div>
-                <h3>3-Wavelength Simultaneous Laser</h3>
-                <p>The first and only laser to fire 755nm, 810nm, and 1064nm wavelengths at the same time — each reaching a different skin depth for layered, simultaneous stimulation.</p>
-            </div>
-            <div class="tx-system-card">
-                <div class="card-num">02</div>
-                <h3>B.T.S Effect</h3>
-                <p>One applicator delivers three effects in a single pass — building elasticity, refining tone, and smoothing texture together rather than treating each concern in isolation.</p>
-            </div>
-            <div class="tx-system-card">
-                <div class="card-num">03</div>
-                <h3>Ice Contact Cooling</h3>
-                <p>The Titanium Cooling Tip uses Alma's Ice Contact Cooling System — protecting the treatment area while energy is delivered. Less pain, less heat sensation, no visible marks.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Detail / Video -->
+<!-- Detail / Video feature -->
 <section id="detail" class="tx-feature">
     <div class="tx-feature-inner">
-        <div class="tx-feature-left">
-            <div class="section-eyebrow">In Detail</div>
-            <h2>Powerful and immediate — built for a moment that matters.</h2>
-            <p>Titanium delivers three of Alma's most established laser wavelengths in a single shot. The 755nm Alexandrite addresses surface tone; the 810nm Diode reaches the mid-dermis for collagen stimulation; the 1064nm Nd:YAG penetrates deepest, targeting the foundational tissues that drive lasting firmness.</p>
-            <p>Because all three are fired simultaneously, the treatment is faster and produces immediate visible results — making Titanium the go-to choice for special-day care before a wedding, photoshoot, or important event. There is no downtime: washing and makeup are possible immediately after.</p>
+        <div class="tx-feature-head">
+            <div class="section-eyebrow" style="justify-content:center">Detail</div>
+            <h2>An Titanium<span style="font-size:0.5em;vertical-align:super">®</span> that's different in the details.</h2>
         </div>
-        <div class="tx-feature-right">
-            <img src="/assets/images/titanium/feature.jpg" alt="Titanium Treatment Detail">
+        <div class="tx-feature-video" data-video-id="_EthNkzyMf8" style="background-image:url('https://i.ytimg.com/vi/_EthNkzyMf8/maxresdefault.jpg'); background-size: cover; background-position: center;">
+            <span class="placeholder-text">— Watch the procedure</span>
         </div>
     </div>
 </section>
 
-<!-- Benefits -->
-<section id="benefits" class="tx-benefits">
-    <div class="tx-benefits-inner">
-        <div class="tx-benefits-head">
-            <div class="section-eyebrow">Benefits</div>
-            <h2>Why patients choose Titanium.</h2>
-        </div>
-        <div class="tx-benefits-grid">
-            <div class="benefit-item">
-                <div class="benefit-num">01</div>
-                <h3>Powerful, Immediate Results</h3>
-                <p>Visible firming and brightening right after the session — three wavelengths working at once for layered impact.</p>
-            </div>
-            <div class="benefit-item">
-                <div class="benefit-num">02</div>
-                <h3>Long-Lasting</h3>
-                <p>Deep collagen stimulation at the 1064nm depth builds structure that holds. A three-session course at 3–4 week intervals delivers sustained results.</p>
-            </div>
-            <div class="benefit-item">
-                <div class="benefit-num">03</div>
-                <h3>Special-Day Care</h3>
-                <p>No downtime, no marks, no recovery period. Ideal as pre-event skin care — wedding, photoshoot, or any day that matters.</p>
-            </div>
-            <div class="benefit-item">
-                <div class="benefit-num">04</div>
-                <h3>Comfort-First Design</h3>
-                <p>Titanium Cooling Tip with Ice Contact Cooling minimizes discomfort. Less pain than conventional laser lifting platforms.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Area -->
+<!-- Treatment Area -->
 <section id="area" class="tx-area">
-    <div class="tx-area-inner">
-        <div class="tx-area-left">
-            <div class="section-eyebrow">Treatment Areas</div>
-            <h2>Where Titanium works best.</h2>
-            <p>We are committed to your beauty — from one-on-one consultation to personalized treatment. Each session is calibrated to your skin's structure and the area being addressed.</p>
+    <div class="tx-area-grid">
+        <div class="tx-area-diagram">
+            <img class="tx-area-photo" src="/assets/images/area/woman.png" alt="Treatment areas">
+            <div class="tx-area-overlay">
+                <div class="tx-point-wrap" data-area="forehead" style="top:25%;left:50%"><div class="tx-point"></div><div class="tx-point-ring"></div></div>
+                <div class="tx-point-wrap" data-area="brow" style="top:34%;left:40%"><div class="tx-point"></div><div class="tx-point-ring"></div></div>
+                <div class="tx-point-wrap" data-area="under-eye" style="top:40%;left:56%"><div class="tx-point"></div><div class="tx-point-ring"></div></div>
+                <div class="tx-point-wrap" data-area="cheek" style="top:48%;left:35%"><div class="tx-point"></div><div class="tx-point-ring"></div></div>
+                <div class="tx-point-wrap" data-area="nasolabial" style="top:52%;left:57%"><div class="tx-point"></div><div class="tx-point-ring"></div></div>
+                <div class="tx-point-wrap" data-area="jawline" style="top:55%;left:37%"><div class="tx-point"></div><div class="tx-point-ring"></div></div>
+                <div class="tx-point-wrap" data-area="neck" style="top:70%;left:58%"><div class="tx-point"></div><div class="tx-point-ring"></div></div>
+                <div class="tx-point-wrap" data-area="decollete" style="top:88%;left:50%"><div class="tx-point"></div><div class="tx-point-ring"></div></div>
+            </div>
         </div>
-        <div class="tx-area-tags">
-            <span class="area-tag">Full face</span>
-            <span class="area-tag">Forehead</span>
-            <span class="area-tag">Cheeks</span>
-            <span class="area-tag">Jawline</span>
-            <span class="area-tag">Neck</span>
-            <span class="area-tag">Décolletage</span>
+        <div class="tx-area-text">
+            <div class="section-eyebrow">Areas</div>
+            <h2>Where Titanium works.</h2>
+            <p>
+                For your beauty, we take full responsibility from <strong>a personal 1:1 consultation through to a customised procedure</strong> — designing each session around the specific areas that matter to you.
+            </p>
+            <div class="area-tags">
+                <span class="area-tag" data-area="forehead">Forehead</span>
+                <span class="area-tag" data-area="brow">Brow</span>
+                <span class="area-tag" data-area="under-eye">Under Eye</span>
+                <span class="area-tag" data-area="cheek">Cheek</span>
+                <span class="area-tag" data-area="nasolabial">Nasolabial</span>
+                <span class="area-tag" data-area="jawline">Jawline</span>
+                <span class="area-tag" data-area="neck">Neck</span>
+                <span class="area-tag" data-area="decollete">Décolleté</span>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Tips -->
+<!-- Tips / B.T.S Effect -->
 <section id="tip" class="tx-tip">
     <div class="tx-tip-inner">
-        <div class="section-eyebrow">Aftercare</div>
-        <h2>How to care for your skin after.</h2>
+        <div class="tx-tip-head">
+            <div class="section-eyebrow">Technology</div>
+            <h2>Three wavelengths, one applicator.</h2>
+        </div>
         <div class="tip-grid">
-            <div class="tip-item">
-                <div class="tip-num">01</div>
-                <p>Washing and makeup are possible immediately after the procedure. There is no downtime or recovery period.</p>
+            <div class="tip-card">
+                <div class="tip-card-img"><img src="/assets/images/titanium/handpiece.jpg" alt="Titanium handpiece"></div>
+                <div class="tip-num">— 755 nm</div>
+                <h3 class="tip-title">Alexandrite</h3>
+                <div class="tip-depth">Surface tone &amp; pigmentation</div>
             </div>
-            <div class="tip-item">
-                <div class="tip-num">02</div>
-                <p>Ensure adequate hydration and apply moisturizing care for the first few days to support collagen response.</p>
+            <div class="tip-card">
+                <div class="tip-card-img"><img src="/assets/images/titanium/handpiece.jpg" alt="Titanium handpiece"></div>
+                <div class="tip-num">— 810 nm</div>
+                <h3 class="tip-title">Diode</h3>
+                <div class="tip-depth">Mid-dermis · collagen stimulation</div>
             </div>
-            <div class="tip-item">
-                <div class="tip-num">03</div>
-                <p>Apply daily sunscreen. UV exposure can compromise the collagen remodeling process and surface results.</p>
-            </div>
-            <div class="tip-item">
-                <div class="tip-num">04</div>
-                <p>A treatment course of 3 sessions at 3–4 week intervals is recommended for optimal, sustained results.</p>
+            <div class="tip-card">
+                <div class="tip-card-img"><img src="/assets/images/titanium/handpiece.jpg" alt="Titanium handpiece"></div>
+                <div class="tip-num">— 1064 nm</div>
+                <h3 class="tip-title">Nd:YAG</h3>
+                <div class="tip-depth">Deep dermis · structural firmness</div>
             </div>
         </div>
     </div>
@@ -974,54 +1641,71 @@ em, cite { font-style: normal; }
 
 <!-- FAQ -->
 <section id="faq" class="tx-faq">
-    <div class="tx-faq-inner">
-        <div class="section-eyebrow">FAQ</div>
-        <h2>Frequently asked questions.</h2>
-        <div class="faq-list">
-            <details>
-                <summary>What are the effects after the procedure?</summary>
-                <p>A single session delivers the B.T.S Effect — three effects (elasticity, tone, texture) at once. Immediate visible firming and brightening, with deeper collagen response building over the following weeks.</p>
-            </details>
-            <details>
-                <summary>How many sessions are recommended?</summary>
-                <p>A treatment course of 3 sessions at 3–4 week intervals is recommended. Treatment time varies depending on individual skin condition and the area being addressed.</p>
-            </details>
-            <details>
-                <summary>How painful is the procedure?</summary>
-                <p>The Titanium Cooling Tip uses Alma's Ice Contact Cooling System to protect the treatment area, significantly reducing pain compared to conventional laser lifting platforms.</p>
-            </details>
-            <details>
-                <summary>When can I resume daily activities?</summary>
-                <p>Immediately. Washing and makeup are possible right after the procedure. There is no recovery period and no visible marks.</p>
-            </details>
-            <details>
-                <summary>How is Titanium different from other lifting treatments?</summary>
-                <p>Titanium is the only laser platform that fires three wavelengths (755nm, 810nm, 1064nm) simultaneously. This delivers multi-depth stimulation in a single session — combined with comfort technology that makes it suitable for pre-event special care.</p>
-            </details>
+    <div class="tx-faq-head">
+        <div>
+            <div class="section-eyebrow">Frequently Asked</div>
+            <h2>Titanium<span style="font-size:0.5em;vertical-align:super">®</span> Q&amp;A.</h2>
+        </div>
+        <p>Questions we hear most often from patients considering Titanium. For anything not covered here, please reach out via KakaoTalk or phone.</p>
+    </div>
+    <div class="faq-list">
+        <div class="faq-item">
+            <div class="faq-q">
+                <div class="faq-q-num">Q 01</div>
+                <div class="faq-q-text">Is there a risk of hollow cheeks or excessive fat loss?</div>
+                <div class="faq-q-toggle">+</div>
+            </div>
+            <div class="faq-a">
+                <p>The key is accurate assessment of each individual's facial structure before treatment. When Titanium is applied without a precise understanding of facial type, there can be unintended consequences — including permanent volume loss in areas where fullness is needed.</p>
+                <p>Because fat distribution, dynamic facial lines (in expression), and static lines (at rest) differ from person to person, both states must be evaluated so that an accurate treatment design is completed before a single shot is delivered.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">
+                <div class="faq-q-num">Q 02</div>
+                <div class="faq-q-text">How painful is Titanium?</div>
+                <div class="faq-q-toggle">+</div>
+            </div>
+            <div class="faq-a">
+                <p>Titanium delivers strong, point-like energy deep into the skin. Because individual pain thresholds vary, we offer a range of anaesthesia options — topical cream, nerve block, or sedation — selected during your consultation.</p>
+                <p>After treatment, a dull sensation may remain in parts of the face for a short period. This fades gradually over the following days.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">
+                <div class="faq-q-num">Q 03</div>
+                <div class="faq-q-text">How many shots should I receive?</div>
+                <div class="faq-q-toggle">+</div>
+            </div>
+            <div class="faq-a">
+                <p>A balanced full-face result typically requires 400 shots or more, but the exact count depends on your individual facial type and the specific concerns you wish to address.</p>
+                <p>In many cases, combining Titanium with complementary lifting treatments allows us to minimise total shots while concentrating precise energy where it is genuinely needed — a more refined approach than volume alone.</p>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- Related treatments -->
 <section class="tx-related">
-    <div class="tx-related-inner">
-        <div class="section-eyebrow">— Related Treatments</div>
-        <h2>Layered, complementary lifting.</h2>
+    <div class="container">
+        <div class="tx-related-head">
+            <h2>Other lifting treatments.</h2>
+        </div>
         <div class="related-grid">
             <a href="/en/ulthera.html" class="related-card">
-                <div class="related-card-eyebrow">HIFU Lifting</div>
-                <h3>Ulthera</h3>
-                <p>The gold-standard HIFU lifting targeting the SMAS layer — combines beautifully with Titanium for structural depth and surface-to-mid-dermis renewal.</p>
+                <div class="related-img"><img src="/assets/images/equipment/ulthera.png" alt="Ulthera"></div>
+                <div class="related-cat">— Lifting · HIFU</div>
+                <div class="related-name">Ulthera</div>
             </a>
             <a href="/en/oligio-x.html" class="related-card">
-                <div class="related-card-eyebrow">Monopolar RF</div>
-                <h3>OligioX</h3>
-                <p>RF energy at the dermal level — a different modality that pairs well with Titanium's laser approach for multi-modal lifting.</p>
+                <div class="related-img"><img src="/assets/images/equipment/oligio-x.png" alt="OligioX"></div>
+                <div class="related-cat">— Lifting · Monopolar RF</div>
+                <div class="related-name">OligioX</div>
             </a>
             <a href="/en/shurink.html" class="related-card">
-                <div class="related-card-eyebrow">HIFU Lifting</div>
-                <h3>Shurink</h3>
-                <p>Cartridge-customized HIFU at 1.5–4.5mm depths — accessible foundational lifting that complements Titanium's surface and tone work.</p>
+                <div class="related-img"><img src="/assets/images/equipment/shurink.jpg" alt="Shurink"></div>
+                <div class="related-cat">— Lifting · HIFU</div>
+                <div class="related-name">Shurink Universe</div>
             </a>
         </div>
     </div>
@@ -1263,6 +1947,21 @@ document.addEventListener('click', function(){
   });
 });
 })();
+</script>
+
+<script>
+document.querySelectorAll('.tx-feature-video').forEach(el => {
+    el.addEventListener('click', function() {
+        const videoId = this.dataset.videoId;
+        if (!videoId || this.classList.contains('playing')) return;
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+        iframe.allow = 'autoplay; encrypted-media';
+        iframe.allowFullscreen = true;
+        this.appendChild(iframe);
+        this.classList.add('playing');
+    });
+});
 </script>
 
 </body>
