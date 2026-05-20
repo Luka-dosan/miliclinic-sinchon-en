@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lifting Overview | Mili Clinic Sinchon</title>
+<meta name="description" content="Seven lifting platforms at Mili Clinic Sinchon — HIFU, RF, laser, and triple-energy technologies, layered around the structure of your face.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mili Clinic Sinchon">
+<meta property="og:title" content="Mili Clinic Sinchon">
+<meta property="og:image" content="https://miliclinic-sinchon-en.vercel.app/assets/images/og/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mili Clinic Sinchon">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://miliclinic-sinchon-en.vercel.app/en/lifting-overview.html">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mili Clinic Sinchon">
+<meta name="twitter:image" content="https://miliclinic-sinchon-en.vercel.app/assets/images/og/og-image.png">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* === Lifting Overview — Design System === */
+:root{
+    --ink:#0a0a0a;
+    --paper:#ffffff;
+    --bone:#f4f1eb;
+    --line:#e7e3d9;
+    --muted:#6b6862;
+    --accent:#4338CA;
+    --container:1280px;
+    --pad-x:clamp(24px,4vw,80px);
+    --display:'Cormorant Garamond',Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-weight:300;letter-spacing:-0.02em}
+img{max-width:100%;display:block}
+
+/* === Scroll Reveal (Intersection Observer) === */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(0.2,0.8,0.2,1),transform 1s cubic-bezier(0.2,0.8,0.2,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+/* === Section Eyebrow === */
+.section-eyebrow{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-bottom:24px;font-weight:400}
+
+/* === Hero === */
+.lo-hero{position:relative;min-height:90vh;display:flex;align-items:center;background:var(--bone);overflow:hidden}
+.lo-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--bone) 0%,#ebe6dc 50%,var(--bone) 100%);z-index:0}
+.lo-hero-bg::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 25% 30%,rgba(67,56,202,0.06) 0%,transparent 50%),radial-gradient(circle at 75% 70%,rgba(67,56,202,0.04) 0%,transparent 50%);z-index:1}
+.lo-hero-inner{position:relative;z-index:2;max-width:var(--container);margin:0 auto;padding:0 var(--pad-x);width:100%}
+.lo-hero-eyebrow{font-size:13px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-bottom:32px;font-weight:400}
+.lo-hero-title{font-family:var(--display);font-size:clamp(48px,8vw,128px);line-height:1.05;letter-spacing:-0.03em;margin-bottom:32px;max-width:14em}
+.lo-hero-title em{font-style:italic;color:var(--accent)}
+.lo-hero-sub{font-size:clamp(16px,1.6vw,20px);line-height:1.7;color:var(--ink);opacity:0.85;max-width:580px;margin-bottom:64px;font-weight:300}
+.lo-hero-meta{display:flex;gap:clamp(32px,5vw,80px);flex-wrap:wrap;padding-top:32px;border-top:1px solid var(--line);max-width:680px}
+.lo-hero-meta-item{flex:0 0 auto}
+.lo-hero-meta-item .label{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;font-weight:400}
+.lo-hero-meta-item .value{font-family:var(--display);font-size:clamp(18px,2vw,24px);font-weight:400;letter-spacing:-0.01em}
+.lo-hero-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);z-index:2;animation:scrollHint 2s ease-in-out infinite}
+@keyframes scrollHint{0%,100%{opacity:0.6;transform:translateX(-50%) translateY(0)}50%{opacity:1;transform:translateX(-50%) translateY(8px)}}
+
+/* === Philosophy === */
+.lo-philosophy{padding:clamp(96px,12vw,160px) 0;background:var(--paper)}
+.lo-philosophy-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
+.lo-philosophy-head{margin-bottom:clamp(56px,6vw,88px);text-align:center}
+.lo-philosophy-head h2{font-family:var(--display);font-size:clamp(36px,5vw,64px);line-height:1.15;max-width:18em;margin:0 auto}
+.lo-philosophy-track{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.lo-philosophy-card{padding:40px 32px;background:var(--bone);border:1px solid var(--line);transition:transform 0.6s cubic-bezier(0.2,0.8,0.2,1),background 0.4s ease}
+.lo-philosophy-card:hover{transform:translateY(-8px);background:#ebe6dc}
+.lo-philosophy-card .card-num{font-size:11px;letter-spacing:0.3em;color:var(--muted);margin-bottom:32px;font-weight:400}
+.lo-philosophy-card h3{font-family:var(--display);font-size:clamp(22px,2.4vw,30px);font-weight:400;margin-bottom:16px;line-height:1.2}
+.lo-philosophy-card p{font-size:15px;line-height:1.7;color:var(--ink);opacity:0.78;font-weight:300}
+
+/* === Lineup === */
+.lo-lineup{padding:clamp(96px,12vw,160px) 0;background:var(--bone)}
+.lo-lineup-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
+.lo-lineup-head{margin-bottom:clamp(56px,6vw,88px);text-align:center;max-width:760px;margin-left:auto;margin-right:auto}
+.lo-lineup-head h2{font-family:var(--display);font-size:clamp(36px,5vw,64px);line-height:1.15;margin-bottom:24px}
+.lo-lineup-head h2 em{font-style:italic;color:var(--accent)}
+.lo-lineup-desc{font-size:16px;line-height:1.7;color:var(--ink);opacity:0.78;font-weight:300}
+.lo-lineup-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.lo-lineup-card{display:flex;flex-direction:column;padding:32px;background:var(--paper);border:1px solid var(--line);text-decoration:none;color:inherit;transition:transform 0.5s cubic-bezier(0.2,0.8,0.2,1),box-shadow 0.5s ease,border-color 0.4s ease}
+.lo-lineup-card:hover{transform:translateY(-12px);box-shadow:0 24px 60px -20px rgba(0,0,0,0.12);border-color:#d6d1c4}
+.lo-lineup-card-img{aspect-ratio:4/3;background:var(--bone);margin:-32px -32px 32px;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:32px}
+.lo-lineup-card-img img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transition:transform 0.8s cubic-bezier(0.2,0.8,0.2,1)}
+.lo-lineup-card:hover .lo-lineup-card-img img{transform:scale(1.08)}
+.lo-lineup-card-cat{font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;font-weight:400}
+.lo-lineup-card h3{font-family:var(--display);font-size:clamp(24px,2.6vw,32px);font-weight:400;margin-bottom:16px;line-height:1.15}
+.lo-lineup-card p{font-size:14px;line-height:1.7;color:var(--ink);opacity:0.78;margin-bottom:24px;font-weight:300;flex:1}
+.lo-lineup-card-link{font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);font-weight:400;padding-top:20px;border-top:1px solid var(--line);transition:color 0.3s}
+.lo-lineup-card:hover .lo-lineup-card-link{color:#312a96}
+
+/* === Compare === */
+.lo-compare{padding:clamp(96px,12vw,160px) 0;background:var(--paper)}
+.lo-compare-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
+.lo-compare-head{margin-bottom:clamp(48px,5vw,72px);text-align:center;max-width:760px;margin-left:auto;margin-right:auto}
+.lo-compare-head h2{font-family:var(--display);font-size:clamp(36px,5vw,64px);line-height:1.15;margin-bottom:24px}
+.lo-compare-head h2 em{font-style:italic;color:var(--accent)}
+.lo-compare-desc{font-size:16px;line-height:1.7;color:var(--ink);opacity:0.78;font-weight:300}
+.lo-compare-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:40px;padding:6px;background:var(--bone);border-radius:48px;width:fit-content;margin-left:auto;margin-right:auto}
+.lo-tab{padding:12px 28px;background:transparent;border:none;border-radius:40px;font-size:13px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:all 0.3s ease;font-family:inherit;font-weight:400}
+.lo-tab.active{background:var(--ink);color:var(--paper)}
+.lo-tab:hover:not(.active){color:var(--ink)}
+.lo-compare-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.lo-compare-table{width:100%;border-collapse:collapse;min-width:760px}
+.lo-compare-table thead th{padding:20px 16px;text-align:left;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);font-weight:400;border-bottom:1px solid var(--ink);white-space:nowrap}
+.lo-compare-table tbody td{padding:24px 16px;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink);font-weight:300;vertical-align:middle}
+.lo-compare-table tbody tr{transition:background 0.3s ease}
+.lo-compare-table tbody tr:hover{background:var(--bone)}
+.lo-compare-table tbody td strong{font-weight:500;color:var(--ink)}
+.lo-compare-table tbody tr:last-child td{border-bottom:none}
+
+/* === Journey === */
+.lo-journey{padding:clamp(96px,12vw,160px) 0;background:var(--ink);color:var(--paper)}
+.lo-journey-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
+.lo-journey-head{margin-bottom:clamp(56px,6vw,88px);text-align:center}
+.lo-journey-head .section-eyebrow{color:rgba(255,255,255,0.6)}
+.lo-journey-head h2{font-family:var(--display);font-size:clamp(36px,5vw,64px);line-height:1.15}
+.lo-journey-head h2 em{font-style:italic;color:#a5acff}
+.lo-journey-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px;max-width:1080px;margin:0 auto}
+.lo-journey-step{padding:48px 36px;background:transparent;border:1px solid rgba(255,255,255,0.15);transition:border-color 0.5s ease,transform 0.5s ease}
+.lo-journey-step:hover{border-color:rgba(255,255,255,0.4);transform:translateY(-4px)}
+.lo-journey-step .step-num{font-family:var(--display);font-size:clamp(24px,2.4vw,32px);font-style:italic;color:#a5acff;margin-bottom:32px;font-weight:400}
+.lo-journey-step h3{font-family:var(--display);font-size:clamp(24px,2.6vw,32px);font-weight:400;margin-bottom:20px;line-height:1.2}
+.lo-journey-step p{font-size:15px;line-height:1.7;color:rgba(255,255,255,0.78);font-weight:300}
+
+/* === FAQ === */
+.lo-faq{padding:clamp(96px,12vw,160px) 0;background:var(--paper)}
+.lo-faq-inner{max-width:980px;margin:0 auto;padding:0 var(--pad-x)}
+.lo-faq-head{margin-bottom:clamp(48px,5vw,72px);text-align:center}
+.lo-faq-head h2{font-family:var(--display);font-size:clamp(36px,5vw,64px);line-height:1.15}
+.lo-faq-list details{border-bottom:1px solid var(--line);padding:32px 0;cursor:pointer}
+.lo-faq-list details summary{font-family:var(--display);font-size:clamp(20px,2.2vw,26px);font-weight:400;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:24px;transition:color 0.3s ease}
+.lo-faq-list details summary::-webkit-details-marker{display:none}
+.lo-faq-list details summary::after{content:'+';font-family:var(--sans);font-size:24px;font-weight:300;color:var(--muted);transition:transform 0.3s ease;flex-shrink:0}
+.lo-faq-list details[open] summary::after{transform:rotate(45deg)}
+.lo-faq-list details summary:hover{color:var(--accent)}
+.lo-faq-list details p{margin-top:24px;font-size:15px;line-height:1.8;color:var(--ink);opacity:0.78;font-weight:300}
+
+/* === Reserve === */
+.lo-reserve{padding:clamp(96px,12vw,160px) 0;background:var(--bone)}
+.lo-reserve-inner{max-width:880px;margin:0 auto;padding:0 var(--pad-x);text-align:center}
+.lo-reserve h2{font-family:var(--display);font-size:clamp(36px,5vw,64px);line-height:1.15;margin-bottom:32px}
+.lo-reserve h2 em{font-style:italic;color:var(--accent)}
+.lo-reserve p{font-size:16px;line-height:1.7;color:var(--ink);opacity:0.78;margin-bottom:48px;font-weight:300;max-width:580px;margin-left:auto;margin-right:auto}
+.lo-reserve-actions{display:flex;gap:48px;justify-content:center;flex-wrap:wrap}
+.lo-reserve-actions a{font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);padding-bottom:8px;border-bottom:1px solid var(--ink);font-weight:400;transition:opacity 0.3s ease,letter-spacing 0.3s ease;text-decoration:none}
+.lo-reserve-actions a:hover{opacity:0.6;letter-spacing:0.25em}
+
+/* === Mobile === */
+@media (max-width:768px){
+    .lo-hero{min-height:80vh}
+    .lo-hero-meta{gap:32px}
+    .lo-philosophy-track,.lo-lineup-grid{grid-template-columns:1fr}
+    .lo-journey-steps{grid-template-columns:1fr;gap:24px}
+    .lo-compare-tabs{width:100%;justify-content:stretch}
+    .lo-tab{flex:1;padding:12px 16px;font-size:11px}
+    .lo-reserve-actions{flex-direction:column;gap:24px}
+    .lo-lineup-card{padding:24px}
+    .lo-lineup-card-img{margin:-24px -24px 24px;padding:24px}
+}
+</style>
+</head>
+<body>
+
+<!-- Top Bar -->
+</div>
+
+<!-- Header -->
+<header class="mili-header">
+    <div class="mili-header-inner">
+        <a href="/en/index.html" class="mili-logo" aria-label="Mili Clinic Sinchon"><img src="/assets/images/logo/logo.png" alt="Mili Clinic Sinchon"></a>
+        <nav class="mili-nav">
+            <ul class="mili-nav-list">
+                <li class="mili-nav-item"><a href="/en/about.html" class="mili-nav-link">Mili Clinic Sinchon<span class="mili-nav-caret"></span></a>
+                    <div class="mili-dropdown">
+                        <a href="/en/about.html">About Sinchon</a>
+                        <a href="/en/tour.html">Tour</a>
+                        <a href="/en/equipment.html">Equipment</a>
+                        <a href="/en/location.html">Location</a>
+                        <a href="/en/schedule.html">Schedule</a>
+                    </div>
+                </li>
+                <li class="mili-nav-item"><span class="mili-nav-link">Lifting<span class="mili-nav-caret"></span></span>
+                    <div class="mili-dropdown">
+                        <a href="/en/ulthera.html">Ulthera</a>
+                        <a href="/en/tuneface.html">TuneFace</a>
+                        <a href="/en/oligio-x.html">OligioX</a>
+                        <a href="/en/inmode.html">InMode</a>
+                        <a href="/en/shurink.html">Shurink</a>
+                        <a href="/en/titanium.html">Titanium</a>
+                        <a href="/en/eve-titan.html">Eve Titan</a>
+                    </div>
+                </li>
+                <li class="mili-nav-item"><span class="mili-nav-link">Minimal Surgery<span class="mili-nav-caret"></span></span>
+                    <div class="mili-dropdown">
+                        <a href="/en/botox.html">Botox</a>
+                        <a href="/en/filler.html">Filler</a>
+                        <a href="/en/collagen-booster.html">Collagen Booster</a>
+                    </div>
+                </li>
+                <li class="mili-nav-item"><span class="mili-nav-link">Skin Care<span class="mili-nav-caret"></span></span>
+                    <div class="mili-dropdown">
+                        <a href="/en/skin-booster.html">Skin Booster</a>
+                        <a href="/en/acne-pore.html">Acne &amp; Pore</a>
+                        <a href="/en/all-in-one-brightening.html">All-in-One Brightening</a>
+                        <a href="/en/medi-spa.html">Medi-Spa</a>
+                    </div>
+                </li>
+                <li class="mili-nav-item"><a href="/en/laser-hair-removal.html" class="mili-nav-link">Laser Hair Removal</a></li>
+                <li class="mili-nav-item"><a href="/en/body-shaping.html" class="mili-nav-link">Body Shaping</a></li>
+                <li class="mili-nav-item"><a href="/en/promotion.html" class="mili-nav-link">Promotion</a></li>
+            </ul>
+        </nav>
+        <div class="mili-lang">
+            <button type="button" class="mili-lang-toggle" aria-haspopup="true" aria-expanded="false">EN
+                <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="mili-lang-menu">
+                <a href="#" class="mili-lang-item active">EN</a>
+                <a href="https://sinchon.miliclinic.co.kr" target="_blank" rel="noopener" class="mili-lang-item">KO</a>
+                <a href="/cn/index.html" class="mili-lang-item">CN</a>
+                <a href="/jp/ulthera.html" class="mili-lang-item">JP</a>
+            </div>
+        </div>
+        <a href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener" class="mili-cta">Reserve<svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <button class="mili-burger" aria-label="Menu" onclick="document.getElementById('mili-mobile-nav').classList.add('open');document.body.style.overflow='hidden'"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mili-mobile-nav" id="mili-mobile-nav">
+        <button class="mili-mobile-nav-close" onclick="document.getElementById('mili-mobile-nav').classList.remove('open');document.body.style.overflow=''">&times;</button>
+        <ul class="mili-mobile-nav-list">
+            <li><span>Mili Clinic Sinchon</span>
+                <ul class="mili-mobile-sub">
+                    <li><a href="/en/about.html">About Dosan</a></li>
+                    
+                    <li><a href="/en/tour.html">Tour</a></li>
+                    <li><a href="/en/equipment.html">Equipment</a></li>
+                    <li><a href="/en/schedule.html">Schedule</a></li>
+                    <li><a href="/en/location.html">Location</a></li>
+                </ul>
+            </li>
+            <li><span>Lifting</span>
+                <ul class="mili-mobile-sub">
+                    <li><a href="/en/ulthera.html">Ulthera</a></li>
+                    <li><a href="/en/oligio-x.html">OligioX</a></li>
+                    <li><a href="/en/tuneface.html">Tuneface</a></li>
+                    <li><a href="/en/shurink.html">Shurink</a></li>
+                    <li><a href="/en/titanium.html">Titanium</a></li>
+                    <li><a href="/en/eve-titan.html">Eve Titan</a></li>
+                </ul>
+            </li>
+            <li><a href="/en/collagen-booster.html">Collagen Booster</a></li>
+            <li><a href="/en/collagen-booster.html">Collagen Booster</a></li>
+            <li><span>Minimal Surgery</span>
+                <ul class="mili-mobile-sub">
+                    <li><a href="/en/collagen-booster.html">Collagen Booster</a></li>
+                    <li><a href="/en/collagen-booster.html">Collagen Booster</a></li>
+                    <li><a href="/en/filler.html">Filler</a></li>
+                </ul>
+            </li>
+            <li><span>Skin Recovery</span>
+                <ul class="mili-mobile-sub">
+                    <li><a href="/en/skin-booster.html">1:1 Skin Booster</a></li>
+                    <li><a href="/en/all-in-one-brightening.html">All-in-One Brightening</a></li>
+                    <li><a href="/en/acne-pore.html">Acne and Pore</a></li>
+                    <li><a href="/en/acne-pore.html">Acne and Pore</a></li>
+                </ul>
+            </li>
+            <li><a href="/en/laser-hair-removal.html">Laser Hair Removal</a></li>
+            <li><span>Skin Care</span>
+                <ul class="mili-mobile-sub">
+                    <li><a href="/en/medi-spa.html">Medi-Spa</a></li>
+                    <li><a href="/en/medi-spa.html">Medi-Spa</a></li>
+                </ul>
+            </li>
+            <li><a href="/en/promotion.html">Promotion</a></li>
+            <li><a href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener">Reserve</a></li>
+        </ul>
+        <div class="mili-mobile-lang">
+            <span class="mili-mobile-lang-label">Language</span>
+            <div class="mili-mobile-lang-list">
+                <a href="#" class="mili-mobile-lang-item active">EN</a>
+                <a href="https://sinchon.miliclinic.co.kr" target="_blank" rel="noopener" class="mili-mobile-lang-item">KO</a>
+                <a href="/cn/index.html" class="mili-mobile-lang-item">CN</a>
+                <a href="/jp/ulthera.html" class="mili-mobile-lang-item">JP</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="lo-hero">
+    <div class="lo-hero-bg" aria-hidden="true"></div>
+    <div class="lo-hero-inner">
+        <div class="lo-hero-eyebrow reveal">— Lifting Treatments</div>
+        <h1 class="lo-hero-title reveal">
+            Lifting at <em>Mili Sinchon</em>.
+        </h1>
+        <p class="lo-hero-sub reveal">
+            Becoming more beautiful with a mere 1mm change.<br>
+            Seven lifting platforms, layered around the structure of your face.
+        </p>
+        <div class="lo-hero-meta reveal">
+            <div class="lo-hero-meta-item">
+                <div class="label">Treatments</div>
+                <div class="value">7</div>
+            </div>
+            <div class="lo-hero-meta-item">
+                <div class="label">Technologies</div>
+                <div class="value">HIFU · RF · Laser · EMS</div>
+            </div>
+            <div class="lo-hero-meta-item">
+                <div class="label">Downtime</div>
+                <div class="value">None</div>
+            </div>
+        </div>
+    </div>
+    <span class="lo-hero-scroll">Scroll ↓</span>
+</section>
+
+<!-- Philosophy & Strengths -->
+<section class="lo-philosophy">
+    <div class="lo-philosophy-inner">
+        <div class="lo-philosophy-head reveal">
+            <div class="section-eyebrow">— Philosophy &amp; Strengths</div>
+            <h2>Why our lifting is different.</h2>
+        </div>
+        <div class="lo-philosophy-track">
+            <div class="lo-philosophy-card reveal">
+                <div class="card-num">01 / 05</div>
+                <h3>Customized Selection</h3>
+                <p>Seven distinct platforms across HIFU, RF, laser, and triple-energy technologies — chosen for your skin's layer-by-layer needs, not by what the clinic owns.</p>
+            </div>
+            <div class="lo-philosophy-card reveal">
+                <div class="card-num">02 / 05</div>
+                <h3>Real-time Skin Analysis</h3>
+                <p>Meta-View 3D diagnosis maps your skin thickness, elasticity, and aging pattern before treatment design — energy follows evidence.</p>
+            </div>
+            <div class="lo-philosophy-card reveal">
+                <div class="card-num">03 / 05</div>
+                <h3>Layered Approach</h3>
+                <p>HIFU reaches the SMAS. RF heats the dermis. Laser refines the surface. EMS lifts the muscle. We combine layers — not stack one technique blindly.</p>
+            </div>
+            <div class="lo-philosophy-card reveal">
+                <div class="card-num">04 / 05</div>
+                <h3>No Downtime</h3>
+                <p>Wash and apply makeup immediately. No recovery period, no visible marks — lifting designed to fit any day of the week.</p>
+            </div>
+            <div class="lo-philosophy-card reveal">
+                <div class="card-num">05 / 05</div>
+                <h3>Long-term View</h3>
+                <p>Lifting builds gradually. We design with collagen response over months, not minutes after a session.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Lifting Lineup -->
+<section class="lo-lineup">
+    <div class="lo-lineup-inner">
+        <div class="lo-lineup-head reveal">
+            <div class="section-eyebrow">— Lifting Lineup</div>
+            <h2>Seven platforms, <em>one face</em>.</h2>
+            <p class="lo-lineup-desc">Each lifting platform reaches a different layer of the skin. Combined intelligently, they refine the surface, build the dermis, lift the SMAS, and re-educate the muscle.</p>
+        </div>
+        <div class="lo-lineup-grid">
+
+            <a href="/en/ulthera.html" class="lo-lineup-card reveal">
+                <div class="lo-lineup-card-img"><img src="/assets/images/equipment/ulthera.png" alt="Ulthera" loading="lazy"></div>
+                <div class="lo-lineup-card-cat">— HIFU · SMAS</div>
+                <h3>Ulthera</h3>
+                <p>The gold-standard HIFU. Real-time DeepSee imaging delivers focused ultrasound precisely to the SMAS layer — structural firming from the foundation up.</p>
+                <span class="lo-lineup-card-link">Read more →</span>
+            </a>
+
+            <a href="/en/tuneface.html" class="lo-lineup-card reveal">
+                <div class="lo-lineup-card-img"><img src="/assets/images/equipment/tuneface.jpg" alt="TuneFace" loading="lazy"></div>
+                <div class="lo-lineup-card-cat">— Multi-Modal · Vacuum</div>
+                <h3>TuneFace</h3>
+                <p>RF, ultrasound, and vacuum technology working in synchrony — multi-modal lifting for those who want layered care in a single session.</p>
+                <span class="lo-lineup-card-link">Read more →</span>
+            </a>
+
+            <a href="/en/oligio-x.html" class="lo-lineup-card reveal">
+                <div class="lo-lineup-card-img"><img src="/assets/images/equipment/oligio-x.png" alt="OligioX" loading="lazy"></div>
+                <div class="lo-lineup-card-cat">— Monopolar RF · Wontech</div>
+                <h3>Oligio X</h3>
+                <p>Monopolar radiofrequency carried through dermal layers — broader, even heat that contracts existing collagen and stimulates new growth.</p>
+                <span class="lo-lineup-card-link">Read more →</span>
+            </a>
+
+            <a href="/en/inmode.html" class="lo-lineup-card reveal">
+                <div class="lo-lineup-card-img"><img src="/assets/images/equipment/inmode.jpg" alt="InMode" loading="lazy"></div>
+                <div class="lo-lineup-card-cat">— Bipolar RF · InMode</div>
+                <h3>InMode</h3>
+                <p>Bipolar RF platform with FX and FORMA handpieces — fat reduction and collagen tightening combined for a defined, refined contour.</p>
+                <span class="lo-lineup-card-link">Read more →</span>
+            </a>
+
+            <a href="/en/shurink.html" class="lo-lineup-card reveal">
+                <div class="lo-lineup-card-img"><img src="/assets/images/equipment/shurink.jpg" alt="Shurink Universe" loading="lazy"></div>
+                <div class="lo-lineup-card-cat">— HIFU · 1.5–9.0mm</div>
+                <h3>Shurink Universe</h3>
+                <p>Classys's next-generation HIFU. Nine cartridge depths and dual energy modes (Normal + MP) for precise coverage across face, neck, and body.</p>
+                <span class="lo-lineup-card-link">Read more →</span>
+            </a>
+
+            <a href="/en/titanium.html" class="lo-lineup-card reveal">
+                <div class="lo-lineup-card-img"><img src="/assets/images/equipment/titanium.png" alt="Titanium" loading="lazy"></div>
+                <div class="lo-lineup-card-cat">— 3-Wave Laser · Alma</div>
+                <h3>Titanium</h3>
+                <p>Three wavelengths in one applicator — 755nm Alexandrite for tone, 810nm Diode for mid-dermis, 1064nm Nd:YAG for deep structural firmness.</p>
+                <span class="lo-lineup-card-link">Read more →</span>
+            </a>
+
+            <a href="/en/eve-titan.html" class="lo-lineup-card reveal">
+                <div class="lo-lineup-card-img"><img src="/assets/images/eve-titan/device.png" alt="Eve Titan" loading="lazy"></div>
+                <div class="lo-lineup-card-cat">— Triple Tech · Weero</div>
+                <h3>Eve Titan</h3>
+                <p>RF, EMS, and microcurrent in synchrony. Reaches the facial muscle layer that conventional lifting devices don't address — re-educating structure from below.</p>
+                <span class="lo-lineup-card-link">Read more →</span>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<!-- Compare -->
+<section class="lo-compare">
+    <div class="lo-compare-inner">
+        <div class="lo-compare-head reveal">
+            <div class="section-eyebrow">— Find Your Match</div>
+            <h2>Compare seven platforms <em>at a glance</em>.</h2>
+            <p class="lo-compare-desc">Different concerns call for different layers. The table below maps each platform's technology, depth, comfort, and ideal candidates side by side.</p>
+        </div>
+
+        <div class="lo-compare-tabs reveal" role="tablist">
+            <button class="lo-tab active" data-tab="tech" role="tab" aria-selected="true">Technology</button>
+            <button class="lo-tab" data-tab="effect" role="tab" aria-selected="false">Effect &amp; Comfort</button>
+        </div>
+
+        <div class="lo-compare-table-wrap reveal">
+            <table class="lo-compare-table" data-view="tech">
+                <thead>
+                    <tr>
+                        <th>Platform</th>
+                        <th>Technology</th>
+                        <th>Depth</th>
+                        <th>Session Time</th>
+                        <th>Manufacturer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Ulthera</strong></td><td>HIFU</td><td>1.5 / 3.0 / 4.5 mm</td><td>~ 60 min</td><td>Merz</td></tr>
+                    <tr><td><strong>TuneFace</strong></td><td>RF + Ultrasound + Vacuum</td><td>Multi-layer</td><td>~ 40 min</td><td>Classys</td></tr>
+                    <tr><td><strong>Oligio X</strong></td><td>Monopolar RF</td><td>Dermis</td><td>~ 15 min</td><td>Wontech</td></tr>
+                    <tr><td><strong>InMode</strong></td><td>Bipolar RF</td><td>Dermis · Subcutaneous</td><td>~ 30 min</td><td>InMode</td></tr>
+                    <tr><td><strong>Shurink Universe</strong></td><td>HIFU (Normal + MP)</td><td>1.5 — 9.0 mm</td><td>~ 30 min</td><td>Classys</td></tr>
+                    <tr><td><strong>Titanium</strong></td><td>3-Wave Laser</td><td>Surface · Mid · Deep</td><td>~ 30 min</td><td>Alma</td></tr>
+                    <tr><td><strong>Eve Titan</strong></td><td>RF + EMS + Microcurrent</td><td>Muscle layer</td><td>~ 30 min</td><td>Weero</td></tr>
+                </tbody>
+            </table>
+
+            <table class="lo-compare-table" data-view="effect" hidden>
+                <thead>
+                    <tr>
+                        <th>Platform</th>
+                        <th>Onset</th>
+                        <th>Duration</th>
+                        <th>Comfort</th>
+                        <th>Best For</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Ulthera</strong></td><td>Gradual · 2–3 mo</td><td>12–18 months</td><td>Mild discomfort</td><td>Sagging, structural laxity</td></tr>
+                    <tr><td><strong>TuneFace</strong></td><td>Some immediate</td><td>6–12 months</td><td>Comfortable</td><td>All-around tightening</td></tr>
+                    <tr><td><strong>Oligio X</strong></td><td>Some immediate</td><td>6–12 months</td><td>Comfortable</td><td>Mild laxity, prevention</td></tr>
+                    <tr><td><strong>InMode</strong></td><td>Visible by 4 weeks</td><td>6–12 months</td><td>Comfortable</td><td>Jawline, double chin</td></tr>
+                    <tr><td><strong>Shurink Universe</strong></td><td>Gradual · 2–3 mo</td><td>12 months</td><td>Mild discomfort</td><td>Face, neck, body lifting</td></tr>
+                    <tr><td><strong>Titanium</strong></td><td>Visible by 4–8 weeks</td><td>6–12 months</td><td>Comfortable</td><td>Tone + lift combined</td></tr>
+                    <tr><td><strong>Eve Titan</strong></td><td>Immediate + gradual</td><td>4–6 weeks per session</td><td>Very comfortable</td><td>Mid-face, muscle tone</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- Journey -->
+<section class="lo-journey">
+    <div class="lo-journey-inner">
+        <div class="lo-journey-head reveal">
+            <div class="section-eyebrow">— Journey</div>
+            <h2>From diagnosis to <em>aftercare</em>.</h2>
+        </div>
+        <div class="lo-journey-steps">
+            <div class="lo-journey-step reveal">
+                <div class="step-num">Step 01</div>
+                <h3>Skin Diagnosis</h3>
+                <p>3D Meta-View analysis maps skin thickness, elasticity, and aging pattern. We see the layers your face actually has — not the layers it should have.</p>
+            </div>
+            <div class="lo-journey-step reveal">
+                <div class="step-num">Step 02</div>
+                <h3>Personalized Design</h3>
+                <p>One-on-one consultation with the lead doctor. We design the layered combination — which platform addresses which layer, and in what order.</p>
+            </div>
+            <div class="lo-journey-step reveal">
+                <div class="step-num">Step 03</div>
+                <h3>Treatment &amp; Aftercare</h3>
+                <p>Procedure performed by trained physicians, followed by soothing care. We follow up on collagen response over weeks and months, not just the same-day check.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="lo-faq">
+    <div class="lo-faq-inner">
+        <div class="lo-faq-head reveal">
+            <div class="section-eyebrow">— Frequently Asked</div>
+            <h2>Lifting Q&amp;A.</h2>
+        </div>
+        <div class="lo-faq-list reveal">
+            <details>
+                <summary>Which lifting treatment is right for me?</summary>
+                <p>The answer depends on your skin's structural condition and primary concern. We diagnose skin thickness, elasticity, and aging pattern through 3D analysis, then recommend the combination — not just one platform — that addresses the layers you actually need.</p>
+            </details>
+            <details>
+                <summary>Can I combine multiple lifting treatments?</summary>
+                <p>Yes — combination is often the most effective approach. Different platforms reach different layers (Ulthera reaches SMAS, OligioX heats the dermis, Eve Titan addresses muscle). Combined sessions deliver layered results that single treatments cannot match.</p>
+            </details>
+            <details>
+                <summary>How long do results last?</summary>
+                <p>Duration varies by platform and individual skin condition. HIFU treatments (Ulthera, Shurink) typically last 12–18 months. RF treatments last 6–12 months. With proper maintenance every 6–12 months, results compound over time.</p>
+            </details>
+            <details>
+                <summary>Is there downtime?</summary>
+                <p>None of our lifting platforms require recovery downtime. Washing and makeup are possible immediately after most procedures. Mild redness or tenderness may occur for a few hours but resolves naturally.</p>
+            </details>
+            <details>
+                <summary>How painful are these treatments?</summary>
+                <p>Discomfort levels vary. HIFU treatments involve some sensation during energy delivery. RF and laser treatments are generally comfortable. Eve Titan integrates microcurrent for very comfortable sessions. Topical anesthesia and vibration devices reduce discomfort where needed.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- Reserve CTA -->
+<section class="lo-reserve">
+    <div class="lo-reserve-inner reveal">
+        <h2>Find your lifting at <em>Mili Sinchon</em>.</h2>
+        <p>Begin with a 1:1 consultation and 3D skin diagnosis. Pricing and recommended combinations are personalized to your skin's structural needs.</p>
+        <div class="lo-reserve-actions">
+            <a href="https://pf.kakao.com/_mxadwxb" target="_blank" rel="noopener">KakaoTalk →</a>
+            <a href="https://api.whatsapp.com/send/?phone=821023834697" target="_blank" rel="noopener">WhatsApp →</a>
+            <a href="mailto:sinchon@miliclinic.com">Email →</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="mili-footer">
+    <div class="mili-footer-inner">
+        <div class="mili-footer-top">
+            <div class="mili-footer-brand">
+                <div class="mili-footer-logo"><img src="/assets/images/logo/logo.png" alt="Mili Clinic Sinchon"></div>
+                <p class="mili-footer-tagline">The flagship of the Mili Clinic brand. Beyond the remedy &mdash; a quiet sanctuary in Dosan for restoration and refinement.</p>
+                <p class="mili-footer-slogan">"Enhancing Beauty with Just a 1mm Change."</p>
+            </div>
+            <div class="mili-footer-col">
+                <h5>Treatments</h5>
+                <ul>
+                    <li><a href="/en/ulthera.html">Ulthera</a></li>
+                    <li><a href="/en/tuneface.html">TuneFace</a></li>
+                    <li><a href="/en/oligio-x.html">OligioX</a></li>
+                    <li><a href="/en/inmode.html">InMode</a></li>
+                    <li><a href="/en/shurink.html">Shurink</a></li>
+                    <li><a href="/en/titanium.html">Titanium</a></li>
+                    <li><a href="/en/eve-titan.html">Eve Titan</a></li>
+                    <li><a href="/en/botox.html">Botox</a></li>
+                    <li><a href="/en/filler.html">Filler</a></li>
+                    <li><a href="/en/collagen-booster.html">Collagen Booster</a></li>
+                    <li><a href="/en/skin-booster.html">Skin Booster</a></li>
+                    <li><a href="/en/acne-pore.html">Acne &amp; Pore</a></li>
+                    <li><a href="/en/all-in-one-brightening.html">All-in-One Brightening</a></li>
+                    <li><a href="/en/medi-spa.html">Medi-Spa</a></li>
+                    <li><a href="/en/laser-hair-removal.html">Laser Hair Removal</a></li>
+                    <li><a href="/en/body-shaping.html">Body Shaping</a></li>
+                </ul>
+            </div>
+            <div class="mili-footer-col">
+                <h5>Visit</h5>
+                <ul>
+                    <li><a href="/en/location.html">Location</a></li>
+                    <li><a href="/en/schedule.html">Schedule</a></li>
+                    <li><a href="https://naver.me/GLAXm15o" target="_blank" rel="noopener">Naver Map</a></li>
+                    <li><a href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener">Naver Booking</a></li>
+                    <li><a href="tel:+82263371212">+82 2&middot;6337&middot;1212</a></li>
+                </ul>
+            </div>
+            <div class="mili-footer-col">
+                <h5>Network</h5>
+                <ul>
+                    <li><a href="/en/promotion.html">Promotion</a></li>
+                    <li><a href="https://www.youtube.com/@Dr.ShinMillimeter" target="_blank" rel="noopener">YouTube</a></li>
+                    <li><a href="https://dosan.miliclinic.co.kr" target="_blank" rel="noopener">Mili Dosan</a></li>
+                    <li><a href="http://miliclinic.com" target="_blank" rel="noopener">Mili Global</a></li>
+                    <li><a href="https://sinchon.miliclinic.co.kr">&#54620;&#44397;&#50612; &#49324;&#51060;&#53944;</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mili-footer-messengers">
+            <a href="https://api.whatsapp.com/send/?phone=821023834697&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mili-msg" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375c-.99-1.575-1.516-3.391-1.516-5.26 0-5.445 4.455-9.885 9.942-9.885 2.654 0 5.145 1.035 7.021 2.91 1.875 1.875 2.909 4.371 2.909 7.026-.004 5.444-4.46 9.885-9.935 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411"/></svg>
+                <span class="mili-msg-name">WhatsApp</span>
+            </a>
+            <a href="https://mp.weixin.qq.com/s/U3J4SX5NmHNIuaYASOZ-XA" target="_blank" rel="noopener" class="mili-msg" aria-label="WeChat">
+                <svg viewBox="0 0 24 24" fill="#7BB32E"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.328.328 0 0 0 .166-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.594-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.475-1.78 5.687.91 2.214 3.337 3.6 6.116 3.6.453 0 .92-.069 1.386-.205a.79.79 0 0 1 .677.069l1.625 1.05a.36.36 0 0 0 .184.061c.16 0 .29-.132.29-.295 0-.071-.027-.142-.038-.213l-.336-1.245a.66.66 0 0 1-.026-.218.625.625 0 0 1 .25-.499C21.546 17.474 22.5 15.852 22.5 13.94c0-3.213-3.045-5.78-6.572-5.85zm-2.379 2.493c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897zm4.625 0c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897z"/></svg>
+                <span class="mili-msg-name">WeChat</span>
+            </a>
+            <a href="https://lin.ee/X7C7bMh" target="_blank" rel="noopener" class="mili-msg" aria-label="LINE">
+                <svg viewBox="0 0 24 24" fill="#06C755"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+                <span class="mili-msg-name">LINE</span>
+            </a>
+            <a href="https://pf.kakao.com/_mxadwxb/chat" target="_blank" rel="noopener" class="mili-msg" aria-label="KakaoTalk">
+                <svg viewBox="0 0 24 24" fill="#FEE500"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.7 6.8L5.6 21.4c-.1.3.2.5.5.4l4.4-2.9c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/><path d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.7 6.8L5.6 21.4c-.1.3.2.5.5.4l4.4-2.9c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8s-4.5-8-10-8z" stroke="#1A1A1A" stroke-width="0.4" fill="#FEE500"/></svg>
+                <span class="mili-msg-name">KakaoTalk</span>
+            </a>
+            <a href="https://www.instagram.com/sinchon.miliclinic/" target="_blank" rel="noopener" class="mili-msg" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="#1A1A1A"/></svg>
+                <span class="mili-msg-name">Instagram</span>
+            </a>
+        </div>
+
+        <div class="mili-footer-business">
+            <div>
+                <p><strong>Company</strong> Mili Clinic Sinchon (&#48128;&#47532;&#51032;&#50896; &#46020;&#49328;)</p>
+                <p><strong>Director</strong> Kim Hye-won, M.D.</p>
+                <p><strong>Business No.</strong> 166-18-01231</p>
+                <p><strong>Information Manager</strong> Kim Hye-won</p>
+            </div>
+            <div>
+                <p><strong>Address</strong> 3F, 104 Sinchon-ro, Mapo-gu, Seoul, Korea</p>
+                <p><strong>Hours</strong> Mon&middot;Wed&middot;Fri 10:00&ndash;19:00 / Tue&middot;Thu 10:00&ndash;21:00 / Sat 10:00&ndash;16:00</p>
+                <p><strong>Closed</strong> Sundays &amp; Public Holidays</p>
+                <p><strong>Lunch</strong> 13:00&ndash;14:00</p>
+            </div>
+        </div>
+
+        <div class="mili-footer-bottom">
+            <div>&copy; 2026 Mili Clinic Sinchon. All Rights Reserved.</div>
+            <div class="mili-footer-policies">
+                <a href="/en/privacy.html">Privacy Policy</a>
+                <a href="/en/non-covered.html">Non-Covered Items</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating -->
+<div class="mili-float">
+    <a href="https://pf.kakao.com/_mxadwxb/chat" target="_blank" rel="noopener" class="mili-float-btn kakao" aria-label="KakaoTalk">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.7 6.8L5.6 21.4c-.1.3.2.5.5.4l4.4-2.9c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/></svg>
+    </a>
+    <a href="https://mp.weixin.qq.com/s/U3J4SX5NmHNIuaYASOZ-XA" target="_blank" rel="noopener" class="mili-float-btn wechat" aria-label="WeChat">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.328.328 0 0 0 .166-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.594-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.475-1.78 5.687.91 2.214 3.337 3.6 6.116 3.6.453 0 .92-.069 1.386-.205a.79.79 0 0 1 .677.069l1.625 1.05a.36.36 0 0 0 .184.061c.16 0 .29-.132.29-.295 0-.071-.027-.142-.038-.213l-.336-1.245a.66.66 0 0 1-.026-.218.625.625 0 0 1 .25-.499C21.546 17.474 22.5 15.852 22.5 13.94c0-3.213-3.045-5.78-6.572-5.85zm-2.379 2.493c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897zm4.625 0c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897z"/></svg>
+    </a>
+    <a href="https://lin.ee/X7C7bMh" target="_blank" rel="noopener" class="mili-float-btn line" aria-label="LINE">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    </a>
+    <a href="https://api.whatsapp.com/send/?phone=821023834697&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mili-float-btn whatsapp" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375c-.99-1.575-1.516-3.391-1.516-5.26 0-5.445 4.455-9.885 9.942-9.885 2.654 0 5.145 1.035 7.021 2.91 1.875 1.875 2.909 4.371 2.909 7.026-.004 5.444-4.46 9.885-9.935 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411"/></svg>
+    </a>
+    <a href="https://www.instagram.com/sinchon.miliclinic/" target="_blank" rel="noopener" class="mili-float-btn instagram" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+    </a>
+</div>
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => item.classList.toggle('open'));
+});
+
+// Active sub-nav on scroll
+(function(){
+    const links = document.querySelectorAll('.tx-subnav a');
+    const sections = [...links].map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if(e.isIntersecting){
+                links.forEach(l => l.classList.remove('active'));
+                const active = document.querySelector('.tx-subnav a[href="#' + e.target.id + '"]');
+                if(active) active.classList.add('active');
+            }
+        });
+    }, {rootMargin: '-30% 0px -60% 0px'});
+    sections.forEach(s => observer.observe(s));
+})();
+</script>
+<script>
+(function(){
+    const wraps = document.querySelectorAll('.tx-point-wrap[data-area]');
+    const tags = document.querySelectorAll('.area-tag[data-area]');
+    function setActive(area){
+        wraps.forEach(w => w.classList.toggle('active', w.getAttribute('data-area') === area));
+        tags.forEach(t => t.classList.toggle('active', t.getAttribute('data-area') === area));
+    }
+    function clearActive(){
+        wraps.forEach(w => w.classList.remove('active'));
+        tags.forEach(t => t.classList.remove('active'));
+    }
+    wraps.forEach(w => {
+        w.addEventListener('mouseenter', () => setActive(w.getAttribute('data-area')));
+        w.addEventListener('mouseleave', clearActive);
+        w.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const area = w.getAttribute('data-area');
+            const isActive = w.classList.contains('active');
+            clearActive();
+            if (!isActive) setActive(area);
+        });
+    });
+    tags.forEach(t => {
+        t.addEventListener('mouseenter', () => setActive(t.getAttribute('data-area')));
+        t.addEventListener('mouseleave', clearActive);
+        t.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const area = t.getAttribute('data-area');
+            if (!area) return;
+            const isActive = t.classList.contains('active');
+            clearActive();
+            if (!isActive) setActive(area);
+        });
+    });
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.tx-point-wrap') && !e.target.closest('.area-tag')) {
+            clearActive();
+        }
+    });
+})();
+</script>
+
+<script data-mobile-nav-accordion>
+(function(){
+    const items = document.querySelectorAll('.mili-mobile-nav-list > li');
+    items.forEach(li => {
+        const span = li.querySelector(':scope > span');
+        if (!span) return;
+        span.addEventListener('click', (e) => {
+            e.stopPropagation();
+            li.classList.toggle('open');
+        });
+    });
+})();
+</script>
+<script data-mili-lang>
+(function(){
+document.querySelectorAll('.mili-lang-toggle').forEach(function(btn){
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var root = btn.closest('.mili-lang');
+    var open = !root.classList.contains('open');
+    document.querySelectorAll('.mili-lang.open').forEach(function(el){
+      el.classList.remove('open');
+      var t = el.querySelector('.mili-lang-toggle');
+      if (t) t.setAttribute('aria-expanded', 'false');
+    });
+    if (open) {
+      root.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+document.addEventListener('click', function(){
+  document.querySelectorAll('.mili-lang.open').forEach(function(el){
+    el.classList.remove('open');
+    var t = el.querySelector('.mili-lang-toggle');
+    if (t) t.setAttribute('aria-expanded', 'false');
+  });
+});
+})();
+</script>
+
+
+
+<script>
+(function(){
+    // Intersection Observer — reveal animations on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function(entries){
+            entries.forEach(function(entry){
+                if (entry.isIntersecting) {
+                    // Stagger reveal for grid children
+                    const delay = parseInt(entry.target.dataset.delay) || 0;
+                    setTimeout(function(){
+                        entry.target.classList.add('in');
+                    }, delay);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.12,
+            rootMargin: '0px 0px -60px 0px'
+        });
+        reveals.forEach(function(el, i){
+            // Auto-stagger cards in grids
+            const parent = el.parentElement;
+            if (parent && (parent.classList.contains('lo-philosophy-track') ||
+                           parent.classList.contains('lo-lineup-grid') ||
+                           parent.classList.contains('lo-journey-steps'))) {
+                el.dataset.delay = Array.from(parent.children).indexOf(el) * 80;
+            }
+            observer.observe(el);
+        });
+    } else {
+        // Fallback for older browsers
+        reveals.forEach(function(el){ el.classList.add('in'); });
+    }
+
+    // Compare table tabs
+    const tabs = document.querySelectorAll('.lo-tab');
+    const tables = document.querySelectorAll('.lo-compare-table');
+    tabs.forEach(function(tab){
+        tab.addEventListener('click', function(){
+            const view = this.dataset.tab;
+            tabs.forEach(function(t){ 
+                t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+            });
+            this.classList.add('active');
+            this.setAttribute('aria-selected', 'true');
+            tables.forEach(function(table){
+                if (table.dataset.view === view) {
+                    table.removeAttribute('hidden');
+                } else {
+                    table.setAttribute('hidden', '');
+                }
+            });
+        });
+    });
+})();
+</script>
+
+</body>
+</html>
