@@ -1,0 +1,143 @@
+/* Mili Clinic Sinchon — shared chrome (header, footer, float). Loaded by pages that omit inline site CSS. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+:root{
+    --ink: #0F0F10;
+    --bone: #F1F2F5;
+    --paper: #F8F9FB;
+    --white: #FFFFFF;
+    --muted: #8A867F;
+    --line: #DEDAD1;
+    --accent: #4338CA;
+    --pad-x: clamp(24px, 5vw, 96px);
+    --container: 1440px;
+    --display: "SF Pro Display", system-ui, -apple-system, "Inter", sans-serif;
+}
+
+body{
+    font-family: "SF Pro Text", system-ui, -apple-system, "Inter", sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    font-weight: 400;
+    line-height: 1.55;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+}
+
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+
+/* === Mili Header Nav with Dropdowns === */
+.mili-header{position:sticky;top:0;z-index:100;background:var(--paper);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.mili-header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px var(--pad-x);gap:24px}
+.mili-logo{display:inline-flex;align-items:center;height:40px;flex-shrink:0;text-decoration:none}.mili-logo img{height:100%;width:auto;object-fit:contain;display:block}
+
+.mili-nav{flex:1;display:flex;justify-content:center}
+.mili-nav-list{display:flex;gap:22px;list-style:none;align-items:center}
+.mili-nav-item{position:relative}
+.mili-nav-link{font-size:11px;letter-spacing:0.13em;text-transform:uppercase;padding:10px 0;display:inline-flex;align-items:center;gap:5px;white-space:nowrap;transition:color .2s;cursor:pointer}
+.mili-nav-link:hover{color:var(--ink)}
+.mili-nav-link.active{border-bottom:1px solid var(--ink)}
+.mili-nav-caret{display:inline-block;width:7px;height:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin-left:2px;margin-bottom:3px;opacity:.6;transition:transform .2s}
+.mili-nav-item:hover .mili-nav-caret{transform:rotate(225deg);margin-bottom:-2px}
+.mili-dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(-8px);background:var(--paper);border:1px solid var(--line);min-width:240px;padding:14px 0;opacity:0;visibility:hidden;transition:opacity .25s,transform .25s,visibility .25s;z-index:120}
+.mili-nav-item:hover .mili-dropdown{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.mili-dropdown a{display:block;padding:9px 24px;font-size:12px;letter-spacing:0.06em;color:var(--ink);transition:background .15s,color .15s;white-space:nowrap}
+.mili-dropdown a:hover{background:var(--bone);color:var(--ink)}
+.mili-cta{flex-shrink:0;display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:10px 20px;border:1px solid var(--ink);transition:background .25s,color .25s;white-space:nowrap}
+.mili-cta:hover{background:var(--ink);color:var(--paper)}
+.mili-cta svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:1.5}
+.mili-burger{display:none;background:none;border:none;cursor:pointer;padding:6px}
+.mili-burger span{display:block;width:22px;height:1px;background:var(--ink);margin:5px 0;transition:transform .3s,opacity .3s}
+.mili-mobile-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100dvh;max-height:100dvh;background:var(--paper);z-index:200;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:80px var(--pad-x) 140px}
+.mili-mobile-nav.open{display:flex;flex-direction:column}
+.mili-mobile-nav-close{position:absolute;top:24px;right:24px;background:none;border:none;cursor:pointer;font-size:24px;color:var(--ink)}
+.mili-mobile-nav-list{list-style:none;flex:1 1 auto;min-height:0;overflow-y:auto}
+.mili-mobile-nav-list>li{border-bottom:1px solid var(--line)}
+.mili-mobile-nav-list>li>a,.mili-mobile-nav-list>li>span{display:block;padding:18px 0;font-size:14px;letter-spacing:0.15em;text-transform:uppercase;font-weight:400;cursor:pointer}
+.mili-mobile-nav-list>li>span{display:flex;justify-content:space-between;align-items:center;position:relative}
+.mili-mobile-nav-list>li>span::after{content:'+';font-size:20px;font-weight:300;transition:transform .25s ease;line-height:1}
+.mili-mobile-nav-list>li.open>span::after{content:'−'}
+.mili-mobile-sub{padding:0 0 0 16px;list-style:none;max-height:0;overflow:hidden;transition:max-height .35s ease}
+.mili-mobile-nav-list>li.open .mili-mobile-sub{max-height:500px;padding-bottom:16px}
+.mili-mobile-sub li a{display:block;padding:8px 0;font-size:13px;color:var(--muted);font-weight:300;letter-spacing:0.04em;text-transform:none}
+@media (max-width:1600px){.mili-nav-list{gap:20px}.mili-nav-link{font-size:11px;letter-spacing:0.1em}.mili-header-inner{gap:16px;padding:18px 28px}.mili-cta{padding:9px 16px;font-size:10px;letter-spacing:0.16em}}
+@media (max-width:1240px){.mili-nav-list{gap:14px}.mili-nav-link{font-size:10px;letter-spacing:0.08em}.mili-header-inner{gap:12px;padding:16px 24px}.mili-cta{padding:8px 14px;font-size:9px}}
+@media (max-width:1100px){.mili-nav-list{gap:11px}.mili-nav-link{font-size:9.5px;letter-spacing:0.06em}.mili-header-inner{gap:10px;padding:14px 20px}.mili-cta{padding:7px 12px;font-size:8.5px}}
+@media (max-width:980px){.mili-nav,.mili-cta,.mili-lang{display:none}.mili-burger{display:block}}@media (max-width:768px){.mili-logo{height:32px}}
+
+/* === Language switcher === */
+.mili-lang{position:relative;margin-right:16px}
+.mili-lang-toggle{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid var(--line);color:var(--ink);padding:9px 14px;font:400 11px/1 var(--display);letter-spacing:0.16em;text-transform:uppercase;border-radius:980px;cursor:pointer;transition:border-color .2s}
+.mili-lang-toggle:hover{border-color:var(--ink)}
+.mili-lang-toggle svg{transition:transform .2s}
+.mili-lang.open .mili-lang-toggle svg{transform:rotate(180deg)}
+.mili-lang-menu{position:absolute;top:calc(100% + 6px);right:0;min-width:100px;background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden;opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .2s,transform .2s,visibility .2s;z-index:50}
+.mili-lang.open .mili-lang-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.mili-lang-item{display:block;padding:10px 14px;font:400 11px/1 var(--display);letter-spacing:0.16em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--line);transition:background .15s;cursor:pointer;text-align:left;width:100%;box-sizing:border-box}
+.mili-lang-item:last-child{border-bottom:none}
+a.mili-lang-item{text-decoration:none}
+.mili-lang-item:hover:not(.disabled){background:var(--bone)}
+.mili-lang-item.active{font-weight:500;background:var(--bone)}
+.mili-lang-item.disabled{color:var(--muted);opacity:0.4;cursor:not-allowed;pointer-events:none}
+.mili-mobile-lang{margin-top:auto;padding-top:32px;border-top:1px solid var(--line);flex-shrink:0}
+.mili-mobile-lang-label{display:block;font:400 10px/1 var(--display);letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.mili-mobile-lang-list{display:flex;gap:12px;flex-wrap:wrap}
+.mili-mobile-lang-item{display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;font:400 12px/1 var(--display);letter-spacing:0.16em;text-transform:uppercase;color:var(--ink);border:1px solid var(--line);border-radius:980px;cursor:pointer;text-decoration:none}
+.mili-mobile-lang-item.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.mili-mobile-lang-item.disabled{color:var(--muted);opacity:0.4;pointer-events:none;cursor:not-allowed}
+
+/* === Mili Footer === */
+.mili-footer{background:var(--paper);border-top:1px solid var(--line);padding:80px 0 40px;font-family:"SF Pro Text",system-ui,-apple-system,"Inter",sans-serif}
+.mili-footer-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
+.mili-footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px}
+.mili-footer-brand .mili-footer-logo{margin-bottom:24px}.mili-footer-logo img{height:32px;width:auto;object-fit:contain;display:block}
+.mili-footer-tagline{font-size:13px;font-weight:300;color:var(--muted);line-height:1.8;max-width:380px;margin-bottom:24px}
+.mili-footer-slogan{font-size:15px;font-weight:300;color:var(--ink);letter-spacing:-0.005em;line-height:1.5;max-width:380px}
+.mili-footer-col h5{font-size:11px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px;color:var(--ink)}
+.mili-footer-col ul{list-style:none}
+.mili-footer-col li{margin-bottom:9px}
+.mili-footer-col a{font-size:13px;color:var(--muted);font-weight:300;transition:color .2s}
+.mili-footer-col a:hover{color:var(--ink)}
+
+.mili-footer-messengers{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:36px}
+.mili-msg{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 12px;border-right:1px solid var(--line);transition:background .2s,color .2s;color:var(--ink);text-align:center;gap:8px}
+.mili-msg:last-child{border-right:none}
+.mili-msg:hover{background:var(--bone)}
+.mili-msg svg{width:22px;height:22px;flex-shrink:0}
+.mili-msg-name{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:400}
+
+.mili-footer-business{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding-top:32px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);line-height:1.85;font-weight:300}
+.mili-footer-business strong{font-weight:500;color:var(--ink);text-transform:uppercase;letter-spacing:0.15em;font-size:10px;display:inline-block;margin-right:8px}
+.mili-footer-business p{margin-bottom:6px}
+.mili-footer-bottom{padding-top:28px;margin-top:32px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);letter-spacing:0.05em;flex-wrap:wrap;gap:20px}
+.mili-footer-policies{display:flex;gap:18px}
+.mili-footer-policies a{color:var(--muted);transition:color .2s}
+.mili-footer-policies a:hover{color:var(--ink)}
+@media (max-width:960px){.mili-footer-top{grid-template-columns:1fr 1fr;gap:40px}.mili-footer-business{grid-template-columns:1fr;gap:24px}}
+@media (max-width:640px){.mili-footer-top{grid-template-columns:1fr}.mili-footer-messengers{grid-template-columns:repeat(5,1fr)}.mili-msg{padding:18px 6px}.mili-msg-name{font-size:9px;letter-spacing:0.1em}.mili-msg svg{width:18px;height:18px}}
+
+/* === Mili Floating Buttons (5) === */
+.mili-float{position:fixed;right:24px;bottom:24px;z-index:90;display:flex;flex-direction:column;gap:8px}
+.mili-float-btn{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--paper);border:1px solid var(--line);box-shadow:0 4px 14px rgba(0,0,0,0.06);transition:transform .25s,background .2s;color:var(--ink)}
+.mili-float-btn:hover{transform:translateY(-3px)}
+.mili-float-btn svg{width:22px;height:22px}
+.mili-float-btn.kakao{background:#FEE500;color:#1A1A1A;border-color:#FEE500}
+.mili-float-btn.whatsapp{background:#25D366;color:#fff;border-color:#25D366}
+.mili-float-btn.line{background:#06C755;color:#fff;border-color:#06C755}
+.mili-float-btn.wechat{background:#7BB32E;color:#fff;border-color:#7BB32E}
+.mili-float-btn.instagram{background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF);color:#fff;border-color:transparent}
+@media (max-width:640px){.mili-float{right:16px;bottom:16px}.mili-float-btn{width:42px;height:42px}.mili-float-btn svg{width:18px;height:18px}}
+
+@media (max-width:640px){
+    :root{--pad-x:20px}
+    .mili-footer-top{display:none}
+    .mili-footer-messengers{display:none}
+    footer.mili-footer{padding:48px 0 100px}
+    .mili-footer-business{padding-top:0;border-top:none}
+}
+@media (max-width:480px){
+    :root{--pad-x:16px}
+}
