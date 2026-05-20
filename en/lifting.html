@@ -149,22 +149,50 @@
 }
 
 /* =========================================
-   PHILOSOPHY — horizontal scroll
+   PHILOSOPHY — scroll-driven horizontal pin
 ========================================= */
 .lf-philosophy {
   position: relative;
   width: 100vw;
-  padding: clamp(120px, 18vh, 200px) 0 clamp(120px, 18vh, 200px);
+  background: var(--lf-bg);
+  /* 높이 = 카드 트랙이 가로로 다 지나가는데 필요한 스크롤 거리.
+     5 카드 + 인트로 패널 ≈ 6 viewports */
+  height: 600vh;
+}
+
+.lf-philosophy__pin {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
   background: var(--lf-bg);
 }
 
-.lf-philosophy__head {
+.lf-philosophy__track {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: clamp(40px, 5vw, 96px);
   padding: 0 clamp(40px, 8vw, 160px);
-  margin-bottom: clamp(80px, 12vh, 140px);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(40px, 6vw, 120px);
-  align-items: end;
+  will-change: transform;
+  transition: transform 0.05s linear;
+}
+
+.lf-philosophy__panel {
+  flex: 0 0 auto;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Intro panel — 첫 번째 패널은 텍스트만 */
+.lf-philosophy__intro-panel {
+  width: clamp(420px, 38vw, 620px);
+  padding-right: clamp(20px, 3vw, 60px);
 }
 
 .lf-philosophy__eyebrow {
@@ -179,36 +207,24 @@
   font-family: var(--lf-serif);
   font-style: italic;
   font-weight: 300;
-  font-size: clamp(48px, 6vw, 96px);
+  font-size: clamp(48px, 5.5vw, 88px);
   line-height: 1.05;
   letter-spacing: -0.01em;
-  margin: 0;
+  margin: 0 0 40px;
 }
 
 .lf-philosophy__intro {
   font-family: var(--lf-serif);
   font-weight: 300;
-  font-size: clamp(18px, 1.4vw, 22px);
+  font-size: clamp(18px, 1.3vw, 22px);
   line-height: 1.7;
   color: var(--lf-ink-soft);
   max-width: 480px;
 }
 
-.lf-philosophy__track {
-  display: flex;
-  gap: clamp(24px, 3vw, 48px);
-  padding: 0 clamp(40px, 8vw, 160px);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-.lf-philosophy__track::-webkit-scrollbar { display: none; }
-
+/* Card panels */
 .lf-philosophy__card {
-  flex: 0 0 auto;
-  width: clamp(320px, 32vw, 480px);
-  scroll-snap-align: start;
+  width: clamp(340px, 30vw, 460px);
 }
 
 .lf-philosophy__media {
@@ -216,24 +232,20 @@
   aspect-ratio: 3 / 4;
   background: var(--lf-bg-soft);
   overflow: hidden;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 .lf-philosophy__media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.75s ease-out;
-}
-.lf-philosophy__card:hover .lf-philosophy__media img {
-  transform: scale(1.04);
 }
 
 .lf-philosophy__num {
   font-family: var(--lf-serif);
   font-style: italic;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--lf-ink-mute);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   letter-spacing: 0.05em;
 }
 
@@ -241,9 +253,9 @@
   font-family: var(--lf-serif);
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(26px, 2.2vw, 34px);
+  font-size: clamp(26px, 2vw, 32px);
   line-height: 1.2;
-  margin: 0 0 20px;
+  margin: 0 0 18px;
 }
 
 .lf-philosophy__desc {
@@ -253,14 +265,56 @@
   max-width: 380px;
 }
 
+/* Progress indicator (하단) */
+.lf-philosophy__progress {
+  position: absolute;
+  bottom: 48px;
+  left: clamp(40px, 8vw, 160px);
+  right: clamp(40px, 8vw, 160px);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-family: var(--lf-sans);
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--lf-ink-mute);
+  z-index: 5;
+}
+
+.lf-philosophy__progress-bar {
+  flex: 1;
+  height: 1px;
+  background: var(--lf-line);
+  position: relative;
+}
+
+.lf-philosophy__progress-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0%;
+  background: var(--lf-ink);
+  transition: width 0.1s linear;
+}
+
+/* Mobile fallback — sticky 인터랙션 비활성, 일반 세로 스택 */
 @media (max-width: 768px) {
-  .lf-philosophy__head {
-    grid-template-columns: 1fr;
-    gap: 32px;
+  .lf-philosophy { height: auto; }
+  .lf-philosophy__pin {
+    position: relative;
+    height: auto;
+    padding: 100px 0;
   }
-  .lf-philosophy__card {
-    width: 78vw;
+  .lf-philosophy__track {
+    flex-direction: column;
+    gap: 80px;
+    padding: 0 24px;
+    transform: none !important;
   }
+  .lf-philosophy__panel { height: auto; width: 100%; }
+  .lf-philosophy__intro-panel { width: 100%; padding-right: 0; }
+  .lf-philosophy__card { width: 100%; max-width: 420px; margin: 0 auto; }
+  .lf-philosophy__progress { display: none; }
 }
 </style>
 </head>
@@ -386,64 +440,72 @@
 
   <!-- ===========================================
        SECTION: PHILOSOPHY
-       — 5개 가로 스크롤 카드
+       — scroll-driven horizontal pin
   =========================================== -->
-  <section class="lf-philosophy">
-    <div class="lf-philosophy__head lf-reveal">
-      <div>
-        <div class="lf-philosophy__eyebrow">Philosophy</div>
-        <h2 class="lf-philosophy__title">Why lifting,<br>done at Mili.</h2>
+  <section class="lf-philosophy" id="lfPhilosophy">
+    <div class="lf-philosophy__pin">
+      <div class="lf-philosophy__track" id="lfPhilosophyTrack">
+
+        <div class="lf-philosophy__panel lf-philosophy__intro-panel">
+          <div class="lf-philosophy__eyebrow">Philosophy</div>
+          <h2 class="lf-philosophy__title">Why lifting,<br>done at Mili.</h2>
+          <p class="lf-philosophy__intro">Lifting is not a device. It's a sequence of decisions — what to read, what to layer, where to stop. Five principles guide every protocol at Mili Clinic Sinchon.</p>
+        </div>
+
+        <article class="lf-philosophy__panel lf-philosophy__card">
+          <div class="lf-philosophy__media">
+            <img src="../assets/images/lifting/philosophy-01.jpg" alt="Diagnosis First">
+          </div>
+          <div class="lf-philosophy__num">01</div>
+          <h3 class="lf-philosophy__name">Diagnosis<br>First</h3>
+          <p class="lf-philosophy__desc">We read the face before we choose the device. Skin thickness, SMAS position, fat distribution, and aging pattern — analyzed first, treated second.</p>
+        </article>
+
+        <article class="lf-philosophy__panel lf-philosophy__card">
+          <div class="lf-philosophy__media">
+            <img src="../assets/images/lifting/philosophy-02.jpg" alt="Layered Lifting">
+          </div>
+          <div class="lf-philosophy__num">02</div>
+          <h3 class="lf-philosophy__name">Layered<br>Lifting</h3>
+          <p class="lf-philosophy__desc">SMAS, dermis, fascia — each layer responds to a different energy. We combine devices the way a tailor combines stitches: precise, intentional, layered.</p>
+        </article>
+
+        <article class="lf-philosophy__panel lf-philosophy__card">
+          <div class="lf-philosophy__media">
+            <img src="../assets/images/lifting/philosophy-03.jpg" alt="Doctor's Hand">
+          </div>
+          <div class="lf-philosophy__num">03</div>
+          <h3 class="lf-philosophy__name">Doctor's<br>Hand</h3>
+          <p class="lf-philosophy__desc">Every shot is delivered by the physician. No delegation, no shortcuts. The angle, the depth, the count — all decided in real time, by the person reading the face.</p>
+        </article>
+
+        <article class="lf-philosophy__panel lf-philosophy__card">
+          <div class="lf-philosophy__media">
+            <img src="../assets/images/lifting/philosophy-04.jpg" alt="Right Density">
+          </div>
+          <div class="lf-philosophy__num">04</div>
+          <h3 class="lf-philosophy__name">Right Density,<br>Not More Shots</h3>
+          <p class="lf-philosophy__desc">More energy is not more lifting. We place shots where the face actually needs them — and stop where it doesn't. Restraint is part of the design.</p>
+        </article>
+
+        <article class="lf-philosophy__panel lf-philosophy__card">
+          <div class="lf-philosophy__media">
+            <img src="../assets/images/lifting/philosophy-05.jpg" alt="Quiet Result">
+          </div>
+          <div class="lf-philosophy__num">05</div>
+          <h3 class="lf-philosophy__name">Quiet<br>Result</h3>
+          <p class="lf-philosophy__desc">No pulled look. No obvious tightness. The face is the same face — only clearer, more defined, more rested. The result speaks softly.</p>
+        </article>
+
       </div>
-      <p class="lf-philosophy__intro">Lifting is not a device. It's a sequence of decisions — what to read, what to layer, where to stop. Five principles guide every protocol at Mili Clinic Sinchon.</p>
-    </div>
 
-    <div class="lf-philosophy__track">
-
-      <article class="lf-philosophy__card lf-reveal">
-        <div class="lf-philosophy__media">
-          <img src="../assets/images/lifting/philosophy-01.jpg" alt="Diagnosis First">
+      <div class="lf-philosophy__progress">
+        <span id="lfPhilosophyCurrent">01</span>
+        <div class="lf-philosophy__progress-bar">
+          <div class="lf-philosophy__progress-fill" id="lfPhilosophyFill"></div>
         </div>
-        <div class="lf-philosophy__num">01</div>
-        <h3 class="lf-philosophy__name">Diagnosis<br>First</h3>
-        <p class="lf-philosophy__desc">We read the face before we choose the device. Skin thickness, SMAS position, fat distribution, and aging pattern — analyzed first, treated second.</p>
-      </article>
-
-      <article class="lf-philosophy__card lf-reveal">
-        <div class="lf-philosophy__media">
-          <img src="../assets/images/lifting/philosophy-02.jpg" alt="Layered Lifting">
-        </div>
-        <div class="lf-philosophy__num">02</div>
-        <h3 class="lf-philosophy__name">Layered<br>Lifting</h3>
-        <p class="lf-philosophy__desc">SMAS, dermis, fascia — each layer responds to a different energy. We combine devices the way a tailor combines stitches: precise, intentional, layered.</p>
-      </article>
-
-      <article class="lf-philosophy__card lf-reveal">
-        <div class="lf-philosophy__media">
-          <img src="../assets/images/lifting/philosophy-03.jpg" alt="Doctor's Hand">
-        </div>
-        <div class="lf-philosophy__num">03</div>
-        <h3 class="lf-philosophy__name">Doctor's<br>Hand</h3>
-        <p class="lf-philosophy__desc">Every shot is delivered by the physician. No delegation, no shortcuts. The angle, the depth, the count — all decided in real time, by the person reading the face.</p>
-      </article>
-
-      <article class="lf-philosophy__card lf-reveal">
-        <div class="lf-philosophy__media">
-          <img src="../assets/images/lifting/philosophy-04.jpg" alt="Right Density">
-        </div>
-        <div class="lf-philosophy__num">04</div>
-        <h3 class="lf-philosophy__name">Right Density,<br>Not More Shots</h3>
-        <p class="lf-philosophy__desc">More energy is not more lifting. We place shots where the face actually needs them — and stop where it doesn't. Restraint is part of the design.</p>
-      </article>
-
-      <article class="lf-philosophy__card lf-reveal">
-        <div class="lf-philosophy__media">
-          <img src="../assets/images/lifting/philosophy-05.jpg" alt="Quiet Result">
-        </div>
-        <div class="lf-philosophy__num">05</div>
-        <h3 class="lf-philosophy__name">Quiet<br>Result</h3>
-        <p class="lf-philosophy__desc">No pulled look. No obvious tightness. The face is the same face — only clearer, more defined, more rested. The result speaks softly.</p>
-      </article>
-
+        <span>05</span>
+      </div>
     </div>
   </section>
 
@@ -634,7 +696,9 @@ document.addEventListener('click', function(){
 </script>
 
 <script>
+// ============================================
 // Reveal on scroll
+// ============================================
 const lfObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -645,6 +709,69 @@ const lfObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
 
 document.querySelectorAll('.lf-reveal').forEach(el => lfObserver.observe(el));
+
+// ============================================
+// Philosophy — scroll-driven horizontal pin
+// 세로 스크롤 진행도를 가로 translateX로 변환
+// ============================================
+(function() {
+  const section = document.getElementById('lfPhilosophy');
+  const track = document.getElementById('lfPhilosophyTrack');
+  const fill = document.getElementById('lfPhilosophyFill');
+  const currentLabel = document.getElementById('lfPhilosophyCurrent');
+  if (!section || !track) return;
+
+  // 모바일에서는 비활성 (CSS에서 일반 세로 스택)
+  const isMobile = () => window.innerWidth <= 768;
+
+  let maxScroll = 0;
+  let trackWidth = 0;
+  let viewportWidth = 0;
+
+  function measure() {
+    if (isMobile()) {
+      track.style.transform = '';
+      return;
+    }
+    trackWidth = track.scrollWidth;
+    viewportWidth = window.innerWidth;
+    // 트랙이 가로로 다 지나가야 하는 거리
+    maxScroll = trackWidth - viewportWidth;
+    update();
+  }
+
+  function update() {
+    if (isMobile()) return;
+    const rect = section.getBoundingClientRect();
+    const sectionHeight = section.offsetHeight;
+    const winH = window.innerHeight;
+
+    // section.top이 0일 때 진행 0, section.bottom이 winH일 때 진행 1
+    // sticky가 활성화된 구간: -rect.top이 0에서 (sectionHeight - winH)까지
+    const scrolled = -rect.top;
+    const scrollable = sectionHeight - winH;
+
+    let progress = scrolled / scrollable;
+    progress = Math.max(0, Math.min(1, progress));
+
+    const translateX = -progress * maxScroll;
+    track.style.transform = `translate3d(${translateX}px, 0, 0)`;
+
+    // Progress bar
+    if (fill) fill.style.width = (progress * 100) + '%';
+
+    // Current label (01~05)
+    if (currentLabel) {
+      const stage = Math.min(5, Math.max(1, Math.ceil(progress * 5) || 1));
+      const label = String(stage).padStart(2, '0');
+      if (currentLabel.textContent !== label) currentLabel.textContent = label;
+    }
+  }
+
+  measure();
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', measure);
+})();
 </script>
 
 </body>
