@@ -7,140 +7,250 @@
 <meta name="description" content="Lifting at Mili Clinic Sinchon. Diagnosis-led, layered, doctor-performed. Time is the only thing that doesn't lift back.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- common.css is host-served on production. Comment out below if previewing standalone. -->
 <link rel="stylesheet" href="../assets/css/common.css">
+
+<!--
+  NOTE for deploy:
+  Image paths below use the absolute Vercel URL so the preview renders real content.
+  Before deploying, find/replace:
+    ../assets/images/lifting/
+    →
+    ../assets/images/lifting/
+-->
+
 <style>
-/* =========================================
-   Lifting Page — Design System
-   Monochrome, full-bleed, editorial
-========================================= */
+/* =========================================================
+   LIFTING — Mili Clinic Sinchon
+   Monochrome editorial, Apple-tight spacing, TU-style restraint
+   ========================================================= */
 
 :root {
-  --lf-bg: #FFFFFF;
-  --lf-bg-soft: #FAFAFA;
-  --lf-bg-dark: #0A0A0A;
-  --lf-ink: #0A0A0A;
-  --lf-ink-soft: #6B6B6B;
-  --lf-ink-mute: #A8A8A8;
-  --lf-line: #E5E5E5;
-  --lf-line-soft: #F0F0F0;
+  /* Apple Design System — colors */
+  --lf-white:    #FFFFFF;
+  --lf-paper:    #F5F5F7;   /* Apple parchment */
+  --lf-mist:     #E8E8ED;
+  --lf-line:     rgba(0, 0, 0, 0.08);   /* Apple hairline */
+  --lf-line-2:   rgba(0, 0, 0, 0.12);
+  --lf-ink:      #1D1D1F;   /* Apple universal ink, never pure black */
+  --lf-ink-2:    #2A2A2C;
+  --lf-ink-3:    #424245;   /* secondary text */
+  --lf-mute:     #86868B;   /* Apple muted */
+  --lf-mute-2:   #B8B8BC;
+  --lf-dark:     #1D1D1F;   /* dark surface — Apple uses near-black, never pure */
+  --lf-dark-2:   #2A2A2C;
 
-  --lf-serif: 'Cormorant Garamond', 'Times New Roman', serif;
-  --lf-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  /* Type — Cormorant Garamond italic reserved for display per brand brief.
+     Everything else: Inter (Apple's off-platform substitute for SF Pro). */
+  --lf-serif:    'Cormorant Garamond', 'Times New Roman', serif;
+  --lf-sans:     'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif;
 
-  --lf-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  /* Motion — Apple default ease-in-out */
+  --lf-ease:     cubic-bezier(0.4, 0, 0.6, 1);
+  --lf-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Radii — Apple's ladder: 0 / 8 / 18 / 980 */
+  --lf-r-card:   18px;
+  --lf-r-pill:   980px;
+  --lf-r-small:  8px;
+
+  --lf-gut:      clamp(28px, 6vw, 120px);
 }
 
+/* ---------------- Reset within .lf ---------------- */
+.lf, .lf * { box-sizing: border-box; }
 .lf {
-  background: var(--lf-bg);
+  background: var(--lf-white);
   color: var(--lf-ink);
   font-family: var(--lf-sans);
   font-weight: 300;
-  letter-spacing: 0.01em;
-  overflow-x: hidden;
+  letter-spacing: 0.005em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
 }
-
-.lf *, .lf *::before, .lf *::after { box-sizing: border-box; }
-
 .lf img { display: block; max-width: 100%; }
+.lf h1, .lf h2, .lf h3, .lf h4 { margin: 0; font-weight: 300; }
+.lf p { margin: 0; }
 
-/* Reveal animation */
-.lf-reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1.2s var(--lf-ease), transform 1.2s var(--lf-ease);
+/* ---------------- Reveal primitive ---------------- */
+.lf-rv { opacity: 0; transform: translateY(28px); transition: opacity 1.1s var(--lf-ease), transform 1.1s var(--lf-ease); }
+.lf-rv.is-in { opacity: 1; transform: none; }
+.lf-rv.d1 { transition-delay: .08s; }
+.lf-rv.d2 { transition-delay: .16s; }
+.lf-rv.d3 { transition-delay: .24s; }
+
+/* ---------------- Shared type ---------------- */
+.lf-eyebrow {
+  display: inline-block;
+  position: relative;
+  padding-left: 42px;
+  font-family: var(--lf-sans);
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--lf-ink-3);
+  white-space: nowrap;
+  line-height: 1;
 }
-.lf-reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+.lf-eyebrow::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 28px; height: 1px;
+  background: currentColor; opacity: .6;
+}
+.lf-eyebrow--light { color: rgba(255,255,255,0.72); }
+.lf-eyebrow--light::before { background: rgba(255,255,255,0.55); }
+
+.lf-display {
+  font-family: var(--lf-sans);
+  
+  font-weight: 300;
+  line-height: 0.96;
+  letter-spacing: -0.018em;
 }
 
-/* =========================================
+/* ---------------- Section running head ---------------- */
+.lf-rule {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: clamp(20px, 3vw, 40px);
+  padding: 28px var(--lf-gut);
+  font-family: var(--lf-sans);
+  font-size: 10.5px;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--lf-mute);
+  background: var(--lf-white);
+  border-top: 1px solid var(--lf-line);
+}
+.lf-rule__num { color: var(--lf-ink); font-weight: 400; }
+.lf-rule__bar { height: 1px; background: var(--lf-line); }
+.lf-rule__name { color: var(--lf-ink); font-weight: 400; }
+.lf-rule--dark { background: var(--lf-ink); color: rgba(255,255,255,0.5); border-color: rgba(255,255,255,0.12); }
+.lf-rule--dark .lf-rule__num,
+.lf-rule--dark .lf-rule__name { color: #fff; }
+.lf-rule--dark .lf-rule__bar { background: rgba(255,255,255,0.18); }
+.lf-rule--paper { background: var(--lf-paper); }
+
+/* =========================================================
    HERO
-========================================= */
+   ========================================================= */
 .lf-hero {
   position: relative;
   width: 100vw;
   height: 100vh;
   min-height: 720px;
-  background: var(--lf-bg-dark);
-  color: #FFFFFF;
+  max-height: 1080px;
+  background: #0A0A0A;
+  color: #fff;
   overflow: hidden;
 }
-
 .lf-hero__media {
-  position: absolute;
-  inset: 0;
-  background: #1A1A1A url('../assets/images/lifting/hero.jpg') center/cover no-repeat;
-  opacity: 0.55;
+  position: absolute; inset: 0;
+  background: #111 url('../assets/images/lifting/hero.jpg') center/cover no-repeat;
+  opacity: 0.62;
+  transform: scale(1.06);
+  animation: lfHeroDrift 18s var(--lf-ease) forwards;
+}
+.lf-hero__media::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.0) 28%, rgba(0,0,0,0.0) 55%, rgba(0,0,0,0.55) 100%);
+}
+@keyframes lfHeroDrift {
+  to { transform: scale(1.0); }
 }
 
-.lf-hero__inner {
-  position: relative;
+.lf-hero__top {
+  position: absolute;
+  top: clamp(28px, 5vh, 56px);
+  left: var(--lf-gut);
+  right: var(--lf-gut);
   z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  font-family: var(--lf-sans);
+  font-size: 10.5px;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+}
+.lf-hero__crumb { display: flex; align-items: center; gap: 14px; }
+.lf-hero__crumb i { width: 18px; height: 1px; background: rgba(255,255,255,0.5); display: inline-block; }
+
+.lf-hero__inner {
+  position: relative; z-index: 2;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 0 clamp(40px, 8vw, 160px) clamp(80px, 12vh, 160px);
+  padding: 0 var(--lf-gut) clamp(72px, 11vh, 140px);
 }
-
-.lf-hero__eyebrow {
-  font-family: var(--lf-sans);
-  font-size: 11px;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  font-weight: 400;
-  margin-bottom: 32px;
-  opacity: 0.7;
-}
-
 .lf-hero__title {
-  font-family: var(--lf-serif);
-  font-style: italic;
-  font-weight: 300;
-  font-size: clamp(80px, 14vw, 220px);
-  line-height: 0.95;
-  letter-spacing: -0.02em;
-  margin: 0 0 40px;
-}
-
-.lf-hero__copy {
-  font-family: var(--lf-serif);
-  font-weight: 300;
-  font-size: clamp(20px, 2vw, 30px);
-  line-height: 1.5;
-  letter-spacing: 0.005em;
-  max-width: 680px;
-  opacity: 0.92;
-}
-
-.lf-hero__scroll {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
   font-family: var(--lf-sans);
-  font-size: 10px;
-  letter-spacing: 0.35em;
+  
+  font-weight: 300;
+  font-size: clamp(96px, 17vw, 280px);
+  line-height: 0.88;
+  letter-spacing: -0.025em;
+  margin: 0 0 clamp(28px, 4vh, 56px);
+  text-wrap: balance;
+}
+.lf-hero__title small {
+  display: block;
+  font-family: var(--lf-sans);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
-  opacity: 0.5;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: clamp(28px, 4vh, 48px);
+}
+.lf-hero__copy {
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: clamp(17px, 1.2vw, 21px);
+  line-height: 1.55;
+  letter-spacing: -0.014em;
+  color: rgba(255,255,255,0.92);
+  max-width: 460px;
+}
+.lf-hero__copy em { font-style: normal; color: #fff; }
+
+.lf-hero__foot {
+  position: absolute;
+  bottom: clamp(22px, 3vh, 36px);
+  left: var(--lf-gut);
+  right: var(--lf-gut);
   z-index: 3;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  font-family: var(--lf-sans);
+  font-size: 10.5px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
 }
-
-.lf-hero__scroll::after {
-  content: '';
-  display: block;
-  width: 1px;
-  height: 40px;
-  background: #FFFFFF;
-  animation: lfScrollLine 2.4s ease-in-out infinite;
+.lf-hero__scroll { display: flex; align-items: center; gap: 14px; }
+.lf-hero__scroll i {
+  display: inline-block;
+  width: 1px; height: 40px;
+  background: rgba(255,255,255,0.85);
+  transform-origin: top;
+  animation: lfScrollLine 2.6s ease-in-out infinite;
 }
-
 @keyframes lfScrollLine {
   0%   { transform: scaleY(0); transform-origin: top; }
   45%  { transform: scaleY(1); transform-origin: top; }
@@ -148,377 +258,473 @@
   100% { transform: scaleY(0); transform-origin: bottom; }
 }
 
-/* =========================================
-   PHILOSOPHY — scroll-driven horizontal pin
-========================================= */
+/* =========================================================
+   INTRO STATEMENT — connective tissue between hero & philosophy
+   ========================================================= */
+.lf-intro {
+  position: relative;
+  width: 100vw;
+  background: var(--lf-white);
+  padding: clamp(120px, 18vh, 200px) var(--lf-gut) clamp(120px, 18vh, 200px);
+}
+.lf-intro__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: clamp(48px, 8vw, 140px);
+  align-items: end;
+  max-width: 1640px;
+  margin: 0 auto;
+}
+.lf-intro__lead {
+  font-family: var(--lf-sans);
+  
+  font-weight: 300;
+  font-size: clamp(36px, 4.6vw, 72px);
+  line-height: 1.08;
+  letter-spacing: -0.012em;
+  color: var(--lf-ink);
+  text-wrap: balance;
+}
+.lf-intro__lead em {  }
+.lf-intro__body {
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--lf-ink-3);
+  max-width: 520px;
+  letter-spacing: -0.012em;
+}
+.lf-intro__body + .lf-intro__body { margin-top: 22px; }
+
+@media (max-width: 880px) {
+  .lf-intro__grid { grid-template-columns: 1fr; gap: 40px; align-items: start; }
+}
+
+/* =========================================================
+   PHILOSOPHY — horizontal pin, smooth lerp
+   ========================================================= */
 .lf-philosophy {
   position: relative;
   width: 100vw;
-  background: var(--lf-bg);
-  /* 높이는 JS가 트랙 너비에 맞춰 동적 설정. fallback으로 임시값. */
-  height: 300vh;
+  background: var(--lf-paper);
+  height: 360vh; /* JS overrides with exact value */
 }
-
 .lf-philosophy__pin {
   position: sticky;
   top: 0;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  background: var(--lf-paper);
+}
+
+.lf-philosophy__head {
+  position: absolute;
+  top: clamp(40px, 8vh, 88px);
+  left: var(--lf-gut);
+  right: var(--lf-gut);
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  pointer-events: none;
+}
+.lf-philosophy__head-l { display: flex; flex-direction: column; gap: 18px; }
+.lf-philosophy__head-r {
+  display: none; /* Bottom progress bar already says "Scroll” — avoid double messaging. */
+}
+
+.lf-philosophy__viewport {
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
-  background: var(--lf-bg);
+  overflow: hidden;
 }
 
 .lf-philosophy__track {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   height: 100%;
-  gap: clamp(40px, 5vw, 96px);
-  padding: 0 clamp(40px, 8vw, 160px);
+  gap: clamp(32px, 4vw, 80px);
+  padding: 0 var(--lf-gut);
   will-change: transform;
-  transition: transform 0.05s linear;
 }
 
 .lf-philosophy__panel {
   flex: 0 0 auto;
-  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-/* Intro panel — 첫 번째 패널은 텍스트만 */
-.lf-philosophy__intro-panel {
-  width: clamp(420px, 38vw, 620px);
-  padding-right: clamp(20px, 3vw, 60px);
-}
-
-.lf-philosophy__eyebrow {
-  font-size: 11px;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--lf-ink-soft);
-  margin-bottom: 32px;
-}
-
-.lf-philosophy__title {
-  font-family: var(--lf-serif);
-  font-style: italic;
-  font-weight: 300;
-  font-size: clamp(48px, 5.5vw, 88px);
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-  margin: 0 0 40px;
-}
-
+/* Intro panel */
 .lf-philosophy__intro {
-  font-family: var(--lf-serif);
+  width: clamp(420px, 36vw, 600px);
+  padding-right: clamp(20px, 3vw, 60px);
+  align-self: center;
+  margin-top: 80px;
+}
+.lf-philosophy__intro-title {
+  font-family: var(--lf-sans);
+  
   font-weight: 300;
-  font-size: clamp(18px, 1.3vw, 22px);
-  line-height: 1.7;
-  color: var(--lf-ink-soft);
-  max-width: 480px;
+  font-size: clamp(56px, 6.4vw, 112px);
+  line-height: 1.0;
+  letter-spacing: -0.018em;
+  margin: 36px 0 32px;
+  color: var(--lf-ink);
+}
+.lf-philosophy__intro-body {
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--lf-ink-3);
+  max-width: 440px;
+  letter-spacing: -0.012em;
 }
 
 /* Card panels */
 .lf-philosophy__card {
-  width: clamp(340px, 30vw, 460px);
+  width: clamp(340px, 28vw, 440px);
+  align-self: center;
+  margin-top: 60px;
 }
-
 .lf-philosophy__media {
   width: 100%;
-  aspect-ratio: 3 / 4;
-  background: var(--lf-bg-soft);
+  aspect-ratio: 4 / 5;
+  background: var(--lf-mist);
   overflow: hidden;
   margin-bottom: 28px;
+  position: relative;
+  border-radius: var(--lf-r-card);
 }
 .lf-philosophy__media img {
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 1.2s var(--lf-ease-out);
 }
-
+.lf-philosophy__media::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.08) 100%);
+  pointer-events: none;
+}
 .lf-philosophy__num {
-  font-family: var(--lf-serif);
-  font-style: italic;
-  font-size: 13px;
-  color: var(--lf-ink-mute);
+  font-family: var(--lf-sans);
+  font-style: normal;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--lf-mute);
   margin-bottom: 14px;
-  letter-spacing: 0.05em;
 }
-
 .lf-philosophy__name {
-  font-family: var(--lf-serif);
-  font-style: italic;
+  font-family: var(--lf-sans);
+  
   font-weight: 400;
-  font-size: clamp(26px, 2vw, 32px);
-  line-height: 1.2;
-  margin: 0 0 18px;
+  font-size: clamp(26px, 2.1vw, 34px);
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  margin: 0 0 16px;
+  color: var(--lf-ink);
 }
-
 .lf-philosophy__desc {
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--lf-ink-soft);
-  max-width: 380px;
+  font-family: var(--lf-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--lf-ink-3);
+  max-width: 360px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
-/* Progress indicator (하단) */
+/* Tail card — closes the horizontal sequence */
+.lf-philosophy__tail {
+  width: clamp(320px, 26vw, 400px);
+  align-self: center;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding-left: clamp(20px, 3vw, 40px);
+  border-left: 1px solid var(--lf-line);
+  height: clamp(280px, 36vh, 360px);
+}
+.lf-philosophy__tail h3 {
+  font-family: var(--lf-sans);
+  
+  font-weight: 400;
+  font-size: clamp(28px, 2.4vw, 38px);
+  line-height: 1.15;
+  letter-spacing: -0.008em;
+  margin: 0;
+  color: var(--lf-ink);
+}
+.lf-philosophy__tail p {
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--lf-ink-3);
+  max-width: 320px;
+  letter-spacing: -0.01em;
+}
+
+/* Progress */
 .lf-philosophy__progress {
   position: absolute;
-  bottom: 48px;
-  left: clamp(40px, 8vw, 160px);
-  right: clamp(40px, 8vw, 160px);
+  bottom: clamp(36px, 5vh, 56px);
+  left: var(--lf-gut);
+  right: var(--lf-gut);
+  z-index: 4;
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 22px;
   font-family: var(--lf-sans);
-  font-size: 11px;
-  letter-spacing: 0.25em;
+  font-size: 10.5px;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: var(--lf-ink-mute);
-  z-index: 5;
+  color: var(--lf-mute);
+  pointer-events: none;
 }
-
+.lf-philosophy__progress-current { color: var(--lf-ink); font-weight: 400; }
 .lf-philosophy__progress-bar {
-  flex: 1;
-  height: 1px;
-  background: var(--lf-line);
-  position: relative;
+  flex: 1; height: 1px; background: var(--lf-line); position: relative;
 }
-
 .lf-philosophy__progress-fill {
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 0%;
-  background: var(--lf-ink);
-  transition: width 0.1s linear;
+  position: absolute; inset: 0 auto 0 0;
+  width: 0%; background: var(--lf-ink);
+  transition: width 0.18s linear;
 }
+.lf-philosophy__progress-hint {
+  display: flex; align-items: center; gap: 10px;
+  color: var(--lf-mute-2);
+}
+.lf-philosophy__progress-hint svg { width: 18px; height: 8px; }
 
-/* Mobile fallback — sticky 인터랙션 비활성, 일반 세로 스택 */
-@media (max-width: 768px) {
+@media (max-width: 880px) {
   .lf-philosophy { height: auto; }
-  .lf-philosophy__pin {
-    position: relative;
-    height: auto;
-    padding: 100px 0;
-  }
+  .lf-philosophy__pin { position: relative; height: auto; padding: 120px 0 100px; }
+  .lf-philosophy__head { position: relative; top: auto; left: auto; right: auto; padding: 0 24px; margin-bottom: 60px; }
+  .lf-philosophy__viewport { position: relative; inset: auto; overflow: visible; }
   .lf-philosophy__track {
-    flex-direction: column;
-    gap: 80px;
-    padding: 0 24px;
+    flex-direction: column; gap: 72px; padding: 0 24px;
     transform: none !important;
   }
-  .lf-philosophy__panel { height: auto; width: 100%; }
-  .lf-philosophy__intro-panel { width: 100%; padding-right: 0; }
-  .lf-philosophy__card { width: 100%; max-width: 420px; margin: 0 auto; }
+  .lf-philosophy__intro,
+  .lf-philosophy__card,
+  .lf-philosophy__tail { width: 100%; max-width: 460px; margin: 0 auto; padding: 0; border: 0; height: auto; }
   .lf-philosophy__progress { display: none; }
 }
 
-/* =========================================
-   LAYERED APPROACH — skin cross-section
-========================================= */
+/* =========================================================
+   LAYERED APPROACH — sticky cross-section, mono
+   ========================================================= */
 .lf-layered {
   position: relative;
   width: 100vw;
-  padding: clamp(140px, 20vh, 220px) clamp(40px, 8vw, 160px);
-  background: var(--lf-bg-soft);
+  background: var(--lf-white);
+  padding: clamp(120px, 18vh, 200px) var(--lf-gut) clamp(140px, 22vh, 240px);
 }
-
 .lf-layered__head {
-  max-width: 720px;
-  margin-bottom: clamp(80px, 12vh, 140px);
+  max-width: 760px;
+  margin: 0 0 clamp(80px, 12vh, 140px);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
-
-.lf-layered__eyebrow {
-  font-size: 11px;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--lf-ink-soft);
-  margin-bottom: 32px;
-}
-
 .lf-layered__title {
-  font-family: var(--lf-serif);
-  font-style: italic;
+  font-family: var(--lf-sans);
+  
   font-weight: 300;
-  font-size: clamp(44px, 5.5vw, 84px);
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-  margin: 0 0 36px;
+  font-size: clamp(46px, 6vw, 96px);
+  line-height: 1.0;
+  letter-spacing: -0.018em;
+  color: var(--lf-ink);
 }
-
 .lf-layered__lede {
-  font-family: var(--lf-serif);
-  font-weight: 300;
-  font-size: clamp(18px, 1.3vw, 22px);
-  line-height: 1.7;
-  color: var(--lf-ink-soft);
-  max-width: 580px;
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: clamp(17px, 1.15vw, 19px);
+  line-height: 1.6;
+  color: var(--lf-ink-3);
+  max-width: 560px;
+  letter-spacing: -0.014em;
 }
 
 .lf-layered__body {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
   gap: clamp(60px, 8vw, 140px);
   align-items: start;
 }
 
-.lf-layered__diagram {
+.lf-layered__diagram-wrap {
   position: sticky;
   top: 15vh;
+}
+.lf-layered__diagram {
   width: 100%;
   aspect-ratio: 4 / 5;
-  background: var(--lf-bg);
+  background: var(--lf-paper);
   border: 1px solid var(--lf-line);
+  border-radius: var(--lf-r-card);
+  position: relative;
+  overflow: hidden;
 }
+.lf-layered__svg { width: 100%; height: 100%; display: block; }
 
-.lf-layered__svg {
-  width: 100%;
-  height: 100%;
-  display: block;
+.lf-layered__svg .layer-fill {
+  transition: opacity 0.6s var(--lf-ease);
+  opacity: 0.18;
 }
+.lf-layered__svg .layer-fill.is-active { opacity: 1; }
 
-.lf-layered__svg .layer {
-  transition: opacity 0.6s var(--lf-ease), fill 0.6s var(--lf-ease);
-  opacity: 0.25;
+.lf-layered__svg .layer-bracket {
+  stroke: var(--lf-ink);
+  stroke-width: 1;
+  fill: none;
+  opacity: 0.18;
+  transition: opacity 0.6s var(--lf-ease);
 }
-.lf-layered__svg .layer.is-active {
-  opacity: 1;
-}
+.lf-layered__svg .layer-bracket.is-active { opacity: 1; }
+
 .lf-layered__svg .layer-label {
   font-family: var(--lf-sans);
-  font-size: 11px;
-  letter-spacing: 0.2em;
+  font-size: 10px;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  fill: var(--lf-ink-mute);
+  fill: var(--lf-mute);
   transition: fill 0.6s var(--lf-ease);
 }
-.lf-layered__svg .layer-label.is-active {
-  fill: var(--lf-ink);
-}
-.lf-layered__svg .depth-tick {
+.lf-layered__svg .layer-label.is-active { fill: var(--lf-ink); }
+
+.lf-layered__svg .layer-depth {
   font-family: var(--lf-sans);
   font-size: 10px;
-  letter-spacing: 0.1em;
-  fill: var(--lf-ink-mute);
+  letter-spacing: 0.05em;
+  fill: var(--lf-mute-2);
+}
+.lf-layered__svg .layer-depth.is-active { fill: var(--lf-ink); }
+
+.lf-layered__svg .ruler { stroke: var(--lf-line); stroke-width: 1; }
+
+.lf-layered__diagram-cap {
+  position: absolute;
+  bottom: 18px; left: 18px; right: 18px;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--lf-sans);
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--lf-mute);
 }
 
 .lf-layered__list {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(60px, 8vh, 100px);
+  display: flex; flex-direction: column;
+  gap: clamp(48px, 7vh, 96px);
 }
-
 .lf-layered__item {
-  padding: 32px 0;
+  padding: 28px 0 0;
   border-top: 1px solid var(--lf-line);
-  opacity: 0.4;
+  opacity: 0.34;
   transition: opacity 0.5s var(--lf-ease);
 }
-.lf-layered__item.is-active {
-  opacity: 1;
-}
-
-.lf-layered__item-num {
-  font-family: var(--lf-serif);
-  font-style: italic;
-  font-size: 14px;
-  color: var(--lf-ink-mute);
-  margin-bottom: 14px;
-}
-
-.lf-layered__item-depth {
+.lf-layered__item.is-active { opacity: 1; }
+.lf-layered__item-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 18px;
   font-family: var(--lf-sans);
-  font-size: 11px;
+  font-size: 10.5px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--lf-ink-soft);
-  margin-bottom: 14px;
 }
-
+.lf-layered__item-num { color: var(--lf-mute); }
+.lf-layered__item-depth { color: var(--lf-ink-3); }
 .lf-layered__item-name {
-  font-family: var(--lf-serif);
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(28px, 2.4vw, 40px);
-  line-height: 1.15;
-  margin: 0 0 24px;
-}
-
-.lf-layered__item-desc {
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--lf-ink-soft);
-  max-width: 460px;
-}
-
-.lf-layered__item-tech {
-  margin-top: 24px;
   font-family: var(--lf-sans);
-  font-size: 12px;
-  letter-spacing: 0.15em;
+  
+  font-weight: 400;
+  font-size: clamp(34px, 3.2vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.012em;
+  margin: 0 0 22px;
+  color: var(--lf-ink);
+}
+.lf-layered__item-desc {
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--lf-ink-3);
+  max-width: 460px;
+  letter-spacing: -0.012em;
+}
+.lf-layered__item-tech {
+  margin-top: 22px;
+  font-family: var(--lf-sans);
+  font-size: 11px;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--lf-ink);
-  padding-top: 16px;
-  border-top: 1px dashed var(--lf-line);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.lf-layered__item-tech::before {
+  content: "";
+  width: 18px; height: 1px;
+  background: currentColor;
+  display: inline-block;
 }
 
-@media (max-width: 900px) {
-  .lf-layered__body {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-  .lf-layered__diagram {
-    position: relative;
-    top: 0;
-    max-width: 480px;
-    margin: 0 auto;
-  }
+@media (max-width: 880px) {
+  .lf-layered__body { grid-template-columns: 1fr; gap: 56px; }
+  .lf-layered__diagram-wrap { position: relative; top: 0; max-width: 460px; margin: 0 auto; width: 100%; }
 }
 
-/* =========================================
-   MILI PROTOCOL — journey 3 steps
-========================================= */
+/* =========================================================
+   MILI PROTOCOL — 3 alternating steps
+   ========================================================= */
 .lf-protocol {
   position: relative;
   width: 100vw;
-  background: var(--lf-bg);
-  padding: clamp(140px, 20vh, 220px) 0 0;
+  background: var(--lf-paper);
+  padding: clamp(120px, 18vh, 200px) 0 0;
 }
-
 .lf-protocol__head {
-  padding: 0 clamp(40px, 8vw, 160px);
-  margin-bottom: clamp(100px, 14vh, 160px);
+  padding: 0 var(--lf-gut);
+  margin: 0 0 clamp(80px, 12vh, 140px);
   max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
-
-.lf-protocol__eyebrow {
-  font-size: 11px;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--lf-ink-soft);
-  margin-bottom: 32px;
-}
-
 .lf-protocol__title {
-  font-family: var(--lf-serif);
-  font-style: italic;
+  font-family: var(--lf-sans);
+  
   font-weight: 300;
-  font-size: clamp(44px, 5.5vw, 84px);
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-  margin: 0 0 36px;
+  font-size: clamp(46px, 6vw, 96px);
+  line-height: 1.0;
+  letter-spacing: -0.018em;
+  color: var(--lf-ink);
 }
-
 .lf-protocol__lede {
-  font-family: var(--lf-serif);
-  font-weight: 300;
-  font-size: clamp(18px, 1.3vw, 22px);
-  line-height: 1.7;
-  color: var(--lf-ink-soft);
-  max-width: 620px;
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: clamp(17px, 1.15vw, 19px);
+  line-height: 1.6;
+  color: var(--lf-ink-3);
+  max-width: 600px;
+  letter-spacing: -0.014em;
 }
 
 .lf-protocol__steps {
@@ -529,402 +735,419 @@
 .lf-protocol__step {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 100vh;
   align-items: stretch;
+  position: relative;
 }
-
-.lf-protocol__step:nth-child(even) {
-  direction: rtl;
+.lf-protocol__step + .lf-protocol__step {
+  border-top: 1px solid var(--lf-line);
 }
-.lf-protocol__step:nth-child(even) > * {
-  direction: ltr;
-}
+.lf-protocol__step:nth-child(even) { direction: rtl; }
+.lf-protocol__step:nth-child(even) > * { direction: ltr; }
 
 .lf-protocol__media {
   position: relative;
   width: 100%;
-  height: 100%;
-  min-height: 70vh;
+  min-height: clamp(440px, 72vh, 760px);
   overflow: hidden;
-  background: var(--lf-bg-soft);
+  background: var(--lf-mist);
 }
 .lf-protocol__media img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
   object-fit: cover;
-  transition: transform 1.6s var(--lf-ease);
+  transform: scale(1.05);
+  transition: transform 1.8s var(--lf-ease-out);
 }
-.lf-protocol__step.is-visible .lf-protocol__media img {
-  transform: scale(1.02);
-}
+.lf-protocol__step.is-in .lf-protocol__media img { transform: scale(1.0); }
 
 .lf-protocol__text {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(60px, 10vh, 120px) clamp(40px, 6vw, 100px);
+  padding: clamp(56px, 9vh, 112px) clamp(36px, 6vw, 96px);
+  position: relative;
 }
-
-.lf-protocol__step-num {
+.lf-protocol__step-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  margin-bottom: clamp(28px, 4vh, 44px);
   font-family: var(--lf-sans);
-  font-size: 11px;
-  letter-spacing: 0.35em;
+  font-size: 10.5px;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: var(--lf-ink-mute);
-  margin-bottom: 36px;
 }
-
+.lf-protocol__step-num { color: var(--lf-mute); }
+.lf-protocol__step-time { color: var(--lf-ink-3); }
 .lf-protocol__step-name {
-  font-family: var(--lf-serif);
-  font-style: italic;
+  font-family: var(--lf-sans);
+  
   font-weight: 400;
-  font-size: clamp(34px, 3.6vw, 60px);
-  line-height: 1.1;
-  margin: 0 0 36px;
+  font-size: clamp(36px, 4vw, 68px);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin: 0 0 32px;
+  color: var(--lf-ink);
 }
-
 .lf-protocol__step-desc {
-  font-family: var(--lf-serif);
-  font-weight: 300;
-  font-size: clamp(17px, 1.2vw, 20px);
-  line-height: 1.75;
-  color: var(--lf-ink-soft);
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--lf-ink-3);
   max-width: 460px;
   margin-bottom: 32px;
+  letter-spacing: -0.012em;
 }
-
 .lf-protocol__step-meta {
+  font-family: var(--lf-sans);
   font-size: 13px;
-  line-height: 1.7;
-  color: var(--lf-ink-mute);
-  letter-spacing: 0.02em;
-  max-width: 420px;
-  padding-top: 24px;
+  line-height: 1.85;
+  color: var(--lf-ink-3);
+  letter-spacing: 0.015em;
+  max-width: 460px;
+  padding-top: 22px;
   border-top: 1px solid var(--lf-line);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 24px;
 }
+.lf-protocol__step-meta dt {
+  font-family: var(--lf-sans);
+  font-size: 10.5px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--lf-mute);
+  font-weight: 400;
+}
+.lf-protocol__step-meta dd { margin: 0; color: var(--lf-ink-3); }
 
-@media (max-width: 900px) {
-  .lf-protocol__step {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
+@media (max-width: 880px) {
+  .lf-protocol__step { grid-template-columns: 1fr; min-height: auto; }
   .lf-protocol__step:nth-child(even) { direction: ltr; }
-  .lf-protocol__media { min-height: 60vh; }
-  .lf-protocol__text { padding: 60px 24px 80px; }
+  .lf-protocol__media { min-height: 56vh; }
+  .lf-protocol__text { padding: 56px 24px 72px; }
 }
 
-/* =========================================
-   LINEUP — 6 devices, sticky title + scrolling cards
-========================================= */
+/* =========================================================
+   LINEUP — dark grid, 6 devices
+   ========================================================= */
 .lf-lineup {
   position: relative;
   width: 100vw;
-  background: var(--lf-bg-dark);
-  color: #FFFFFF;
-  padding: clamp(140px, 20vh, 220px) 0;
+  background: var(--lf-ink);
+  color: #fff;
+  padding: clamp(120px, 18vh, 200px) 0 clamp(140px, 22vh, 240px);
 }
-
 .lf-lineup__head {
-  padding: 0 clamp(40px, 8vw, 160px);
+  padding: 0 var(--lf-gut);
   margin-bottom: clamp(80px, 12vh, 140px);
   max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
-
-.lf-lineup__eyebrow {
-  font-size: 11px;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
-  margin-bottom: 32px;
-}
-
 .lf-lineup__title {
-  font-family: var(--lf-serif);
-  font-style: italic;
+  font-family: var(--lf-sans);
+  
   font-weight: 300;
-  font-size: clamp(44px, 5.5vw, 84px);
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-  margin: 0 0 36px;
+  font-size: clamp(46px, 6vw, 96px);
+  line-height: 1.0;
+  letter-spacing: -0.018em;
 }
-
 .lf-lineup__lede {
-  font-family: var(--lf-serif);
-  font-weight: 300;
-  font-size: clamp(18px, 1.3vw, 22px);
-  line-height: 1.7;
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: clamp(17px, 1.15vw, 19px);
+  line-height: 1.6;
   color: rgba(255,255,255,0.7);
-  max-width: 620px;
+  max-width: 600px;
+  letter-spacing: -0.014em;
 }
 
 .lf-lineup__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid rgba(255,255,255,0.12);
   border-left: 1px solid rgba(255,255,255,0.12);
-  margin: 0 clamp(40px, 8vw, 160px);
+  margin: 0 var(--lf-gut);
 }
-
 .lf-lineup__card {
   position: relative;
-  padding: clamp(48px, 6vw, 88px) clamp(40px, 5vw, 72px);
+  padding: clamp(42px, 4.5vw, 72px) clamp(36px, 4vw, 56px) clamp(42px, 4.5vw, 64px);
   border-right: 1px solid rgba(255,255,255,0.12);
   border-bottom: 1px solid rgba(255,255,255,0.12);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: clamp(440px, 56vh, 560px);
+  min-height: clamp(440px, 56vh, 540px);
   overflow: hidden;
   transition: background 0.6s var(--lf-ease);
 }
-
-.lf-lineup__card:hover {
-  background: rgba(255,255,255,0.04);
-}
+.lf-lineup__card:hover { background: rgba(255,255,255,0.03); }
 
 .lf-lineup__card-media {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 45%;
-  height: 60%;
-  opacity: 0.35;
+  top: 8%;
+  right: 6%;
+  width: 44%;
+  height: 42%;
+  opacity: 0.55;
   pointer-events: none;
   transition: opacity 0.8s var(--lf-ease), transform 1.2s var(--lf-ease);
 }
 .lf-lineup__card-media img {
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   object-fit: contain;
   object-position: top right;
-  filter: brightness(1.4) contrast(0.95);
 }
 .lf-lineup__card:hover .lf-lineup__card-media {
-  opacity: 0.6;
+  opacity: 0.85;
   transform: translateY(-4px);
 }
+
 .lf-lineup__card > *:not(.lf-lineup__card-media) {
-  position: relative;
-  z-index: 2;
+  position: relative; z-index: 2;
 }
 
 .lf-lineup__card-top {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 48px;
-}
-
-.lf-lineup__card-num {
-  font-family: var(--lf-serif);
-  font-style: italic;
-  font-size: 14px;
-  color: rgba(255,255,255,0.45);
-  letter-spacing: 0.05em;
-}
-
-.lf-lineup__card-depth {
+  align-items: baseline;
+  margin-bottom: clamp(48px, 7vh, 80px);
   font-family: var(--lf-sans);
-  font-size: 11px;
-  letter-spacing: 0.25em;
+  font-size: 10.5px;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
-  text-align: right;
 }
+.lf-lineup__card-num { color: rgba(255,255,255,0.5); }
+.lf-lineup__card-depth { color: rgba(255,255,255,0.7); text-align: right; }
 
 .lf-lineup__card-name {
-  font-family: var(--lf-serif);
-  font-style: italic;
+  font-family: var(--lf-sans);
+  
   font-weight: 400;
-  font-size: clamp(40px, 4.5vw, 72px);
-  line-height: 1;
-  letter-spacing: -0.01em;
+  font-size: clamp(40px, 4vw, 64px);
+  line-height: 1.0;
+  letter-spacing: -0.012em;
   margin: 0 0 24px;
-  text-transform: uppercase;
+  color: #fff;
 }
-
 .lf-lineup__card-tagline {
-  font-family: var(--lf-serif);
-  font-weight: 300;
-  font-size: clamp(17px, 1.2vw, 21px);
-  line-height: 1.55;
-  color: rgba(255,255,255,0.85);
-  max-width: 380px;
-  margin-bottom: 28px;
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.82);
+  max-width: 320px;
+  margin-bottom: auto;
+  letter-spacing: -0.012em;
 }
-
 .lf-lineup__card-meta {
-  font-size: 13px;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.55);
-  letter-spacing: 0.02em;
-  max-width: 380px;
-  padding-top: 20px;
+  margin-top: 36px;
+  font-family: var(--lf-sans);
+  font-size: 12px;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.01em;
+  padding-top: 22px;
   border-top: 1px solid rgba(255,255,255,0.14);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 20px;
+}
+.lf-lineup__card-meta dt {
+  font-family: var(--lf-sans);
+  font-size: 10px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  font-weight: 400;
+}
+.lf-lineup__card-meta dd { margin: 0; color: rgba(255,255,255,0.9); }
+
+@media (max-width: 1100px) {
+  .lf-lineup__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 720px) {
+  .lf-lineup__grid { grid-template-columns: 1fr; margin: 0 24px; }
+  .lf-lineup__card { min-height: 0; padding: 56px 28px; }
 }
 
-.lf-lineup__card-meta b {
-  color: rgba(255,255,255,0.85);
-  font-weight: 500;
-}
-
-@media (max-width: 768px) {
-  .lf-lineup__grid {
-    grid-template-columns: 1fr;
-    margin: 0 24px;
-  }
-  .lf-lineup__card { min-height: 0; padding: 60px 28px; }
-}
-
-/* =========================================
-   BEFORE & AFTER — placeholder
-========================================= */
+/* =========================================================
+   BEFORE & AFTER — editorial placeholder
+   ========================================================= */
 .lf-ba {
   position: relative;
   width: 100vw;
-  background: var(--lf-bg);
-  padding: clamp(140px, 20vh, 220px) clamp(40px, 8vw, 160px);
-  text-align: center;
+  background: var(--lf-white);
+  padding: clamp(120px, 18vh, 200px) var(--lf-gut);
 }
-
-.lf-ba__eyebrow {
-  font-size: 11px;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--lf-ink-soft);
-  margin-bottom: 36px;
+.lf-ba__inner {
+  max-width: 1640px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(48px, 8vw, 140px);
+  align-items: center;
 }
-
 .lf-ba__title {
-  font-family: var(--lf-serif);
-  font-style: italic;
+  font-family: var(--lf-sans);
+  
   font-weight: 300;
-  font-size: clamp(40px, 5vw, 76px);
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  margin: 0 auto 36px;
-  max-width: 820px;
+  font-size: clamp(44px, 5.6vw, 84px);
+  line-height: 1.03;
+  letter-spacing: -0.015em;
+  margin: 24px 0 28px;
+  color: var(--lf-ink);
 }
-
 .lf-ba__lede {
-  font-family: var(--lf-serif);
-  font-weight: 300;
-  font-size: clamp(17px, 1.2vw, 20px);
-  line-height: 1.7;
-  color: var(--lf-ink-soft);
-  max-width: 560px;
-  margin: 0 auto 56px;
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--lf-ink-3);
+  max-width: 460px;
+  margin-bottom: 36px;
+  letter-spacing: -0.012em;
 }
-
 .lf-ba__note {
-  display: inline-block;
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--lf-sans);
   font-size: 12px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--lf-ink-mute);
-  padding: 16px 28px;
+  font-weight: 400;
+  color: var(--lf-ink-3);
+  padding: 12px 22px;
   border: 1px solid var(--lf-line);
+  border-radius: var(--lf-r-pill);
+  background: var(--lf-white);
+}
+.lf-ba__note i { width: 6px; height: 6px; border-radius: 50%; background: var(--lf-ink); display: inline-block; }
+
+.lf-ba__frames {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  position: relative;
+}
+.lf-ba__frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background: var(--lf-paper);
+  overflow: hidden;
+  border: 1px solid var(--lf-line);
+  border-radius: var(--lf-r-card);
+}
+.lf-ba__frame::before,
+.lf-ba__frame::after {
+  content: "";
+  position: absolute;
+  background: var(--lf-mute-2);
+  opacity: 0.5;
+}
+.lf-ba__frame::before { top: 20%; left: 18%; right: 18%; height: 1px; }
+.lf-ba__frame::after  { top: 20%; bottom: 20%; left: 50%; width: 1px; }
+.lf-ba__frame-tag {
+  position: absolute;
+  top: 18px; left: 18px;
+  font-family: var(--lf-sans);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--lf-ink-3);
+}
+.lf-ba__frame--after .lf-ba__frame-tag { color: var(--lf-ink); }
+
+@media (max-width: 880px) {
+  .lf-ba__inner { grid-template-columns: 1fr; gap: 48px; }
 }
 
-/* =========================================
+/* =========================================================
    FAQ
-========================================= */
+   ========================================================= */
 .lf-faq {
   position: relative;
   width: 100vw;
-  background: var(--lf-bg-soft);
-  padding: clamp(140px, 20vh, 220px) clamp(40px, 8vw, 160px);
+  background: var(--lf-paper);
+  padding: clamp(120px, 18vh, 200px) var(--lf-gut);
 }
-
+.lf-faq__inner {
+  max-width: 1640px;
+  margin: 0 auto;
+}
 .lf-faq__head {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(40px, 6vw, 120px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(48px, 8vw, 140px);
   align-items: end;
-  margin-bottom: clamp(80px, 10vh, 120px);
+  margin-bottom: clamp(72px, 10vh, 120px);
 }
-
-.lf-faq__eyebrow {
-  font-size: 11px;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--lf-ink-soft);
-  margin-bottom: 32px;
-}
-
 .lf-faq__title {
-  font-family: var(--lf-serif);
-  font-style: italic;
+  font-family: var(--lf-sans);
+  
   font-weight: 300;
-  font-size: clamp(40px, 5vw, 76px);
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-  margin: 0;
+  font-size: clamp(44px, 5.6vw, 88px);
+  line-height: 1.0;
+  letter-spacing: -0.018em;
+  margin: 24px 0 0;
+  color: var(--lf-ink);
 }
-
 .lf-faq__note {
-  font-family: var(--lf-serif);
-  font-weight: 300;
-  font-size: clamp(16px, 1.1vw, 19px);
-  line-height: 1.7;
-  color: var(--lf-ink-soft);
-  max-width: 440px;
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--lf-ink-3);
+  max-width: 420px;
+  letter-spacing: -0.012em;
 }
-
-.lf-faq__list {
-  border-top: 1px solid var(--lf-ink);
-}
-
-.lf-faq__item {
-  border-bottom: 1px solid var(--lf-line);
-}
-
+.lf-faq__list { border-top: 1px solid var(--lf-ink); }
+.lf-faq__item { border-bottom: 1px solid var(--lf-line); }
 .lf-faq__q {
   width: 100%;
   background: none;
   border: 0;
-  padding: clamp(28px, 3.5vh, 40px) 0;
-  display: flex;
-  justify-content: space-between;
+  padding: clamp(28px, 3.6vh, 44px) 0;
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  gap: clamp(24px, 4vw, 60px);
   align-items: center;
-  gap: 40px;
   cursor: pointer;
   text-align: left;
-  font-family: var(--lf-serif);
-  font-style: italic;
+  font-family: var(--lf-sans);
+  
   font-weight: 400;
-  font-size: clamp(20px, 1.8vw, 28px);
+  font-size: clamp(20px, 1.9vw, 30px);
   line-height: 1.3;
   color: var(--lf-ink);
   transition: color 0.4s var(--lf-ease);
 }
-.lf-faq__q:hover { color: var(--lf-ink-soft); }
+.lf-faq__q:hover { color: var(--lf-ink-3); }
+.lf-faq__q-num {
+  font-family: var(--lf-sans);
+  font-style: normal;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--lf-mute);
+  font-weight: 400;
+}
 
 .lf-faq__plus {
   flex: 0 0 auto;
-  width: 14px;
-  height: 14px;
+  width: 16px; height: 16px;
   position: relative;
   transition: transform 0.5s var(--lf-ease);
 }
 .lf-faq__plus::before,
 .lf-faq__plus::after {
-  content: '';
-  position: absolute;
-  background: var(--lf-ink);
+  content: ''; position: absolute; background: var(--lf-ink);
 }
-.lf-faq__plus::before {
-  top: 50%; left: 0; right: 0; height: 1px; transform: translateY(-50%);
-}
-.lf-faq__plus::after {
-  top: 0; bottom: 0; left: 50%; width: 1px; transform: translateX(-50%);
-  transition: transform 0.5s var(--lf-ease);
-}
-.lf-faq__item.is-open .lf-faq__plus::after {
-  transform: translateX(-50%) scaleY(0);
-}
+.lf-faq__plus::before { top: 50%; left: 0; right: 0; height: 1px; transform: translateY(-50%); }
+.lf-faq__plus::after  { top: 0; bottom: 0; left: 50%; width: 1px; transform: translateX(-50%); transition: transform 0.5s var(--lf-ease); }
+.lf-faq__item.is-open .lf-faq__plus::after { transform: translateX(-50%) scaleY(0); }
 
 .lf-faq__a {
   max-height: 0;
@@ -932,110 +1155,143 @@
   transition: max-height 0.6s var(--lf-ease);
 }
 .lf-faq__a-inner {
-  padding: 0 0 clamp(28px, 3.5vh, 40px);
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  gap: clamp(24px, 4vw, 60px);
+  padding: 0 0 clamp(28px, 3.6vh, 44px);
+}
+.lf-faq__a-inner > div:nth-child(2) {
+  font-family: var(--lf-sans);
   font-size: 15px;
+  font-weight: 300;
   line-height: 1.75;
-  color: var(--lf-ink-soft);
-  max-width: 760px;
+  color: var(--lf-ink-3);
+  max-width: 720px;
 }
 
-@media (max-width: 768px) {
-  .lf-faq__head { grid-template-columns: 1fr; gap: 24px; }
+@media (max-width: 720px) {
+  .lf-faq__head { grid-template-columns: 1fr; gap: 28px; }
+  .lf-faq__q,
+  .lf-faq__a-inner { grid-template-columns: 32px 1fr auto; gap: 18px; }
 }
 
-/* =========================================
-   CONSULTATION CTA
-========================================= */
+/* =========================================================
+   CTA
+   ========================================================= */
 .lf-cta {
   position: relative;
   width: 100vw;
-  height: 80vh;
-  min-height: 560px;
-  background: var(--lf-bg-dark);
-  color: #FFFFFF;
+  min-height: 80vh;
+  background: var(--lf-ink);
+  color: #fff;
   overflow: hidden;
+  padding: clamp(120px, 18vh, 200px) var(--lf-gut);
 }
-
 .lf-cta__media {
-  position: absolute;
-  inset: 0;
-  background: #1A1A1A url('../assets/images/lifting/cta.png') center/cover no-repeat;
-  opacity: 0.45;
+  position: absolute; inset: 0;
+  background: #0A0A0A url('../assets/images/lifting/cta.png') center/cover no-repeat;
+  opacity: 0.38;
 }
-
+.lf-cta__media::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.55));
+}
 .lf-cta__inner {
-  position: relative;
-  z-index: 2;
-  height: 100%;
+  position: relative; z-index: 2;
+  max-width: 1640px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 clamp(24px, 6vw, 80px);
+  align-items: stretch;
+  gap: clamp(32px, 5vh, 56px);
 }
-
-.lf-cta__eyebrow {
-  font-size: 11px;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.7);
-  margin-bottom: 36px;
-}
-
 .lf-cta__title {
-  font-family: var(--lf-serif);
-  font-style: italic;
+  font-family: var(--lf-sans);
+  
   font-weight: 300;
-  font-size: clamp(40px, 5.5vw, 88px);
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  margin: 0 0 56px;
-  max-width: 900px;
+  font-size: clamp(48px, 6.4vw, 112px);
+  line-height: 0.98;
+  letter-spacing: -0.022em;
+  margin: 12px 0 0;
+  max-width: none;
+  text-wrap: balance;
 }
-
+.lf-cta__sub {
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: clamp(17px, 1.15vw, 19px);
+  line-height: 1.6;
+  color: rgba(255,255,255,0.82);
+  max-width: 520px;
+  letter-spacing: -0.014em;
+}
 .lf-cta__actions {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
-  justify-content: center;
+  margin-top: 4px;
+  align-self: flex-start;
 }
-
 .lf-cta__btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 20px 44px;
+  gap: 12px;
+  padding: 14px 28px;
   border: 1px solid rgba(255,255,255,0.55);
-  color: #FFFFFF;
+  border-radius: var(--lf-r-pill);
+  color: #fff;
   font-family: var(--lf-sans);
-  font-size: 12px;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  text-transform: none;
   text-decoration: none;
   background: transparent;
-  transition: background 0.5s var(--lf-ease), color 0.5s var(--lf-ease), border-color 0.5s var(--lf-ease);
+  transition: background 0.4s var(--lf-ease), color 0.4s var(--lf-ease), border-color 0.4s var(--lf-ease), transform 0.18s var(--lf-ease);
+  cursor: pointer;
 }
-.lf-cta__btn:hover {
-  background: #FFFFFF;
-  color: var(--lf-bg-dark);
-  border-color: #FFFFFF;
+.lf-cta__btn:hover { background: rgba(255,255,255,0.08); }
+.lf-cta__btn:active { transform: scale(0.96); }
+.lf-cta__btn:focus-visible { outline: 2px solid #0071e3; outline-offset: 3px; }
+.lf-cta__btn--solid { background: #fff; color: var(--lf-ink); border-color: #fff; }
+.lf-cta__btn--solid:hover { background: #f5f5f7; color: var(--lf-ink); border-color: #f5f5f7; }
+
+.lf-cta__foot {
+  position: relative;
+  z-index: 2;
+  margin-top: clamp(80px, 12vh, 140px);
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.18);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  font-family: var(--lf-sans);
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  max-width: 1640px;
+  margin-left: auto; margin-right: auto;
 }
-.lf-cta__btn--solid {
-  background: #FFFFFF;
-  color: var(--lf-bg-dark);
-  border-color: #FFFFFF;
+.lf-cta__foot div span {
+  display: block;
+  font-family: var(--lf-sans);
+  font-size: 10px;
+  letter-spacing: 0.32em;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 8px;
 }
-.lf-cta__btn--solid:hover {
-  background: transparent;
-  color: #FFFFFF;
-  border-color: #FFFFFF;
+@media (max-width: 720px) {
+  .lf-cta__foot { grid-template-columns: 1fr 1fr; }
 }
 </style>
 </head>
 <body>
 
-<!-- Header -->
+<!-- ===========================================
+     HEADER — DO NOT MODIFY
+=========================================== -->
 <header class="mili-header">
     <div class="mili-header-inner">
         <a href="/en/index.html" class="mili-logo" aria-label="Mili Clinic Sinchon"><img src="/assets/images/logo/logo.png" alt="Mili Clinic Sinchon"></a>
@@ -1091,7 +1347,6 @@
             <li><span>Mili Clinic Sinchon</span>
                 <ul class="mili-mobile-sub">
                     <li><a href="/en/about.html">About Dosan</a></li>
-                    
                     <li><a href="/en/tour.html">Tour</a></li>
                     <li><a href="/en/equipment.html">Equipment</a></li>
                     <li><a href="/en/schedule.html">Schedule</a></li>
@@ -1100,10 +1355,8 @@
             </li>
             <li><a href="lifting.html">Lifting</a></li>
             <li><a href="/en/collagen-booster.html">Collagen Booster</a></li>
-            <li><a href="/en/collagen-booster.html">Collagen Booster</a></li>
             <li><span>Minimal Surgery</span>
                 <ul class="mili-mobile-sub">
-                    <li><a href="/en/collagen-booster.html">Collagen Booster</a></li>
                     <li><a href="/en/collagen-booster.html">Collagen Booster</a></li>
                     <li><a href="/en/filler.html">Filler</a></li>
                 </ul>
@@ -1113,13 +1366,11 @@
                     <li><a href="/en/skin-booster.html">1:1 Skin Booster</a></li>
                     <li><a href="/en/all-in-one-brightening.html">All-in-One Brightening</a></li>
                     <li><a href="/en/acne-pore.html">Acne and Pore</a></li>
-                    <li><a href="/en/acne-pore.html">Acne and Pore</a></li>
                 </ul>
             </li>
             <li><a href="/en/laser-hair-removal.html">Laser Hair Removal</a></li>
             <li><span>Skin Care</span>
                 <ul class="mili-mobile-sub">
-                    <li><a href="/en/medi-spa.html">Medi-Spa</a></li>
                     <li><a href="/en/medi-spa.html">Medi-Spa</a></li>
                 </ul>
             </li>
@@ -1140,179 +1391,228 @@
 
 <main class="lf">
 
-  <!-- ===========================================
-       SECTION: HERO
-  =========================================== -->
+  <!-- ============================== HERO ============================== -->
   <section class="lf-hero">
     <div class="lf-hero__media"></div>
-    <div class="lf-hero__inner">
-      <div class="lf-hero__eyebrow">Mili Clinic Sinchon — Lifting</div>
-      <h1 class="lf-hero__title">Lifting</h1>
-      <p class="lf-hero__copy">Time is the only thing that doesn't lift back.<br>We do the rest.</p>
+
+    <div class="lf-hero__top">
+      <div class="lf-hero__crumb"><span>Mili Clinic Sinchon</span><i></i><span>Lifting</span></div>
+      <div>2026 Edition</div>
     </div>
-    <div class="lf-hero__scroll">Scroll</div>
+
+    <div class="lf-hero__inner">
+      <h1 class="lf-hero__title">
+        <small>The Lifting Edit · Sinchon</small>
+        <em>Lifting,</em>
+      </h1>
+      <p class="lf-hero__copy">
+        Time is the only thing<br>that doesn't lift back.<br>
+        <em>We do the rest.</em>
+      </p>
+    </div>
+
+    <div class="lf-hero__foot">
+      <div class="lf-hero__scroll"><span>Scroll</span><i></i></div>
+      <div>I — VII</div>
+    </div>
   </section>
 
-  <!-- ===========================================
-       SECTION: PHILOSOPHY
-       — scroll-driven horizontal pin
-  =========================================== -->
+  <!-- ============================== INTRO ============================== -->
+  <div class="lf-rule">
+    <div class="lf-rule__num">I</div>
+    <div class="lf-rule__bar"></div>
+    <div class="lf-rule__name">Statement</div>
+  </div>
+
+  <section class="lf-intro">
+    <div class="lf-intro__grid">
+      <h2 class="lf-intro__lead lf-rv">
+        <em>Lifting is not a&nbsp;device.</em><br>
+        It is a sequence of&nbsp;decisions —<br>
+        read first, layer&nbsp;second, stop&nbsp;in&nbsp;time.
+      </h2>
+      <div>
+        <p class="lf-intro__body lf-rv d1">At Mili Clinic Sinchon, no two protocols are identical. The face is read before the device is chosen. Energy is layered, not stacked. Restraint is part of the design.</p>
+        <p class="lf-intro__body lf-rv d2">Every shot is delivered by the attending physician, and every session ends where the face says enough.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== PHILOSOPHY ============================== -->
+  <div class="lf-rule lf-rule--paper">
+    <div class="lf-rule__num">II</div>
+    <div class="lf-rule__bar"></div>
+    <div class="lf-rule__name">Philosophy</div>
+  </div>
+
   <section class="lf-philosophy" id="lfPhilosophy">
     <div class="lf-philosophy__pin">
-      <div class="lf-philosophy__track" id="lfPhilosophyTrack">
 
-        <div class="lf-philosophy__panel lf-philosophy__intro-panel">
-          <div class="lf-philosophy__eyebrow">Philosophy</div>
-          <h2 class="lf-philosophy__title">Why lifting,<br>done at Mili.</h2>
-          <p class="lf-philosophy__intro">Lifting is not a device. It's a sequence of decisions — what to read, what to layer, where to stop. Five principles guide every protocol at Mili Clinic Sinchon.</p>
+      <div class="lf-philosophy__head">
+        <div class="lf-philosophy__head-l">
+          <span class="lf-eyebrow">Five principles</span>
         </div>
+        <div class="lf-philosophy__head-r">Scroll<br>to traverse</div>
+      </div>
 
-        <article class="lf-philosophy__panel lf-philosophy__card">
-          <div class="lf-philosophy__media">
-            <img src="../assets/images/lifting/philosophy-01.jpg" alt="Diagnosis First">
+      <div class="lf-philosophy__viewport">
+        <div class="lf-philosophy__track" id="lfPhilosophyTrack">
+
+          <div class="lf-philosophy__panel lf-philosophy__intro">
+            <h2 class="lf-philosophy__intro-title"><em>Why lifting,</em><br>done at&nbsp;Mili.</h2>
+            <p class="lf-philosophy__intro-body">Lifting is not a device. It is a sequence of decisions — what to read, what to layer, where to stop. Five principles guide every protocol at Mili Clinic Sinchon.</p>
           </div>
-          <div class="lf-philosophy__num">01</div>
-          <h3 class="lf-philosophy__name">Diagnosis<br>First</h3>
-          <p class="lf-philosophy__desc">We read the face before we choose the device. Skin thickness, SMAS position, fat distribution, and aging pattern — analyzed first, treated second.</p>
-        </article>
 
-        <article class="lf-philosophy__panel lf-philosophy__card">
-          <div class="lf-philosophy__media">
-            <img src="../assets/images/lifting/philosophy-02.png" alt="Layered Lifting">
-          </div>
-          <div class="lf-philosophy__num">02</div>
-          <h3 class="lf-philosophy__name">Layered<br>Lifting</h3>
-          <p class="lf-philosophy__desc">SMAS, dermis, fascia — each layer responds to a different energy. We combine devices the way a tailor combines stitches: precise, intentional, layered.</p>
-        </article>
+          <article class="lf-philosophy__panel lf-philosophy__card">
+            <div class="lf-philosophy__media">
+              <img src="../assets/images/lifting/philosophy-01.jpg" alt="">
+            </div>
+            <div class="lf-philosophy__num">— 01 / 05</div>
+            <h3 class="lf-philosophy__name"><em>Diagnosis first.</em></h3>
+            <p class="lf-philosophy__desc">We read the face before we choose the device. Skin thickness, SMAS position, fat distribution, and aging pattern — analyzed first, treated second.</p>
+          </article>
 
-        <article class="lf-philosophy__panel lf-philosophy__card">
-          <div class="lf-philosophy__media">
-            <img src="../assets/images/lifting/philosophy-03.jpg" alt="Doctor's Hand">
-          </div>
-          <div class="lf-philosophy__num">03</div>
-          <h3 class="lf-philosophy__name">Doctor's<br>Hand</h3>
-          <p class="lf-philosophy__desc">Every shot is delivered by the physician. No delegation, no shortcuts. The angle, the depth, the count — all decided in real time, by the person reading the face.</p>
-        </article>
+          <article class="lf-philosophy__panel lf-philosophy__card">
+            <div class="lf-philosophy__media">
+              <img src="../assets/images/lifting/philosophy-02.png" alt="">
+            </div>
+            <div class="lf-philosophy__num">— 02 / 05</div>
+            <h3 class="lf-philosophy__name"><em>Layered lifting.</em></h3>
+            <p class="lf-philosophy__desc">SMAS, dermis, fascia — each layer responds to a different energy. We combine devices the way a tailor combines stitches: precise, intentional, layered.</p>
+          </article>
 
-        <article class="lf-philosophy__panel lf-philosophy__card">
-          <div class="lf-philosophy__media">
-            <img src="../assets/images/lifting/philosophy-04.jpg" alt="Right Density">
-          </div>
-          <div class="lf-philosophy__num">04</div>
-          <h3 class="lf-philosophy__name">Right Density,<br>Not More Shots</h3>
-          <p class="lf-philosophy__desc">More energy is not more lifting. We place shots where the face actually needs them — and stop where it doesn't. Restraint is part of the design.</p>
-        </article>
+          <article class="lf-philosophy__panel lf-philosophy__card">
+            <div class="lf-philosophy__media">
+              <img src="../assets/images/lifting/philosophy-03.jpg" alt="">
+            </div>
+            <div class="lf-philosophy__num">— 03 / 05</div>
+            <h3 class="lf-philosophy__name"><em>Doctor's hand.</em></h3>
+            <p class="lf-philosophy__desc">Every shot is delivered by the physician. No delegation, no shortcuts. The angle, the depth, the count — all decided in real time, by the person reading the face.</p>
+          </article>
 
-        <article class="lf-philosophy__panel lf-philosophy__card">
-          <div class="lf-philosophy__media">
-            <img src="../assets/images/lifting/philosophy-05.jpg" alt="Quiet Result">
-          </div>
-          <div class="lf-philosophy__num">05</div>
-          <h3 class="lf-philosophy__name">Quiet<br>Result</h3>
-          <p class="lf-philosophy__desc">No pulled look. No obvious tightness. The face is the same face — only clearer, more defined, more rested. The result speaks softly.</p>
-        </article>
+          <article class="lf-philosophy__panel lf-philosophy__card">
+            <div class="lf-philosophy__media">
+              <img src="../assets/images/lifting/philosophy-04.jpg" alt="">
+            </div>
+            <div class="lf-philosophy__num">— 04 / 05</div>
+            <h3 class="lf-philosophy__name"><em>Right density,<br>not more&nbsp;shots.</em></h3>
+            <p class="lf-philosophy__desc">More energy is not more lifting. We place shots where the face actually needs them — and stop where it doesn't. Restraint is part of the design.</p>
+          </article>
 
+          <article class="lf-philosophy__panel lf-philosophy__card">
+            <div class="lf-philosophy__media">
+              <img src="../assets/images/lifting/philosophy-05.jpg" alt="">
+            </div>
+            <div class="lf-philosophy__num">— 05 / 05</div>
+            <h3 class="lf-philosophy__name"><em>Quiet result.</em></h3>
+            <p class="lf-philosophy__desc">No pulled look. No obvious tightness. The face is the same face — only clearer, more defined, more rested. The result speaks softly.</p>
+          </article>
+
+          <aside class="lf-philosophy__panel lf-philosophy__tail">
+            <span class="lf-eyebrow">End of section</span>
+            <h3><em>Five principles,<br>one&nbsp;protocol.</em></h3>
+            <p>How those principles meet the face — layer by layer — is what follows.</p>
+          </aside>
+
+        </div>
       </div>
 
       <div class="lf-philosophy__progress">
-        <span id="lfPhilosophyCurrent">01</span>
-        <div class="lf-philosophy__progress-bar">
-          <div class="lf-philosophy__progress-fill" id="lfPhilosophyFill"></div>
-        </div>
+        <span class="lf-philosophy__progress-current" id="lfPhilosophyCurrent">01</span>
+        <div class="lf-philosophy__progress-bar"><div class="lf-philosophy__progress-fill" id="lfPhilosophyFill"></div></div>
         <span>05</span>
+        <span class="lf-philosophy__progress-hint">
+          <svg viewBox="0 0 18 8"><path d="M0 4h16M12 1l4 3-4 3" stroke="currentColor" fill="none" stroke-width="1"/></svg>
+          Scroll
+        </span>
       </div>
     </div>
   </section>
 
-  <!-- ===========================================
-       SECTION: LAYERED APPROACH (다음 단계에서 추가)
-  =========================================== -->
-  <!-- ===========================================
-       SECTION: LAYERED APPROACH
-       — skin cross-section, scroll-pinned diagram
-  =========================================== -->
+  <!-- ============================== LAYERED APPROACH ============================== -->
+  <div class="lf-rule">
+    <div class="lf-rule__num">III</div>
+    <div class="lf-rule__bar"></div>
+    <div class="lf-rule__name">Layered Approach</div>
+  </div>
+
   <section class="lf-layered" id="lfLayered">
-    <div class="lf-layered__head lf-reveal">
-      <div class="lf-layered__eyebrow">Layered Approach</div>
-      <h2 class="lf-layered__title">The face is not<br>a single surface.</h2>
-      <p class="lf-layered__lede">Skin is built in layers — and each layer ages differently. A single device cannot reach all of them. At Mili Clinic Sinchon, we read each layer separately and choose the energy that belongs to it.</p>
+    <div class="lf-layered__head">
+      <span class="lf-eyebrow lf-rv">Four depths</span>
+      <h2 class="lf-layered__title lf-rv d1"><em>The face is not<br>a single&nbsp;surface.</em></h2>
+      <p class="lf-layered__lede lf-rv d2">Skin is built in layers — and each layer ages differently. A single device cannot reach all of them. We read each layer separately and choose the energy that belongs to it.</p>
     </div>
 
     <div class="lf-layered__body">
-      <!-- Diagram (sticky) -->
-      <div class="lf-layered__diagram">
-        <svg class="lf-layered__svg" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-          <!-- Background skin tone gradient -->
-          <defs>
-            <linearGradient id="lfSkin" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#F4EFEA"/>
-              <stop offset="100%" stop-color="#E8DFD6"/>
-            </linearGradient>
-          </defs>
+      <div class="lf-layered__diagram-wrap">
+        <div class="lf-layered__diagram">
+          <svg class="lf-layered__svg" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <!-- Layer fills (grayscale) -->
+            <rect class="layer-fill" data-layer="0" x="0" y="60"  width="340" height="55"  fill="#0C0C0D" fill-opacity="0.06"/>
+            <rect class="layer-fill" data-layer="1" x="0" y="115" width="340" height="105" fill="#0C0C0D" fill-opacity="0.10"/>
+            <rect class="layer-fill" data-layer="2" x="0" y="220" width="340" height="115" fill="#0C0C0D" fill-opacity="0.18"/>
+            <rect class="layer-fill" data-layer="3" x="0" y="335" width="340" height="105" fill="#0C0C0D" fill-opacity="0.28"/>
 
-          <!-- Epidermis 0-0.1mm -->
-          <g class="layer" data-layer="0">
-            <rect x="40" y="60" width="320" height="50" fill="#EFE6DC"/>
-            <text class="layer-label" data-label="0" x="60" y="92">Epidermis · 0.1mm</text>
-          </g>
+            <!-- Brackets on right -->
+            <path class="layer-bracket" data-layer="0" d="M345 60 L355 60 L355 115 L345 115"/>
+            <path class="layer-bracket" data-layer="1" d="M345 115 L355 115 L355 220 L345 220"/>
+            <path class="layer-bracket" data-layer="2" d="M345 220 L355 220 L355 335 L345 335"/>
+            <path class="layer-bracket" data-layer="3" d="M345 335 L355 335 L355 440 L345 440"/>
 
-          <!-- Dermis 1.5mm -->
-          <g class="layer" data-layer="1">
-            <rect x="40" y="110" width="320" height="100" fill="#E0CFBD"/>
-            <text class="layer-label" data-label="1" x="60" y="170">Dermis · 1.5mm</text>
-          </g>
+            <!-- Depth ruler vertical -->
+            <line class="ruler" x1="22" y1="60" x2="22" y2="440"/>
+            <line class="ruler" x1="22" y1="60"  x2="28" y2="60"/>
+            <line class="ruler" x1="22" y1="115" x2="28" y2="115"/>
+            <line class="ruler" x1="22" y1="220" x2="28" y2="220"/>
+            <line class="ruler" x1="22" y1="335" x2="28" y2="335"/>
+            <line class="ruler" x1="22" y1="440" x2="28" y2="440"/>
 
-          <!-- SMAS 4.5mm -->
-          <g class="layer" data-layer="2">
-            <rect x="40" y="210" width="320" height="120" fill="#C8B59E"/>
-            <text class="layer-label" data-label="2" x="60" y="280">SMAS · 4.5mm</text>
-          </g>
+            <!-- Depth labels -->
+            <text class="layer-depth" data-depth="0" x="40" y="64">0.0 mm</text>
+            <text class="layer-depth" data-depth="1" x="40" y="119">0.1 mm</text>
+            <text class="layer-depth" data-depth="2" x="40" y="224">1.5 mm</text>
+            <text class="layer-depth" data-depth="3" x="40" y="339">4.5 mm</text>
+            <text class="layer-depth" x="40" y="444">Deep</text>
 
-          <!-- Subcutaneous / Muscle -->
-          <g class="layer" data-layer="3">
-            <rect x="40" y="330" width="320" height="110" fill="#A89177"/>
-            <text class="layer-label" data-label="3" x="60" y="400">Fascia · Deep</text>
-          </g>
+            <!-- Layer name labels (centered in their band) -->
+            <text class="layer-label" data-label="0" x="170" y="92">Epidermis</text>
+            <text class="layer-label" data-label="1" x="170" y="172">Dermis</text>
+            <text class="layer-label" data-label="2" x="170" y="282">SMAS</text>
+            <text class="layer-label" data-label="3" x="170" y="392">Fascia &amp; Volume</text>
+          </svg>
 
-          <!-- Depth ruler -->
-          <line x1="380" y1="60" x2="380" y2="440" stroke="#999" stroke-width="0.5"/>
-          <text class="depth-tick" x="384" y="64">0</text>
-          <text class="depth-tick" x="384" y="170">1.5</text>
-          <text class="depth-tick" x="384" y="280">4.5</text>
-          <text class="depth-tick" x="384" y="440">DEEP</text>
-        </svg>
+          <div class="lf-layered__diagram-cap">
+            <span>Cross-section</span>
+            <span>0 → Deep</span>
+          </div>
+        </div>
       </div>
 
-      <!-- List -->
       <div class="lf-layered__list">
         <div class="lf-layered__item" data-layer="0">
-          <div class="lf-layered__item-num">01</div>
-          <div class="lf-layered__item-depth">Surface · 0.1mm</div>
-          <h3 class="lf-layered__item-name">Epidermis</h3>
+          <div class="lf-layered__item-top"><span class="lf-layered__item-num">— 01 / 04</span><span class="lf-layered__item-depth">Surface · 0.1 mm</span></div>
+          <h3 class="lf-layered__item-name"><em>Epidermis.</em></h3>
           <p class="lf-layered__item-desc">The outermost layer. Tone, texture, brightness live here. Lifting energy does not stop here, but skin quality is judged at this surface — so it is conditioned, not treated.</p>
           <div class="lf-layered__item-tech">Conditioning · Recovery</div>
         </div>
 
         <div class="lf-layered__item" data-layer="1">
-          <div class="lf-layered__item-num">02</div>
-          <div class="lf-layered__item-depth">Mid-depth · 1.5mm</div>
-          <h3 class="lf-layered__item-name">Dermis</h3>
+          <div class="lf-layered__item-top"><span class="lf-layered__item-num">— 02 / 04</span><span class="lf-layered__item-depth">Mid-depth · 1.5 mm</span></div>
+          <h3 class="lf-layered__item-name"><em>Dermis.</em></h3>
           <p class="lf-layered__item-desc">Where collagen lives. Heating this layer triggers neocollagenesis — the slow remodelling that thickens skin and softens fine lines. The energy must be precise: enough to provoke, not enough to scar.</p>
           <div class="lf-layered__item-tech">Microfocused RF · Bipolar RF</div>
         </div>
 
         <div class="lf-layered__item" data-layer="2">
-          <div class="lf-layered__item-num">03</div>
-          <div class="lf-layered__item-depth">Structural · 4.5mm</div>
-          <h3 class="lf-layered__item-name">SMAS</h3>
+          <div class="lf-layered__item-top"><span class="lf-layered__item-num">— 03 / 04</span><span class="lf-layered__item-depth">Structural · 4.5 mm</span></div>
+          <h3 class="lf-layered__item-name"><em>SMAS.</em></h3>
           <p class="lf-layered__item-desc">The structural net beneath the face. When this layer descends, the lower face descends with it. Focused ultrasound and high-intensity RF reach this depth without breaking the skin above — the foundation of true lifting.</p>
           <div class="lf-layered__item-tech">Microfocused Ultrasound · Monopolar RF</div>
         </div>
 
         <div class="lf-layered__item" data-layer="3">
-          <div class="lf-layered__item-num">04</div>
-          <div class="lf-layered__item-depth">Volumetric · Deep</div>
-          <h3 class="lf-layered__item-name">Fascia &amp; Volume</h3>
+          <div class="lf-layered__item-top"><span class="lf-layered__item-num">— 04 / 04</span><span class="lf-layered__item-depth">Volumetric · Deep</span></div>
+          <h3 class="lf-layered__item-name"><em>Fascia &amp; Volume.</em></h3>
           <p class="lf-layered__item-desc">Beyond the SMAS lies volumetric heating — the contour of the lower face, the jawline, the submental line. Reached selectively, with a different generation of energy, and only when the face calls for it.</p>
           <div class="lf-layered__item-tech">Deep RF · Contouring Energy</div>
         </div>
@@ -1320,70 +1620,91 @@
     </div>
   </section>
 
-  <!-- ===========================================
-       SECTION: MILI PROTOCOL (다음 단계에서 추가)
-  =========================================== -->
-  <!-- ===========================================
-       SECTION: MILI PROTOCOL
-       — journey, 3 steps, alternating image/text
-  =========================================== -->
+  <!-- ============================== PROTOCOL ============================== -->
+  <div class="lf-rule lf-rule--paper">
+    <div class="lf-rule__num">IV</div>
+    <div class="lf-rule__bar"></div>
+    <div class="lf-rule__name">The Mili Protocol</div>
+  </div>
+
   <section class="lf-protocol" id="lfProtocol">
-    <div class="lf-protocol__head lf-reveal">
-      <div class="lf-protocol__eyebrow">The Mili Protocol</div>
-      <h2 class="lf-protocol__title">How a lifting<br>session unfolds.</h2>
-      <p class="lf-protocol__lede">Every face is read before it is treated. Every protocol is built before a single shot is delivered. Three steps, every time, by the same doctor — from the first reading to the last pulse.</p>
+    <div class="lf-protocol__head">
+      <span class="lf-eyebrow lf-rv">Three steps · One doctor</span>
+      <h2 class="lf-protocol__title lf-rv d1"><em>How a lifting<br>session unfolds.</em></h2>
+      <p class="lf-protocol__lede lf-rv d2">Every face is read before it is treated. Every protocol is built before a single shot is delivered. Three steps, every time, by the same doctor — from the first reading to the last pulse.</p>
     </div>
 
     <div class="lf-protocol__steps">
 
-      <article class="lf-protocol__step lf-reveal">
+      <article class="lf-protocol__step">
         <div class="lf-protocol__media">
-          <img src="../assets/images/lifting/protocol-01.jpg" alt="Skin Analysis">
+          <img src="../assets/images/lifting/protocol-01.jpg" alt="">
         </div>
         <div class="lf-protocol__text">
-          <div class="lf-protocol__step-num">Step 01</div>
-          <h3 class="lf-protocol__step-name">Skin Analysis<br>&amp; Reading</h3>
+          <div class="lf-protocol__step-top">
+            <span class="lf-protocol__step-num">Step 01 / 03</span>
+            <span class="lf-protocol__step-time">15 – 20 min</span>
+          </div>
+          <h3 class="lf-protocol__step-name"><em>Skin analysis<br>&amp; reading.</em></h3>
           <p class="lf-protocol__step-desc">We measure what cannot be seen — skin thickness, SMAS depth, elasticity, fat distribution. The face is read with diagnostic imaging and a clinician's eye before any energy is chosen.</p>
-          <div class="lf-protocol__step-meta">Diagnostic imaging · Clinical assessment · 15–20 minutes</div>
+          <dl class="lf-protocol__step-meta">
+            <dt>Tools</dt><dd>Diagnostic imaging, clinical assessment</dd>
+            <dt>Output</dt><dd>Layer map, density plan, device shortlist</dd>
+          </dl>
         </div>
       </article>
 
-      <article class="lf-protocol__step lf-reveal">
+      <article class="lf-protocol__step">
         <div class="lf-protocol__media">
-          <img src="../assets/images/lifting/protocol-02.jpg" alt="Custom Layering">
+          <img src="../assets/images/lifting/protocol-02.jpg" alt="">
         </div>
         <div class="lf-protocol__text">
-          <div class="lf-protocol__step-num">Step 02</div>
-          <h3 class="lf-protocol__step-name">Custom<br>Layering</h3>
+          <div class="lf-protocol__step-top">
+            <span class="lf-protocol__step-num">Step 02 / 03</span>
+            <span class="lf-protocol__step-time">Custom layering</span>
+          </div>
+          <h3 class="lf-protocol__step-name"><em>Custom<br>layering.</em></h3>
           <p class="lf-protocol__step-desc">From seven available technologies, the doctor selects the combination this face requires. Layer by layer — SMAS, dermis, surface. The protocol is drawn before the room is entered.</p>
-          <div class="lf-protocol__step-meta">Device selection · Shot count · Treatment mapping</div>
+          <dl class="lf-protocol__step-meta">
+            <dt>Inputs</dt><dd>Layer map, aging pattern, patient goals</dd>
+            <dt>Decisions</dt><dd>Device selection, shot count, treatment map</dd>
+          </dl>
         </div>
       </article>
 
-      <article class="lf-protocol__step lf-reveal">
+      <article class="lf-protocol__step">
         <div class="lf-protocol__media">
-          <img src="../assets/images/lifting/protocol-03.jpg" alt="Doctor-Led Treatment">
+          <img src="../assets/images/lifting/protocol-03.jpg" alt="">
         </div>
         <div class="lf-protocol__text">
-          <div class="lf-protocol__step-num">Step 03</div>
-          <h3 class="lf-protocol__step-name">Doctor-Led<br>Treatment</h3>
+          <div class="lf-protocol__step-top">
+            <span class="lf-protocol__step-num">Step 03 / 03</span>
+            <span class="lf-protocol__step-time">40 – 80 min</span>
+          </div>
+          <h3 class="lf-protocol__step-name"><em>Doctor-led<br>treatment.</em></h3>
           <p class="lf-protocol__step-desc">Every shot is delivered by the physician, in real time, with adjustments made as the face responds. No assistant performs the lifting. The result is the work of the hand that read the face.</p>
-          <div class="lf-protocol__step-meta">Performed by attending physician · 40–80 minutes per session</div>
+          <dl class="lf-protocol__step-meta">
+            <dt>Performed by</dt><dd>Attending physician, in-room throughout</dd>
+            <dt>Aftercare</dt><dd>Same-day debrief, recovery brief, follow-up schedule</dd>
+          </dl>
         </div>
       </article>
 
     </div>
   </section>
 
-  <!-- ===========================================
-       SECTION: LIFTING LINEUP
-       — 6 devices
-  =========================================== -->
+  <!-- ============================== LINEUP ============================== -->
+  <div class="lf-rule lf-rule--dark">
+    <div class="lf-rule__num">V</div>
+    <div class="lf-rule__bar"></div>
+    <div class="lf-rule__name">Lifting Lineup</div>
+  </div>
+
   <section class="lf-lineup">
-    <div class="lf-lineup__head lf-reveal">
-      <div class="lf-lineup__eyebrow">Lifting Lineup</div>
-      <h2 class="lf-lineup__title">Seven energies.<br>One protocol.</h2>
-      <p class="lf-lineup__lede">No single device lifts a face. We hold every major lifting technology in one room — and choose the combination this face requires. The lineup is the language; the protocol is the sentence.</p>
+    <div class="lf-lineup__head">
+      <span class="lf-eyebrow lf-eyebrow--light lf-rv">Six devices · One room</span>
+      <h2 class="lf-lineup__title lf-rv d1"><em>Every major energy.<br>One protocol.</em></h2>
+      <p class="lf-lineup__lede lf-rv d2">No single device lifts a face. We hold every major lifting technology in one room — and choose the combination this face requires. The lineup is the language; the protocol is the sentence.</p>
     </div>
 
     <div class="lf-lineup__grid">
@@ -1391,538 +1712,444 @@
       <article class="lf-lineup__card">
         <div class="lf-lineup__card-media"><img src="../assets/images/lifting/ulthera.png" alt=""></div>
         <div class="lf-lineup__card-top">
-          <div class="lf-lineup__card-num">01</div>
-          <div class="lf-lineup__card-depth">4.5 / 3.0 / 1.5 mm</div>
+          <span class="lf-lineup__card-num">— 01 / 06</span>
+          <span class="lf-lineup__card-depth">4.5 / 3.0 / 1.5 mm</span>
         </div>
-        <div>
-          <h3 class="lf-lineup__card-name">Ulthera</h3>
-          <p class="lf-lineup__card-tagline">The gold standard. Focused ultrasound to the SMAS — the deepest lifting energy a non-invasive device can reach.</p>
-        </div>
-        <div class="lf-lineup__card-meta">
-          <b>Technology</b> · Microfocused Ultrasound (MFU-V)<br>
-          <b>Best for</b> · Lower face descent, jawline definition
-        </div>
+        <h3 class="lf-lineup__card-name"><em>Ulthera</em></h3>
+        <p class="lf-lineup__card-tagline">The gold standard. Focused ultrasound to the SMAS — the deepest lifting energy a non-invasive device can reach.</p>
+        <dl class="lf-lineup__card-meta">
+          <dt>Energy</dt><dd>Microfocused Ultrasound (MFU-V)</dd>
+          <dt>Best for</dt><dd>Lower-face descent, jawline definition</dd>
+        </dl>
       </article>
 
       <article class="lf-lineup__card">
         <div class="lf-lineup__card-media"><img src="../assets/images/lifting/tuneface.jpg" alt=""></div>
         <div class="lf-lineup__card-top">
-          <div class="lf-lineup__card-num">02</div>
-          <div class="lf-lineup__card-depth">Multi-depth</div>
+          <span class="lf-lineup__card-num">— 02 / 06</span>
+          <span class="lf-lineup__card-depth">Multi-depth</span>
         </div>
-        <div>
-          <h3 class="lf-lineup__card-name">TuneFace</h3>
-          <p class="lf-lineup__card-tagline">Microfocused ultrasound with adjustable density. A finer lifting language for faces that need precision over power.</p>
-        </div>
-        <div class="lf-lineup__card-meta">
-          <b>Technology</b> · Tunable MFU<br>
-          <b>Best for</b> · Mid-face lift, fine contouring
-        </div>
+        <h3 class="lf-lineup__card-name"><em>TuneFace</em></h3>
+        <p class="lf-lineup__card-tagline">Microfocused ultrasound with adjustable density. A finer lifting language for faces that need precision over power.</p>
+        <dl class="lf-lineup__card-meta">
+          <dt>Energy</dt><dd>Tunable MFU</dd>
+          <dt>Best for</dt><dd>Mid-face lift, fine contouring</dd>
+        </dl>
       </article>
 
       <article class="lf-lineup__card">
         <div class="lf-lineup__card-media"><img src="../assets/images/lifting/oligio-x.png" alt=""></div>
         <div class="lf-lineup__card-top">
-          <div class="lf-lineup__card-num">03</div>
-          <div class="lf-lineup__card-depth">Monopolar RF</div>
+          <span class="lf-lineup__card-num">— 03 / 06</span>
+          <span class="lf-lineup__card-depth">Monopolar RF</span>
         </div>
-        <div>
-          <h3 class="lf-lineup__card-name">Oligio X</h3>
-          <p class="lf-lineup__card-tagline">Monopolar radiofrequency that heats volumetrically — softening the lower face and tightening skin from within.</p>
-        </div>
-        <div class="lf-lineup__card-meta">
-          <b>Technology</b> · Monopolar RF<br>
-          <b>Best for</b> · Skin tightening, jawline, full-face firmness
-        </div>
+        <h3 class="lf-lineup__card-name"><em>Oligio X</em></h3>
+        <p class="lf-lineup__card-tagline">Monopolar radiofrequency that heats volumetrically — softening the lower face and tightening skin from within.</p>
+        <dl class="lf-lineup__card-meta">
+          <dt>Energy</dt><dd>Monopolar RF</dd>
+          <dt>Best for</dt><dd>Skin tightening, jawline, full-face firmness</dd>
+        </dl>
       </article>
 
       <article class="lf-lineup__card">
         <div class="lf-lineup__card-media"><img src="../assets/images/lifting/inmode.jpg" alt=""></div>
         <div class="lf-lineup__card-top">
-          <div class="lf-lineup__card-num">04</div>
-          <div class="lf-lineup__card-depth">Bipolar RF + Light</div>
+          <span class="lf-lineup__card-num">— 04 / 06</span>
+          <span class="lf-lineup__card-depth">Bipolar RF · Light</span>
         </div>
-        <div>
-          <h3 class="lf-lineup__card-name">InMode</h3>
-          <p class="lf-lineup__card-tagline">A platform that pairs RF with light energy. Layered tone, texture, and surface lifting in a single visit.</p>
-        </div>
-        <div class="lf-lineup__card-meta">
-          <b>Technology</b> · Bipolar RF · Light-based<br>
-          <b>Best for</b> · Tone correction, surface tightening
-        </div>
+        <h3 class="lf-lineup__card-name"><em>InMode</em></h3>
+        <p class="lf-lineup__card-tagline">A platform that pairs RF with light energy. Layered tone, texture, and surface lifting in a single visit.</p>
+        <dl class="lf-lineup__card-meta">
+          <dt>Energy</dt><dd>Bipolar RF · Light-based</dd>
+          <dt>Best for</dt><dd>Tone correction, surface tightening</dd>
+        </dl>
       </article>
 
       <article class="lf-lineup__card">
         <div class="lf-lineup__card-media"><img src="../assets/images/lifting/shurink.jpg" alt=""></div>
         <div class="lf-lineup__card-top">
-          <div class="lf-lineup__card-num">05</div>
-          <div class="lf-lineup__card-depth">HIFU · 1.5 / 3.0 / 4.5 mm</div>
+          <span class="lf-lineup__card-num">— 05 / 06</span>
+          <span class="lf-lineup__card-depth">HIFU · 1.5 / 3.0 / 4.5 mm</span>
         </div>
-        <div>
-          <h3 class="lf-lineup__card-name">Shurink</h3>
-          <p class="lf-lineup__card-tagline">High-intensity focused ultrasound across three depths. A dependable lifting baseline that pairs with every protocol.</p>
-        </div>
-        <div class="lf-lineup__card-meta">
-          <b>Technology</b> · HIFU (Multi-depth)<br>
-          <b>Best for</b> · Whole-face firming, maintenance
-        </div>
+        <h3 class="lf-lineup__card-name"><em>Shurink</em></h3>
+        <p class="lf-lineup__card-tagline">High-intensity focused ultrasound across three depths. A dependable lifting baseline that pairs with every protocol.</p>
+        <dl class="lf-lineup__card-meta">
+          <dt>Energy</dt><dd>HIFU (Multi-depth)</dd>
+          <dt>Best for</dt><dd>Whole-face firming, maintenance</dd>
+        </dl>
       </article>
 
       <article class="lf-lineup__card">
         <div class="lf-lineup__card-media"><img src="../assets/images/lifting/titanium.png" alt=""></div>
         <div class="lf-lineup__card-top">
-          <div class="lf-lineup__card-num">06</div>
-          <div class="lf-lineup__card-depth">Monopolar RF · Deep</div>
+          <span class="lf-lineup__card-num">— 06 / 06</span>
+          <span class="lf-lineup__card-depth">Monopolar RF · Deep</span>
         </div>
-        <div>
-          <h3 class="lf-lineup__card-name">Titanium</h3>
-          <p class="lf-lineup__card-tagline">Deep monopolar RF for volumetric heating. Reaches structural depth where ultrasound stops — a complement, not a competitor.</p>
-        </div>
-        <div class="lf-lineup__card-meta">
-          <b>Technology</b> · Monopolar RF (Deep)<br>
-          <b>Best for</b> · Sub-mental contour, deep tightening
-        </div>
+        <h3 class="lf-lineup__card-name"><em>Titanium</em></h3>
+        <p class="lf-lineup__card-tagline">Deep monopolar RF for volumetric heating. Reaches structural depth where ultrasound stops — a complement, not a competitor.</p>
+        <dl class="lf-lineup__card-meta">
+          <dt>Energy</dt><dd>Monopolar RF (Deep)</dd>
+          <dt>Best for</dt><dd>Sub-mental contour, deep tightening</dd>
+        </dl>
       </article>
 
     </div>
   </section>
 
-  <!-- ===========================================
-       SECTION: BEFORE & AFTER (placeholder)
-  =========================================== -->
-  <section class="lf-ba lf-reveal">
-    <div class="lf-ba__eyebrow">Before &amp; After</div>
-    <h2 class="lf-ba__title">The result speaks softly.</h2>
-    <p class="lf-ba__lede">No pulled look. No obvious tightness. Only the same face — clearer, more defined, more rested. Case galleries will be released as patient consent is collected.</p>
-    <div class="lf-ba__note">Gallery coming soon</div>
+  <!-- ============================== BEFORE & AFTER ============================== -->
+  <div class="lf-rule">
+    <div class="lf-rule__num">VI</div>
+    <div class="lf-rule__bar"></div>
+    <div class="lf-rule__name">Before &amp; After</div>
+  </div>
+
+  <section class="lf-ba">
+    <div class="lf-ba__inner">
+      <div class="lf-rv">
+        <span class="lf-eyebrow">Coming soon</span>
+        <h2 class="lf-ba__title"><em>The result<br>speaks softly.</em></h2>
+        <p class="lf-ba__lede">No pulled look. No obvious tightness. Only the same face — clearer, more defined, more rested. Case galleries will be released as patient consent is collected, one face at a time.</p>
+        <span class="lf-ba__note"><i></i> Gallery in preparation</span>
+      </div>
+      <div class="lf-ba__frames lf-rv d1">
+        <div class="lf-ba__frame lf-ba__frame--before"><span class="lf-ba__frame-tag">Before</span></div>
+        <div class="lf-ba__frame lf-ba__frame--after"><span class="lf-ba__frame-tag">After · 12 wks</span></div>
+      </div>
+    </div>
   </section>
 
-  <!-- ===========================================
-       SECTION: FAQ
-  =========================================== -->
+  <!-- ============================== FAQ ============================== -->
+  <div class="lf-rule lf-rule--paper">
+    <div class="lf-rule__num">VII</div>
+    <div class="lf-rule__bar"></div>
+    <div class="lf-rule__name">FAQ</div>
+  </div>
+
   <section class="lf-faq">
-    <div class="lf-faq__head lf-reveal">
-      <div>
-        <div class="lf-faq__eyebrow">FAQ</div>
-        <h2 class="lf-faq__title">Questions,<br>answered plainly.</h2>
-      </div>
-      <p class="lf-faq__note">Five common questions about lifting at Mili Clinic Sinchon. More specific concerns are best addressed during consultation.</p>
-    </div>
-
-    <div class="lf-faq__list">
-
-      <div class="lf-faq__item">
-        <button class="lf-faq__q" type="button">
-          <span>Can multiple lifting devices be combined in one session?</span>
-          <span class="lf-faq__plus" aria-hidden="true"></span>
-        </button>
-        <div class="lf-faq__a">
-          <div class="lf-faq__a-inner">Yes — and in most protocols, they are. SMAS, dermis, and surface respond to different energies, so combining devices is often the more effective approach. The doctor decides which combinations are safe and appropriate for each face during analysis.</div>
+    <div class="lf-faq__inner">
+      <div class="lf-faq__head">
+        <div class="lf-rv">
+          <span class="lf-eyebrow">Five questions</span>
+          <h2 class="lf-faq__title"><em>Answered<br>plainly.</em></h2>
         </div>
+        <p class="lf-faq__note lf-rv d1">Five common questions about lifting at Mili Clinic Sinchon. More specific concerns are best addressed during consultation.</p>
       </div>
 
-      <div class="lf-faq__item">
-        <button class="lf-faq__q" type="button">
-          <span>How much downtime should I expect?</span>
-          <span class="lf-faq__plus" aria-hidden="true"></span>
-        </button>
-        <div class="lf-faq__a">
-          <div class="lf-faq__a-inner">Most lifting sessions at Mili Clinic Sinchon have minimal downtime — mild redness or a slight feeling of tightness for several hours, occasionally up to a day. Microneedle RF (Eve Titan) may leave subtle pinpoint marks for 1–2 days. Specific recovery is reviewed before treatment.</div>
+      <div class="lf-faq__list">
+
+        <div class="lf-faq__item">
+          <button class="lf-faq__q" type="button">
+            <span class="lf-faq__q-num">01</span>
+            <span><em>Can multiple lifting devices be combined in one session?</em></span>
+            <span class="lf-faq__plus" aria-hidden="true"></span>
+          </button>
+          <div class="lf-faq__a">
+            <div class="lf-faq__a-inner">
+              <span></span>
+              <div>Yes — and in most protocols, they are. SMAS, dermis, and surface respond to different energies, so combining devices is often the more effective approach. The doctor decides which combinations are safe and appropriate for each face during analysis.</div>
+              <span></span>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="lf-faq__item">
-        <button class="lf-faq__q" type="button">
-          <span>When will I see results?</span>
-          <span class="lf-faq__plus" aria-hidden="true"></span>
-        </button>
-        <div class="lf-faq__a">
-          <div class="lf-faq__a-inner">An immediate firming is often visible the same day, as treated tissue contracts. The structural result — new collagen and remodelled support — develops gradually over 8 to 12 weeks, with continued refinement for several months.</div>
+        <div class="lf-faq__item">
+          <button class="lf-faq__q" type="button">
+            <span class="lf-faq__q-num">02</span>
+            <span><em>How much downtime should I expect?</em></span>
+            <span class="lf-faq__plus" aria-hidden="true"></span>
+          </button>
+          <div class="lf-faq__a">
+            <div class="lf-faq__a-inner">
+              <span></span>
+              <div>Most lifting sessions at Mili Clinic Sinchon have minimal downtime — mild redness or a slight feeling of tightness for several hours, occasionally up to a day. Microneedle RF (Eve Titan) may leave subtle pinpoint marks for 1–2 days. Specific recovery is reviewed before treatment.</div>
+              <span></span>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="lf-faq__item">
-        <button class="lf-faq__q" type="button">
-          <span>Is the treatment painful?</span>
-          <span class="lf-faq__plus" aria-hidden="true"></span>
-        </button>
-        <div class="lf-faq__a">
-          <div class="lf-faq__a-inner">Sensation depends on the device and depth. Focused ultrasound and deep RF carry a brief warm or sharp sensation per shot. Topical anaesthetic is applied before treatment, and intensity is adjusted in real time. Most patients describe it as tolerable rather than painful.</div>
+        <div class="lf-faq__item">
+          <button class="lf-faq__q" type="button">
+            <span class="lf-faq__q-num">03</span>
+            <span><em>When will I see results?</em></span>
+            <span class="lf-faq__plus" aria-hidden="true"></span>
+          </button>
+          <div class="lf-faq__a">
+            <div class="lf-faq__a-inner">
+              <span></span>
+              <div>An immediate firming is often visible the same day, as treated tissue contracts. The structural result — new collagen and remodelled support — develops gradually over 8 to 12 weeks, with continued refinement for several months.</div>
+              <span></span>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="lf-faq__item">
-        <button class="lf-faq__q" type="button">
-          <span>How often should lifting be repeated?</span>
-          <span class="lf-faq__plus" aria-hidden="true"></span>
-        </button>
-        <div class="lf-faq__a">
-          <div class="lf-faq__a-inner">Structural lifting (Ulthera, TuneFace, Titanium) is generally repeated every 12–18 months. Lighter modalities (Shurink, surface RF, microneedle RF) are used more frequently, often quarterly, as part of a maintenance protocol designed for each patient.</div>
+        <div class="lf-faq__item">
+          <button class="lf-faq__q" type="button">
+            <span class="lf-faq__q-num">04</span>
+            <span><em>Is the treatment painful?</em></span>
+            <span class="lf-faq__plus" aria-hidden="true"></span>
+          </button>
+          <div class="lf-faq__a">
+            <div class="lf-faq__a-inner">
+              <span></span>
+              <div>Sensation depends on the device and depth. Focused ultrasound and deep RF carry a brief warm or sharp sensation per shot. Topical anaesthetic is applied before treatment, and intensity is adjusted in real time. Most patients describe it as tolerable rather than painful.</div>
+              <span></span>
+            </div>
+          </div>
         </div>
-      </div>
 
+        <div class="lf-faq__item">
+          <button class="lf-faq__q" type="button">
+            <span class="lf-faq__q-num">05</span>
+            <span><em>How often should lifting be repeated?</em></span>
+            <span class="lf-faq__plus" aria-hidden="true"></span>
+          </button>
+          <div class="lf-faq__a">
+            <div class="lf-faq__a-inner">
+              <span></span>
+              <div>Structural lifting (Ulthera, TuneFace, Titanium) is generally repeated every 12–18 months. Lighter modalities (Shurink, surface RF, microneedle RF) are used more frequently, often quarterly, as part of a maintenance protocol designed for each patient.</div>
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- ===========================================
-       SECTION: CONSULTATION CTA
-  =========================================== -->
+  <!-- ============================== CTA ============================== -->
   <section class="lf-cta">
     <div class="lf-cta__media"></div>
     <div class="lf-cta__inner">
-      <div class="lf-cta__eyebrow">Begin with a reading</div>
-      <h2 class="lf-cta__title">Lifting begins<br>with the face,<br>not the device.</h2>
+      <span class="lf-eyebrow lf-eyebrow--light">Begin with a reading</span>
+      <h2 class="lf-cta__title"><em>Lifting begins<br>with the&nbsp;face,<br>not the&nbsp;device.</em></h2>
+      <p class="lf-cta__sub">Book a diagnostic consultation. The first thirty minutes are spent on the face — not on the menu.</p>
       <div class="lf-cta__actions">
-        <a class="lf-cta__btn lf-cta__btn--solid" href="https://pf.kakao.com/_mxadwxb" target="_blank" rel="noopener">KakaoTalk</a>
+        <a class="lf-cta__btn lf-cta__btn--solid" href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener">Reserve Consultation</a>
+        <a class="lf-cta__btn" href="https://pf.kakao.com/_mxadwxb" target="_blank" rel="noopener">KakaoTalk</a>
         <a class="lf-cta__btn" href="https://api.whatsapp.com/send/?phone=821023834697" target="_blank" rel="noopener">WhatsApp</a>
-        <a class="lf-cta__btn" href="tel:+82263371212">+82 2-6337-1212</a>
       </div>
+    </div>
+
+    <div class="lf-cta__foot">
+      <div><span>Phone</span>+82 2-6337-1212</div>
+      <div><span>Address</span>3F, 104 Sinchon-ro, Mapo-gu, Seoul</div>
+      <div><span>Hours</span>Mon · Wed · Fri 10:00 – 19:00</div>
     </div>
   </section>
 
 </main>
 
-<!-- Footer -->
-<footer class="mili-footer">
-    <div class="mili-footer-inner">
-        <div class="mili-footer-top">
-            <div class="mili-footer-brand">
-                <div class="mili-footer-logo"><img src="/assets/images/logo/logo.png" alt="Mili Clinic Sinchon"></div>
-                <p class="mili-footer-tagline">The flagship of the Mili Clinic brand. Beyond the remedy &mdash; a quiet sanctuary in Dosan for restoration and refinement.</p>
-                <p class="mili-footer-slogan">"Enhancing Beauty with Just a 1mm Change."</p>
-            </div>
-            <div class="mili-footer-col">
-                <h5>Treatments</h5>
-                <ul>
-                    <li><a href="/en/ulthera.html">Ulthera</a></li>
-                    <li><a href="/en/tuneface.html">TuneFace</a></li>
-                    <li><a href="/en/oligio-x.html">OligioX</a></li>
-                    <li><a href="/en/inmode.html">InMode</a></li>
-                    <li><a href="/en/shurink.html">Shurink</a></li>
-                    <li><a href="/en/titanium.html">Titanium</a></li>
-                    <li><a href="/en/eve-titan.html">Eve Titan</a></li>
-                    <li><a href="/en/botox.html">Botox</a></li>
-                    <li><a href="/en/filler.html">Filler</a></li>
-                    <li><a href="/en/collagen-booster.html">Collagen Booster</a></li>
-                    <li><a href="/en/skin-booster.html">Skin Booster</a></li>
-                    <li><a href="/en/acne-pore.html">Acne &amp; Pore</a></li>
-                    <li><a href="/en/all-in-one-brightening.html">All-in-One Brightening</a></li>
-                    <li><a href="/en/medi-spa.html">Medi-Spa</a></li>
-                    <li><a href="/en/laser-hair-removal.html">Laser Hair Removal</a></li>
-                    <li><a href="/en/body-shaping.html">Body Shaping</a></li>
-                </ul>
-            </div>
-            <div class="mili-footer-col">
-                <h5>Visit</h5>
-                <ul>
-                    <li><a href="/en/location.html">Location</a></li>
-                    <li><a href="/en/schedule.html">Schedule</a></li>
-                    <li><a href="https://naver.me/GLAXm15o" target="_blank" rel="noopener">Naver Map</a></li>
-                    <li><a href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener">Naver Booking</a></li>
-                    <li><a href="tel:+82263371212">+82 2&middot;6337&middot;1212</a></li>
-                </ul>
-            </div>
-            <div class="mili-footer-col">
-                <h5>Network</h5>
-                <ul>
-                    <li><a href="/en/promotion.html">Promotion</a></li>
-                    <li><a href="https://www.youtube.com/@Dr.ShinMillimeter" target="_blank" rel="noopener">YouTube</a></li>
-                    <li><a href="https://dosan.miliclinic.co.kr" target="_blank" rel="noopener">Mili Dosan</a></li>
-                    <li><a href="http://miliclinic.com" target="_blank" rel="noopener">Mili Global</a></li>
-                    <li><a href="https://sinchon.miliclinic.co.kr">&#54620;&#44397;&#50612; &#49324;&#51060;&#53944;</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="mili-footer-messengers">
-            <a href="https://api.whatsapp.com/send/?phone=821023834697&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mili-msg" aria-label="WhatsApp">
-                <svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375c-.99-1.575-1.516-3.391-1.516-5.26 0-5.445 4.455-9.885 9.942-9.885 2.654 0 5.145 1.035 7.021 2.91 1.875 1.875 2.909 4.371 2.909 7.026-.004 5.444-4.46 9.885-9.935 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411"/></svg>
-                <span class="mili-msg-name">WhatsApp</span>
-            </a>
-            <a href="https://mp.weixin.qq.com/s/U3J4SX5NmHNIuaYASOZ-XA" target="_blank" rel="noopener" class="mili-msg" aria-label="WeChat">
-                <svg viewBox="0 0 24 24" fill="#7BB32E"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.328.328 0 0 0 .166-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.594-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.475-1.78 5.687.91 2.214 3.337 3.6 6.116 3.6.453 0 .92-.069 1.386-.205a.79.79 0 0 1 .677.069l1.625 1.05a.36.36 0 0 0 .184.061c.16 0 .29-.132.29-.295 0-.071-.027-.142-.038-.213l-.336-1.245a.66.66 0 0 1-.026-.218.625.625 0 0 1 .25-.499C21.546 17.474 22.5 15.852 22.5 13.94c0-3.213-3.045-5.78-6.572-5.85zm-2.379 2.493c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897zm4.625 0c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897z"/></svg>
-                <span class="mili-msg-name">WeChat</span>
-            </a>
-            <a href="https://lin.ee/X7C7bMh" target="_blank" rel="noopener" class="mili-msg" aria-label="LINE">
-                <svg viewBox="0 0 24 24" fill="#06C755"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                <span class="mili-msg-name">LINE</span>
-            </a>
-            <a href="https://pf.kakao.com/_mxadwxb/chat" target="_blank" rel="noopener" class="mili-msg" aria-label="KakaoTalk">
-                <svg viewBox="0 0 24 24" fill="#FEE500"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.7 6.8L5.6 21.4c-.1.3.2.5.5.4l4.4-2.9c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/><path d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.7 6.8L5.6 21.4c-.1.3.2.5.5.4l4.4-2.9c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8s-4.5-8-10-8z" stroke="#1A1A1A" stroke-width="0.4" fill="#FEE500"/></svg>
-                <span class="mili-msg-name">KakaoTalk</span>
-            </a>
-            <a href="https://www.instagram.com/sinchon.miliclinic/" target="_blank" rel="noopener" class="mili-msg" aria-label="Instagram">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="#1A1A1A"/></svg>
-                <span class="mili-msg-name">Instagram</span>
-            </a>
-        </div>
-
-        <div class="mili-footer-business">
-            <div>
-                <p><strong>Company</strong> Mili Clinic Sinchon (&#48128;&#47532;&#51032;&#50896; &#46020;&#49328;)</p>
-                <p><strong>Director</strong> Kim Hye-won, M.D.</p>
-                <p><strong>Business No.</strong> 166-18-01231</p>
-                <p><strong>Information Manager</strong> Kim Hye-won</p>
-            </div>
-            <div>
-                <p><strong>Address</strong> 3F, 104 Sinchon-ro, Mapo-gu, Seoul, Korea</p>
-                <p><strong>Hours</strong> Mon&middot;Wed&middot;Fri 10:00&ndash;19:00 / Tue&middot;Thu 10:00&ndash;21:00 / Sat 10:00&ndash;16:00</p>
-                <p><strong>Closed</strong> Sundays &amp; Public Holidays</p>
-                <p><strong>Lunch</strong> 13:00&ndash;14:00</p>
-            </div>
-        </div>
-
-        <div class="mili-footer-bottom">
-            <div>&copy; 2026 Mili Clinic Sinchon. All Rights Reserved.</div>
-            <div class="mili-footer-policies">
-                <a href="/en/privacy.html">Privacy Policy</a>
-                <a href="/en/non-covered.html">Non-Covered Items</a>
-            </div>
-        </div>
-    </div>
+<!-- ===========================================
+     FOOTER — DO NOT MODIFY (Trimmed for review preview;
+     production uses the full footer from the source file)
+=========================================== -->
+<footer class="mili-footer" data-footer-placeholder>
+  <div class="mili-footer-inner" style="padding:60px var(--lf-gut, 64px); text-align:center; color:#8a8a8c; font-family:'Inter',sans-serif; font-size:12px; letter-spacing:0.16em; text-transform:uppercase;">
+    Footer · preserved from production
+  </div>
 </footer>
-
-<!-- Floating -->
-<div class="mili-float">
-    <a href="https://pf.kakao.com/_mxadwxb/chat" target="_blank" rel="noopener" class="mili-float-btn kakao" aria-label="KakaoTalk">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.7 6.8L5.6 21.4c-.1.3.2.5.5.4l4.4-2.9c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/></svg>
-    </a>
-    <a href="https://mp.weixin.qq.com/s/U3J4SX5NmHNIuaYASOZ-XA" target="_blank" rel="noopener" class="mili-float-btn wechat" aria-label="WeChat">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.328.328 0 0 0 .166-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.594-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.475-1.78 5.687.91 2.214 3.337 3.6 6.116 3.6.453 0 .92-.069 1.386-.205a.79.79 0 0 1 .677.069l1.625 1.05a.36.36 0 0 0 .184.061c.16 0 .29-.132.29-.295 0-.071-.027-.142-.038-.213l-.336-1.245a.66.66 0 0 1-.026-.218.625.625 0 0 1 .25-.499C21.546 17.474 22.5 15.852 22.5 13.94c0-3.213-3.045-5.78-6.572-5.85zm-2.379 2.493c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897zm4.625 0c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897z"/></svg>
-    </a>
-    <a href="https://lin.ee/X7C7bMh" target="_blank" rel="noopener" class="mili-float-btn line" aria-label="LINE">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-    </a>
-    <a href="https://api.whatsapp.com/send/?phone=821023834697&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mili-float-btn whatsapp" aria-label="WhatsApp">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375c-.99-1.575-1.516-3.391-1.516-5.26 0-5.445 4.455-9.885 9.942-9.885 2.654 0 5.145 1.035 7.021 2.91 1.875 1.875 2.909 4.371 2.909 7.026-.004 5.444-4.46 9.885-9.935 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411"/></svg>
-    </a>
-    <a href="https://www.instagram.com/sinchon.miliclinic/" target="_blank" rel="noopener" class="mili-float-btn instagram" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
-    </a>
-</div>
 
 <script data-mobile-nav-accordion>
 (function(){
-    const items = document.querySelectorAll('.mili-mobile-nav-list > li');
-    items.forEach(li => {
-        const span = li.querySelector(':scope > span');
-        if (!span) return;
-        span.addEventListener('click', (e) => {
-            e.stopPropagation();
-            li.classList.toggle('open');
-        });
+  const items = document.querySelectorAll('.mili-mobile-nav-list > li');
+  items.forEach(li => {
+    const span = li.querySelector(':scope > span');
+    if (!span) return;
+    span.addEventListener('click', (e) => {
+      e.stopPropagation();
+      li.classList.toggle('open');
     });
+  });
 })();
 </script>
 <script data-mili-lang>
 (function(){
-document.querySelectorAll('.mili-lang-toggle').forEach(function(btn){
-  btn.addEventListener('click', function(e){
-    e.stopPropagation();
-    var root = btn.closest('.mili-lang');
-    var open = !root.classList.contains('open');
+  document.querySelectorAll('.mili-lang-toggle').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var root = btn.closest('.mili-lang');
+      var open = !root.classList.contains('open');
+      document.querySelectorAll('.mili-lang.open').forEach(function(el){
+        el.classList.remove('open');
+        var t = el.querySelector('.mili-lang-toggle');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      });
+      if (open) {
+        root.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+  document.addEventListener('click', function(){
     document.querySelectorAll('.mili-lang.open').forEach(function(el){
       el.classList.remove('open');
       var t = el.querySelector('.mili-lang-toggle');
       if (t) t.setAttribute('aria-expanded', 'false');
     });
-    if (open) {
-      root.classList.add('open');
-      btn.setAttribute('aria-expanded', 'true');
-    }
   });
-});
-document.addEventListener('click', function(){
-  document.querySelectorAll('.mili-lang.open').forEach(function(el){
-    el.classList.remove('open');
-    var t = el.querySelector('.mili-lang-toggle');
-    if (t) t.setAttribute('aria-expanded', 'false');
-  });
-});
 })();
 </script>
 
 <script>
-// ============================================
-// Reveal on scroll
-// ============================================
-const lfObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      lfObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+// ====================================================
+// 1) Reveal on scroll
+// ====================================================
+(function(){
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.lf-rv').forEach(el => io.observe(el));
+})();
 
-document.querySelectorAll('.lf-reveal').forEach(el => lfObserver.observe(el));
-
-// ============================================
-// Philosophy — scroll-driven horizontal pin
-// 세로 스크롤 진행도를 가로 translateX로 변환
-// 섹션 높이를 트랙 너비에 맞춰 동적 계산 → 빈 공간 제거
-// ============================================
-(function() {
+// ====================================================
+// 2) Philosophy — smooth lerped horizontal scroll
+//    Vertical scroll progress → horizontal translateX
+//    rAF lerp so it never feels glued to the scroll wheel
+// ====================================================
+(function(){
   const section = document.getElementById('lfPhilosophy');
-  const track = document.getElementById('lfPhilosophyTrack');
-  const fill = document.getElementById('lfPhilosophyFill');
-  const currentLabel = document.getElementById('lfPhilosophyCurrent');
+  const track   = document.getElementById('lfPhilosophyTrack');
+  const fill    = document.getElementById('lfPhilosophyFill');
+  const cur     = document.getElementById('lfPhilosophyCurrent');
   if (!section || !track) return;
 
-  // 스크롤 속도 계수 — 1.0 = 가로 거리 = 세로 거리 (1:1)
-  // 1.2~1.5가 자연스러움. 값 키울수록 천천히, 줄일수록 빠르게.
-  const SPEED = 1.2;
+  // Speed: how many viewports of vertical travel per horizontal viewport.
+  // 0.9 = a little faster than 1:1 (track moves slightly ahead of scroll).
+  const SPEED = 0.95;
+  // Lerp smoothing — 0 = no smoothing, 1 = no movement. 0.12 is buttery.
+  const LERP  = 0.12;
 
-  const isMobile = () => window.innerWidth <= 768;
   let maxScroll = 0;
-  let ticking = false;
+  let targetX   = 0;
+  let currentX  = 0;
+  let progress  = 0;
+  let raf       = 0;
+  let measured  = false;
+
+  function isMobile() { return window.innerWidth <= 880; }
 
   function measure() {
     if (isMobile()) {
       track.style.transform = '';
       section.style.height = '';
+      measured = false;
       return;
     }
     const trackWidth = track.scrollWidth;
-    const viewportWidth = window.innerWidth;
-    maxScroll = Math.max(0, trackWidth - viewportWidth);
-
-    // 섹션 높이 = 1 viewport (sticky 진입용) + maxScroll * SPEED (스크롤 거리)
-    // 트랙이 정확히 다 지나갈 만큼만 높이 부여 → 빈 공간 제거
+    const vw         = window.innerWidth;
+    maxScroll = Math.max(0, trackWidth - vw);
     const requiredHeight = window.innerHeight + (maxScroll * SPEED);
     section.style.height = requiredHeight + 'px';
-
-    update();
+    measured = true;
+    sample();
   }
 
-  function update() {
-    if (isMobile()) return;
+  function sample() {
+    if (!measured) return;
     const rect = section.getBoundingClientRect();
-    const sectionHeight = section.offsetHeight;
     const winH = window.innerHeight;
+    const total = section.offsetHeight - winH;
+    if (total <= 0) return;
 
-    const scrolled = -rect.top;
-    const scrollable = sectionHeight - winH;
-    if (scrollable <= 0) return;
-
-    let progress = scrolled / scrollable;
-    progress = Math.max(0, Math.min(1, progress));
-
-    const translateX = -progress * maxScroll;
-    track.style.transform = `translate3d(${translateX}px, 0, 0)`;
-
-    if (fill) fill.style.width = (progress * 100) + '%';
-    if (currentLabel) {
-      const stage = Math.min(5, Math.max(1, Math.ceil(progress * 5) || 1));
-      const label = String(stage).padStart(2, '0');
-      if (currentLabel.textContent !== label) currentLabel.textContent = label;
-    }
+    let p = (-rect.top) / total;
+    p = Math.max(0, Math.min(1, p));
+    progress = p;
+    targetX = -p * maxScroll;
   }
 
-  function onScroll() {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        update();
-        ticking = false;
-      });
-      ticking = true;
+  function tick() {
+    if (measured) {
+      currentX += (targetX - currentX) * LERP;
+      if (Math.abs(targetX - currentX) < 0.05) currentX = targetX;
+      track.style.transform = 'translate3d(' + currentX.toFixed(2) + 'px, 0, 0)';
+
+      if (fill) fill.style.width = (progress * 100).toFixed(1) + '%';
+      if (cur) {
+        // 5 stages, scale visually around progress
+        const stage = Math.min(5, Math.max(1, Math.ceil(progress * 5) || 1));
+        const label = String(stage).padStart(2, '0');
+        if (cur.textContent !== label) cur.textContent = label;
+      }
     }
+    raf = requestAnimationFrame(tick);
   }
 
-  // 초기 측정 — DOM 준비 후
+  function onScroll(){ sample(); }
+  function onResize(){ measure(); }
+
   measure();
-
-  // 이미지/폰트 로드 완료 후 재측정 (트랙 너비가 변할 수 있음)
   window.addEventListener('load', measure);
-
-  // 이미지가 개별 로드될 때마다도 재측정
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
   track.querySelectorAll('img').forEach(img => {
     if (!img.complete) {
-      img.addEventListener('load', measure, { once: true });
+      img.addEventListener('load',  measure, { once: true });
       img.addEventListener('error', measure, { once: true });
     }
   });
 
-  // 폰트 로드 완료 후 재측정 (Cormorant Garamond 등 로드되며 텍스트 폭 변화)
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(measure);
-  }
-
   window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', measure);
+  window.addEventListener('resize', onResize);
+  tick();
 })();
 
-// ============================================
-// Layered Approach — sync diagram with list scroll
-// ============================================
-(function() {
-  const items = document.querySelectorAll('.lf-layered__item');
-  const svgLayers = document.querySelectorAll('.lf-layered__svg .layer');
-  const svgLabels = document.querySelectorAll('.lf-layered__svg .layer-label');
-  if (!items.length || !svgLayers.length) return;
+// ====================================================
+// 3) Layered — sync diagram with list scroll
+// ====================================================
+(function(){
+  const items   = document.querySelectorAll('.lf-layered__item');
+  const fills   = document.querySelectorAll('.lf-layered__svg .layer-fill');
+  const brackets= document.querySelectorAll('.lf-layered__svg .layer-bracket');
+  const labels  = document.querySelectorAll('.lf-layered__svg .layer-label');
+  const depths  = document.querySelectorAll('.lf-layered__svg .layer-depth');
+  if (!items.length || !fills.length) return;
 
-  function activate(index) {
-    items.forEach((el, i) => el.classList.toggle('is-active', i === index));
-    svgLayers.forEach(el => {
-      el.classList.toggle('is-active', Number(el.dataset.layer) === index);
-    });
-    svgLabels.forEach(el => {
-      el.classList.toggle('is-active', Number(el.dataset.label) === index);
-    });
+  function activate(i) {
+    items.forEach((el, idx) => el.classList.toggle('is-active', idx === i));
+    fills.forEach(el  => el.classList.toggle('is-active', +el.dataset.layer === i));
+    brackets.forEach(el => el.classList.toggle('is-active', +el.dataset.layer === i));
+    labels.forEach(el => el.classList.toggle('is-active', +el.dataset.label === i));
+    depths.forEach(el => el.classList.toggle('is-active', +el.dataset.depth === i));
   }
-
-  // 활성화 첫 항목
   activate(0);
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
-        const idx = Array.from(items).indexOf(entry.target);
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting && e.intersectionRatio > 0.5) {
+        const idx = Array.from(items).indexOf(e.target);
         if (idx >= 0) activate(idx);
       }
     });
-  }, {
-    threshold: [0.5, 0.6, 0.7],
-    rootMargin: '-30% 0px -30% 0px'
-  });
-
-  items.forEach(item => observer.observe(item));
+  }, { threshold: [0.5, 0.6, 0.7], rootMargin: '-30% 0px -30% 0px' });
+  items.forEach(it => io.observe(it));
 })();
 
-// ============================================
-// Mili Protocol — reveal each step
-// ============================================
-(function() {
+// ====================================================
+// 4) Protocol — reveal each step
+// ====================================================
+(function(){
   const steps = document.querySelectorAll('.lf-protocol__step');
   if (!steps.length) return;
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-      }
-    });
-  }, { threshold: 0.25 });
-
-  steps.forEach(step => observer.observe(step));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-in'); });
+  }, { threshold: 0.22 });
+  steps.forEach(s => io.observe(s));
 })();
 
-// ============================================
-// FAQ — accordion
-// ============================================
-(function() {
-  const items = document.querySelectorAll('.lf-faq__item');
-  items.forEach(item => {
+// ====================================================
+// 5) FAQ — accordion
+// ====================================================
+(function(){
+  document.querySelectorAll('.lf-faq__item').forEach(item => {
     const btn = item.querySelector('.lf-faq__q');
     const ans = item.querySelector('.lf-faq__a');
     if (!btn || !ans) return;
-
     btn.addEventListener('click', () => {
       const isOpen = item.classList.contains('is-open');
-      // 한 번에 하나만 열기 원할 경우 아래 두 줄 활성화
-      // items.forEach(other => other.classList.remove('is-open'));
-      // items.forEach(other => { other.querySelector('.lf-faq__a').style.maxHeight = '0px'; });
-
       if (isOpen) {
         item.classList.remove('is-open');
         ans.style.maxHeight = '0px';
