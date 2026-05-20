@@ -155,9 +155,8 @@
   position: relative;
   width: 100vw;
   background: var(--lf-bg);
-  /* 높이 = 카드 트랙이 가로로 다 지나가는데 필요한 스크롤 거리.
-     5 카드 + 인트로 패널 ≈ 6 viewports */
-  height: 600vh;
+  /* 높이는 JS가 트랙 너비에 맞춰 동적 설정. fallback으로 임시값. */
+  height: 300vh;
 }
 
 .lf-philosophy__pin {
@@ -1761,6 +1760,7 @@ document.querySelectorAll('.lf-reveal').forEach(el => lfObserver.observe(el));
 // ============================================
 // Philosophy — scroll-driven horizontal pin
 // 세로 스크롤 진행도를 가로 translateX로 변환
+// 섹션 높이를 트랙 너비에 맞춰 동적 계산 → 빈 공간 제거
 // ============================================
 (function() {
   const section = document.getElementById('lfPhilosophy');
@@ -1769,22 +1769,29 @@ document.querySelectorAll('.lf-reveal').forEach(el => lfObserver.observe(el));
   const currentLabel = document.getElementById('lfPhilosophyCurrent');
   if (!section || !track) return;
 
-  // 모바일에서는 비활성 (CSS에서 일반 세로 스택)
-  const isMobile = () => window.innerWidth <= 768;
+  // 스크롤 속도 계수 — 1.0 = 가로 거리 = 세로 거리 (1:1)
+  // 1.2~1.5가 자연스러움. 값 키울수록 천천히, 줄일수록 빠르게.
+  const SPEED = 1.2;
 
+  const isMobile = () => window.innerWidth <= 768;
   let maxScroll = 0;
-  let trackWidth = 0;
-  let viewportWidth = 0;
+  let ticking = false;
 
   function measure() {
     if (isMobile()) {
       track.style.transform = '';
+      section.style.height = '';
       return;
     }
-    trackWidth = track.scrollWidth;
-    viewportWidth = window.innerWidth;
-    // 트랙이 가로로 다 지나가야 하는 거리
-    maxScroll = trackWidth - viewportWidth;
+    const trackWidth = track.scrollWidth;
+    const viewportWidth = window.innerWidth;
+    maxScroll = Math.max(0, trackWidth - viewportWidth);
+
+    // 섹션 높이 = 1 viewport (sticky 진입용) + maxScroll * SPEED (스크롤 거리)
+    // 트랙이 정확히 다 지나갈 만큼만 높이 부여 → 빈 공간 제거
+    const requiredHeight = window.innerHeight + (maxScroll * SPEED);
+    section.style.height = requiredHeight + 'px';
+
     update();
   }
 
@@ -1794,10 +1801,9 @@ document.querySelectorAll('.lf-reveal').forEach(el => lfObserver.observe(el));
     const sectionHeight = section.offsetHeight;
     const winH = window.innerHeight;
 
-    // section.top이 0일 때 진행 0, section.bottom이 winH일 때 진행 1
-    // sticky가 활성화된 구간: -rect.top이 0에서 (sectionHeight - winH)까지
     const scrolled = -rect.top;
     const scrollable = sectionHeight - winH;
+    if (scrollable <= 0) return;
 
     let progress = scrolled / scrollable;
     progress = Math.max(0, Math.min(1, progress));
@@ -1805,10 +1811,7 @@ document.querySelectorAll('.lf-reveal').forEach(el => lfObserver.observe(el));
     const translateX = -progress * maxScroll;
     track.style.transform = `translate3d(${translateX}px, 0, 0)`;
 
-    // Progress bar
     if (fill) fill.style.width = (progress * 100) + '%';
-
-    // Current label (01~05)
     if (currentLabel) {
       const stage = Math.min(5, Math.max(1, Math.ceil(progress * 5) || 1));
       const label = String(stage).padStart(2, '0');
@@ -1816,8 +1819,36 @@ document.querySelectorAll('.lf-reveal').forEach(el => lfObserver.observe(el));
     }
   }
 
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        update();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  // 초기 측정 — DOM 준비 후
   measure();
-  window.addEventListener('scroll', update, { passive: true });
+
+  // 이미지/폰트 로드 완료 후 재측정 (트랙 너비가 변할 수 있음)
+  window.addEventListener('load', measure);
+
+  // 이미지가 개별 로드될 때마다도 재측정
+  track.querySelectorAll('img').forEach(img => {
+    if (!img.complete) {
+      img.addEventListener('load', measure, { once: true });
+      img.addEventListener('error', measure, { once: true });
+    }
+  });
+
+  // 폰트 로드 완료 후 재측정 (Cormorant Garamond 등 로드되며 텍스트 폭 변화)
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(measure);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', measure);
 })();
 
