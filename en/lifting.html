@@ -316,6 +316,305 @@
   .lf-philosophy__card { width: 100%; max-width: 420px; margin: 0 auto; }
   .lf-philosophy__progress { display: none; }
 }
+
+/* =========================================
+   LAYERED APPROACH — skin cross-section
+========================================= */
+.lf-layered {
+  position: relative;
+  width: 100vw;
+  padding: clamp(140px, 20vh, 220px) clamp(40px, 8vw, 160px);
+  background: var(--lf-bg-soft);
+}
+
+.lf-layered__head {
+  max-width: 720px;
+  margin-bottom: clamp(80px, 12vh, 140px);
+}
+
+.lf-layered__eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--lf-ink-soft);
+  margin-bottom: 32px;
+}
+
+.lf-layered__title {
+  font-family: var(--lf-serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(44px, 5.5vw, 84px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0 0 36px;
+}
+
+.lf-layered__lede {
+  font-family: var(--lf-serif);
+  font-weight: 300;
+  font-size: clamp(18px, 1.3vw, 22px);
+  line-height: 1.7;
+  color: var(--lf-ink-soft);
+  max-width: 580px;
+}
+
+.lf-layered__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(60px, 8vw, 140px);
+  align-items: start;
+}
+
+.lf-layered__diagram {
+  position: sticky;
+  top: 15vh;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: var(--lf-bg);
+  border: 1px solid var(--lf-line);
+}
+
+.lf-layered__svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.lf-layered__svg .layer {
+  transition: opacity 0.6s var(--lf-ease), fill 0.6s var(--lf-ease);
+  opacity: 0.25;
+}
+.lf-layered__svg .layer.is-active {
+  opacity: 1;
+}
+.lf-layered__svg .layer-label {
+  font-family: var(--lf-sans);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  fill: var(--lf-ink-mute);
+  transition: fill 0.6s var(--lf-ease);
+}
+.lf-layered__svg .layer-label.is-active {
+  fill: var(--lf-ink);
+}
+.lf-layered__svg .depth-tick {
+  font-family: var(--lf-sans);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  fill: var(--lf-ink-mute);
+}
+
+.lf-layered__list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(60px, 8vh, 100px);
+}
+
+.lf-layered__item {
+  padding: 32px 0;
+  border-top: 1px solid var(--lf-line);
+  opacity: 0.4;
+  transition: opacity 0.5s var(--lf-ease);
+}
+.lf-layered__item.is-active {
+  opacity: 1;
+}
+
+.lf-layered__item-num {
+  font-family: var(--lf-serif);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--lf-ink-mute);
+  margin-bottom: 14px;
+}
+
+.lf-layered__item-depth {
+  font-family: var(--lf-sans);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--lf-ink-soft);
+  margin-bottom: 14px;
+}
+
+.lf-layered__item-name {
+  font-family: var(--lf-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(28px, 2.4vw, 40px);
+  line-height: 1.15;
+  margin: 0 0 24px;
+}
+
+.lf-layered__item-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--lf-ink-soft);
+  max-width: 460px;
+}
+
+.lf-layered__item-tech {
+  margin-top: 24px;
+  font-family: var(--lf-sans);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--lf-ink);
+  padding-top: 16px;
+  border-top: 1px dashed var(--lf-line);
+}
+
+@media (max-width: 900px) {
+  .lf-layered__body {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .lf-layered__diagram {
+    position: relative;
+    top: 0;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+/* =========================================
+   MILI PROTOCOL — journey 3 steps
+========================================= */
+.lf-protocol {
+  position: relative;
+  width: 100vw;
+  background: var(--lf-bg);
+  padding: clamp(140px, 20vh, 220px) 0 0;
+}
+
+.lf-protocol__head {
+  padding: 0 clamp(40px, 8vw, 160px);
+  margin-bottom: clamp(100px, 14vh, 160px);
+  max-width: 1100px;
+}
+
+.lf-protocol__eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--lf-ink-soft);
+  margin-bottom: 32px;
+}
+
+.lf-protocol__title {
+  font-family: var(--lf-serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(44px, 5.5vw, 84px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0 0 36px;
+}
+
+.lf-protocol__lede {
+  font-family: var(--lf-serif);
+  font-weight: 300;
+  font-size: clamp(18px, 1.3vw, 22px);
+  line-height: 1.7;
+  color: var(--lf-ink-soft);
+  max-width: 620px;
+}
+
+.lf-protocol__steps {
+  display: flex;
+  flex-direction: column;
+}
+
+.lf-protocol__step {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  align-items: stretch;
+}
+
+.lf-protocol__step:nth-child(even) {
+  direction: rtl;
+}
+.lf-protocol__step:nth-child(even) > * {
+  direction: ltr;
+}
+
+.lf-protocol__media {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 70vh;
+  overflow: hidden;
+  background: var(--lf-bg-soft);
+}
+.lf-protocol__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.6s var(--lf-ease);
+}
+.lf-protocol__step.is-visible .lf-protocol__media img {
+  transform: scale(1.02);
+}
+
+.lf-protocol__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(60px, 10vh, 120px) clamp(40px, 6vw, 100px);
+}
+
+.lf-protocol__step-num {
+  font-family: var(--lf-sans);
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--lf-ink-mute);
+  margin-bottom: 36px;
+}
+
+.lf-protocol__step-name {
+  font-family: var(--lf-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(34px, 3.6vw, 60px);
+  line-height: 1.1;
+  margin: 0 0 36px;
+}
+
+.lf-protocol__step-desc {
+  font-family: var(--lf-serif);
+  font-weight: 300;
+  font-size: clamp(17px, 1.2vw, 20px);
+  line-height: 1.75;
+  color: var(--lf-ink-soft);
+  max-width: 460px;
+  margin-bottom: 32px;
+}
+
+.lf-protocol__step-meta {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--lf-ink-mute);
+  letter-spacing: 0.02em;
+  max-width: 420px;
+  padding-top: 24px;
+  border-top: 1px solid var(--lf-line);
+}
+
+@media (max-width: 900px) {
+  .lf-protocol__step {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .lf-protocol__step:nth-child(even) { direction: ltr; }
+  .lf-protocol__media { min-height: 60vh; }
+  .lf-protocol__text { padding: 60px 24px 80px; }
+}
 </style>
 </head>
 <body>
@@ -512,10 +811,153 @@
   <!-- ===========================================
        SECTION: LAYERED APPROACH (다음 단계에서 추가)
   =========================================== -->
+  <!-- ===========================================
+       SECTION: LAYERED APPROACH
+       — skin cross-section, scroll-pinned diagram
+  =========================================== -->
+  <section class="lf-layered" id="lfLayered">
+    <div class="lf-layered__head lf-reveal">
+      <div class="lf-layered__eyebrow">Layered Approach</div>
+      <h2 class="lf-layered__title">The face is not<br>a single surface.</h2>
+      <p class="lf-layered__lede">Skin is built in layers — and each layer ages differently. A single device cannot reach all of them. At Mili Clinic Sinchon, we read each layer separately and choose the energy that belongs to it.</p>
+    </div>
+
+    <div class="lf-layered__body">
+      <!-- Diagram (sticky) -->
+      <div class="lf-layered__diagram">
+        <svg class="lf-layered__svg" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+          <!-- Background skin tone gradient -->
+          <defs>
+            <linearGradient id="lfSkin" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#F4EFEA"/>
+              <stop offset="100%" stop-color="#E8DFD6"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Epidermis 0-0.1mm -->
+          <g class="layer" data-layer="0">
+            <rect x="40" y="60" width="320" height="50" fill="#EFE6DC"/>
+            <text class="layer-label" data-label="0" x="60" y="92">Epidermis · 0.1mm</text>
+          </g>
+
+          <!-- Dermis 1.5mm -->
+          <g class="layer" data-layer="1">
+            <rect x="40" y="110" width="320" height="100" fill="#E0CFBD"/>
+            <text class="layer-label" data-label="1" x="60" y="170">Dermis · 1.5mm</text>
+          </g>
+
+          <!-- SMAS 4.5mm -->
+          <g class="layer" data-layer="2">
+            <rect x="40" y="210" width="320" height="120" fill="#C8B59E"/>
+            <text class="layer-label" data-label="2" x="60" y="280">SMAS · 4.5mm</text>
+          </g>
+
+          <!-- Subcutaneous / Muscle -->
+          <g class="layer" data-layer="3">
+            <rect x="40" y="330" width="320" height="110" fill="#A89177"/>
+            <text class="layer-label" data-label="3" x="60" y="400">Fascia · Deep</text>
+          </g>
+
+          <!-- Depth ruler -->
+          <line x1="380" y1="60" x2="380" y2="440" stroke="#999" stroke-width="0.5"/>
+          <text class="depth-tick" x="384" y="64">0</text>
+          <text class="depth-tick" x="384" y="170">1.5</text>
+          <text class="depth-tick" x="384" y="280">4.5</text>
+          <text class="depth-tick" x="384" y="440">DEEP</text>
+        </svg>
+      </div>
+
+      <!-- List -->
+      <div class="lf-layered__list">
+        <div class="lf-layered__item" data-layer="0">
+          <div class="lf-layered__item-num">01</div>
+          <div class="lf-layered__item-depth">Surface · 0.1mm</div>
+          <h3 class="lf-layered__item-name">Epidermis</h3>
+          <p class="lf-layered__item-desc">The outermost layer. Tone, texture, brightness live here. Lifting energy does not stop here, but skin quality is judged at this surface — so it is conditioned, not treated.</p>
+          <div class="lf-layered__item-tech">Conditioning · Recovery</div>
+        </div>
+
+        <div class="lf-layered__item" data-layer="1">
+          <div class="lf-layered__item-num">02</div>
+          <div class="lf-layered__item-depth">Mid-depth · 1.5mm</div>
+          <h3 class="lf-layered__item-name">Dermis</h3>
+          <p class="lf-layered__item-desc">Where collagen lives. Heating this layer triggers neocollagenesis — the slow remodelling that thickens skin and softens fine lines. The energy must be precise: enough to provoke, not enough to scar.</p>
+          <div class="lf-layered__item-tech">Microfocused RF · Bipolar RF</div>
+        </div>
+
+        <div class="lf-layered__item" data-layer="2">
+          <div class="lf-layered__item-num">03</div>
+          <div class="lf-layered__item-depth">Structural · 4.5mm</div>
+          <h3 class="lf-layered__item-name">SMAS</h3>
+          <p class="lf-layered__item-desc">The structural net beneath the face. When this layer descends, the lower face descends with it. Focused ultrasound and high-intensity RF reach this depth without breaking the skin above — the foundation of true lifting.</p>
+          <div class="lf-layered__item-tech">Microfocused Ultrasound · Monopolar RF</div>
+        </div>
+
+        <div class="lf-layered__item" data-layer="3">
+          <div class="lf-layered__item-num">04</div>
+          <div class="lf-layered__item-depth">Volumetric · Deep</div>
+          <h3 class="lf-layered__item-name">Fascia &amp; Volume</h3>
+          <p class="lf-layered__item-desc">Beyond the SMAS lies volumetric heating — the contour of the lower face, the jawline, the submental line. Reached selectively, with a different generation of energy, and only when the face calls for it.</p>
+          <div class="lf-layered__item-tech">Deep RF · Contouring Energy</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ===========================================
        SECTION: MILI PROTOCOL (다음 단계에서 추가)
   =========================================== -->
+  <!-- ===========================================
+       SECTION: MILI PROTOCOL
+       — journey, 3 steps, alternating image/text
+  =========================================== -->
+  <section class="lf-protocol" id="lfProtocol">
+    <div class="lf-protocol__head lf-reveal">
+      <div class="lf-protocol__eyebrow">The Mili Protocol</div>
+      <h2 class="lf-protocol__title">How a lifting<br>session unfolds.</h2>
+      <p class="lf-protocol__lede">Every face is read before it is treated. Every protocol is built before a single shot is delivered. Three steps, every time, by the same doctor — from the first reading to the last pulse.</p>
+    </div>
+
+    <div class="lf-protocol__steps">
+
+      <article class="lf-protocol__step lf-reveal">
+        <div class="lf-protocol__media">
+          <img src="../assets/images/lifting/protocol-01.jpg" alt="Skin Analysis">
+        </div>
+        <div class="lf-protocol__text">
+          <div class="lf-protocol__step-num">Step 01</div>
+          <h3 class="lf-protocol__step-name">Skin Analysis<br>&amp; Reading</h3>
+          <p class="lf-protocol__step-desc">We measure what cannot be seen — skin thickness, SMAS depth, elasticity, fat distribution. The face is read with diagnostic imaging and a clinician's eye before any energy is chosen.</p>
+          <div class="lf-protocol__step-meta">Diagnostic imaging · Clinical assessment · 15–20 minutes</div>
+        </div>
+      </article>
+
+      <article class="lf-protocol__step lf-reveal">
+        <div class="lf-protocol__media">
+          <img src="../assets/images/lifting/protocol-02.jpg" alt="Custom Layering">
+        </div>
+        <div class="lf-protocol__text">
+          <div class="lf-protocol__step-num">Step 02</div>
+          <h3 class="lf-protocol__step-name">Custom<br>Layering</h3>
+          <p class="lf-protocol__step-desc">From seven available technologies, the doctor selects the combination this face requires. Layer by layer — SMAS, dermis, surface. The protocol is drawn before the room is entered.</p>
+          <div class="lf-protocol__step-meta">Device selection · Shot count · Treatment mapping</div>
+        </div>
+      </article>
+
+      <article class="lf-protocol__step lf-reveal">
+        <div class="lf-protocol__media">
+          <img src="../assets/images/lifting/protocol-03.jpg" alt="Doctor-Led Treatment">
+        </div>
+        <div class="lf-protocol__text">
+          <div class="lf-protocol__step-num">Step 03</div>
+          <h3 class="lf-protocol__step-name">Doctor-Led<br>Treatment</h3>
+          <p class="lf-protocol__step-desc">Every shot is delivered by the physician, in real time, with adjustments made as the face responds. No assistant performs the lifting. The result is the work of the hand that read the face.</p>
+          <div class="lf-protocol__step-meta">Performed by attending physician · 40–80 minutes per session</div>
+        </div>
+      </article>
+
+    </div>
+  </section>
 
   <!-- ===========================================
        SECTION: LIFTING LINEUP (다음 단계에서 추가)
@@ -771,6 +1213,61 @@ document.querySelectorAll('.lf-reveal').forEach(el => lfObserver.observe(el));
   measure();
   window.addEventListener('scroll', update, { passive: true });
   window.addEventListener('resize', measure);
+})();
+
+// ============================================
+// Layered Approach — sync diagram with list scroll
+// ============================================
+(function() {
+  const items = document.querySelectorAll('.lf-layered__item');
+  const svgLayers = document.querySelectorAll('.lf-layered__svg .layer');
+  const svgLabels = document.querySelectorAll('.lf-layered__svg .layer-label');
+  if (!items.length || !svgLayers.length) return;
+
+  function activate(index) {
+    items.forEach((el, i) => el.classList.toggle('is-active', i === index));
+    svgLayers.forEach(el => {
+      el.classList.toggle('is-active', Number(el.dataset.layer) === index);
+    });
+    svgLabels.forEach(el => {
+      el.classList.toggle('is-active', Number(el.dataset.label) === index);
+    });
+  }
+
+  // 활성화 첫 항목
+  activate(0);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+        const idx = Array.from(items).indexOf(entry.target);
+        if (idx >= 0) activate(idx);
+      }
+    });
+  }, {
+    threshold: [0.5, 0.6, 0.7],
+    rootMargin: '-30% 0px -30% 0px'
+  });
+
+  items.forEach(item => observer.observe(item));
+})();
+
+// ============================================
+// Mili Protocol — reveal each step
+// ============================================
+(function() {
+  const steps = document.querySelectorAll('.lf-protocol__step');
+  if (!steps.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  }, { threshold: 0.25 });
+
+  steps.forEach(step => observer.observe(step));
 })();
 </script>
 
