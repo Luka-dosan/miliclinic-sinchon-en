@@ -155,18 +155,13 @@
 }
 .lf-hero__media {
   position: absolute; inset: 0;
-  background: var(--lf-white) url('../assets/images/lifting/hero.jpg') center/cover no-repeat;
+  background: var(--lf-white);
   opacity: 1;
-  transform: scale(1.06);
-  animation: lfHeroDrift 18s var(--lf-ease) forwards;
 }
 .lf-hero__media::after {
   content: "";
   position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 30%, rgba(255,255,255,0) 70%, rgba(255,255,255,0.35) 100%);
-}
-@keyframes lfHeroDrift {
-  to { transform: scale(1.0); }
+  background: none;
 }
 
 .lf-hero__top {
@@ -174,7 +169,7 @@
   top: clamp(28px, 5vh, 56px);
   left: var(--lf-gut);
   right: var(--lf-gut);
-  z-index: 2;
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -191,20 +186,78 @@
 .lf-hero__inner {
   position: relative; z-index: 2;
   height: 100%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 0 var(--lf-gut) clamp(72px, 11vh, 140px);
+  align-items: center;
+  justify-content: center;
 }
 .lf-hero__title {
+  position: relative;
+  z-index: 5;
   font-family: var(--lf-sans);
   font-weight: 200;
   font-size: clamp(120px, 22vw, 360px);
-  line-height: 0.82;
+  line-height: 1;
   letter-spacing: -0.045em;
-  margin: 0 0 clamp(36px, 5vh, 64px);
+  margin: 0;
+  text-align: center;
+  color: var(--lf-ink);
+  opacity: 0;
+  transform: scale(0.96);
+  animation: lfHeroTitleIn 1.6s var(--lf-ease-out) 1.3s forwards;
   text-wrap: balance;
 }
+@keyframes lfHeroTitleIn {
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* =========================================================
+   HERO PIECES — handpieces converging to center
+   ========================================================= */
+.lf-hero__pieces {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.lf-hero__piece {
+  position: absolute;
+  opacity: 0;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.08));
+  will-change: transform, opacity;
+}
+
+/* Sizes — varied for visual rhythm */
+.lf-hero__piece--01 { width: clamp(220px, 22vw, 380px); top: 18%; right: -10%; animation: lfPieceRight 1.4s var(--lf-ease-out) 0.5s forwards; }
+.lf-hero__piece--02 { width: clamp(180px, 18vw, 320px); top: 58%; right: -8%;  animation: lfPieceRight 1.4s var(--lf-ease-out) 0.7s forwards; }
+
+.lf-hero__piece--03 { width: clamp(220px, 22vw, 380px); top: 22%; left: -10%; animation: lfPieceLeft 1.4s var(--lf-ease-out) 0.3s forwards; }
+.lf-hero__piece--04 { width: clamp(180px, 18vw, 320px); top: 62%; left: -8%;  animation: lfPieceLeft 1.4s var(--lf-ease-out) 0.55s forwards; }
+
+.lf-hero__piece--05 { width: clamp(160px, 16vw, 280px); top: -12%; left: 50%; transform: translateX(-50%); animation: lfPieceTop 1.4s var(--lf-ease-out) 0.9s forwards; }
+.lf-hero__piece--06 { width: clamp(160px, 16vw, 280px); bottom: -12%; left: 50%; transform: translateX(-50%); animation: lfPieceBottom 1.4s var(--lf-ease-out) 1.1s forwards; }
+
+@keyframes lfPieceRight {
+  to { opacity: 0.88; transform: translateX(-30%); }
+}
+@keyframes lfPieceLeft {
+  to { opacity: 0.88; transform: translateX(30%); }
+}
+@keyframes lfPieceTop {
+  to { opacity: 0.88; transform: translate(-50%, 100%); }
+}
+@keyframes lfPieceBottom {
+  to { opacity: 0.88; transform: translate(-50%, -100%); }
+}
+
+@media (max-width: 720px) {
+  .lf-hero__piece--01, .lf-hero__piece--02 { display: none; }
+  .lf-hero__piece--03, .lf-hero__piece--04 { display: none; }
+  .lf-hero__piece--05 { width: 120px; top: 8%; }
+  .lf-hero__piece--06 { width: 120px; bottom: 8%; }
+}
+
 .lf-hero__title small {
   display: block;
   font-family: var(--lf-sans);
@@ -269,7 +322,7 @@
   bottom: clamp(22px, 3vh, 36px);
   left: var(--lf-gut);
   right: var(--lf-gut);
-  z-index: 3;
+  z-index: 10;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -1402,27 +1455,16 @@
     </div>
 
     <div class="lf-hero__inner">
-      <h1 class="lf-hero__title">Lifting</h1>
-      <p class="lf-hero__copy">
-        Time is the only thing<br>that doesn't lift back.<br>
-        <strong>We do the rest.</strong>
-      </p>
-      <div class="lf-hero__stats">
-        <div class="lf-hero__stat">
-          <div class="lf-hero__stat-num">07</div>
-          <div class="lf-hero__stat-label">Technologies</div>
-        </div>
-        <div class="lf-hero__stat">
-          <div class="lf-hero__stat-num">01</div>
-          <div class="lf-hero__stat-label">Doctor</div>
-        </div>
-        <div class="lf-hero__stat">
-          <div class="lf-hero__stat-num">04</div>
-          <div class="lf-hero__stat-label">Skin Depths</div>
-        </div>
+      <div class="lf-hero__pieces">
+        <img class="lf-hero__piece lf-hero__piece--01" src="../assets/images/lifting/handpiece-01.png" alt="">
+        <img class="lf-hero__piece lf-hero__piece--02" src="../assets/images/lifting/handpiece-02.png" alt="">
+        <img class="lf-hero__piece lf-hero__piece--03" src="../assets/images/lifting/handpiece-03.png" alt="">
+        <img class="lf-hero__piece lf-hero__piece--04" src="../assets/images/lifting/handpiece-04.png" alt="">
+        <img class="lf-hero__piece lf-hero__piece--05" src="../assets/images/lifting/handpiece-05.png" alt="">
+        <img class="lf-hero__piece lf-hero__piece--06" src="../assets/images/lifting/handpiece-06.png" alt="">
       </div>
+      <h1 class="lf-hero__title">Lifting</h1>
     </div>
-
     <div class="lf-hero__foot">
       <div class="lf-hero__scroll"><span>Scroll</span><i></i></div>
     </div>
