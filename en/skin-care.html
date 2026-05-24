@@ -644,6 +644,9 @@
   transition: background 0.8s var(--lf-ease);
 }
 /* Gradient palette — top is lightest, bottom is deepest */
+.lf-strata__band {
+  grid-template-columns: minmax(200px, 18%) 1fr 1fr !important;
+}
 .lf-strata__band[data-depth="0"] { background: #FFFAF6; }
 .lf-strata__band[data-depth="1"] { background: #FBEEE5; }
 .lf-strata__band[data-depth="2"] { background: #F2D9C6; }
@@ -663,6 +666,8 @@
 .lf-strata__depth {
   font-family: var(--lf-sans);
   font-weight: 600;
+  min-width: 200px;
+  white-space: nowrap;
   font-size: clamp(40px, 5vw, 76px);
   line-height: 1;
   letter-spacing: -0.04em;
@@ -715,7 +720,7 @@
 
 @media (max-width: 880px) {
   .lf-strata__band {
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: minmax(140px, 42%) 1fr !important;
     grid-template-rows: auto auto;
     min-height: auto;
     padding: 40px 24px;
@@ -1550,7 +1555,7 @@
 
   <section class="lf-layered" id="lfLayered">
     <div class="lf-layered__head">
-      <span class="lf-eyebrow lf-rv">Four depths</span>
+      <span class="lf-eyebrow lf-rv">Five stages</span>
       <h2 class="lf-layered__title lf-rv d1"><em>Skin changes<br>in&nbsp;rhythm.</em></h2>
       <p class="lf-layered__lede lf-rv d2">Real skin care doesn't happen in one visit. It unfolds — slowly, predictably — as the skin renews itself from within. This is the rhythm we design around, and what to expect along the way.</p>
     </div>
