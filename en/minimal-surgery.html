@@ -650,6 +650,9 @@
   transition: background 0.8s var(--lf-ease);
 }
 /* Gradient palette — top is lightest, bottom is deepest */
+.lf-strata__band {
+  grid-template-columns: minmax(200px, 18%) 1fr 1fr !important;
+}
 .lf-strata__band[data-depth="0"] { background: #FAFBFC; }
 .lf-strata__band[data-depth="1"] { background: #ECEFF3; }
 .lf-strata__band[data-depth="2"] { background: #D8DDE4; }
@@ -669,6 +672,8 @@
 .lf-strata__depth {
   font-family: var(--lf-sans);
   font-weight: 600;
+  min-width: 200px;
+  white-space: nowrap;
   font-size: clamp(40px, 5vw, 76px);
   line-height: 1;
   letter-spacing: -0.04em;
@@ -721,7 +726,7 @@
 
 @media (max-width: 880px) {
   .lf-strata__band {
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: minmax(140px, 42%) 1fr !important;
     grid-template-rows: auto auto;
     min-height: auto;
     padding: 40px 24px;
@@ -1567,7 +1572,7 @@
     <div class="lf-strata">
 
       <div class="lf-strata__band" data-depth="0">
-        <div class="lf-strata__depth">0min</div>
+        <div class="lf-strata__depth">Min 0</div>
         <div class="lf-strata__center">
           <div class="lf-strata__sublabel">Consultation</div>
           <div class="lf-strata__layer">Reading the face</div>
@@ -1578,7 +1583,7 @@
       </div>
 
       <div class="lf-strata__band" data-depth="1">
-        <div class="lf-strata__depth">5min</div>
+        <div class="lf-strata__depth">Min 5</div>
         <div class="lf-strata__center">
           <div class="lf-strata__sublabel">Treatment</div>
           <div class="lf-strata__layer">Precise injection</div>
@@ -1591,7 +1596,7 @@
       </div>
 
       <div class="lf-strata__band" data-depth="2">
-        <div class="lf-strata__depth">15min</div>
+        <div class="lf-strata__depth">Min 15</div>
         <div class="lf-strata__center">
           <div class="lf-strata__sublabel">Return</div>
           <div class="lf-strata__layer">Walk out, no marks</div>
@@ -1602,7 +1607,7 @@
       </div>
 
       <div class="lf-strata__band" data-depth="3">
-        <div class="lf-strata__depth">24hr</div>
+        <div class="lf-strata__depth">Hour 24</div>
         <div class="lf-strata__center">
           <div class="lf-strata__sublabel">Settling</div>
           <div class="lf-strata__layer">Subtle softening</div>
@@ -1613,7 +1618,7 @@
       </div>
 
       <div class="lf-strata__band" data-depth="4">
-        <div class="lf-strata__depth">2 weeks</div>
+        <div class="lf-strata__depth">Week 2</div>
         <div class="lf-strata__center">
           <div class="lf-strata__sublabel">Final form</div>
           <div class="lf-strata__layer">The result, set in</div>
