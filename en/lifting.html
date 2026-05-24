@@ -59,6 +59,7 @@
 
 /* ---------------- Reset within .lf ---------------- */
 .lf, .lf * { box-sizing: border-box; }
+.lf em { font-style: normal; }
 .lf {
   background: var(--lf-white);
   color: var(--lf-ink);
@@ -338,7 +339,7 @@
 
 .lf-philosophy__viewport {
   position: absolute;
-  inset: 0 0 80px 0;
+  inset: 0 0 120px 0;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -580,19 +581,31 @@
 .lf-layered__svg { width: 100%; height: 100%; display: block; }
 
 .lf-layered__svg .layer-fill {
-  transition: opacity 0.6s var(--lf-ease);
-  opacity: 0.18;
+  transition: opacity 0.5s var(--lf-ease), fill 0.5s var(--lf-ease);
+  opacity: 0.55;
 }
 .lf-layered__svg .layer-fill.is-active { opacity: 1; }
 
 .lf-layered__svg .layer-bracket {
-  stroke: var(--lf-ink);
-  stroke-width: 1;
-  fill: none;
-  opacity: 0.18;
-  transition: opacity 0.6s var(--lf-ease);
+  fill: none; stroke: var(--lf-ink); stroke-width: 1;
+  opacity: 0.35;
+  transition: opacity 0.5s var(--lf-ease), stroke-width 0.5s var(--lf-ease);
+  vector-effect: non-scaling-stroke;
 }
 .lf-layered__svg .layer-bracket.is-active { opacity: 1; }
+
+.lf-layered__svg .face-outline {
+  vector-effect: non-scaling-stroke;
+}
+.lf-layered__svg .layer-line path {
+  transition: opacity 0.6s var(--lf-ease), stroke-width 0.6s var(--lf-ease), stroke-dasharray 0.6s var(--lf-ease);
+  vector-effect: non-scaling-stroke;
+}
+.lf-layered__svg .layer-line.is-active path {
+  opacity: 1;
+  stroke-width: 1.25;
+  stroke-dasharray: none;
+}
 
 .lf-layered__svg .layer-label {
   font-family: var(--lf-sans);
@@ -1542,39 +1555,73 @@
     <div class="lf-layered__body">
       <div class="lf-layered__diagram-wrap">
         <div class="lf-layered__diagram">
-          <svg class="lf-layered__svg" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-            <!-- Layer fills (grayscale) -->
-            <rect class="layer-fill" data-layer="0" x="0" y="60"  width="340" height="55"  fill="#0C0C0D" fill-opacity="0.06"/>
-            <rect class="layer-fill" data-layer="1" x="0" y="115" width="340" height="105" fill="#0C0C0D" fill-opacity="0.10"/>
-            <rect class="layer-fill" data-layer="2" x="0" y="220" width="340" height="115" fill="#0C0C0D" fill-opacity="0.18"/>
-            <rect class="layer-fill" data-layer="3" x="0" y="335" width="340" height="105" fill="#0C0C0D" fill-opacity="0.28"/>
+          <svg class="lf-layered__svg" viewBox="0 0 500 620" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <!-- ===== Side profile face silhouette ===== -->
+            <!-- Elegant 1px facial outline (forehead → nose → lip → chin → jaw → neck) -->
+            <path class="face-outline" 
+              d="M 165 75 
+                 C 145 90, 130 130, 125 180
+                 C 122 215, 128 245, 138 270
+                 C 145 285, 150 295, 155 305
+                 L 145 318
+                 C 132 332, 125 348, 132 358
+                 C 138 365, 150 365, 158 360
+                 L 158 372
+                 C 150 380, 145 390, 152 398
+                 L 168 402
+                 C 175 410, 175 422, 168 432
+                 C 158 445, 145 460, 135 478
+                 C 125 498, 118 522, 115 550
+                 L 115 615"
+              fill="none" stroke="var(--lf-ink)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+            
+            <!-- Inner skin layer guides — horizontal lines flowing inside face -->
+            <!-- Each line is one depth layer, controlled by data-layer for activation -->
+            
+            <!-- Layer 0: Epidermis (just inside skin surface, ~0.1mm) -->
+            <g class="layer-line" data-layer="0">
+              <path d="M 165 168 L 280 168 L 460 168" 
+                fill="none" stroke="var(--lf-ink)" stroke-width="0.75" stroke-dasharray="2 3" opacity="0.25"/>
+            </g>
+            
+            <!-- Layer 1: Dermis (deeper, ~1.5mm) -->
+            <g class="layer-line" data-layer="1">
+              <path d="M 158 220 L 280 220 L 460 220" 
+                fill="none" stroke="var(--lf-ink)" stroke-width="0.75" stroke-dasharray="2 3" opacity="0.25"/>
+            </g>
+            
+            <!-- Layer 2: SMAS (structural, ~4.5mm) -->
+            <g class="layer-line" data-layer="2">
+              <path d="M 150 290 L 280 290 L 460 290" 
+                fill="none" stroke="var(--lf-ink)" stroke-width="0.75" stroke-dasharray="2 3" opacity="0.25"/>
+            </g>
+            
+            <!-- Layer 3: Fascia & Volume (deep) -->
+            <g class="layer-line" data-layer="3">
+              <path d="M 142 380 L 280 380 L 460 380" 
+                fill="none" stroke="var(--lf-ink)" stroke-width="0.75" stroke-dasharray="2 3" opacity="0.25"/>
+            </g>
 
-            <!-- Brackets on right -->
-            <path class="layer-bracket" data-layer="0" d="M345 60 L355 60 L355 115 L345 115"/>
-            <path class="layer-bracket" data-layer="1" d="M345 115 L355 115 L355 220 L345 220"/>
-            <path class="layer-bracket" data-layer="2" d="M345 220 L355 220 L355 335 L345 335"/>
-            <path class="layer-bracket" data-layer="3" d="M345 335 L355 335 L355 440 L345 440"/>
+            <!-- ===== Right side: depth measurement ruler ===== -->
+            <line class="ruler" x1="430" y1="150" x2="430" y2="400" stroke="var(--lf-line)" stroke-width="1"/>
+            
+            <!-- Ruler tick marks -->
+            <line class="ruler" x1="425" y1="168" x2="435" y2="168" stroke="var(--lf-line)" stroke-width="1"/>
+            <line class="ruler" x1="425" y1="220" x2="435" y2="220" stroke="var(--lf-line)" stroke-width="1"/>
+            <line class="ruler" x1="425" y1="290" x2="435" y2="290" stroke="var(--lf-line)" stroke-width="1"/>
+            <line class="ruler" x1="425" y1="380" x2="435" y2="380" stroke="var(--lf-line)" stroke-width="1"/>
 
-            <!-- Depth ruler vertical -->
-            <line class="ruler" x1="22" y1="60" x2="22" y2="440"/>
-            <line class="ruler" x1="22" y1="60"  x2="28" y2="60"/>
-            <line class="ruler" x1="22" y1="115" x2="28" y2="115"/>
-            <line class="ruler" x1="22" y1="220" x2="28" y2="220"/>
-            <line class="ruler" x1="22" y1="335" x2="28" y2="335"/>
-            <line class="ruler" x1="22" y1="440" x2="28" y2="440"/>
+            <!-- Depth labels (right of ruler) -->
+            <text class="layer-depth" data-depth="0" x="445" y="172">0.1 mm</text>
+            <text class="layer-depth" data-depth="1" x="445" y="224">1.5 mm</text>
+            <text class="layer-depth" data-depth="2" x="445" y="294">4.5 mm</text>
+            <text class="layer-depth" data-depth="3" x="445" y="384">Deep</text>
 
-            <!-- Depth labels -->
-            <text class="layer-depth" data-depth="0" x="40" y="64">0.0 mm</text>
-            <text class="layer-depth" data-depth="1" x="40" y="119">0.1 mm</text>
-            <text class="layer-depth" data-depth="2" x="40" y="224">1.5 mm</text>
-            <text class="layer-depth" data-depth="3" x="40" y="339">4.5 mm</text>
-            <text class="layer-depth" x="40" y="444">Deep</text>
-
-            <!-- Layer name labels (centered in their band) -->
-            <text class="layer-label" data-label="0" x="170" y="92">Epidermis</text>
-            <text class="layer-label" data-label="1" x="170" y="172">Dermis</text>
-            <text class="layer-label" data-label="2" x="170" y="282">SMAS</text>
-            <text class="layer-label" data-label="3" x="170" y="392">Fascia &amp; Volume</text>
+            <!-- Layer name labels (positioned along the layer lines, right of face) -->
+            <text class="layer-label" data-label="0" x="300" y="163">Epidermis</text>
+            <text class="layer-label" data-label="1" x="300" y="215">Dermis</text>
+            <text class="layer-label" data-label="2" x="300" y="285">SMAS</text>
+            <text class="layer-label" data-label="3" x="300" y="375">Fascia &amp; Volume</text>
           </svg>
 
           <div class="lf-layered__diagram-cap">
@@ -2079,14 +2126,16 @@
   const items   = document.querySelectorAll('.lf-layered__item');
   const fills   = document.querySelectorAll('.lf-layered__svg .layer-fill');
   const brackets= document.querySelectorAll('.lf-layered__svg .layer-bracket');
+  const lines   = document.querySelectorAll('.lf-layered__svg .layer-line');
   const labels  = document.querySelectorAll('.lf-layered__svg .layer-label');
   const depths  = document.querySelectorAll('.lf-layered__svg .layer-depth');
-  if (!items.length || !fills.length) return;
+  if (!items.length || !lines.length) return;
 
   function activate(i) {
-    items.forEach((el, idx) => el.classList.toggle('is-active', idx === i));
-    fills.forEach(el  => el.classList.toggle('is-active', +el.dataset.layer === i));
+    items.forEach((el, k) => el.classList.toggle('is-active', k === i));
+    fills.forEach(el => el.classList.toggle('is-active', +el.dataset.layer === i));
     brackets.forEach(el => el.classList.toggle('is-active', +el.dataset.layer === i));
+    lines.forEach(el => el.classList.toggle('is-active', +el.dataset.layer === i));
     labels.forEach(el => el.classList.toggle('is-active', +el.dataset.label === i));
     depths.forEach(el => el.classList.toggle('is-active', +el.dataset.depth === i));
   }
