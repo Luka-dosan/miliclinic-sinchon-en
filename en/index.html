@@ -139,6 +139,135 @@ a.mili-lang-item{text-decoration:none}
 }
 
 em, cite { font-style: normal; }
+
+/* ============================== NEW INDEX STYLES ============================== */
+.mc-index {
+  background: #FAFBFC;
+  color: #0A0A0A;
+  font-family: var(--display, "SF Pro Display", system-ui, -apple-system, sans-serif);
+  font-feature-settings: "ss01", "ss02";
+}
+
+/* Section 1: Hero */
+.mc-hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #FAFBFC;
+}
+.mc-hero__bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #FAFBFC 0%, #F0F0F2 100%);
+  z-index: 1;
+}
+.mc-hero__bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(200, 210, 220, 0.15) 0%, transparent 60%);
+  z-index: 1;
+}
+.mc-hero__inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 32px;
+}
+.mc-hero__eyebrow {
+  font-family: var(--display);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #6B7280;
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: mcFadeIn 1.2s ease-out 0.2s forwards;
+}
+.mc-hero__title {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(80px, 16vw, 280px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  margin: 0;
+  text-align: center;
+  color: #0A0A0A;
+  display: inline-flex;
+  justify-content: center;
+}
+.mc-hero__title span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(60px);
+  filter: blur(8px);
+  animation: mcLetterIn 1.1s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+.mc-hero__title span:nth-child(1) { animation-delay: 0.40s; }
+.mc-hero__title span:nth-child(2) { animation-delay: 0.50s; }
+.mc-hero__title span:nth-child(3) { animation-delay: 0.60s; }
+.mc-hero__title span:nth-child(4) { animation-delay: 0.70s; }
+.mc-hero__title span:nth-child(5) { animation-delay: 0.80s; }
+.mc-hero__title span:nth-child(6) { animation-delay: 0.90s; }
+.mc-hero__title span:nth-child(7) { animation-delay: 1.00s; }
+.mc-hero__title span:nth-child(8) { animation-delay: 1.10s; }
+.mc-hero__scroll {
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  opacity: 0;
+  animation: mcFadeIn 1.2s ease-out 1.8s forwards;
+}
+.mc-hero__scroll span {
+  font-family: var(--display);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #6B7280;
+}
+.mc-hero__scroll i {
+  width: 1px;
+  height: 40px;
+  background: #6B7280;
+  display: block;
+  animation: mcScrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes mcFadeIn {
+  to { opacity: 1; }
+}
+@keyframes mcLetterIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+@keyframes mcScrollPulse {
+  0%, 100% { transform: scaleY(1); opacity: 0.6; }
+  50% { transform: scaleY(0.5); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .mc-hero__title { font-size: clamp(56px, 18vw, 120px); }
+}
+
+/* ============================== END NEW INDEX STYLES ============================== */
 </style>
 </head>
 <body data-accent="navy" data-card="flat" data-type="sf">
@@ -235,128 +364,28 @@ em, cite { font-style: normal; }
 
 
 
-<!-- Hero (variant switchable) -->
-<section class="hero" id="hero" data-variant="sequence">
-  <div class="seq-bg" aria-hidden="true">
-    <div class="seq-slide" style="background-image:url(assets/images/hero/intro.jpg)"></div>
-    <div class="seq-slide" style="background-image:url(assets/images/hero/intro.jpg)"></div>
-    <div class="seq-slide" style="background-image:url(assets/images/hero/intro.jpg)"></div>
-    <div class="seq-slide" style="background-image:url(assets/images/hero/intro.jpg)"></div>
-    <div class="seq-veil"></div>
-  </div>
-  <div class="hero-eyebrow">Mili Clinic — Sinchon</div>
-  <h1>Beauty, refined<br/>Care, in confidence</h1>
-  <p class="tagline">A private aesthetic clinic in the heart of Seoul, designed around the quiet hospitality of a city home.</p>
-</section>
+<!-- ============================== NEW INDEX BODY ============================== -->
+<main class="mc-index">
 
-<!-- Manifesto -->
-<section class="tile bone" id="about">
-  <div class="inner">
-    <span class="eyebrow">Our promise</span>
-    <h2 class="title-lg">Hospitality, written in millimeters.</h2>
-    <p class="lead">MILI is built on the precision of a clinic and the warmth of a home. Every consultation begins with listening — and ends with a plan made for you, alone.</p>
-  </div>
-</section>
-
-<!-- Treatments grid -->
-<section class="treatments" id="treatments">
-  <div class="inner">
-    <div class="treatments-head">
-      <span class="eyebrow">Treatments</span>
-      <h2 class="title-lg">Five categories,<br>one philosophy.</h2>
-      <p class="treatments-lede">Every program at Mili Clinic Sinchon is built on the same foundation — read first, layer with restraint, trust the long arc. Explore each category to see how that translates into practice.</p>
+  <!-- ===== Section 1: Hero ===== -->
+  <section class="mc-hero" id="mc-hero">
+    <div class="mc-hero__bg"></div>
+    <div class="mc-hero__inner">
+      <div class="mc-hero__eyebrow">— Mili Clinic Sinchon</div>
+      <h1 class="mc-hero__title" aria-label="Becoming">
+        <span>B</span><span>e</span><span>c</span><span>o</span><span>m</span><span>i</span><span>n</span><span>g</span>
+      </h1>
+      <div class="mc-hero__scroll">
+        <span>Scroll</span>
+        <i></i>
+      </div>
     </div>
-    <div class="treatments-grid">
-      <a class="card" href="/en/lifting.html">
-        <div class="img" style="background-image:url(assets/images/lifting/hero.jpg)"></div>
-        <div class="card-num">01</div>
-        <div class="name">Lifting</div>
-        <p class="desc">Ultrasound and radiofrequency platforms that restore foundational structure — each targeting a different skin layer for a cumulative, natural lift.</p>
-        <span class="link">Explore Lifting →</span>
-      </a>
-      <a class="card" href="/en/minimal-surgery.html">
-        <div class="img" style="background-image:url(assets/images/minimal/hero.jpg), linear-gradient(135deg, #FAFBFC 0%, #6B7280 100%)"></div>
-        <div class="card-num">02</div>
-        <div class="name">Minimal Surgery</div>
-        <p class="desc">Botox, filler, collagen booster. Five-minute precision delivered by the physician — interventions small enough to walk back into your day.</p>
-        <span class="link">Explore Minimal Surgery →</span>
-      </a>
-      <a class="card" href="/en/skin-care.html">
-        <div class="img" style="background-image:url(assets/images/skincare/hero.jpg), linear-gradient(135deg, #FFFAF6 0%, #C8927A 100%)"></div>
-        <div class="card-num">03</div>
-        <div class="name">Skin Care</div>
-        <p class="desc">Booster, brightening, acne and pore programs — patient, layered, supervised. Care for the skin you live in every day.</p>
-        <span class="link">Explore Skin Care →</span>
-      </a>
-      <a class="card" href="/en/laser-hair-removal.html">
-        <div class="img" style="background-image:url(assets/images/laser/hero.jpg), linear-gradient(135deg, #FAFBFC 0%, #2A2A2E 100%)"></div>
-        <div class="card-num">04</div>
-        <div class="name">Laser Hair Removal</div>
-        <p class="desc">Clinical precision calibrated for Asian skin. Wavelength matched, cycles planned, physician-supervised — never a factory preset.</p>
-        <span class="link">Explore Laser Hair Removal →</span>
-      </a>
-      <a class="card" href="/en/body-shaping.html">
-        <div class="img" style="background-image:url(assets/images/body/hero.jpg), linear-gradient(135deg, #F5EFE6 0%, #B89B7A 100%)"></div>
-        <div class="card-num">05</div>
-        <div class="name">Body Shaping</div>
-        <p class="desc">Localized fat reduction and contour refinement. Doctor-mapped, gentle across multiple sessions — sculpture, not subtraction.</p>
-        <span class="link">Explore Body Shaping →</span>
-      </a>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- Brand story 2-up panes -->
-<section class="story" id="story">
-  <div class="pane bone">
-    <span class="eyebrow">Chapter one</span>
-    <h3>Designed like a home, run like a clinic.</h3>
-    <p>Every room at Dosan is composed in millimetres — from the warmth of the lighting to the depth of the chairs. The result is a quiet that lets the work speak.</p>
-  </div>
-  <div class="pane image" style="background-image:url(assets/images/hero/story-01.jpg)"></div>
+</main>
 
-  <div class="pane image" style="background-image:url(assets/images/hero/story-02.jpg)"></div>
-  <div class="pane">
-    <span class="eyebrow">Chapter two</span>
-    <h3>Hospitality, beyond service.</h3>
-    <p>You're greeted by name. Your tea is remembered. Your record is read before the door opens. We design the visit, not just the procedure.</p>
-  </div>
+<!-- ============================== END NEW INDEX BODY ============================== -->
 
-  <div class="pane dark">
-    <span class="eyebrow">Chapter three</span>
-    <h3>Privacy, by default.</h3>
-    <p>A discreet entrance, individual recovery suites, a separate exit path. Care, in the truest sense of confidence.</p>
-  </div>
-  <div class="pane image" style="background-image:url(assets/images/hero/story-03.jpg)"></div>
-</section>
-
-<!-- Tour strip -->
-<section class="tile" style="padding-bottom: 0;">
-  <div class="inner">
-    <span class="eyebrow">The space</span>
-    <h2 class="title-lg">Step inside.</h2>
-    <p class="lead" style="margin-bottom: 56px;">Six suites, two lounges, one private courtyard — across two floors of a townhouse on Dosan Park.</p>
-  </div>
-  <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; max-width: 100%;">
-    <div style="aspect-ratio: 1/1; background:url(assets/images/hero/space-01.jpg) center/cover;"></div>
-    <div style="aspect-ratio: 1/1; background:url(assets/images/hero/space-02.jpg) center/cover;"></div>
-    <div style="aspect-ratio: 1/1; background:url(assets/images/hero/space-03.jpg) center/cover;"></div>
-  </div>
-</section>
-
-<!-- Location -->
-<section class="location" id="location">
-  <span class="eyebrow">Visit</span>
-  <h2>Dosan Park, Seoul.</h2>
-  <p class="addr">Dosandaero 45gil 17, 3F Miliclinic<br>Gangnam-gu, Seoul, 06021</p>
-  <div class="visit-actions">
-    <a href="tel:+82263371212" class="visit-phone">+82 2-6367-1212</a>
-    <div class="visit-buttons">
-      <a class="pill" href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener">Reserve</a>
-      <a class="pill ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Mili+Clinic+Dosan+17+Sinchon-ro+45-gil+Gangnam-gu+Seoul" target="_blank" rel="noopener" style="background:transparent; color:var(--paper); border-color: rgba(255,255,255,0.3);">Get directions</a>
-    </div>
-  </div>
-</section>
 <!-- Footer -->
 <footer class="mili-footer">
     <div class="mili-footer-inner">
