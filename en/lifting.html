@@ -228,46 +228,52 @@
   will-change: transform, opacity;
 }
 
-/* Sizes — varied for visual rhythm */
-/* 우측 — 위/아래 대칭 */
-.lf-hero__piece--01 { width: clamp(280px, 26vw, 420px); top: 14%; right: -10%; animation: lfPieceRight 1.4s var(--lf-ease-out) 0.5s forwards; }
-.lf-hero__piece--02 { width: clamp(280px, 26vw, 420px); bottom: 14%; right: -10%; animation: lfPieceRight 1.4s var(--lf-ease-out) 0.7s forwards; }
+/* 사이즈 통일 */
+.lf-hero__piece {
+  width: clamp(180px, 16vw, 260px);
+}
 
-/* 좌측 — 위/아래 대칭 (우측과 정확히 대칭 위치) */
-.lf-hero__piece--03 { width: clamp(280px, 26vw, 420px); top: 14%; left: -10%; animation: lfPieceLeft 1.4s var(--lf-ease-out) 0.3s forwards; }
-.lf-hero__piece--04 { width: clamp(280px, 26vw, 420px); bottom: 14%; left: -10%; animation: lfPieceLeft 1.4s var(--lf-ease-out) 0.55s forwards; }
+/* 우측 — 위/아래 대칭, 화면 밖에서 등장해 가장자리에 위치 */
+.lf-hero__piece--01 { top: 16%;    right: 4%;  animation: lfPieceRight 1.4s var(--lf-ease-out) 0.5s forwards; }
+.lf-hero__piece--02 { bottom: 16%; right: 4%;  animation: lfPieceRight 1.4s var(--lf-ease-out) 0.7s forwards; }
 
-/* 상단 중앙 — Lifting 글자 위쪽 */
+/* 좌측 — 우측과 정확히 대칭 */
+.lf-hero__piece--03 { top: 16%;    left: 4%;   animation: lfPieceLeft 1.4s var(--lf-ease-out) 0.3s forwards; }
+.lf-hero__piece--04 { bottom: 16%; left: 4%;   animation: lfPieceLeft 1.4s var(--lf-ease-out) 0.55s forwards; }
+
+/* 상단 중앙 — Lifting 글자 한참 위쪽, 가운데 정렬 */
 .lf-hero__piece--05 {
-  width: clamp(220px, 20vw, 340px);
-  top: -8%;
+  top: 8%;
   left: 50%;
-  transform: translateX(-50%);
-  animation: lfPieceTop 1.4s var(--lf-ease-out) 0.9s forwards;
+  margin-left: -130px;
+  animation: lfPieceTopSmall 1.4s var(--lf-ease-out) 0.9s forwards;
   z-index: 6;
 }
 
-/* 하단 중앙 — Lifting 글자 아래쪽 */
+/* 하단 중앙 — Lifting 글자 한참 아래쪽 */
 .lf-hero__piece--06 {
-  width: clamp(220px, 20vw, 340px);
-  bottom: -8%;
+  bottom: 8%;
   left: 50%;
-  transform: translateX(-50%);
-  animation: lfPieceBottom 1.4s var(--lf-ease-out) 1.1s forwards;
+  margin-left: -130px;
+  animation: lfPieceBottomSmall 1.4s var(--lf-ease-out) 1.1s forwards;
   z-index: 6;
 }
 
 @keyframes lfPieceRight {
-  to { opacity: 0.92; transform: translateX(-25%); }
+  from { opacity: 0; transform: translateX(120%); }
+  to   { opacity: 0.92; transform: translateX(0); }
 }
 @keyframes lfPieceLeft {
-  to { opacity: 0.92; transform: translateX(25%); }
+  from { opacity: 0; transform: translateX(-120%); }
+  to   { opacity: 0.92; transform: translateX(0); }
 }
-@keyframes lfPieceTop {
-  to { opacity: 0.92; transform: translate(-50%, 38%); }
+@keyframes lfPieceTopSmall {
+  from { opacity: 0; transform: translateY(-120%); }
+  to   { opacity: 0.92; transform: translateY(0); }
 }
-@keyframes lfPieceBottom {
-  to { opacity: 0.92; transform: translate(-50%, -38%); }
+@keyframes lfPieceBottomSmall {
+  from { opacity: 0; transform: translateY(120%); }
+  to   { opacity: 0.92; transform: translateY(0); }
 }
 
 @media (max-width: 720px) {
