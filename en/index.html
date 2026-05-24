@@ -269,6 +269,74 @@ em, cite { font-style: normal; }
   .mc-hero__title { font-size: clamp(56px, 18vw, 120px); }
 }
 
+/* Section 2: Statement */
+.mc-statement {
+  position: relative;
+  min-height: 110vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FAFBFC;
+  padding: 160px 32px;
+}
+.mc-statement__inner {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+.mc-statement__lede {
+  font-family: var(--display);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #6B7280;
+  margin: 0 0 64px;
+  text-align: center;
+}
+.mc-statement__text {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(36px, 5.5vw, 90px);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #0A0A0A;
+  text-align: center;
+  margin: 0;
+  text-wrap: balance;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mc-statement__text .word {
+  display: inline-block;
+  opacity: 0.15;
+  transition: opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  margin: 0 0.15em;
+}
+.mc-statement__text .word.is-active {
+  opacity: 1;
+}
+.mc-statement__accent {
+  color: #6B7280;
+  font-style: italic;
+  font-weight: 500;
+}
+.mc-statement__text .mc-statement__accent.is-active {
+  color: #0A0A0A;
+}
+
+@media (max-width: 768px) {
+  .mc-statement {
+    padding: 100px 24px;
+    min-height: 90vh;
+  }
+  .mc-statement__lede {
+    margin-bottom: 48px;
+  }
+}
+
 /* ============================== END NEW INDEX STYLES ============================== */
 </style>
 </head>
@@ -381,6 +449,23 @@ em, cite { font-style: normal; }
     <div class="mc-hero__scroll">
       <span>Scroll</span>
       <i></i>
+    </div>
+  </section>
+
+  <!-- ===== Section 2: Statement ===== -->
+  <section class="mc-statement" id="mc-statement">
+    <div class="mc-statement__inner">
+      <p class="mc-statement__lede">— Our Philosophy</p>
+      <h2 class="mc-statement__text" aria-label="Becoming more beautiful with a mere 1mm change.">
+        <span class="word" data-i="0">Becoming</span>
+        <span class="word" data-i="1">more</span>
+        <span class="word" data-i="2">beautiful</span>
+        <span class="word" data-i="3">with</span>
+        <span class="word" data-i="4">a</span>
+        <span class="word" data-i="5">mere</span>
+        <span class="word mc-statement__accent" data-i="6">1mm</span>
+        <span class="word" data-i="7">change.</span>
+      </h2>
     </div>
   </section>
 
@@ -545,5 +630,38 @@ document.addEventListener('click', function(){
 })();
 </script>
 
+<script>
+/* ===== Section 2: Statement scroll-triggered word reveal ===== */
+(function() {
+  const statement = document.getElementById('mc-statement');
+  if (!statement) return;
+  
+  const words = statement.querySelectorAll('.word');
+  if (!words.length) return;
+
+  function updateWords() {
+    const rect = statement.getBoundingClientRect();
+    const windowH = window.innerHeight;
+    
+    // 섹션이 화면 안에 진입한 정도 (0 ~ 1)
+    const progress = Math.max(0, Math.min(1, (windowH - rect.top) / (windowH + rect.height * 0.5)));
+    
+    // 진행도에 따라 단어를 순차 활성화
+    const activeCount = Math.floor(progress * words.length * 1.5);
+    
+    words.forEach((word, i) => {
+      if (i < activeCount) {
+        word.classList.add('is-active');
+      } else {
+        word.classList.remove('is-active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateWords, { passive: true });
+  window.addEventListener('resize', updateWords);
+  updateWords();
+})();
+</script>
 </body>
 </html>
