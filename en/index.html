@@ -339,6 +339,99 @@ em, cite { font-style: normal; }
   }
 }
 
+/* Section 3: Philosophy (horizontal pin) */
+.mc-philo {
+  position: relative;
+  width: 100%;
+  background: #0A0A0A;
+  color: #FFFFFF;
+  height: 350vh;
+}
+.mc-philo__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.mc-philo__head {
+  position: relative;
+  z-index: 2;
+  padding: 80px 64px 40px;
+  text-align: center;
+}
+.mc-philo__eyebrow {
+  font-family: var(--display);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin: 0 0 24px;
+}
+.mc-philo__title {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(36px, 4vw, 64px);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: #FFFFFF;
+  margin: 0;
+}
+.mc-philo__track {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding: 0 64px;
+  gap: 64px;
+  will-change: transform;
+  transition: transform 0.05s linear;
+}
+.mc-philo__card {
+  flex: 0 0 auto;
+  width: clamp(320px, 36vw, 540px);
+  padding: 56px 48px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  backdrop-filter: blur(4px);
+}
+.mc-philo__num {
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  color: rgba(255,255,255,0.5);
+}
+.mc-philo__name {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(28px, 3vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: #FFFFFF;
+  margin: 0;
+}
+.mc-philo__desc {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.75);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .mc-philo__head { padding: 60px 24px 32px; }
+  .mc-philo__track { padding: 0 24px; gap: 32px; }
+  .mc-philo__card { width: 80vw; padding: 40px 32px; }
+}
+
 /* ============================== END NEW INDEX STYLES ============================== */
 </style>
 </head>
@@ -468,6 +561,33 @@ em, cite { font-style: normal; }
         <span class="word mc-statement__accent" data-i="6">1mm</span>
         <span class="word" data-i="7">change.</span>
       </h2>
+    </div>
+  </section>
+
+  <!-- ===== Section 3: Philosophy (horizontal pin) ===== -->
+  <section class="mc-philo" id="mc-philo">
+    <div class="mc-philo__sticky">
+      <div class="mc-philo__head">
+        <p class="mc-philo__eyebrow">— Three Pillars</p>
+        <h2 class="mc-philo__title">What we believe.</h2>
+      </div>
+      <div class="mc-philo__track">
+        <article class="mc-philo__card">
+          <div class="mc-philo__num">01</div>
+          <h3 class="mc-philo__name">Beyond healing.</h3>
+          <p class="mc-philo__desc">A clinic is more than a treatment room. It is a place to pause, to be considered, to leave better than you arrived — in body and in spirit.</p>
+        </article>
+        <article class="mc-philo__card">
+          <div class="mc-philo__num">02</div>
+          <h3 class="mc-philo__name">A single millimeter.</h3>
+          <p class="mc-philo__desc">The smallest meaningful change is often the most powerful. We work in millimeters, not centimeters — refinement, not transformation.</p>
+        </article>
+        <article class="mc-philo__card">
+          <div class="mc-philo__num">03</div>
+          <h3 class="mc-philo__name">Three commitments.</h3>
+          <p class="mc-philo__desc">Sincere consultation. Delicate practice. Lasting rest. Three promises we make to every patient, every visit, without compromise.</p>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -669,6 +789,42 @@ document.addEventListener('click', function(){
   window.addEventListener('scroll', updateWords, { passive: true });
   window.addEventListener('resize', updateWords);
   updateWords();
+})();
+
+/* ===== Section 3: Philosophy horizontal scroll on vertical scroll ===== */
+(function() {
+  const philo = document.getElementById('mc-philo');
+  if (!philo) return;
+  
+  const track = philo.querySelector('.mc-philo__track');
+  const sticky = philo.querySelector('.mc-philo__sticky');
+  if (!track || !sticky) return;
+
+  function updateTrack() {
+    const rect = philo.getBoundingClientRect();
+    const windowH = window.innerHeight;
+    
+    // sticky 진행 거리
+    const scrollableDistance = philo.offsetHeight - windowH;
+    
+    // 현재 진행도 (0 ~ 1)
+    let progress = -rect.top / scrollableDistance;
+    progress = Math.max(0, Math.min(1, progress));
+    
+    // 트랙이 가로로 움직일 거리 = 트랙 전체 너비 - viewport 너비
+    const maxTranslate = track.scrollWidth - window.innerWidth;
+    
+    // 가로 이동 (마이너스 방향)
+    const translateX = -progress * maxTranslate;
+    track.style.transform = `translateX(${translateX}px)`;
+  }
+
+  window.addEventListener('scroll', updateTrack, { passive: true });
+  window.addEventListener('resize', updateTrack);
+  
+  // 이미지/폰트 로드 후 재계산
+  window.addEventListener('load', updateTrack);
+  setTimeout(updateTrack, 500);
 })();
 </script>
 </body>
