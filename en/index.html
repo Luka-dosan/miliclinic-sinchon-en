@@ -272,7 +272,7 @@ em, cite { font-style: normal; }
 /* Section 2: Statement */
 .mc-statement {
   position: relative;
-  min-height: 110vh;
+  min-height: 180vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -319,12 +319,14 @@ em, cite { font-style: normal; }
   opacity: 1;
 }
 .mc-statement__accent {
-  color: #6B7280;
+  color: #C9A876;
   font-style: italic;
   font-weight: 500;
+  opacity: 0.15;
 }
 .mc-statement__text .mc-statement__accent.is-active {
-  color: #0A0A0A;
+  color: #C9A876;
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
@@ -643,11 +645,17 @@ document.addEventListener('click', function(){
     const rect = statement.getBoundingClientRect();
     const windowH = window.innerHeight;
     
-    // 섹션이 화면 안에 진입한 정도 (0 ~ 1)
-    const progress = Math.max(0, Math.min(1, (windowH - rect.top) / (windowH + rect.height * 0.5)));
+    // 섹션이 화면 중앙에 가까워질 때부터 인터랙션 시작
+    // rect.top이 화면 상단(0)에 도달했을 때 progress 0
+    // rect.bottom이 화면 상단을 벗어났을 때 progress 1
+    const start = windowH * 0.5;  // 화면의 절반 지점부터 시작
+    const end = -rect.height * 0.3;  // 섹션이 70% 지났을 때 완료
     
-    // 진행도에 따라 단어를 순차 활성화
-    const activeCount = Math.floor(progress * words.length * 1.5);
+    let progress = (start - rect.top) / (start - end);
+    progress = Math.max(0, Math.min(1, progress));
+    
+    // 진행도에 따라 단어를 순차 활성화 (1.0 배수 - 정확히 진행도에 맞춤)
+    const activeCount = Math.ceil(progress * words.length);
     
     words.forEach((word, i) => {
       if (i < activeCount) {
