@@ -158,18 +158,19 @@ em, cite { font-style: normal; }
   justify-content: center;
   overflow: hidden;
   background: #FAFBFC;
+  padding-bottom: 120px;
 }
 .mc-hero__bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, #FAFBFC 0%, #F0F0F2 100%);
+  background: url('/assets/images/index/hero.jpg') center/cover no-repeat;
   z-index: 1;
 }
 .mc-hero__bg::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, rgba(200, 210, 220, 0.15) 0%, transparent 60%);
+  background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.4) 100%);
   z-index: 1;
 }
 .mc-hero__inner {
@@ -188,7 +189,7 @@ em, cite { font-style: normal; }
   font-weight: 400;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: #6B7280;
+  color: rgba(255,255,255,0.85);
   margin-bottom: 48px;
   opacity: 0;
   animation: mcFadeIn 1.2s ease-out 0.2s forwards;
@@ -201,7 +202,7 @@ em, cite { font-style: normal; }
   letter-spacing: -0.04em;
   margin: 0;
   text-align: center;
-  color: #0A0A0A;
+  color: #FFFFFF;
   display: inline-flex;
   justify-content: center;
 }
@@ -222,7 +223,7 @@ em, cite { font-style: normal; }
 .mc-hero__title span:nth-child(8) { animation-delay: 1.10s; }
 .mc-hero__scroll {
   position: absolute;
-  bottom: 48px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -231,6 +232,7 @@ em, cite { font-style: normal; }
   gap: 16px;
   opacity: 0;
   animation: mcFadeIn 1.2s ease-out 1.8s forwards;
+  z-index: 2;
 }
 .mc-hero__scroll span {
   font-family: var(--display);
@@ -238,12 +240,12 @@ em, cite { font-style: normal; }
   font-weight: 400;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: #6B7280;
+  color: rgba(255,255,255,0.85);
 }
 .mc-hero__scroll i {
   width: 1px;
   height: 40px;
-  background: #6B7280;
+  background: rgba(255,255,255,0.85);
   display: block;
   animation: mcScrollPulse 2s ease-in-out infinite;
 }
@@ -375,10 +377,10 @@ em, cite { font-style: normal; }
       <h1 class="mc-hero__title" aria-label="Becoming">
         <span>B</span><span>e</span><span>c</span><span>o</span><span>m</span><span>i</span><span>n</span><span>g</span>
       </h1>
-      <div class="mc-hero__scroll">
-        <span>Scroll</span>
-        <i></i>
-      </div>
+    </div>
+    <div class="mc-hero__scroll">
+      <span>Scroll</span>
+      <i></i>
     </div>
   </section>
 
