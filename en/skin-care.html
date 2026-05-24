@@ -904,10 +904,10 @@
 
 .lf-lineup__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   border-top: 1px solid rgba(255,255,255,0.12);
   border-left: 1px solid rgba(255,255,255,0.12);
-  margin: 0 var(--lf-gut);
+  margin: 0 clamp(40px, 8vw, 160px);
 }
 .lf-lineup__card {
   position: relative;
@@ -1001,11 +1001,8 @@
 }
 .lf-lineup__card-meta dd { margin: 0; color: rgba(255,255,255,0.9); }
 
-@media (max-width: 1100px) {
-  .lf-lineup__grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 720px) {
-  .lf-lineup__grid { grid-template-columns: 1fr; margin: 0 24px; }
+@media (max-width: 640px) {
+  .lf-lineup__grid { grid-template-columns: 1fr; }
   .lf-lineup__card { min-height: 0; padding: 56px 28px; }
 }
 
@@ -1341,15 +1338,9 @@
                         <a href="/en/schedule.html">Schedule</a>
                     </div>
                 </li>
-                <li class="mili-nav-item"><a href="lifting.html" class="mili-nav-link active">Lifting</a></li>
+                <li class="mili-nav-item"><a href="/en/lifting.html" class="mili-nav-link">Lifting</a></li>
                 <li class="mili-nav-item"><a href="/en/minimal-surgery.html" class="mili-nav-link">Minimal Surgery</a></li>
-                <li class="mili-nav-item"><span class="mili-nav-link">Skin Care<span class="mili-nav-caret"></span></span>
-                    <div class="mili-dropdown">
-                        <a href="/en/skin-booster.html">Skin Booster</a>
-                        <a href="/en/acne-pore.html">Acne &amp; Pore</a>
-                        <a href="/en/all-in-one-brightening.html">All-in-One Brightening</a>
-                        <a href="/en/medi-spa.html">Medi-Spa</a>
-                    </div>
+                <li class="mili-nav-item"><a href="/en/skin-care.html" class="mili-nav-link active">Skin Care</a><span style="display:none" class="mili-nav-caret"></span>
                 </li>
                 <li class="mili-nav-item"><a href="/en/laser-hair-removal.html" class="mili-nav-link">Laser Hair Removal</a></li>
                 <li class="mili-nav-item"><a href="/en/body-shaping.html" class="mili-nav-link">Body Shaping</a></li>
@@ -1448,13 +1439,13 @@
   <section class="lf-intro">
     <div class="lf-intro__grid">
       <h2 class="lf-intro__lead lf-rv">
-        <em>Lifting is not a&nbsp;device.</em><br>
-        It is a sequence of&nbsp;decisions —<br>
-        read first, layer&nbsp;second, stop&nbsp;in&nbsp;time.
+        <em>Skin care is not a&nbsp;moment.</em><br>
+        It is a rhythm of&nbsp;decisions —<br>
+        read first, layer&nbsp;gently, repeat&nbsp;with&nbsp;care.
       </h2>
       <div>
-        <p class="lf-intro__body lf-rv d1">At Mili Clinic Sinchon, no two protocols are identical. The face is read before the device is chosen. Energy is layered, not stacked. Restraint is part of the design.</p>
-        <p class="lf-intro__body lf-rv d2">Every shot is delivered by the attending physician, and every session ends where the face says enough.</p>
+        <p class="lf-intro__body lf-rv d1">At Mili Clinic Sinchon, no two skin programs are identical. The skin is read before the treatment is chosen. Care is layered gently, never overloaded. Patience is part of the design.</p>
+        <p class="lf-intro__body lf-rv d2">Every program is supervised by the attending physician, and every session ends where the skin says it has had enough.</p>
       </div>
     </div>
   </section>
@@ -1480,8 +1471,8 @@
         <div class="lf-philosophy__track" id="lfPhilosophyTrack">
 
           <div class="lf-philosophy__panel lf-philosophy__intro">
-            <h2 class="lf-philosophy__intro-title"><em>Why lifting,</em><br>done at&nbsp;Mili.</h2>
-            <p class="lf-philosophy__intro-body">Lifting is not a device. It is a sequence of decisions — what to read, what to layer, where to stop. Five principles guide every protocol at Mili Clinic Sinchon.</p>
+            <h2 class="lf-philosophy__intro-title"><em>Why skin care,</em><br>done at&nbsp;Mili.</h2>
+            <p class="lf-philosophy__intro-body">Skin care is not a moment. It is a rhythm built over weeks, not minutes. Five principles guide every program at Mili Clinic Sinchon.</p>
           </div>
 
           <article class="lf-philosophy__panel lf-philosophy__card">
@@ -1489,8 +1480,8 @@
               <img src="../assets/images/lifting/philosophy-01.jpg" alt="">
             </div>
             <div class="lf-philosophy__num">— 01 / 05</div>
-            <h3 class="lf-philosophy__name"><em>Diagnosis first.</em></h3>
-            <p class="lf-philosophy__desc">We read the face before we choose the device. Skin thickness, SMAS position, fat distribution, and aging pattern — analyzed first, treated second.</p>
+            <h3 class="lf-philosophy__name"><em>Skin reads&nbsp;first.</em></h3>
+            <p class="lf-philosophy__desc">We read the skin before we plan the program. Hydration level, pore condition, pigmentation, sebum balance — analyzed first, treated second. No program runs without a reading.</p>
           </article>
 
           <article class="lf-philosophy__panel lf-philosophy__card">
@@ -1498,8 +1489,8 @@
               <img src="../assets/images/lifting/philosophy-02.png" alt="">
             </div>
             <div class="lf-philosophy__num">— 02 / 05</div>
-            <h3 class="lf-philosophy__name"><em>Layered lifting.</em></h3>
-            <p class="lf-philosophy__desc">SMAS, dermis, fascia — each layer responds to a different energy. We combine devices the way a tailor combines stitches: precise, intentional, layered.</p>
+            <h3 class="lf-philosophy__name"><em>Layered care.</em></h3>
+            <p class="lf-philosophy__desc">Hydration, exfoliation, regeneration — each addresses a different need. We combine programs the way a gardener tends seasons: timed, patient, layered. Care that builds on itself.</p>
           </article>
 
           <article class="lf-philosophy__panel lf-philosophy__card">
@@ -1507,8 +1498,8 @@
               <img src="../assets/images/lifting/philosophy-03.jpg" alt="">
             </div>
             <div class="lf-philosophy__num">— 03 / 05</div>
-            <h3 class="lf-philosophy__name"><em>Doctor's hand.</em></h3>
-            <p class="lf-philosophy__desc">Every shot is delivered by the physician. No delegation, no shortcuts. The angle, the depth, the count — all decided in real time, by the person reading the face.</p>
+            <h3 class="lf-philosophy__name"><em>Doctor-led,<br>every time.</em></h3>
+            <p class="lf-philosophy__desc">Every program is designed and supervised by the physician. Aestheticians work under direct guidance — the eye that reads the skin is the eye that adjusts the plan, every session.</p>
           </article>
 
           <article class="lf-philosophy__panel lf-philosophy__card">
@@ -1516,8 +1507,8 @@
               <img src="../assets/images/lifting/philosophy-04.jpg" alt="">
             </div>
             <div class="lf-philosophy__num">— 04 / 05</div>
-            <h3 class="lf-philosophy__name"><em>Right density,<br>not more&nbsp;shots.</em></h3>
-            <p class="lf-philosophy__desc">More energy is not more lifting. We place shots where the face actually needs them — and stop where it doesn't. Restraint is part of the design.</p>
+            <h3 class="lf-philosophy__name"><em>Maintenance<br>over miracle.</em></h3>
+            <p class="lf-philosophy__desc">Great skin is not the result of one heroic session. It is the result of patient, consistent care — small inputs, repeated over time. We design for the long arc, not the dramatic moment.</p>
           </article>
 
           <article class="lf-philosophy__panel lf-philosophy__card">
@@ -1525,13 +1516,13 @@
               <img src="../assets/images/lifting/philosophy-05.jpg" alt="">
             </div>
             <div class="lf-philosophy__num">— 05 / 05</div>
-            <h3 class="lf-philosophy__name"><em>Quiet result.</em></h3>
-            <p class="lf-philosophy__desc">No pulled look. No obvious tightness. The face is the same face — only clearer, more defined, more rested. The result speaks softly.</p>
+            <h3 class="lf-philosophy__name"><em>The skin you<br>live in.</em></h3>
+            <p class="lf-philosophy__desc">The goal is not perfection. It is comfort. Skin that feels right under your own hand, looks even in any light, and asks nothing of you. The skin you live in, every day.</p>
           </article>
 
           <aside class="lf-philosophy__panel lf-philosophy__tail">
             <span class="lf-eyebrow">End of section</span>
-            <h3><em>Five principles,<br>one&nbsp;protocol.</em></h3>
+            <h3><em>Five principles,<br>four&nbsp;programs.</em></h3>
             <p>How those principles meet the face — layer by layer — is what follows.</p>
           </aside>
 
@@ -1560,68 +1551,67 @@
   <section class="lf-layered" id="lfLayered">
     <div class="lf-layered__head">
       <span class="lf-eyebrow lf-rv">Four depths</span>
-      <h2 class="lf-layered__title lf-rv d1"><em>The face is not<br>a single&nbsp;surface.</em></h2>
-      <p class="lf-layered__lede lf-rv d2">Skin is built in layers — and each layer ages differently. A single device cannot reach all of them. We read each layer separately and choose the energy that belongs to it.</p>
+      <h2 class="lf-layered__title lf-rv d1"><em>Skin changes<br>in&nbsp;rhythm.</em></h2>
+      <p class="lf-layered__lede lf-rv d2">Real skin care doesn't happen in one visit. It unfolds — slowly, predictably — as the skin renews itself from within. This is the rhythm we design around, and what to expect along the way.</p>
     </div>
 
     <div class="lf-strata">
 
       <div class="lf-strata__band" data-depth="0">
-        <div class="lf-strata__depth">0.1mm</div>
+        <div class="lf-strata__depth">Day 1</div>
         <div class="lf-strata__center">
-          <div class="lf-strata__sublabel">Surface</div>
-          <div class="lf-strata__layer">Epidermis</div>
+          <div class="lf-strata__sublabel">Reading</div>
+          <div class="lf-strata__layer">Diagnosis &amp; first program</div>
         </div>
         <div class="lf-strata__devices">
-          <span class="lf-strata__device lf-strata__device--empty">Conditioning · Recovery</span>
+          <span class="lf-strata__device lf-strata__device--empty">Analysis · Planning</span>
         </div>
       </div>
 
       <div class="lf-strata__band" data-depth="1">
-        <div class="lf-strata__depth">1.5mm</div>
+        <div class="lf-strata__depth">Week 2</div>
         <div class="lf-strata__center">
-          <div class="lf-strata__sublabel">Mid-depth</div>
-          <div class="lf-strata__layer">Dermis · Upper</div>
+          <div class="lf-strata__sublabel">Surface</div>
+          <div class="lf-strata__layer">First visible changes</div>
         </div>
         <div class="lf-strata__devices">
-          <span class="lf-strata__device">Thermage</span>
-          <span class="lf-strata__device">Oligio</span>
-          <span class="lf-strata__device">Titanium</span>
+          <span class="lf-strata__device">Texture softens</span>
+          <span class="lf-strata__device">Tone evens</span>
         </div>
       </div>
 
       <div class="lf-strata__band" data-depth="2">
-        <div class="lf-strata__depth">3.0mm</div>
+        <div class="lf-strata__depth">Week 6</div>
         <div class="lf-strata__center">
-          <div class="lf-strata__sublabel">Deeper dermis</div>
-          <div class="lf-strata__layer">Dermis · Lower</div>
+          <div class="lf-strata__sublabel">Dermal</div>
+          <div class="lf-strata__layer">Deeper renewal begins</div>
         </div>
         <div class="lf-strata__devices">
-          <span class="lf-strata__device">TuneFace</span>
-          <span class="lf-strata__device">InMode</span>
+          <span class="lf-strata__device">Pores refine</span>
+          <span class="lf-strata__device">Hydration holds</span>
         </div>
       </div>
 
       <div class="lf-strata__band" data-depth="3">
-        <div class="lf-strata__depth">4.5mm</div>
+        <div class="lf-strata__depth">Month 3</div>
         <div class="lf-strata__center">
-          <div class="lf-strata__sublabel">Structural</div>
-          <div class="lf-strata__layer">SMAS</div>
+          <div class="lf-strata__sublabel">Stabilizing</div>
+          <div class="lf-strata__layer">The new baseline</div>
         </div>
         <div class="lf-strata__devices">
-          <span class="lf-strata__device">Ulthera</span>
-          <span class="lf-strata__device">Shurink</span>
+          <span class="lf-strata__device">Elasticity returns</span>
+          <span class="lf-strata__device">Clarity settles</span>
         </div>
       </div>
 
       <div class="lf-strata__band" data-depth="4">
-        <div class="lf-strata__depth">Deep</div>
+        <div class="lf-strata__depth">Ongoing</div>
         <div class="lf-strata__center">
-          <div class="lf-strata__sublabel">Volumetric</div>
-          <div class="lf-strata__layer">Fascia &amp; Volume</div>
+          <div class="lf-strata__sublabel">Maintenance</div>
+          <div class="lf-strata__layer">The skin you live in</div>
         </div>
         <div class="lf-strata__devices">
-          <span class="lf-strata__device">Eve Titan</span>
+          <span class="lf-strata__device">Quarterly visits keep it</span>
         </div>
       </div>
 
@@ -1638,8 +1628,8 @@
   <section class="lf-protocol" id="lfProtocol">
     <div class="lf-protocol__head">
       <span class="lf-eyebrow lf-rv">Three steps · One doctor</span>
-      <h2 class="lf-protocol__title lf-rv d1"><em>How a lifting<br>session unfolds.</em></h2>
-      <p class="lf-protocol__lede lf-rv d2">Every face is read before it is treated. Every protocol is built before a single shot is delivered. Three steps, every time, by the same doctor — from the first reading to the last pulse.</p>
+      <h2 class="lf-protocol__title lf-rv d1"><em>How a care<br>program unfolds.</em></h2>
+      <p class="lf-protocol__lede lf-rv d2">Every skin is read before any program begins. Every plan is personal — designed for the skin in front of us, not borrowed from a template. Three steps, every time, by the same doctor — from the first reading to the long arc of care.</p>
     </div>
 
     <div class="lf-protocol__steps">
@@ -1653,12 +1643,9 @@
             <span class="lf-protocol__step-num">Step 01 / 03</span>
             <span class="lf-protocol__step-time">15 – 20 min</span>
           </div>
-          <h3 class="lf-protocol__step-name"><em>Skin analysis<br>&amp; reading.</em></h3>
-          <p class="lf-protocol__step-desc">We measure what cannot be seen — skin thickness, SMAS depth, elasticity, fat distribution. The face is read with diagnostic imaging and a clinician's eye before any energy is chosen.</p>
-          <dl class="lf-protocol__step-meta">
-            <dt>Tools</dt><dd>Diagnostic imaging, clinical assessment</dd>
-            <dt>Output</dt><dd>Layer map, density plan, device shortlist</dd>
-          </dl>
+          <h3 class="lf-protocol__step-name"><em>Skin reading<br>&amp; consultation.</em></h3>
+          <p class="lf-protocol__step-desc">We measure what you cannot see in the mirror — hydration level, sebum balance, pore condition, pigmentation, sensitivity. The skin is studied with diagnostic imaging and a clinician's eye before any program is designed.</p>
+          <div class="lf-protocol__step-meta">Diagnostic imaging · Lifestyle review · 20–30 minutes</div>
         </div>
       </article>
 
@@ -1671,12 +1658,9 @@
             <span class="lf-protocol__step-num">Step 02 / 03</span>
             <span class="lf-protocol__step-time">Custom layering</span>
           </div>
-          <h3 class="lf-protocol__step-name"><em>Custom<br>layering.</em></h3>
-          <p class="lf-protocol__step-desc">From seven available technologies, the doctor selects the combination this face requires. Layer by layer — SMAS, dermis, surface. The protocol is drawn before the room is entered.</p>
-          <dl class="lf-protocol__step-meta">
-            <dt>Inputs</dt><dd>Layer map, aging pattern, patient goals</dd>
-            <dt>Decisions</dt><dd>Device selection, shot count, treatment map</dd>
-          </dl>
+          <h3 class="lf-protocol__step-name"><em>Personal<br>program.</em></h3>
+          <p class="lf-protocol__step-desc">From four available programs, the doctor designs the right combination and sequence for this skin. Booster, brightening, acne and pore, or medi-spa — chosen and layered to address what this skin actually needs, in what order.</p>
+          <div class="lf-protocol__step-meta">Program selection · Session schedule · Home care plan</div>
         </div>
       </article>
 
@@ -1689,12 +1673,9 @@
             <span class="lf-protocol__step-num">Step 03 / 03</span>
             <span class="lf-protocol__step-time">40 – 80 min</span>
           </div>
-          <h3 class="lf-protocol__step-name"><em>Doctor-led<br>treatment.</em></h3>
-          <p class="lf-protocol__step-desc">Every shot is delivered by the physician, in real time, with adjustments made as the face responds. No assistant performs the lifting. The result is the work of the hand that read the face.</p>
-          <dl class="lf-protocol__step-meta">
-            <dt>Performed by</dt><dd>Attending physician, in-room throughout</dd>
-            <dt>Aftercare</dt><dd>Same-day debrief, recovery brief, follow-up schedule</dd>
-          </dl>
+          <h3 class="lf-protocol__step-name"><em>Ongoing<br>care.</em></h3>
+          <p class="lf-protocol__step-desc">Every session is supervised by the physician, with the plan adjusted as the skin responds. The program evolves with you — what works in spring may shift in autumn. Skin care is a relationship, not a transaction.</p>
+          <div class="lf-protocol__step-meta">Supervised by attending physician · 30–60 minutes per session</div>
         </div>
       </article>
 
@@ -1705,100 +1686,76 @@
   <div class="lf-rule lf-rule--dark">
     <div class="lf-rule__num">V</div>
     <div class="lf-rule__bar"></div>
-    <div class="lf-rule__name">Lifting Lineup</div>
+    <div class="lf-rule__name">Treatment Programs</div>
   </div>
 
   <section class="lf-lineup">
     <div class="lf-lineup__head">
       <span class="lf-eyebrow lf-eyebrow--light lf-rv">Six devices · One room</span>
-      <h2 class="lf-lineup__title lf-rv d1"><em>Every major energy.<br>One protocol.</em></h2>
-      <p class="lf-lineup__lede lf-rv d2">No single device lifts a face. We hold every major lifting technology in one room — and choose the combination this face requires. The lineup is the language; the protocol is the sentence.</p>
+      <h2 class="lf-lineup__title lf-rv d1"><em>Four programs.<br>One philosophy.</em></h2>
+      <p class="lf-lineup__lede lf-rv d2">Four programs, each designed for a different concern, each built on the same principle — patient, layered, supervised. Used alone or in combination, never as a one-size template.</p>
     </div>
 
     <div class="lf-lineup__grid">
 
       <article class="lf-lineup__card">
-        <div class="lf-lineup__card-media"><img src="../assets/images/lifting/ulthera.png" alt=""></div>
         <div class="lf-lineup__card-top">
-          <span class="lf-lineup__card-num">— 01 / 06</span>
-          <span class="lf-lineup__card-depth">4.5 / 3.0 / 1.5 mm</span>
+          <div class="lf-lineup__card-num">01</div>
+          <div class="lf-lineup__card-depth">Hydration · 30 min</div>
         </div>
-        <h3 class="lf-lineup__card-name"><em>Ulthera</em></h3>
-        <p class="lf-lineup__card-tagline">The gold standard. Focused ultrasound to the SMAS — the deepest lifting energy a non-invasive device can reach.</p>
-        <dl class="lf-lineup__card-meta">
-          <dt>Energy</dt><dd>Microfocused Ultrasound (MFU-V)</dd>
-          <dt>Best for</dt><dd>Lower-face descent, jawline definition</dd>
-        </dl>
+        <div>
+          <h3 class="lf-lineup__card-name"><em>Skin Booster</em></h3>
+          <p class="lf-lineup__card-tagline">Microinjections of hyaluronic acid delivered directly into the dermis. Hydration that doesn't sit on the surface but lives where skin actually holds water.</p>
+        </div>
+        <div class="lf-lineup__card-meta">
+          <b>Use</b> · Deep hydration, fine line softening<br>
+          <b>Course</b> · 3 sessions, 4 weeks apart
+        </div>
       </article>
 
       <article class="lf-lineup__card">
-        <div class="lf-lineup__card-media"><img src="../assets/images/lifting/tuneface.jpg" alt=""></div>
         <div class="lf-lineup__card-top">
-          <span class="lf-lineup__card-num">— 02 / 06</span>
-          <span class="lf-lineup__card-depth">Multi-depth</span>
+          <div class="lf-lineup__card-num">02</div>
+          <div class="lf-lineup__card-depth">Pores · 45 min</div>
         </div>
-        <h3 class="lf-lineup__card-name"><em>TuneFace</em></h3>
-        <p class="lf-lineup__card-tagline">Microfocused ultrasound with adjustable density. A finer lifting language for faces that need precision over power.</p>
-        <dl class="lf-lineup__card-meta">
-          <dt>Energy</dt><dd>Tunable MFU</dd>
-          <dt>Best for</dt><dd>Mid-face lift, fine contouring</dd>
-        </dl>
+        <div>
+          <h3 class="lf-lineup__card-name"><em>Acne &amp; Pore</em></h3>
+          <p class="lf-lineup__card-tagline">A combined program for active breakouts and the pores they leave behind. Inflammation calmed, oil regulated, texture refined — without aggressive resurfacing.</p>
+        </div>
+        <div class="lf-lineup__card-meta">
+          <b>Use</b> · Active acne, pore visibility, post-acne marks<br>
+          <b>Course</b> · 4–8 sessions depending on severity
+        </div>
       </article>
 
       <article class="lf-lineup__card">
-        <div class="lf-lineup__card-media"><img src="../assets/images/lifting/oligio-x.png" alt=""></div>
         <div class="lf-lineup__card-top">
-          <span class="lf-lineup__card-num">— 03 / 06</span>
-          <span class="lf-lineup__card-depth">Monopolar RF</span>
+          <div class="lf-lineup__card-num">03</div>
+          <div class="lf-lineup__card-depth">Tone · 40 min</div>
         </div>
-        <h3 class="lf-lineup__card-name"><em>Oligio X</em></h3>
-        <p class="lf-lineup__card-tagline">Monopolar radiofrequency that heats volumetrically — softening the lower face and tightening skin from within.</p>
-        <dl class="lf-lineup__card-meta">
-          <dt>Energy</dt><dd>Monopolar RF</dd>
-          <dt>Best for</dt><dd>Skin tightening, jawline, full-face firmness</dd>
-        </dl>
+        <div>
+          <h3 class="lf-lineup__card-name"><em>All-in-One<br>Brightening</em></h3>
+          <p class="lf-lineup__card-tagline">A layered approach to uneven tone — pigmentation, redness, and dullness addressed in one program. Brightening that builds, not bleaches.</p>
+        </div>
+        <div class="lf-lineup__card-meta">
+          <b>Use</b> · Pigmentation, redness, overall tone<br>
+          <b>Course</b> · 5 sessions, 3 weeks apart
+        </div>
       </article>
 
       <article class="lf-lineup__card">
-        <div class="lf-lineup__card-media"><img src="../assets/images/lifting/inmode.jpg" alt=""></div>
         <div class="lf-lineup__card-top">
-          <span class="lf-lineup__card-num">— 04 / 06</span>
-          <span class="lf-lineup__card-depth">Bipolar RF · Light</span>
+          <div class="lf-lineup__card-num">04</div>
+          <div class="lf-lineup__card-depth">Care · 60 min</div>
         </div>
-        <h3 class="lf-lineup__card-name"><em>InMode</em></h3>
-        <p class="lf-lineup__card-tagline">A platform that pairs RF with light energy. Layered tone, texture, and surface lifting in a single visit.</p>
-        <dl class="lf-lineup__card-meta">
-          <dt>Energy</dt><dd>Bipolar RF · Light-based</dd>
-          <dt>Best for</dt><dd>Tone correction, surface tightening</dd>
-        </dl>
-      </article>
-
-      <article class="lf-lineup__card">
-        <div class="lf-lineup__card-media"><img src="../assets/images/lifting/shurink.jpg" alt=""></div>
-        <div class="lf-lineup__card-top">
-          <span class="lf-lineup__card-num">— 05 / 06</span>
-          <span class="lf-lineup__card-depth">HIFU · 1.5 / 3.0 / 4.5 mm</span>
+        <div>
+          <h3 class="lf-lineup__card-name"><em>Medi-Spa</em></h3>
+          <p class="lf-lineup__card-tagline">Clinical care delivered with the calm of a spa. Deep cleansing, regenerative serums, gentle resurfacing — all clinically dosed, under physician supervision.</p>
         </div>
-        <h3 class="lf-lineup__card-name"><em>Shurink</em></h3>
-        <p class="lf-lineup__card-tagline">High-intensity focused ultrasound across three depths. A dependable lifting baseline that pairs with every protocol.</p>
-        <dl class="lf-lineup__card-meta">
-          <dt>Energy</dt><dd>HIFU (Multi-depth)</dd>
-          <dt>Best for</dt><dd>Whole-face firming, maintenance</dd>
-        </dl>
-      </article>
-
-      <article class="lf-lineup__card">
-        <div class="lf-lineup__card-media"><img src="../assets/images/lifting/titanium.png" alt=""></div>
-        <div class="lf-lineup__card-top">
-          <span class="lf-lineup__card-num">— 06 / 06</span>
-          <span class="lf-lineup__card-depth">Monopolar RF · Deep</span>
+        <div class="lf-lineup__card-meta">
+          <b>Use</b> · Maintenance, recovery, monthly care<br>
+          <b>Course</b> · Monthly or quarterly
         </div>
-        <h3 class="lf-lineup__card-name"><em>Titanium</em></h3>
-        <p class="lf-lineup__card-tagline">Deep monopolar RF for volumetric heating. Reaches structural depth where ultrasound stops — a complement, not a competitor.</p>
-        <dl class="lf-lineup__card-meta">
-          <dt>Energy</dt><dd>Monopolar RF (Deep)</dd>
-          <dt>Best for</dt><dd>Sub-mental contour, deep tightening</dd>
-        </dl>
       </article>
 
     </div>
@@ -1819,7 +1776,7 @@
           <span class="lf-eyebrow">Five questions</span>
           <h2 class="lf-faq__title"><em>Answered<br>plainly.</em></h2>
         </div>
-        <p class="lf-faq__note lf-rv d1">Five common questions about lifting at Mili Clinic Sinchon. More specific concerns are best addressed during consultation.</p>
+        <p class="lf-faq__note lf-rv d1">Five common questions about skin care at Mili Clinic Sinchon. More specific concerns are best addressed during consultation.</p>
       </div>
 
       <div class="lf-faq__list">
@@ -1827,13 +1784,13 @@
         <div class="lf-faq__item">
           <button class="lf-faq__q" type="button">
             <span class="lf-faq__q-num">01</span>
-            <span><em>Can multiple lifting devices be combined in one session?</em></span>
+            <span><em>Can multiple programs be combined?</em></span>
             <span class="lf-faq__plus" aria-hidden="true"></span>
           </button>
           <div class="lf-faq__a">
             <div class="lf-faq__a-inner">
               <span></span>
-              <div>Yes — and in most protocols, they are. SMAS, dermis, and surface respond to different energies, so combining devices is often the more effective approach. The doctor decides which combinations are safe and appropriate for each face during analysis.</div>
+              <div>Yes — and often the most effective skin programs do exactly this. Hydration, brightening, and pore care can run in parallel or sequence. The doctor designs the right combination and timing based on your skin's current condition and goals.</div>
               <span></span>
             </div>
           </div>
@@ -1848,7 +1805,7 @@
           <div class="lf-faq__a">
             <div class="lf-faq__a-inner">
               <span></span>
-              <div>Most lifting sessions at Mili Clinic Sinchon have minimal downtime — mild redness or a slight feeling of tightness for several hours, occasionally up to a day. Microneedle RF (Eve Titan) may leave subtle pinpoint marks for 1–2 days. Specific recovery is reviewed before treatment.</div>
+              <div>Most skin care programs have minimal downtime — mild redness for a few hours, occasionally subtle pinpoint marks from injection programs that fade within a day. We design programs around your schedule so visible recovery is rare.</div>
               <span></span>
             </div>
           </div>
@@ -1863,7 +1820,7 @@
           <div class="lf-faq__a">
             <div class="lf-faq__a-inner">
               <span></span>
-              <div>An immediate firming is often visible the same day, as treated tissue contracts. The structural result — new collagen and remodelled support — develops gradually over 8 to 12 weeks, with continued refinement for several months.</div>
+              <div>First visible changes appear within 1–2 weeks — usually in texture and tone. Deeper changes (hydration retention, pore refinement, pigment fading) build over 6–12 weeks across the program. The skin you see at the end is not the same skin you brought in.</div>
               <span></span>
             </div>
           </div>
@@ -1878,7 +1835,7 @@
           <div class="lf-faq__a">
             <div class="lf-faq__a-inner">
               <span></span>
-              <div>Sensation depends on the device and depth. Focused ultrasound and deep RF carry a brief warm or sharp sensation per shot. Topical anaesthetic is applied before treatment, and intensity is adjusted in real time. Most patients describe it as tolerable rather than painful.</div>
+              <div>Most skin care programs are gentle. Injection-based programs (skin booster, brightening) include topical anaesthetic; the sensation is a brief pinch. Spa and care programs are relaxing rather than painful. We adjust intensity based on your sensitivity throughout.</div>
               <span></span>
             </div>
           </div>
@@ -1887,13 +1844,13 @@
         <div class="lf-faq__item">
           <button class="lf-faq__q" type="button">
             <span class="lf-faq__q-num">05</span>
-            <span><em>How often should lifting be repeated?</em></span>
+            <span><em>How often should programs be repeated?</em></span>
             <span class="lf-faq__plus" aria-hidden="true"></span>
           </button>
           <div class="lf-faq__a">
             <div class="lf-faq__a-inner">
               <span></span>
-              <div>Structural lifting (Ulthera, TuneFace, Titanium) is generally repeated every 12–18 months. Lighter modalities (Shurink, surface RF, microneedle RF) are used more frequently, often quarterly, as part of a maintenance protocol designed for each patient.</div>
+              <div>Skin Booster: 3 sessions every 4 weeks initially, then quarterly maintenance. Brightening: 5 sessions every 3 weeks, then seasonal touch-ups. Acne & Pore: 4–8 sessions during active phase, then preventive monthly visits. Medi-Spa: monthly or quarterly, ongoing.</div>
               <span></span>
             </div>
           </div>
@@ -1908,7 +1865,7 @@
     <div class="lf-cta__media"></div>
     <div class="lf-cta__inner">
       <span class="lf-eyebrow lf-eyebrow--light">Begin with a reading</span>
-      <h2 class="lf-cta__title"><em>Lifting begins<br>with the&nbsp;face,<br>not the&nbsp;device.</em></h2>
+      <h2 class="lf-cta__title"><em>Skin care begins<br>with the skin,<br>not the program.</em></h2>
       <p class="lf-cta__sub">Book a diagnostic consultation. The first thirty minutes are spent on the face — not on the menu.</p>
       <div class="lf-cta__actions">
         <a class="lf-cta__btn lf-cta__btn--solid" href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener">Reserve Consultation</a>
