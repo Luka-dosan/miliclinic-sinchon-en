@@ -4,638 +4,1332 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Body Shaping | Mili Clinic Sinchon</title>
-<meta name="description" content="Body Shaping non-surgical contouring">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Mili Clinic Sinchon">
-<meta property="og:title" content="Mili Clinic Sinchon">
-<meta property="og:image" content="https://miliclinic-sinchon-en.vercel.app/assets/images/og/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Mili Clinic Sinchon">
-<meta property="og:locale" content="en_US">
-<meta property="og:url" content="https://miliclinic-sinchon-en.vercel.app/ulthera.html">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Mili Clinic Sinchon">
-<meta name="twitter:image" content="https://miliclinic-sinchon-en.vercel.app/assets/images/og/og-image.png">
-
-
+<meta name="description" content="Body Shaping at Mili Clinic Sinchon. Localized fat reduction, contour refinement, doctor-mapped — built for the body you have, not the one in a magazine.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- common.css is host-served on production. Comment out below if previewing standalone. -->
+<link rel="stylesheet" href="../assets/css/common.css">
+
+<!--
+  NOTE for deploy:
+  Image paths below use the absolute Vercel URL so the preview renders real content.
+  Before deploying, find/replace:
+    ../assets/images/lifting/
+    →
+    ../assets/images/lifting/
+-->
 
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-:root{--ink:#0F0F10;--bone:#F4F1EB;--paper:#FAF8F4;--white:#FFFFFF;--muted:#8A867F;--line:#DEDAD1;--accent:#1C2438;--pad-x:clamp(24px,5vw,96px);--container:1440px;
-    --display: "SF Pro Display", system-ui, -apple-system, "Inter", sans-serif;
-}
-body{font-family: "SF Pro Text", system-ui, -apple-system, "Inter", sans-serif;color:var(--ink);background:var(--paper);font-weight:400;line-height:1.55;letter-spacing:-0.01em;-webkit-font-smoothing:antialiased}
-img{max-width:100%;height:auto;display:block}
-a{color:inherit;text-decoration:none}
-button{font-family:inherit;cursor:pointer;border:none;background:none}
-.container{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
+/* =========================================================
+   LIFTING — Mili Clinic Sinchon
+   Monochrome editorial, Apple-tight spacing, TU-style restraint
+   ========================================================= */
 
+:root {
+  /* Apple Design System — colors */
+  --lf-white:    #FFFFFF;
+  --lf-paper:    #F5EFE6;   /* warm parchment */
+  --lf-mist:     #E6DCCD;   /* warm mist */
+  --lf-line:     rgba(0, 0, 0, 0.08);   /* Apple hairline */
+  --lf-line-2:   rgba(0, 0, 0, 0.12);
+  --lf-ink:      #1D1D1F;   /* Apple universal ink, never pure black */
+  --lf-ink-2:    #2A2A2C;
+  --lf-ink-3:    #424245;   /* secondary text */
+  --lf-mute:     #86868B;   /* Apple muted */
+  --lf-mute-2:   #B8B8BC;
+  --lf-dark:     #1D1D1F;   /* dark surface — Apple uses near-black, never pure */
+  --lf-dark-2:   #2A2A2C;
 
-/* Top Bar */
-.top-bar{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line);background:var(--paper)}
-.top-bar-inner{display:flex;justify-content:space-between;align-items:center;padding:12px var(--pad-x)}
-.lang-list{display:flex;gap:14px;list-style:none}
-.lang-list li a{padding:2px 6px;transition:color .2s}
-.lang-list li a:hover{color:var(--ink)}
-.lang-list .active{color:var(--ink);border-bottom:1px solid var(--ink)}
-.top-links{display:flex;gap:24px}
-.top-links a:hover{color:var(--ink)}
+  /* Type — Cormorant Garamond italic reserved for display per brand brief.
+     Everything else: Inter (Apple's off-platform substitute for SF Pro). */
+  --lf-serif:    'Cormorant Garamond', 'Times New Roman', serif;
+  --lf-sans:     "SF Pro Display", system-ui, -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
 
-/* Header */
-.site-header{position:sticky;top:0;z-index:100;background:var(--paper);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
-.header-inner{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:22px var(--pad-x)}
-.logo{font-size:17px;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;justify-self:start}
-.logo .dot{display:inline-block;width:4px;height:4px;background:var(--ink);border-radius:50%;vertical-align:middle;margin:0 8px 3px}
-.nav ul{display:flex;gap:38px;list-style:none;justify-self:center}
-.nav a{font-size:12px;letter-spacing:0.18em;text-transform:uppercase;padding:8px 0;position:relative}
-.nav a.active{border-bottom:1px solid var(--ink)}
-.nav a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--ink);transition:width .3s ease}
-.nav a:hover::after{width:100%}
-.header-cta{justify-self:end;display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;padding:11px 22px;border:1px solid var(--ink);transition:background .25s,color .25s}
-.header-cta:hover{background:var(--ink);color:var(--paper)}
-@media (max-width:960px){.nav{display:none}.header-inner{grid-template-columns:1fr auto}.logo{grid-column:1}.header-cta{grid-column:2}}
+  /* Motion — Apple default ease-in-out */
+  --lf-ease:     cubic-bezier(0.4, 0, 0.6, 1);
+  --lf-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 
-/* Hero — wave bg + device (same pattern as ulthera; tx-hero namespace) */
-.tx-hero{position:relative;min-height:calc(100vh - 70px);overflow:hidden}
-.tx-hero-visual{position:absolute;inset:0;z-index:0;pointer-events:none}
-.tx-hero-bg{
-    position:absolute;
-    inset:0;
-    background-image: url('/assets/images/body-shaping/bg.jpg');
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-}
-.tx-hero-device{
-    position:absolute;
-    right:0;
-    bottom:0;
-    height:80%;
-    width:auto;
-    object-fit:contain;
-    opacity:0;
-    transform:translateX(30%);
-    will-change:transform,opacity;
-    animation:slideInRightTh 1.4s cubic-bezier(0.2,0.8,0.2,1) 0.3s forwards;
-}
-@keyframes slideInRightTh{
-    to{opacity:1;transform:translateX(0);}
-}
-.tx-hero > *:not(.tx-hero-visual){
-    position:relative;
-    z-index:2;
-    max-width:60%;
-}
-.tx-hero-inner{position:relative;z-index:2;min-height:calc(100vh - 70px);display:flex;flex-direction:column;justify-content:space-between;padding:60px var(--pad-x) 40px;color:var(--ink);box-sizing:border-box}
-.tx-hero-top{display:flex;gap:10px;align-items:center;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);opacity:.75}
-.tx-hero-top a{transition:opacity .2s}
-.tx-hero-top a:hover{opacity:1}
-.tx-hero-top .sep{opacity:.5}
-.tx-hero-center{margin-top:auto;margin-bottom:auto}
-.tx-hero-eyebrow{font-family:var(--display);font-weight:400;
-    font-size: 12px;
-    letter-spacing: 0.45em;
-    text-transform: uppercase;
-    margin-bottom: 32px;
-    color: var(--muted);
-    opacity: 0.85;
-}
-.tx-hero-badge{
-    display: inline-flex;
-    align-items: center;
-    gap: 14px;
-    padding: 10px 16px 10px 14px;
-    border: 1px solid rgba(15,15,16,.2);
-    margin-bottom: 28px;
-}
-.tx-hero-badge-mark{
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: var(--paper);
-    color: var(--ink);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: 500;
-}
-.tx-hero-badge-text{
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    font-weight: 300;
-    color: var(--ink);
-    opacity: 0.9;
-}
-.tx-hero-title{font-family:var(--display);
-    font-size:clamp(54px,10vw,160px);font-weight:600;line-height:0.92;letter-spacing:-0.025em;margin-bottom:30px;color:var(--ink)}
-.tx-hero-title .reg{font-size:0.35em;vertical-align:super;opacity:.7;margin-left:8px;font-weight:300;letter-spacing:0;color:var(--ink)}
-.tx-hero-title .line-2{display:block;padding-left:clamp(20px,5vw,80px)}
-.tx-hero-sub{max-width:520px;font-size:16px;font-weight:300;line-height:1.7;opacity:0.9;color:var(--ink)}
-.tx-hero-sub strong{font-weight:500}
-.tx-hero-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink);opacity:.75}
-.tx-hero-meta{display:flex;gap:48px}
-.tx-hero-meta-item .label{color:var(--muted);opacity:1;margin-bottom:6px;font-size:10px}
-.tx-hero-meta-item .value{font-size:14px;letter-spacing:0.08em;text-transform:none;font-weight:300;color:var(--ink)}
-.tx-hero .tx-hero-cta-primary,
-.tx-hero .tx-hero-cta-secondary{color:var(--ink);border-color:var(--ink)}
-.tx-hero-scroll{
-    position:absolute;
-    right:var(--pad-x);
-    bottom:32px;
-    font-size:11px;
-    letter-spacing:0.25em;
-    text-transform:uppercase;
-    color:var(--ink);
-    opacity:0.7;
-    z-index:3;
-}
-@media (max-width:700px){.tx-hero{min-height:calc(60vh - 70px)}.tx-hero-inner{min-height:calc(60vh - 70px);padding:32px var(--pad-x) 24px}.tx-hero-bottom{flex-direction:column;align-items:flex-start}.tx-hero-meta{gap:24px}.tx-hero-scroll{bottom:24px;font-size:10px}}
-@media (max-width:640px){
-    .tx-hero{min-height:calc(60vh - 70px);padding:0}
-    .tx-hero-inner{min-height:calc(60vh - 70px);padding:32px var(--pad-x) 24px;justify-content:space-between;gap:24px}
-    .tx-hero-center{margin-top:0;margin-bottom:0}
-    .tx-hero-bottom{margin-top:0}
-    .tx-hero-title{font-family:var(--display);
-    font-size:clamp(44px,14vw,88px);line-height:0.98;margin-bottom:24px}
-    .tx-hero-eyebrow{font-size:10px;letter-spacing:0.3em;margin-bottom:20px}
-    .tx-hero-badge{display:none}
-    .tx-hero-sub{font-size:15px;line-height:1.7}
-    .tx-hero-top{flex-wrap:wrap;gap:6px;font-size:9px;letter-spacing:0.15em}
-    .tx-hero-meta{flex-wrap:wrap;gap:16px}
-    .tx-hero-meta-item .label{font-size:9px}
-    .tx-hero-meta-item .value{font-size:12px}
-}
-@media (max-width:768px){
-    .tx-hero-device{height:45%;opacity:0.2;animation:none;transform:translateX(20%)}
-    .tx-hero > *:not(.tx-hero-visual){max-width:100%}
+  /* Radii — Apple's ladder: 0 / 8 / 18 / 980 */
+  --lf-r-card:   18px;
+  --lf-r-pill:   980px;
+  --lf-r-small:  8px;
+
+  --lf-gut:      clamp(28px, 6vw, 120px);
 }
 
+/* ---------------- Reset within .lf ---------------- */
+.lf, .lf * { box-sizing: border-box; }
+.lf em { font-style: normal; }
+.lf {
+  background: var(--lf-white);
+  color: var(--lf-ink);
+  font-family: var(--lf-sans);
+  font-weight: 300;
+  letter-spacing: 0.005em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+.lf img { display: block; max-width: 100%; }
+.lf h1, .lf h2, .lf h3, .lf h4 { margin: 0; }
+.lf p { margin: 0; }
 
-/* Sticky sub-nav */
-.tx-subnav{position:sticky;top:72px;z-index:40;background:var(--paper);border-bottom:1px solid var(--line);padding:20px 0}
-.tx-subnav-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x);display:flex;gap:32px;align-items:center;overflow-x:auto;scrollbar-width:none}
-.tx-subnav-inner::-webkit-scrollbar{display:none}
-.tx-subnav-label{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
-.tx-subnav a{font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink);white-space:nowrap;padding:6px 0;border-bottom:1px solid transparent;transition:border-color .2s,color .2s}
-.tx-subnav a:hover,.tx-subnav a.active{border-bottom-color:var(--ink)}
-@media (max-width: 700px) {
-    .tx-subnav { top: 56px; padding: 14px 0; }
+/* ---------------- Reveal primitive ---------------- */
+.lf-rv { opacity: 0; transform: translateY(28px); transition: opacity 1.1s var(--lf-ease), transform 1.1s var(--lf-ease); }
+.lf-rv.is-in { opacity: 1; transform: none; }
+.lf-rv.d1 { transition-delay: .08s; }
+.lf-rv.d2 { transition-delay: .16s; }
+.lf-rv.d3 { transition-delay: .24s; }
+
+/* ---------------- Shared type ---------------- */
+.lf-eyebrow {
+  display: inline-block;
+  position: relative;
+  padding-left: 42px;
+  font-family: var(--lf-sans);
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--lf-ink-3);
+  white-space: nowrap;
+  line-height: 1;
+}
+.lf-eyebrow::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 28px; height: 1px;
+  background: currentColor; opacity: .6;
+}
+.lf-eyebrow--light { color: rgba(255,255,255,0.72); }
+.lf-eyebrow--light::before { background: rgba(255,255,255,0.55); }
+
+.lf-display {
+  font-family: var(--lf-sans);
+  
+  font-weight: 300;
+  line-height: 0.96;
+  letter-spacing: -0.018em;
 }
 
+/* ---------------- Section running head ---------------- */
+.lf-rule {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: clamp(20px, 3vw, 40px);
+  padding: 28px var(--lf-gut);
+  font-family: var(--lf-sans);
+  font-size: 10.5px;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--lf-mute);
+  background: var(--lf-white);
+  border-top: 1px solid var(--lf-line);
+}
+.lf-rule__num { color: var(--lf-ink); font-weight: 400; }
+.lf-rule__bar { height: 1px; background: var(--lf-line); }
+.lf-rule__name { color: var(--lf-ink); font-weight: 400; }
+.lf-rule--dark { background: var(--lf-ink); color: rgba(255,255,255,0.5); border-color: rgba(255,255,255,0.12); }
+.lf-rule--dark .lf-rule__num,
+.lf-rule--dark .lf-rule__name { color: #fff; }
+.lf-rule--dark .lf-rule__bar { background: rgba(255,255,255,0.18); }
+.lf-rule--paper { background: var(--lf-paper); }
 
-/* Section common */
-.section-eyebrow{font-family:var(--display);font-weight:400;font-size:12px;letter-spacing:0.4em;text-transform:uppercase;color:var(--muted);display:inline-flex;align-items:center;gap:10px;margin-bottom:28px}
-.section-eyebrow::before{content:'';width:24px;height:1px;background:var(--muted)}
-
-/* Principle / System */
-.tx-principle{padding:clamp(80px,12vw,160px) 0}
-.tx-principle-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x);display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(40px,6vw,120px);align-items:start}
-.tx-principle-left{position:sticky;top:140px}
-.tx-principle-left h2{font-family:var(--display);
-    font-size:clamp(32px,4.5vw,56px);font-weight:600;line-height:1.1;letter-spacing:-0.02em;max-width:8em}
-.tx-principle-right .lead{font-size:20px;font-weight:300;line-height:1.7;margin-bottom:32px;color:var(--ink);letter-spacing:-0.005em}
-.tx-principle-right p{font-size:16px;font-weight:300;line-height:1.9;color:var(--ink);max-width:640px}
-.tx-principle-right p strong{font-weight:500}
-.pillars-inline{margin-top:60px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;padding-top:40px;border-top:1px solid var(--line)}
-.pillar-mini h4{font-size:13px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px}
-.pillar-mini p{font-size:13px;color:var(--muted);line-height:1.75;font-weight:300}
-@media (max-width:900px){.tx-principle-inner{grid-template-columns:1fr;gap:40px}.tx-principle-left{position:static}.pillars-inline{grid-template-columns:1fr;gap:24px}}
-
-/* System feature block — thermage specific 3-image row */
-.tx-system{padding:clamp(60px,10vw,120px) 0;background:var(--bone)}
-.tx-system-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
-.tx-system-head{text-align:center;margin-bottom:72px}
-.tx-system-head h2{font-family:var(--display);
-    font-size:clamp(32px,4.5vw,56px);font-weight:600;line-height:1.1;letter-spacing:-0.02em;max-width:16em;margin:16px auto 0}
-.tx-system-row{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
-.tx-system-card{display:block;overflow:hidden;background:var(--paper);border:1px solid var(--line);padding:28px}
-.tx-system-img{aspect-ratio:4/5;overflow:hidden;margin:-28px -28px 24px;background:var(--bone)}
-.tx-system-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
-.tx-system-card:hover .tx-system-img img{transform:scale(1.04)}
-.tx-system-num{font-size:11px;letter-spacing:0.3em;color:var(--muted);margin-bottom:12px}
-.tx-system-title{font-size:18px;font-weight:400;letter-spacing:-0.005em;margin-bottom:8px;line-height:1.3}
-.tx-system-desc{font-size:13px;color:var(--muted);line-height:1.75;font-weight:300}
-@media (max-width:900px){.tx-system-row{grid-template-columns:1fr;gap:28px}}
-
-.tx-cert{
-    padding: clamp(60px, 8vw, 100px) 0;
-    background: var(--ink);
-    color: var(--paper);
+/* =========================================================
+   HERO
+   ========================================================= */
+.lf-hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-height: 720px;
+  max-height: 1080px;
+  background: var(--lf-white);
+  color: var(--lf-ink);
+  overflow: hidden;
 }
-.tx-cert-inner{
-    max-width: var(--container);
-    margin: 0 auto;
-    padding: 0 var(--pad-x);
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    gap: 48px;
+.lf-hero__media {
+  position: absolute; inset: 0;
+  background: var(--lf-white) url('../assets/images/lifting/hero.jpg') center/cover no-repeat;
+  opacity: 1;
+  transform: scale(1.06);
+  animation: lfHeroDrift 18s var(--lf-ease) forwards;
+  transition: filter 0.1s linear, transform 0.1s linear;
 }
-.tx-benefits-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
-.tx-area-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
-.tx-tip-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
-.tx-faq-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
-.tx-related-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
-.tx-cert-mark{
-    width: 88px;
-    height: 88px;
-    border-radius: 50%;
-    border: 1px solid rgba(244,241,235,.35);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    text-align: center;
-    line-height: 1.3;
-    font-weight: 300;
+@keyframes lfHeroDrift {
+  to { transform: scale(1.0); }
 }
-.tx-cert-text h3{
-    font-family: var(--display);
-    font-size: clamp(22px, 2.6vw, 32px);
-    font-weight: 500;
-    line-height: 1.25;
-    letter-spacing: -0.015em;
-    margin-bottom: 6px;
-}
-.tx-cert-text p{
-    font-size: 13px;
-    font-weight: 300;
-    color: rgba(244,241,235,.7);
-    letter-spacing: 0.05em;
-}
-.tx-cert-tag{
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: rgba(244,241,235,.55);
-    writing-mode: vertical-rl;
-}
-@media (max-width: 700px){
-    .tx-cert-inner{grid-template-columns: auto 1fr; gap: 24px}
-    .tx-cert-tag{display: none}
+.lf-hero__media::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: rgba(255,255,255,0.5);
+  transition: background 0.1s linear;
 }
 
-/* Detail / video feature */
-.tx-feature{padding:clamp(80px,12vw,160px) 0}
-.tx-feature-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
-.tx-feature-head{text-align:center;margin-bottom:64px}
-.tx-feature-head h2{font-family:var(--display);
-    font-size:clamp(36px,5vw,64px);font-weight:600;line-height:1.1;letter-spacing:-0.025em;max-width:16em;margin:20px auto 0}
-.tx-feature-video{aspect-ratio:16/9;background:var(--ink);position:relative;overflow:hidden;cursor:pointer;margin-bottom:32px;display:block}
-a.tx-feature-video{color:inherit}
-.tx-feature-video::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 0%,rgba(15,15,16,.4) 100%);z-index:1}
-.tx-feature-video::after{content:'▶';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--paper);font-size:32px;z-index:2;width:88px;height:88px;border:1px solid rgba(244,241,235,.5);border-radius:50%;display:flex;align-items:center;justify-content:center;padding-left:6px;transition:background .25s,transform .25s}
-.tx-feature-video:hover::after{background:var(--paper);color:var(--ink);transform:translate(-50%,-50%) scale(1.05)}
-.tx-feature-video .placeholder-text{position:absolute;bottom:40px;left:40px;color:var(--paper);font-size:11px;letter-spacing:0.3em;text-transform:uppercase;opacity:.7;z-index:2}
-.tx-feature-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.tx-feature-video.playing{cursor:default}
-.tx-feature-video.playing::before{display:none}
-.tx-feature-video.playing::after{display:none}
-.tx-feature-video.playing .placeholder-text{display:none}
-.tx-feature-video.playing{background-image:none !important}
+.lf-hero__top {
+  position: absolute;
+  top: clamp(28px, 5vh, 56px);
+  left: var(--lf-gut);
+  right: var(--lf-gut);
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  font-family: var(--lf-sans);
+  font-size: 10.5px;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--lf-ink);
+}
+.lf-hero__crumb { display: flex; align-items: center; gap: 14px; }
+.lf-hero__crumb i { width: 18px; height: 1px; background: var(--lf-ink); display: inline-block; }
 
-/* Benefits (ink band) — replaces Collagen for Thermage */
-.tx-benefits{padding:clamp(80px,12vw,160px) 0;background:var(--ink);color:var(--paper)}
-.tx-benefits .section-eyebrow{color:rgba(244,241,235,.5)}
-.tx-benefits .section-eyebrow::before{background:rgba(244,241,235,.3)}
-.tx-benefits-head{max-width:var(--container);margin:0 auto 80px;padding:0 var(--pad-x);display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end}
-.tx-benefits-head h2{font-family:var(--display);
-    font-size:clamp(32px,4.5vw,60px);font-weight:600;line-height:1.1;letter-spacing:-0.02em;max-width:11em}
-.tx-benefits-head p{font-size:15px;font-weight:300;line-height:1.85;color:rgba(244,241,235,.75);max-width:480px;padding-bottom:8px}
-.benefits-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(244,241,235,.12);border-top:1px solid rgba(244,241,235,.12);border-bottom:1px solid rgba(244,241,235,.12);max-width:var(--container);margin:0 auto}
-.benefit-card{background:var(--ink);padding:48px 28px 56px;min-height:280px;display:flex;flex-direction:column}
-.benefit-num{font-size:11px;letter-spacing:0.35em;color:rgba(244,241,235,.5);margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid rgba(244,241,235,.15)}
-.benefit-title{font-size:19px;font-weight:300;margin-bottom:14px;letter-spacing:-0.01em;line-height:1.3}
-.benefit-desc{font-size:13px;font-weight:300;color:rgba(244,241,235,.7);line-height:1.75;margin-top:auto}
-@media (max-width:1000px){.benefits-grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:560px){.benefits-grid{grid-template-columns:1fr}.tx-benefits-head{grid-template-columns:1fr;gap:24px}}
+.lf-hero__inner {
+  position: relative; z-index: 2;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lf-hero__title {
+  position: relative;
+  z-index: 5;
+  font-family: var(--lf-sans);
+  font-weight: 600;
+  font-size: clamp(48px, 8.5vw, 140px);
+  line-height: 0.92;
+  letter-spacing: -0.025em;
+  margin: 0;
+  text-align: center;
+  color: var(--lf-ink);
+  text-wrap: balance;
+  display: inline-flex;
+  justify-content: center;
+}
+.lf-hero__title span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(60px);
+  filter: blur(8px);
+  animation: lfTitleLetterIn 1.1s var(--lf-ease-out) forwards;
+}
+.lf-hero__title span:nth-child(1)  { animation-delay: 0.30s; }
+.lf-hero__title span:nth-child(2)  { animation-delay: 0.40s; }
+.lf-hero__title span:nth-child(3)  { animation-delay: 0.50s; }
+.lf-hero__title span:nth-child(4)  { animation-delay: 0.60s; }
+.lf-hero__title span:nth-child(5)  { animation-delay: 0.70s; }
+.lf-hero__title span:nth-child(6)  { animation-delay: 0.80s; }
+.lf-hero__title span:nth-child(7)  { animation-delay: 0.90s; }
+.lf-hero__title span:nth-child(8)  { animation-delay: 1.00s; }
+.lf-hero__title span:nth-child(9)  { animation-delay: 1.10s; }
+.lf-hero__title span:nth-child(10) { animation-delay: 1.20s; }
+.lf-hero__title span:nth-child(11) { animation-delay: 1.30s; }
+.lf-hero__title span:nth-child(12) { animation-delay: 1.40s; }
 
-/* Treatment area */
-.tx-area{
-    padding: clamp(80px, 12vw, 160px) 0;
-    background: var(--bone);
-}
-.tx-area-grid{
-    max-width: var(--container);
-    margin: 0 auto;
-    padding: 0 var(--pad-x);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(40px, 6vw, 100px);
-    align-items: center;
-}
-.tx-area-diagram{
-    justify-self: center;
-    width: 100%;
-    max-width: 480px;
-    position: relative;
-}
-.tx-area-photo{
-    width: 100%;
-    height: auto;
-    display: block;
-}
-.tx-area-overlay{
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    pointer-events: none;
-}
-.tx-point-wrap{
-    position: absolute;
-    pointer-events: auto;
-    cursor: pointer;
-    transform: translate(-50%, -50%);
-}
-.tx-point{
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.95);
-    position: relative;
-    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.25);
-    transition: all 0.25s ease;
-}
-.tx-point-wrap:hover .tx-point,
-.tx-point-wrap.active .tx-point{
-    transform: scale(1.3);
-    box-shadow: 0 0 0 9px rgba(255, 255, 255, 0.4);
-}
-.tx-point-ring{display: none}
-.tx-area-text h2{font-family:var(--display);
-    font-size: clamp(32px, 4.5vw, 56px);
-    font-weight:600;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    margin-bottom: 32px;
-    max-width: 10em;
-}
-.tx-area-text p{
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.85;
-    color: var(--ink);
-    margin-bottom: 24px;
-    max-width: 520px;
-}
-.tx-area-text p strong{font-weight: 500}
-.area-tags{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 28px;
-}
-.area-tag{
-    padding: 8px 16px;
-    border: 1px solid var(--line);
-    background: var(--paper);
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-    cursor: default;
-    transition: all 0.2s ease;
-}
-.area-tag.active{
-    background: var(--ink);
-    color: var(--paper);
-    border-color: var(--ink);
-}
-@media (max-width: 900px){
-    .tx-area-grid{grid-template-columns: 1fr; gap: 40px}
-    .tx-area-diagram{max-width: 360px}
+@keyframes lfTitleLetterIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
 }
 
-/* Tips */
-.tx-tip{padding:clamp(80px,12vw,160px) 0;background:var(--bone)}
-.tx-tip-head{text-align:center;margin-bottom:80px}
-.tx-tip-head h2{font-family:var(--display);
-    font-size:clamp(32px,4.5vw,60px);font-weight:600;line-height:1.1;letter-spacing:-0.02em;max-width:14em;margin:16px auto 0}
-.tip-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;max-width:1100px;margin:0 auto;padding:0 var(--pad-x)}
-.tip-card{border:1px solid var(--line);background:var(--paper);padding:32px 28px 40px}
-.tip-card-img{aspect-ratio:4/3;overflow:hidden;margin:-32px -28px 28px;background:var(--bone)}
-.tip-card-img img{width:100%;height:100%;object-fit:cover}
-.tip-num{font-size:11px;letter-spacing:0.3em;color:var(--muted);margin-bottom:14px}
-.tip-title{font-size:20px;font-weight:400;letter-spacing:-0.005em;margin-bottom:10px}
-.tip-depth{font-size:13px;color:var(--muted);letter-spacing:0.05em}
-@media (max-width:700px){.tip-grid{grid-template-columns:1fr}}
-
-/* FAQ */
-.tx-faq{padding:clamp(80px,12vw,160px) 0;border-top:1px solid var(--line)}
-.tx-faq-head{max-width:var(--container);margin:0 auto 64px;padding:0 var(--pad-x);display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end}
-.tx-faq-head h2{font-family:var(--display);
-    font-size:clamp(32px,4.5vw,60px);font-weight:600;line-height:1.1;letter-spacing:-0.02em}
-.tx-faq-head p{font-size:14px;font-weight:300;color:var(--muted);line-height:1.8;max-width:420px}
-.faq-list{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
-.faq-item{border-top:1px solid var(--line);padding:28px 0;cursor:pointer}
-.faq-item:last-child{border-bottom:1px solid var(--line)}
-.faq-q{display:grid;grid-template-columns:60px 1fr auto;align-items:start;gap:20px}
-.faq-q-num{font-size:12px;letter-spacing:0.25em;color:var(--muted);padding-top:4px}
-.faq-q-text{font-size:19px;font-weight:300;line-height:1.45;letter-spacing:-0.01em;color:var(--ink)}
-.faq-q-toggle{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .25s,color .25s,transform .3s;font-size:18px;font-weight:200;line-height:1}
-.faq-item.open .faq-q-toggle{background:var(--ink);color:var(--paper);transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .5s ease,padding .3s ease;padding-left:80px;padding-right:60px;color:var(--muted)}
-.faq-item.open .faq-a{max-height:600px;padding-top:20px;padding-bottom:8px}
-.faq-a p{font-size:15px;font-weight:300;line-height:1.85;margin-bottom:14px}
-.faq-a p:last-child{margin-bottom:0}
-@media (max-width:700px){.tx-faq-head{grid-template-columns:1fr;gap:24px}.faq-q{grid-template-columns:1fr auto;gap:16px}.faq-q-num{grid-column:1 / -1;padding-top:0;margin-bottom:4px}.faq-a{padding-left:0;padding-right:0}}
-
-.tx-related{padding:clamp(60px,8vw,100px) 0 clamp(80px,12vw,140px);border-top:1px solid var(--line)}
-.tx-related-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:48px}
-.tx-related-head h2{font-family:var(--display);
-    font-size:clamp(28px,3.5vw,44px);font-weight:600;line-height:1.1;letter-spacing:-0.02em}
-.tx-related-head a{font-size:11px;letter-spacing:0.25em;text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:4px}
-.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.related-card{display:block}
-.related-img{aspect-ratio:4/3;overflow:hidden;background:var(--bone);margin-bottom:18px;position:relative}
-.related-img::after{content:'→';position:absolute;right:20px;bottom:20px;width:36px;height:36px;background:var(--paper);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .25s,color .25s}
-.related-card:hover .related-img::after{background:var(--ink);color:var(--paper)}
-.related-img img{width:100%;height:100%;object-fit:cover;transition:transform 1s ease}
-.related-card:hover .related-img img{transform:scale(1.04)}
-.related-cat{font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-.related-name{font-size:17px;font-weight:400;letter-spacing:-0.005em}
-@media (max-width:900px){.related-grid{grid-template-columns:1fr 1fr;gap:20px}}
-@media (max-width:560px){.related-grid{grid-template-columns:1fr}}
-
-/* Footer */
-.site-footer{background:var(--paper);border-top:1px solid var(--line);padding:80px 0 40px}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:80px}
-.footer-logo{font-size:22px;font-weight:300;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:28px}
-.footer-tagline{font-size:13px;font-weight:300;color:var(--muted);line-height:1.8;max-width:360px}
-.footer-col h5{font-size:11px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:24px}
-.footer-col ul{list-style:none}
-.footer-col li{margin-bottom:10px}
-.footer-col a{font-size:13px;color:var(--muted);font-weight:300;transition:color .2s}
-.footer-col a:hover{color:var(--ink)}
-.footer-bottom{padding-top:36px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);letter-spacing:0.05em;flex-wrap:wrap;gap:20px}
-@media (max-width:960px){.footer-top{grid-template-columns:1fr 1fr;gap:40px}}
-@media (max-width:560px){.footer-top{grid-template-columns:1fr}}
-
-/* Floating */
-.float-actions{position:fixed;bottom:28px;right:28px;z-index:50;display:flex;flex-direction:column;gap:10px}
-.float-btn{width:52px;height:52px;background:var(--ink);color:var(--paper);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:0.12em;transition:transform .25s;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
-.float-btn:hover{transform:translateY(-3px)}
-.float-btn.kakao{background:#FEE500;color:#1A1A1A}
-
-/* === Mili Header Nav with Dropdowns === */
-.mili-header{position:sticky;top:0;z-index:100;background:var(--paper);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
-.mili-header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px var(--pad-x);gap:24px}
-.mili-logo{display:inline-flex;align-items:center;height:40px;flex-shrink:0;text-decoration:none}.mili-logo img{height:100%;width:auto;object-fit:contain;display:block}
-
-.mili-nav{flex:1;display:flex;justify-content:center}
-.mili-nav-list{display:flex;gap:22px;list-style:none;align-items:center}
-.mili-nav-item{position:relative}
-.mili-nav-link{font-size:11px;letter-spacing:0.13em;text-transform:uppercase;padding:10px 0;display:inline-flex;align-items:center;gap:5px;white-space:nowrap;transition:color .2s;cursor:pointer}
-.mili-nav-link:hover{color:var(--ink)}
-.mili-nav-link.active{border-bottom:1px solid var(--ink)}
-.mili-nav-caret{display:inline-block;width:7px;height:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin-left:2px;margin-bottom:3px;opacity:.6;transition:transform .2s}
-.mili-nav-item:hover .mili-nav-caret{transform:rotate(225deg);margin-bottom:-2px}
-.mili-dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(-8px);background:var(--paper);border:1px solid var(--line);min-width:240px;padding:14px 0;opacity:0;visibility:hidden;transition:opacity .25s,transform .25s,visibility .25s;z-index:120}
-.mili-nav-item:hover .mili-dropdown{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-.mili-dropdown a{display:block;padding:9px 24px;font-size:12px;letter-spacing:0.06em;color:var(--ink);transition:background .15s,color .15s;white-space:nowrap}
-.mili-dropdown a:hover{background:var(--bone);color:var(--ink)}
-.mili-cta{flex-shrink:0;display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:10px 20px;border:1px solid var(--ink);transition:background .25s,color .25s;white-space:nowrap}
-.mili-cta:hover{background:var(--ink);color:var(--paper)}
-.mili-cta svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:1.5}
-.mili-burger{display:none;background:none;border:none;cursor:pointer;padding:6px}
-.mili-burger span{display:block;width:22px;height:1px;background:var(--ink);margin:5px 0;transition:transform .3s,opacity .3s}
-.mili-mobile-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100dvh;max-height:100dvh;background:var(--paper);z-index:200;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:80px var(--pad-x) 140px}
-.mili-mobile-nav.open{display:flex;flex-direction:column}
-.mili-mobile-nav-close{position:absolute;top:24px;right:24px;background:none;border:none;cursor:pointer;font-size:24px;color:var(--ink)}
-.mili-mobile-nav-list{list-style:none;flex:1 1 auto;min-height:0;overflow-y:auto}
-.mili-mobile-nav-list>li{border-bottom:1px solid var(--line)}
-.mili-mobile-nav-list>li>a,.mili-mobile-nav-list>li>span{display:block;padding:18px 0;font-size:14px;letter-spacing:0.15em;text-transform:uppercase;font-weight:400;cursor:pointer}
-.mili-mobile-nav-list>li>span{display:flex;justify-content:space-between;align-items:center;position:relative}
-.mili-mobile-nav-list>li>span::after{content:'+';font-size:20px;font-weight:300;transition:transform .25s ease;line-height:1}
-.mili-mobile-nav-list>li.open>span::after{content:'−'}
-.mili-mobile-sub{padding:0 0 0 16px;list-style:none;max-height:0;overflow:hidden;transition:max-height .35s ease}
-.mili-mobile-nav-list>li.open .mili-mobile-sub{max-height:500px;padding-bottom:16px}
-.mili-mobile-sub li a{display:block;padding:8px 0;font-size:13px;color:var(--muted);font-weight:300;letter-spacing:0.04em;text-transform:none}
-@media (max-width:1600px){.mili-nav-list{gap:20px}.mili-nav-link{font-size:11px;letter-spacing:0.1em}.mili-header-inner{gap:16px;padding:18px 28px}.mili-cta{padding:9px 16px;font-size:10px;letter-spacing:0.16em}}
-@media (max-width:1240px){.mili-nav-list{gap:14px}.mili-nav-link{font-size:10px;letter-spacing:0.08em}.mili-header-inner{gap:12px;padding:16px 24px}.mili-cta{padding:8px 14px;font-size:9px}}
-@media (max-width:1100px){.mili-nav-list{gap:11px}.mili-nav-link{font-size:9.5px;letter-spacing:0.06em}.mili-header-inner{gap:10px;padding:14px 20px}.mili-cta{padding:7px 12px;font-size:8.5px}}
-@media (max-width:980px){.mili-nav,.mili-cta,.mili-lang{display:none}.mili-burger{display:block}}@media (max-width:768px){.mili-logo{height:32px}}
-
-/* === Language switcher === */
-.mili-lang{position:relative;margin-right:16px}
-.mili-lang-toggle{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid var(--line);color:var(--ink);padding:9px 14px;font:400 11px/1 var(--display);letter-spacing:0.16em;text-transform:uppercase;border-radius:980px;cursor:pointer;transition:border-color .2s}
-.mili-lang-toggle:hover{border-color:var(--ink)}
-.mili-lang-toggle svg{transition:transform .2s}
-.mili-lang.open .mili-lang-toggle svg{transform:rotate(180deg)}
-.mili-lang-menu{position:absolute;top:calc(100% + 6px);right:0;min-width:100px;background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden;opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .2s,transform .2s,visibility .2s;z-index:50}
-.mili-lang.open .mili-lang-menu{opacity:1;visibility:visible;transform:translateY(0)}
-.mili-lang-item{display:block;padding:10px 14px;font:400 11px/1 var(--display);letter-spacing:0.16em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--line);transition:background .15s;cursor:pointer;text-align:left;width:100%;box-sizing:border-box}
-.mili-lang-item:last-child{border-bottom:none}
-a.mili-lang-item{text-decoration:none}
-.mili-lang-item:hover:not(.disabled){background:var(--bone)}
-.mili-lang-item.active{font-weight:500;background:var(--bone)}
-.mili-lang-item.disabled{color:var(--muted);opacity:0.4;cursor:not-allowed;pointer-events:none}
-.mili-mobile-lang{margin-top:auto;padding-top:32px;border-top:1px solid var(--line);flex-shrink:0}
-.mili-mobile-lang-label{display:block;font:400 10px/1 var(--display);letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
-.mili-mobile-lang-list{display:flex;gap:12px;flex-wrap:wrap}
-.mili-mobile-lang-item{display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;font:400 12px/1 var(--display);letter-spacing:0.16em;text-transform:uppercase;color:var(--ink);border:1px solid var(--line);border-radius:980px;cursor:pointer;text-decoration:none}
-.mili-mobile-lang-item.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.mili-mobile-lang-item.disabled{color:var(--muted);opacity:0.4;pointer-events:none;cursor:not-allowed}
-
-/* === Mili Footer === */
-.mili-footer{background:var(--paper);border-top:1px solid var(--line);padding:80px 0 40px;font-family:"SF Pro Text",system-ui,-apple-system,"Inter",sans-serif}
-.mili-footer-inner{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
-.mili-footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px}
-.mili-footer-brand .mili-footer-logo{margin-bottom:24px}.mili-footer-logo img{height:32px;width:auto;object-fit:contain;display:block}
-.mili-footer-tagline{font-size:13px;font-weight:300;color:var(--muted);line-height:1.8;max-width:380px;margin-bottom:24px}
-.mili-footer-slogan{font-size:15px;font-weight:300;color:var(--ink);letter-spacing:-0.005em;line-height:1.5;max-width:380px}
-.mili-footer-col h5{font-size:11px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px;color:var(--ink)}
-.mili-footer-col ul{list-style:none}
-.mili-footer-col li{margin-bottom:9px}
-.mili-footer-col a{font-size:13px;color:var(--muted);font-weight:300;transition:color .2s}
-.mili-footer-col a:hover{color:var(--ink)}
-
-.mili-footer-messengers{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:36px}
-.mili-msg{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 12px;border-right:1px solid var(--line);transition:background .2s,color .2s;color:var(--ink);text-align:center;gap:8px}
-.mili-msg:last-child{border-right:none}
-.mili-msg:hover{background:var(--bone)}
-.mili-msg svg{width:22px;height:22px;flex-shrink:0}
-.mili-msg-name{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:400}
-
-.mili-footer-business{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding-top:32px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);line-height:1.85;font-weight:300}
-.mili-footer-business strong{font-weight:500;color:var(--ink);text-transform:uppercase;letter-spacing:0.15em;font-size:10px;display:inline-block;margin-right:8px}
-.mili-footer-business p{margin-bottom:6px}
-.mili-footer-bottom{padding-top:28px;margin-top:32px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);letter-spacing:0.05em;flex-wrap:wrap;gap:20px}
-.mili-footer-policies{display:flex;gap:18px}
-.mili-footer-policies a{color:var(--muted);transition:color .2s}
-.mili-footer-policies a:hover{color:var(--ink)}
-@media (max-width:960px){.mili-footer-top{grid-template-columns:1fr 1fr;gap:40px}.mili-footer-business{grid-template-columns:1fr;gap:24px}}
-@media (max-width:640px){.mili-footer-top{grid-template-columns:1fr}.mili-footer-messengers{grid-template-columns:repeat(5,1fr)}.mili-msg{padding:18px 6px}.mili-msg-name{font-size:9px;letter-spacing:0.1em}.mili-msg svg{width:18px;height:18px}}
-
-/* === Mili Floating Buttons (5) === */
-.mili-float{position:fixed;right:24px;bottom:24px;z-index:90;display:flex;flex-direction:column;gap:8px}
-.mili-float-btn{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--paper);border:1px solid var(--line);box-shadow:0 4px 14px rgba(0,0,0,0.06);transition:transform .25s,background .2s;color:var(--ink)}
-.mili-float-btn:hover{transform:translateY(-3px)}
-.mili-float-btn svg{width:22px;height:22px}
-.mili-float-btn.kakao{background:#FEE500;color:#1A1A1A;border-color:#FEE500}
-.mili-float-btn.whatsapp{background:#25D366;color:#fff;border-color:#25D366}
-.mili-float-btn.line{background:#06C755;color:#fff;border-color:#06C755}
-.mili-float-btn.wechat{background:#7BB32E;color:#fff;border-color:#7BB32E}
-.mili-float-btn.instagram{background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF);color:#fff;border-color:transparent}
-@media (max-width:640px){.mili-float{right:16px;bottom:16px}.mili-float-btn{width:42px;height:42px}.mili-float-btn svg{width:18px;height:18px}}
-
-
-/* ========== MOBILE CONTENT TOGGLES ========== */
-.mobile-only{display:none}
-@media (max-width:640px){
-    .mobile-hide{display:none !important}
-    .desktop-only{display:none !important}
-    .mobile-only{display:block !important}
+.lf-hero__title small {
+  display: block;
+  font-family: var(--lf-sans);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--lf-ink-3);
+  margin-bottom: clamp(28px, 4vh, 48px);
+}
+.lf-hero__copy {
+  font-family: var(--lf-sans);
+  font-weight: 300;
+  font-size: clamp(19px, 1.5vw, 26px);
+  line-height: 1.45;
+  letter-spacing: -0.018em;
+  color: var(--lf-ink);
+  max-width: 560px;
+  margin-bottom: clamp(48px, 7vh, 80px);
+}
+.lf-hero__copy em { font-style: normal; color: var(--lf-ink); }
+.lf-hero__copy strong {
+  font-weight: 500;
+  color: var(--lf-ink);
 }
 
-/* ========== MOBILE OPTIMIZATIONS ========== */
-@media (max-width:640px){
-    :root{--pad-x:20px}
-    body{font-size:15px;line-height:1.65}
-    section{padding-top:clamp(60px,14vw,100px) !important;padding-bottom:clamp(60px,14vw,100px) !important}
-    h2{font-size:clamp(32px,8vw,48px) !important;line-height:1.1 !important;letter-spacing:-0.02em !important}
-    .section-eyebrow{font-size:11px;letter-spacing:0.28em}
-    .tx-area-diagram{max-width:320px}
-    .tx-point{width:10px;height:10px;box-shadow:0 0 0 7px rgba(255,255,255,0.3)}
-    .area-tag{font-size:10px;padding:7px 13px;letter-spacing:0.18em}
-    .faq-q-text{font-size:15px;line-height:1.4}
-    .related-grid{gap:16px}
-
-    /* Footer 컬럼/메신저/배너 모바일 숨김 */
-    .mili-footer-top{display:none}
-    .mili-footer-messengers{display:none}
-
-    /* Footer 모바일 padding 축소 */
-    footer.mili-footer{padding:48px 0 100px}
-    .mili-footer-business{padding-top:0;border-top:none}
-
-    /* Hero sub 모바일 숨김 */
-    .tx-hero-sub{display:none}
+.lf-hero__stats {
+  display: flex;
+  gap: clamp(48px, 7vw, 96px);
+  align-items: baseline;
+  margin-top: clamp(40px, 5vh, 64px);
+}
+.lf-hero__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.lf-hero__stat-num {
+  font-family: var(--lf-sans);
+  font-weight: 200;
+  font-size: clamp(48px, 5vw, 80px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--lf-ink);
+}
+.lf-hero__stat-label {
+  font-family: var(--lf-sans);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--lf-ink-3);
+}
+@media (max-width: 720px) {
+  .lf-hero__stats { gap: 32px; }
+  .lf-hero__stat-num { font-size: 36px; }
 }
 
-@media (max-width:480px){
-    .tx-hero-title{font-family:var(--display);
-    font-size:clamp(38px,13vw,64px) !important}
-    :root{--pad-x:16px}
+.lf-hero__foot {
+  position: absolute;
+  bottom: clamp(22px, 3vh, 36px);
+  left: var(--lf-gut);
+  right: var(--lf-gut);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 24px;
+  font-family: var(--lf-sans);
+  font-size: 10.5px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--lf-ink);
+}
+.lf-hero__scroll { display: flex; align-items: center; gap: 14px; }
+.lf-hero__scroll i {
+  display: inline-block;
+  width: 1px; height: 40px;
+  background: var(--lf-ink);
+  transform-origin: top;
+  animation: lfScrollLine 2.6s ease-in-out infinite;
+}
+@keyframes lfScrollLine {
+  0%   { transform: scaleY(0); transform-origin: top; }
+  45%  { transform: scaleY(1); transform-origin: top; }
+  55%  { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
 }
 
-em, cite { font-style: normal; }
+/* =========================================================
+   INTRO STATEMENT — connective tissue between hero & philosophy
+   ========================================================= */
+.lf-intro {
+  position: relative;
+  width: 100vw;
+  background: var(--lf-white);
+  padding: clamp(120px, 18vh, 200px) var(--lf-gut) clamp(120px, 18vh, 200px);
+}
+.lf-intro__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: clamp(48px, 8vw, 140px);
+  align-items: end;
+  max-width: 1640px;
+  margin: 0 auto;
+}
+.lf-intro__lead {
+  font-family: var(--lf-sans);
+  
+  font-weight: 400;
+  font-size: clamp(36px, 4.6vw, 72px);
+  line-height: 1.08;
+  letter-spacing: -0.012em;
+  color: var(--lf-ink);
+  text-wrap: balance;
+}
+.lf-intro__lead em {  }
+.lf-intro__body {
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--lf-ink-3);
+  max-width: 520px;
+  letter-spacing: -0.012em;
+}
+.lf-intro__body + .lf-intro__body { margin-top: 22px; }
+
+@media (max-width: 880px) {
+  .lf-intro__grid { grid-template-columns: 1fr; gap: 40px; align-items: start; }
+}
+
+/* =========================================================
+   PHILOSOPHY — horizontal pin, smooth lerp
+   ========================================================= */
+.lf-philosophy {
+  position: relative;
+  width: 100vw;
+  background: var(--lf-paper);
+  height: 360vh; /* JS overrides with exact value */
+}
+.lf-philosophy__pin {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--lf-paper);
+}
+
+.lf-philosophy__head {
+  position: absolute;
+  top: clamp(40px, 8vh, 88px);
+  left: var(--lf-gut);
+  right: var(--lf-gut);
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  pointer-events: none;
+}
+.lf-philosophy__head-l { display: flex; flex-direction: column; gap: 18px; }
+.lf-philosophy__head-r {
+  display: none; /* Bottom progress bar already says "Scroll” — avoid double messaging. */
+}
+
+.lf-philosophy__viewport {
+  position: absolute;
+  inset: 0 0 120px 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.lf-philosophy__track {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+  gap: clamp(32px, 4vw, 80px);
+  padding: 0 var(--lf-gut);
+  will-change: transform;
+}
+
+.lf-philosophy__panel {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Intro panel */
+.lf-philosophy__intro {
+  width: clamp(420px, 36vw, 600px);
+  padding-right: clamp(20px, 3vw, 60px);
+  align-self: center;
+  margin-top: 80px;
+}
+.lf-philosophy__intro-title {
+  font-family: var(--lf-sans);
+  
+  font-weight: 600;
+  font-size: clamp(56px, 6.4vw, 112px);
+  line-height: 1.0;
+  letter-spacing: -0.018em;
+  margin: 36px 0 32px;
+  color: var(--lf-ink);
+}
+.lf-philosophy__intro-body {
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--lf-ink-3);
+  max-width: 440px;
+  letter-spacing: -0.012em;
+}
+
+/* Card panels */
+.lf-philosophy__card {
+  width: clamp(320px, 25vw, 400px);
+  align-self: center;
+  margin-top: 40px;
+}
+.lf-philosophy__media {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--lf-mist);
+  overflow: hidden;
+  margin-bottom: 24px;
+  position: relative;
+  border-radius: var(--lf-r-card);
+}
+.lf-philosophy__media img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 1.2s var(--lf-ease-out);
+}
+.lf-philosophy__media::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.08) 100%);
+  pointer-events: none;
+}
+.lf-philosophy__num {
+  font-family: var(--lf-sans);
+  font-style: normal;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--lf-mute);
+  margin-bottom: 14px;
+}
+.lf-philosophy__name {
+  font-family: var(--lf-sans);
+  
+  font-weight: 600;
+  font-size: clamp(26px, 2.1vw, 34px);
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  margin: 0 0 16px;
+  color: var(--lf-ink);
+}
+.lf-philosophy__desc {
+  font-family: var(--lf-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--lf-ink-3);
+  max-width: 360px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* Tail card — closes the horizontal sequence */
+.lf-philosophy__tail {
+  width: clamp(320px, 26vw, 400px);
+  align-self: center;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding-left: clamp(20px, 3vw, 40px);
+  border-left: 1px solid var(--lf-line);
+  height: clamp(280px, 36vh, 360px);
+}
+.lf-philosophy__tail h3 {
+  font-family: var(--lf-sans);
+  
+  font-weight: 400;
+  font-size: clamp(28px, 2.4vw, 38px);
+  line-height: 1.15;
+  letter-spacing: -0.008em;
+  margin: 0;
+  color: var(--lf-ink);
+}
+.lf-philosophy__tail p {
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--lf-ink-3);
+  max-width: 320px;
+  letter-spacing: -0.01em;
+}
+
+/* Progress */
+.lf-philosophy__progress {
+  position: absolute;
+  bottom: clamp(16px, 2vh, 24px);
+  left: var(--lf-gut);
+  right: var(--lf-gut);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-family: var(--lf-sans);
+  font-size: 10.5px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--lf-mute);
+  pointer-events: none;
+}
+.lf-philosophy__progress-current { color: var(--lf-ink); font-weight: 400; }
+.lf-philosophy__progress-bar {
+  flex: 1; height: 1px; background: var(--lf-line); position: relative;
+}
+.lf-philosophy__progress-fill {
+  position: absolute; inset: 0 auto 0 0;
+  width: 0%; background: var(--lf-ink);
+  transition: width 0.18s linear;
+}
+.lf-philosophy__progress-hint {
+  display: flex; align-items: center; gap: 10px;
+  color: var(--lf-mute-2);
+}
+.lf-philosophy__progress-hint svg { width: 18px; height: 8px; }
+
+@media (max-width: 880px) {
+  .lf-philosophy { height: auto; }
+  .lf-philosophy__pin { position: relative; height: auto; padding: 120px 0 100px; }
+  .lf-philosophy__head { position: relative; top: auto; left: auto; right: auto; padding: 0 24px; margin-bottom: 60px; }
+  .lf-philosophy__viewport { position: relative; inset: auto; overflow: visible; }
+  .lf-philosophy__track {
+    flex-direction: column; gap: 72px; padding: 0 24px;
+    transform: none !important;
+  }
+  .lf-philosophy__intro,
+  .lf-philosophy__card,
+  .lf-philosophy__tail { width: 100%; max-width: 460px; margin: 0 auto; padding: 0; border: 0; height: auto; }
+  .lf-philosophy__progress { display: none; }
+}
+
+/* =========================================================
+   STRATA — 5-band full-bleed depth diagram
+   ========================================================= */
+.lf-layered {
+  position: relative;
+  width: 100vw;
+  background: var(--lf-white);
+  padding: clamp(100px, 14vh, 160px) 0 0;
+}
+.lf-layered__head {
+  padding: 0 var(--lf-gut);
+  margin-bottom: clamp(80px, 11vh, 140px);
+  max-width: 980px;
+}
+.lf-layered__title {
+  font-family: var(--lf-sans);
+  font-weight: 600;
+  font-size: clamp(44px, 5.6vw, 84px);
+  line-height: 1.04;
+  letter-spacing: -0.028em;
+  margin: 32px 0 32px;
+  color: var(--lf-ink);
+}
+.lf-layered__lede {
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: clamp(17px, 1.2vw, 21px);
+  line-height: 1.65;
+  color: var(--lf-ink-3);
+  max-width: 560px;
+  letter-spacing: -0.014em;
+}
+
+.lf-strata {
+  position: relative;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+.lf-strata__band {
+  position: relative;
+  width: 100%;
+  min-height: 28vh;
+  padding: clamp(48px, 7vh, 80px) var(--lf-gut);
+  display: grid;
+  grid-template-columns: 180px 1fr 1fr;
+  align-items: center;
+  gap: clamp(24px, 4vw, 80px);
+  border-top: 1px solid rgba(0,0,0,0.08);
+  transition: background 0.8s var(--lf-ease);
+}
+/* Gradient palette — top is lightest, bottom is deepest */
+.lf-strata__band[data-depth="0"] { background: #FBF8F4; }
+.lf-strata__band[data-depth="1"] { background: #F2E9DC; }
+.lf-strata__band[data-depth="2"] { background: #E5D5BD; }
+.lf-strata__band[data-depth="3"] { background: #D4BC9A; }
+.lf-strata__band[data-depth="4"] { background: #B8997A; color: #FFFFFF; }
+
+.lf-strata__band[data-depth="4"] .lf-strata__layer,
+.lf-strata__band[data-depth="4"] .lf-strata__depth,
+.lf-strata__band[data-depth="4"] .lf-strata__sublabel {
+  color: #FFFFFF;
+}
+.lf-strata__band[data-depth="4"] .lf-strata__device {
+  border-color: rgba(255,255,255,0.45);
+  color: #FFFFFF;
+}
+
+.lf-strata__depth {
+  font-family: var(--lf-sans);
+  font-weight: 600;
+  font-size: clamp(40px, 5vw, 76px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--lf-ink);
+}
+.lf-strata__center {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.lf-strata__sublabel {
+  font-family: var(--lf-sans);
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--lf-ink-3);
+  font-weight: 400;
+}
+.lf-strata__layer {
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: clamp(26px, 2.4vw, 38px);
+  line-height: 1.1;
+  letter-spacing: -0.018em;
+  color: var(--lf-ink);
+}
+.lf-strata__devices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+}
+.lf-strata__device {
+  font-family: var(--lf-sans);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  padding: 9px 18px;
+  border: 1px solid rgba(0,0,0,0.18);
+  border-radius: var(--lf-r-pill);
+  color: var(--lf-ink);
+  background: transparent;
+  transition: background 0.4s var(--lf-ease);
+}
+.lf-strata__device--empty {
+  border-style: dashed;
+  opacity: 0.5;
+  font-style: italic;
+}
+
+@media (max-width: 880px) {
+  .lf-strata__band {
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: auto auto;
+    min-height: auto;
+    padding: 40px 24px;
+    gap: 16px;
+  }
+  .lf-strata__depth { font-size: 32px; grid-row: span 2; }
+  .lf-strata__center { grid-column: 2; }
+  .lf-strata__devices { grid-column: 1 / -1; }
+  .lf-strata__layer { font-size: 22px; }
+}
+
+/* =========================================================
+   MILI PROTOCOL — 3 alternating steps
+   ========================================================= */
+.lf-protocol {
+  position: relative;
+  width: 100vw;
+  background: var(--lf-paper);
+  padding: clamp(120px, 18vh, 200px) 0 0;
+}
+.lf-protocol__head {
+  padding: 0 var(--lf-gut);
+  margin: 0 0 clamp(80px, 12vh, 140px);
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.lf-protocol__title {
+  font-family: var(--lf-sans);
+  
+  font-weight: 600;
+  font-size: clamp(46px, 6vw, 96px);
+  line-height: 1.0;
+  letter-spacing: -0.018em;
+  color: var(--lf-ink);
+}
+.lf-protocol__lede {
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: clamp(17px, 1.15vw, 19px);
+  line-height: 1.6;
+  color: var(--lf-ink-3);
+  max-width: 600px;
+  letter-spacing: -0.014em;
+}
+
+.lf-protocol__steps {
+  display: flex;
+  flex-direction: column;
+}
+
+.lf-protocol__step {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  position: relative;
+}
+.lf-protocol__step + .lf-protocol__step {
+  border-top: 1px solid var(--lf-line);
+}
+.lf-protocol__step:nth-child(even) { direction: rtl; }
+.lf-protocol__step:nth-child(even) > * { direction: ltr; }
+
+.lf-protocol__media {
+  position: relative;
+  width: 100%;
+  min-height: clamp(440px, 72vh, 760px);
+  overflow: hidden;
+  background: var(--lf-mist);
+}
+.lf-protocol__media img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+  transition: transform 1.8s var(--lf-ease-out);
+}
+.lf-protocol__step.is-in .lf-protocol__media img { transform: scale(1.0); }
+
+.lf-protocol__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(56px, 9vh, 112px) clamp(36px, 6vw, 96px);
+  position: relative;
+}
+.lf-protocol__step-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  margin-bottom: clamp(28px, 4vh, 44px);
+  font-family: var(--lf-sans);
+  font-size: 10.5px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.lf-protocol__step-num { color: var(--lf-mute); }
+.lf-protocol__step-time { color: var(--lf-ink-3); }
+.lf-protocol__step-name {
+  font-family: var(--lf-sans);
+  
+  font-weight: 400;
+  font-size: clamp(36px, 4vw, 68px);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin: 0 0 32px;
+  color: var(--lf-ink);
+}
+.lf-protocol__step-desc {
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--lf-ink-3);
+  max-width: 460px;
+  margin-bottom: 32px;
+  letter-spacing: -0.012em;
+}
+.lf-protocol__step-meta {
+  font-family: var(--lf-sans);
+  font-size: 13px;
+  line-height: 1.85;
+  color: var(--lf-ink-3);
+  letter-spacing: 0.015em;
+  max-width: 460px;
+  padding-top: 22px;
+  border-top: 1px solid var(--lf-line);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 24px;
+}
+.lf-protocol__step-meta dt {
+  font-family: var(--lf-sans);
+  font-size: 10.5px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--lf-mute);
+  font-weight: 400;
+}
+.lf-protocol__step-meta dd { margin: 0; color: var(--lf-ink-3); }
+
+@media (max-width: 880px) {
+  .lf-protocol__step { grid-template-columns: 1fr; min-height: auto; }
+  .lf-protocol__step:nth-child(even) { direction: ltr; }
+  .lf-protocol__media { min-height: 56vh; }
+  .lf-protocol__text { padding: 56px 24px 72px; }
+}
+
+/* =========================================================
+   LINEUP — dark grid, 6 devices
+   ========================================================= */
+.lf-lineup {
+  position: relative;
+  width: 100vw;
+  background: var(--lf-ink);
+  color: #fff;
+  padding: clamp(120px, 18vh, 200px) 0 clamp(140px, 22vh, 240px);
+}
+.lf-lineup__head {
+  padding: 0 var(--lf-gut);
+  margin-bottom: clamp(80px, 12vh, 140px);
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.lf-lineup__title {
+  font-family: var(--lf-sans);
+  
+  font-weight: 600;
+  font-size: clamp(46px, 6vw, 96px);
+  line-height: 1.0;
+  letter-spacing: -0.018em;
+}
+.lf-lineup__lede {
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: clamp(17px, 1.15vw, 19px);
+  line-height: 1.6;
+  color: rgba(255,255,255,0.7);
+  max-width: 600px;
+  letter-spacing: -0.014em;
+}
+
+.lf-lineup__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(255,255,255,0.12);
+  border-left: 1px solid rgba(255,255,255,0.12);
+  margin: 0 var(--lf-gut);
+}
+.lf-lineup__card {
+  position: relative;
+  padding: clamp(42px, 4.5vw, 72px) clamp(36px, 4vw, 56px) clamp(42px, 4.5vw, 64px);
+  border-right: 1px solid rgba(255,255,255,0.12);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  display: flex;
+  flex-direction: column;
+  min-height: clamp(440px, 56vh, 540px);
+  overflow: hidden;
+  transition: background 0.6s var(--lf-ease);
+}
+.lf-lineup__card:hover { background: rgba(255,255,255,0.03); }
+
+.lf-lineup__card-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.22;
+  pointer-events: none;
+  transition: opacity 0.8s var(--lf-ease), transform 1.2s var(--lf-ease);
+}
+.lf-lineup__card-media img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.lf-lineup__card:hover .lf-lineup__card-media {
+  opacity: 0.38;
+  transform: scale(1.02);
+}
+
+.lf-lineup__card > *:not(.lf-lineup__card-media) {
+  position: relative; z-index: 2;
+}
+
+.lf-lineup__card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: clamp(48px, 7vh, 80px);
+  font-family: var(--lf-sans);
+  font-size: 10.5px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.lf-lineup__card-num { color: rgba(255,255,255,0.5); }
+.lf-lineup__card-depth { color: rgba(255,255,255,0.7); text-align: right; }
+
+.lf-lineup__card-name {
+  font-family: var(--lf-sans);
+  
+  font-weight: 400;
+  font-size: clamp(40px, 4vw, 64px);
+  line-height: 1.0;
+  letter-spacing: -0.012em;
+  margin: 0 0 24px;
+  color: #fff;
+}
+.lf-lineup__card-tagline {
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.82);
+  max-width: 320px;
+  margin-bottom: auto;
+  letter-spacing: -0.012em;
+}
+.lf-lineup__card-meta {
+  margin-top: 36px;
+  font-family: var(--lf-sans);
+  font-size: 12px;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.01em;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255,255,255,0.14);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 20px;
+}
+.lf-lineup__card-meta dt {
+  font-family: var(--lf-sans);
+  font-size: 10px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  font-weight: 400;
+}
+.lf-lineup__card-meta dd { margin: 0; color: rgba(255,255,255,0.9); }
+
+@media (max-width: 1100px) {
+  .lf-lineup__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 720px) {
+  .lf-lineup__grid { grid-template-columns: 1fr; margin: 0 24px; }
+  .lf-lineup__card { min-height: 0; padding: 56px 28px; }
+}
+
+/* =========================================================
+   BEFORE & AFTER — editorial placeholder
+   ========================================================= */
+.lf-ba {
+  position: relative;
+  width: 100vw;
+  background: var(--lf-white);
+  padding: clamp(120px, 18vh, 200px) var(--lf-gut);
+}
+.lf-ba__inner {
+  max-width: 1640px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(48px, 8vw, 140px);
+  align-items: center;
+}
+.lf-ba__title {
+  font-family: var(--lf-sans);
+  
+  font-weight: 600;
+  font-size: clamp(44px, 5.6vw, 84px);
+  line-height: 1.03;
+  letter-spacing: -0.015em;
+  margin: 24px 0 28px;
+  color: var(--lf-ink);
+}
+.lf-ba__lede {
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--lf-ink-3);
+  max-width: 460px;
+  margin-bottom: 36px;
+  letter-spacing: -0.012em;
+}
+.lf-ba__note {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--lf-sans);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--lf-ink-3);
+  padding: 12px 22px;
+  border: 1px solid var(--lf-line);
+  border-radius: var(--lf-r-pill);
+  background: var(--lf-white);
+}
+.lf-ba__note i { width: 6px; height: 6px; border-radius: 50%; background: var(--lf-ink); display: inline-block; }
+
+.lf-ba__frames {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  position: relative;
+}
+.lf-ba__frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background: var(--lf-paper);
+  overflow: hidden;
+  border: 1px solid var(--lf-line);
+  border-radius: var(--lf-r-card);
+}
+.lf-ba__frame::before,
+.lf-ba__frame::after {
+  content: "";
+  position: absolute;
+  background: var(--lf-mute-2);
+  opacity: 0.5;
+}
+.lf-ba__frame::before { top: 20%; left: 18%; right: 18%; height: 1px; }
+.lf-ba__frame::after  { top: 20%; bottom: 20%; left: 50%; width: 1px; }
+.lf-ba__frame-tag {
+  position: absolute;
+  top: 18px; left: 18px;
+  font-family: var(--lf-sans);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--lf-ink-3);
+}
+.lf-ba__frame--after .lf-ba__frame-tag { color: var(--lf-ink); }
+
+@media (max-width: 880px) {
+  .lf-ba__inner { grid-template-columns: 1fr; gap: 48px; }
+}
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+.lf-faq {
+  position: relative;
+  width: 100vw;
+  background: var(--lf-paper);
+  padding: clamp(120px, 18vh, 200px) var(--lf-gut);
+}
+.lf-faq__inner {
+  max-width: 1640px;
+  margin: 0 auto;
+}
+.lf-faq__head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(48px, 8vw, 140px);
+  align-items: end;
+  margin-bottom: clamp(72px, 10vh, 120px);
+}
+.lf-faq__title {
+  font-family: var(--lf-sans);
+  
+  font-weight: 600;
+  font-size: clamp(44px, 5.6vw, 88px);
+  line-height: 1.0;
+  letter-spacing: -0.018em;
+  margin: 24px 0 0;
+  color: var(--lf-ink);
+}
+.lf-faq__note {
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--lf-ink-3);
+  max-width: 420px;
+  letter-spacing: -0.012em;
+}
+.lf-faq__list { border-top: 1px solid var(--lf-ink); }
+.lf-faq__item { border-bottom: 1px solid var(--lf-line); }
+.lf-faq__q {
+  width: 100%;
+  background: none;
+  border: 0;
+  padding: clamp(28px, 3.6vh, 44px) 0;
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  gap: clamp(24px, 4vw, 60px);
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--lf-sans);
+  
+  font-weight: 400;
+  font-size: clamp(20px, 1.9vw, 30px);
+  line-height: 1.3;
+  color: var(--lf-ink);
+  transition: color 0.4s var(--lf-ease);
+}
+.lf-faq__q:hover { color: var(--lf-ink-3); }
+.lf-faq__q-num {
+  font-family: var(--lf-sans);
+  font-style: normal;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--lf-mute);
+  font-weight: 400;
+}
+
+.lf-faq__plus {
+  flex: 0 0 auto;
+  width: 16px; height: 16px;
+  position: relative;
+  transition: transform 0.5s var(--lf-ease);
+}
+.lf-faq__plus::before,
+.lf-faq__plus::after {
+  content: ''; position: absolute; background: var(--lf-ink);
+}
+.lf-faq__plus::before { top: 50%; left: 0; right: 0; height: 1px; transform: translateY(-50%); }
+.lf-faq__plus::after  { top: 0; bottom: 0; left: 50%; width: 1px; transform: translateX(-50%); transition: transform 0.5s var(--lf-ease); }
+.lf-faq__item.is-open .lf-faq__plus::after { transform: translateX(-50%) scaleY(0); }
+
+.lf-faq__a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s var(--lf-ease);
+}
+.lf-faq__a-inner {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  gap: clamp(24px, 4vw, 60px);
+  padding: 0 0 clamp(28px, 3.6vh, 44px);
+}
+.lf-faq__a-inner > div:nth-child(2) {
+  font-family: var(--lf-sans);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--lf-ink-3);
+  max-width: 720px;
+}
+
+@media (max-width: 720px) {
+  .lf-faq__head { grid-template-columns: 1fr; gap: 28px; }
+  .lf-faq__q,
+  .lf-faq__a-inner { grid-template-columns: 32px 1fr auto; gap: 18px; }
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+.lf-cta {
+  position: relative;
+  width: 100vw;
+  min-height: 80vh;
+  background: var(--lf-ink);
+  color: #fff;
+  overflow: hidden;
+  padding: clamp(120px, 18vh, 200px) var(--lf-gut);
+}
+.lf-cta__media {
+  position: absolute; inset: 0;
+  background: #0A0A0A url('../assets/images/lifting/cta.png') center/cover no-repeat;
+  opacity: 0.38;
+}
+.lf-cta__media::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.55));
+}
+.lf-cta__inner {
+  position: relative; z-index: 2;
+  max-width: 1640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: clamp(32px, 5vh, 56px);
+}
+.lf-cta__title {
+  font-family: var(--lf-sans);
+  
+  font-weight: 600;
+  font-size: clamp(48px, 6.4vw, 112px);
+  line-height: 0.98;
+  letter-spacing: -0.022em;
+  margin: 12px 0 0;
+  max-width: none;
+  text-wrap: balance;
+}
+.lf-cta__sub {
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: clamp(17px, 1.15vw, 19px);
+  line-height: 1.6;
+  color: rgba(255,255,255,0.82);
+  max-width: 520px;
+  letter-spacing: -0.014em;
+}
+.lf-cta__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+  align-self: flex-start;
+}
+.lf-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 28px;
+  border: 1px solid rgba(255,255,255,0.55);
+  border-radius: var(--lf-r-pill);
+  color: #fff;
+  font-family: var(--lf-sans);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  text-transform: none;
+  text-decoration: none;
+  background: transparent;
+  transition: background 0.4s var(--lf-ease), color 0.4s var(--lf-ease), border-color 0.4s var(--lf-ease), transform 0.18s var(--lf-ease);
+  cursor: pointer;
+}
+.lf-cta__btn:hover { background: rgba(255,255,255,0.08); }
+.lf-cta__btn:active { transform: scale(0.96); }
+.lf-cta__btn:focus-visible { outline: 2px solid #0071e3; outline-offset: 3px; }
+.lf-cta__btn--solid { background: #fff; color: var(--lf-ink); border-color: #fff; }
+.lf-cta__btn--solid:hover { background: #f5f5f7; color: var(--lf-ink); border-color: #f5f5f7; }
+
+.lf-cta__foot {
+  position: relative;
+  z-index: 2;
+  margin-top: clamp(80px, 12vh, 140px);
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.18);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  font-family: var(--lf-sans);
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  max-width: 1640px;
+  margin-left: auto; margin-right: auto;
+}
+.lf-cta__foot div span {
+  display: block;
+  font-family: var(--lf-sans);
+  font-size: 10px;
+  letter-spacing: 0.32em;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 8px;
+}
+@media (max-width: 720px) {
+  .lf-cta__foot { grid-template-columns: 1fr 1fr; }
+}
 </style>
 </head>
 <body>
 
-<!-- Top Bar -->
-</div>
-
-<!-- Header -->
+<!-- ===========================================
+     HEADER — DO NOT MODIFY
+=========================================== -->
 <header class="mili-header">
     <div class="mili-header-inner">
         <a href="/en/index.html" class="mili-logo" aria-label="Mili Clinic Sinchon"><img src="/assets/images/logo/logo.png" alt="Mili Clinic Sinchon"></a>
@@ -654,7 +1348,7 @@ em, cite { font-style: normal; }
                 <li class="mili-nav-item"><a href="/en/minimal-surgery.html" class="mili-nav-link">Minimal Surgery</a></li>
                 <li class="mili-nav-item"><a href="/en/skin-care.html" class="mili-nav-link">Skin Care</a></li>
                 <li class="mili-nav-item"><a href="/en/laser-hair-removal.html" class="mili-nav-link">Laser Hair Removal</a></li>
-                <li class="mili-nav-item"><a href="/en/body-shaping.html" class="mili-nav-link">Body Shaping</a></li>
+                <li class="mili-nav-item"><a href="/en/body-shaping.html" class="mili-nav-link active">Body Shaping</a></li>
                 <li class="mili-nav-item"><a href="/en/promotion.html" class="mili-nav-link">Promotion</a></li>
             </ul>
         </nav>
@@ -666,7 +1360,7 @@ em, cite { font-style: normal; }
                 <a href="#" class="mili-lang-item active">EN</a>
                 <a href="https://sinchon.miliclinic.co.kr" target="_blank" rel="noopener" class="mili-lang-item">KO</a>
                 <a href="/cn/index.html" class="mili-lang-item">CN</a>
-                <a href="/jp/ulthera.html" class="mili-lang-item">JP</a>
+                <a href="/jp/about.html" class="mili-lang-item">JP</a>
             </div>
         </div>
         <a href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener" class="mili-cta">Reserve<svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
@@ -678,19 +1372,16 @@ em, cite { font-style: normal; }
             <li><span>Mili Clinic Sinchon</span>
                 <ul class="mili-mobile-sub">
                     <li><a href="/en/about.html">About Dosan</a></li>
-                    
                     <li><a href="/en/tour.html">Tour</a></li>
                     <li><a href="/en/equipment.html">Equipment</a></li>
                     <li><a href="/en/schedule.html">Schedule</a></li>
                     <li><a href="/en/location.html">Location</a></li>
                 </ul>
             </li>
-            <li><a href="/en/lifting.html">Lifting</a></li>
-            <li><a href="/en/collagen-booster.html">Collagen Booster</a></li>
+            <li><a href="lifting.html">Lifting</a></li>
             <li><a href="/en/collagen-booster.html">Collagen Booster</a></li>
             <li><span>Minimal Surgery</span>
                 <ul class="mili-mobile-sub">
-                    <li><a href="/en/collagen-booster.html">Collagen Booster</a></li>
                     <li><a href="/en/collagen-booster.html">Collagen Booster</a></li>
                     <li><a href="/en/filler.html">Filler</a></li>
                 </ul>
@@ -700,13 +1391,11 @@ em, cite { font-style: normal; }
                     <li><a href="/en/skin-booster.html">1:1 Skin Booster</a></li>
                     <li><a href="/en/all-in-one-brightening.html">All-in-One Brightening</a></li>
                     <li><a href="/en/acne-pore.html">Acne and Pore</a></li>
-                    <li><a href="/en/acne-pore.html">Acne and Pore</a></li>
                 </ul>
             </li>
             <li><a href="/en/laser-hair-removal.html">Laser Hair Removal</a></li>
             <li><span>Skin Care</span>
                 <ul class="mili-mobile-sub">
-                    <li><a href="/en/medi-spa.html">Medi-Spa</a></li>
                     <li><a href="/en/medi-spa.html">Medi-Spa</a></li>
                 </ul>
             </li>
@@ -719,532 +1408,547 @@ em, cite { font-style: normal; }
                 <a href="#" class="mili-mobile-lang-item active">EN</a>
                 <a href="https://sinchon.miliclinic.co.kr" target="_blank" rel="noopener" class="mili-mobile-lang-item">KO</a>
                 <a href="/cn/index.html" class="mili-mobile-lang-item">CN</a>
-                <a href="/jp/ulthera.html" class="mili-mobile-lang-item">JP</a>
+                <a href="/jp/about.html" class="mili-mobile-lang-item">JP</a>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Hero -->
-<section class="tx-hero">
-    <div class="tx-hero-visual" aria-hidden="true">
-        <div class="tx-hero-bg"></div>
-        <img class="tx-hero-device" src="/assets/images/body-shaping/device.png" alt="">
+<main class="lf">
+
+  <!-- ============================== HERO ============================== -->
+  <section class="lf-hero">
+    <div class="lf-hero__media"></div>
+
+    <div class="lf-hero__top">
+      <div class="lf-hero__crumb"><span>Mili Clinic Sinchon</span><i></i><span>Body Shaping</span></div>
     </div>
-    <div class="tx-hero-inner">
-        <div class="tx-hero-top">
-            <a href="/">Home</a>
-            <span class="sep">/</span>
-            <span>Body Shaping</span>
-        </div>
-        <div class="tx-hero-center">
-            <div class="tx-hero-eyebrow">— Body Shaping · Mili Fit + Wegovy Program</div>
-            <div class="tx-hero-badge">
-                <div class="tx-hero-badge-mark">✦</div>
-                <div class="tx-hero-badge-text">Medically Guided Diet &amp; Body Contouring</div>
-            </div>
-            <h1 class="tx-hero-title">
-                Body Shaping<span class="reg">®</span>
-            </h1>
-            <p class="tx-hero-sub">
-                A diet program designed to enhance healthy elasticity and sculpt a balanced body line — <strong>not just fat reduction, but reshaping with intention</strong>.
-            </p>
-        </div>
-        <div class="tx-hero-bottom">
-            <div class="tx-hero-meta">
-                <div class="tx-hero-meta-item">
-                    <div class="label">Category</div>
-                    <div class="value">Body Shaping</div>
-                </div>
-                <div class="tx-hero-meta-item">
-                    <div class="label">Time</div>
-                    <div class="value">~ 20 min</div>
-                </div>
-                <div class="tx-hero-meta-item">
-                    <div class="label">Onset</div>
-                    <div class="value">Within 3 sessions</div>
-                </div>
-            </div>
-        </div>
+
+    <div class="lf-hero__inner">
+      <h1 class="lf-hero__title" aria-label="Body Shaping">
+        <span>B</span><span>o</span><span>d</span><span>y</span><span>&nbsp;</span><span>S</span><span>h</span><span>a</span><span>p</span><span>i</span><span>n</span><span>g</span>
+      </h1>
     </div>
-    <span class="tx-hero-scroll">Scroll ↓</span>
-</section>
-
-<!-- Sub-nav -->
-<nav class="tx-subnav">
-    <div class="tx-subnav-inner">
-        <span class="tx-subnav-label">— On this page</span>
-        <a href="#principle">Principle</a>
-        <a href="#certified">Certified</a>
-        <a href="#system">Program</a>
-        <a href="#detail">Detail</a>
-        <a href="#benefits">Benefits</a>
-        <a href="#area">Areas</a>
-        <a href="#tip">Tips</a>
-        <a href="#faq">FAQ</a>
+    <div class="lf-hero__foot">
+      <div class="lf-hero__scroll"><span>Scroll</span><i></i></div>
     </div>
-</nav>
+  </section>
 
-<!-- Principle -->
-<section id="principle" class="tx-principle">
-    <div class="tx-principle-inner">
-        <div class="tx-principle-left">
-            <div class="section-eyebrow">Principle</div>
-            <h2>Mili's exclusive Body Shaping program.</h2>
-        </div>
-        <div class="tx-principle-right">
-            <p class="lead">
-                Mili Clinic's Body Shaping Program goes beyond simply reducing fat volume or shrinking body size. It is a comprehensive, medically guided program designed to enhance body elasticity and create a healthy, balanced silhouette.
-            </p>
-            <p>
-                Unlike extreme calorie restriction or fasting — which can lead to muscle loss, decreased firmness, and the yo-yo effect — Mili Clinic promotes healthy, sustainable weight loss through personalized nutrition plans, exercise guidance, and lifestyle improvement.
-            </p>
-            <p>
-                Using in-depth medical analysis, we provide individualized programs that combine diet, exercise, medication, and targeted treatments. The goal is not only to reshape the body, but to help each patient understand the fundamentals of healthy weight management — restoring natural beauty through expert consultation and evidence-based care.
-            </p>
-        </div>
+  <!-- ============================== INTRO ============================== -->
+  <div class="lf-rule">
+    <div class="lf-rule__num">I</div>
+    <div class="lf-rule__bar"></div>
+    <div class="lf-rule__name">Statement</div>
+  </div>
+
+  <section class="lf-intro">
+    <div class="lf-intro__grid">
+      <h2 class="lf-intro__lead lf-rv">
+        <em>Shaping is not&nbsp;reduction.</em><br>
+        It is a refinement of&nbsp;contour —<br>
+        read first, sculpt&nbsp;locally, leave&nbsp;the&nbsp;rest.
+      </h2>
+      <div>
+        <p class="lf-intro__body lf-rv d1">At Mili Clinic Sinchon, body shaping is local — not generalized weight management. The body is read before the device is chosen. We treat the specific contour you want refined, not the body as a whole.</p>
+        <p class="lf-intro__body lf-rv d2">Every treatment plan is mapped by the attending physician, and every session ends where the contour says enough.</p>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- Certified Strip -->
-<section id="certified" class="tx-cert">
-    <div class="tx-cert-inner">
-        <div class="tx-cert-mark">✦</div>
-        <div class="tx-cert-text">
-            <div class="tx-cert-title">Mili's signature combination — Mili-FIT + Wegovy.</div>
-            <p>Mili Clinic's exclusive formulation combines our proprietary Mili-FIT injections with Wegovy — an innovative weight loss medication — for enhanced fat reduction and appetite control. Administered under structured medical supervision, this program offers a healthy, sustainable approach customized to your individual needs and goals.</p>
+  <!-- ============================== PHILOSOPHY ============================== -->
+  <div class="lf-rule lf-rule--paper">
+    <div class="lf-rule__num">II</div>
+    <div class="lf-rule__bar"></div>
+    <div class="lf-rule__name">Philosophy</div>
+  </div>
+
+  <section class="lf-philosophy" id="lfPhilosophy">
+    <div class="lf-philosophy__pin">
+
+      <div class="lf-philosophy__head">
+        <div class="lf-philosophy__head-l">
+          <span class="lf-eyebrow">Five principles</span>
         </div>
+        <div class="lf-philosophy__head-r">Scroll<br>to traverse</div>
+      </div>
+
+      <div class="lf-philosophy__viewport">
+        <div class="lf-philosophy__track" id="lfPhilosophyTrack">
+
+          <div class="lf-philosophy__panel lf-philosophy__intro">
+            <h2 class="lf-philosophy__intro-title"><em>Why shaping,</em><br>done at&nbsp;Mili.</h2>
+            <p class="lf-philosophy__intro-body">Body shaping is a clinical refinement of contour — not weight loss, not a diet replacement. Five principles guide every shaping protocol at Mili Clinic Sinchon.</p>
+          </div>
+
+          <article class="lf-philosophy__panel lf-philosophy__card">
+            <div class="lf-philosophy__media">
+              <img src="../assets/images/lifting/philosophy-01.jpg" alt="">
+            </div>
+            <div class="lf-philosophy__num">— 01 / 05</div>
+            <h3 class="lf-philosophy__name"><em>Body before<br>machine.</em></h3>
+            <p class="lf-philosophy__desc">We read the body before we choose the technology. Fat thickness, skin elasticity, muscle definition, posture — analyzed first, treated second. Two bodies that look the same on a chart need very different protocols.</p>
+          </article>
+
+          <article class="lf-philosophy__panel lf-philosophy__card">
+            <div class="lf-philosophy__media">
+              <img src="../assets/images/lifting/philosophy-02.png" alt="">
+            </div>
+            <div class="lf-philosophy__num">— 02 / 05</div>
+            <h3 class="lf-philosophy__name"><em>Local, never<br>general.</em></h3>
+            <p class="lf-philosophy__desc">Body shaping is for localized concerns — the area diet and exercise cannot reach. We treat the contour you want refined, not the whole body. This is sculpture, not subtraction.</p>
+          </article>
+
+          <article class="lf-philosophy__panel lf-philosophy__card">
+            <div class="lf-philosophy__media">
+              <img src="../assets/images/lifting/philosophy-03.jpg" alt="">
+            </div>
+            <div class="lf-philosophy__num">— 03 / 05</div>
+            <h3 class="lf-philosophy__name"><em>Doctor-mapped.</em></h3>
+            <p class="lf-philosophy__desc">The treatment area, depth, and energy level are decided by the physician — not standardized by area or weight. Every protocol is mapped on your body, marker on skin, before any energy is delivered.</p>
+          </article>
+
+          <article class="lf-philosophy__panel lf-philosophy__card">
+            <div class="lf-philosophy__media">
+              <img src="../assets/images/lifting/philosophy-04.jpg" alt="">
+            </div>
+            <div class="lf-philosophy__num">— 04 / 05</div>
+            <h3 class="lf-philosophy__name"><em>Slow, not<br>aggressive.</em></h3>
+            <p class="lf-philosophy__desc">Aggressive single sessions cause irregularity, dimpling, and recovery problems. We build results across multiple gentle sessions — fat metabolizes naturally, skin tightens with it, contour stays smooth.</p>
+          </article>
+
+          <article class="lf-philosophy__panel lf-philosophy__card">
+            <div class="lf-philosophy__media">
+              <img src="../assets/images/lifting/philosophy-05.jpg" alt="">
+            </div>
+            <div class="lf-philosophy__num">— 05 / 05</div>
+            <h3 class="lf-philosophy__name"><em>Yours, just<br>refined.</em></h3>
+            <p class="lf-philosophy__desc">The goal is not a different body. It is your body, with the line you wanted. People notice you look fit, but cannot point to what changed. That is the refinement we work toward.</p>
+          </article>
+
+          <aside class="lf-philosophy__panel lf-philosophy__tail">
+            <span class="lf-eyebrow">End of section</span>
+            <h3><em>Five principles,<br>one&nbsp;sculpture.</em></h3>
+            <p>How those principles meet the face — layer by layer — is what follows.</p>
+          </aside>
+
+        </div>
+      </div>
+
+      <div class="lf-philosophy__progress">
+        <span class="lf-philosophy__progress-current" id="lfPhilosophyCurrent">01</span>
+        <div class="lf-philosophy__progress-bar"><div class="lf-philosophy__progress-fill" id="lfPhilosophyFill"></div></div>
+        <span>05</span>
+        <span class="lf-philosophy__progress-hint">
+          <svg viewBox="0 0 18 8"><path d="M0 4h16M12 1l4 3-4 3" stroke="currentColor" fill="none" stroke-width="1"/></svg>
+          Scroll
+        </span>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- System / Program -->
-<section id="system" class="tx-system">
-    <div class="tx-system-inner">
-        <div class="tx-system-head">
-            <div class="section-eyebrow">The Program</div>
-            <h2>Mili-FIT Injection Suite.</h2>
-        </div>
-        <div class="tx-system-grid">
-            <div class="tx-system-card">
-                <div class="card-num">01</div>
-                <h3>Mili ZERO</h3>
-                <p>Steroid-free fat-dissolving injection that selectively breaks down fat without the side effects of conventional formulations. Safe for repeat sessions and sensitive patients.</p>
-            </div>
-            <div class="tx-system-card">
-                <div class="card-num">02</div>
-                <h3>Mili-FIT Mini</h3>
-                <p>Promotes localized fat breakdown in delicate areas such as underarms, neck, and ankles — while enhancing lymphatic circulation and supporting the elimination of waste and toxins.</p>
-            </div>
-            <div class="tx-system-card">
-                <div class="card-num">03</div>
-                <h3>Mili-FIT Section</h3>
-                <p>Mili Clinic's unique formula that reduces fat cell size and enhances circulation. Particularly effective for cellulite, flanks, abdomen, upper arms, and thighs — stubborn areas resistant to diet and exercise.</p>
-            </div>
-            <div class="tx-system-card">
-                <div class="card-num">04</div>
-                <h3>Wegovy</h3>
-                <p>An appetite-suppressing and fat-metabolizing injection that supports weight loss by enhancing fat reduction and promoting body contouring. Administered under medical supervision as part of the structured program.</p>
-            </div>
-            <div class="tx-system-card">
-                <div class="card-num">05</div>
-                <h3>Tune Body</h3>
-                <p>3D ultrasound technology generates mechanical and thermal energy simultaneously — selectively destroying fat cells while improving cellulite. 90–100 kJ per session, continuously monitored for safety.</p>
-            </div>
-            <div class="tx-system-card">
-                <div class="card-num">06</div>
-                <h3>Noble Shape</h3>
-                <p>Three simultaneous mechanisms — mid-frequency for muscle stimulation, high-frequency for deep fat heating, low-level laser for fat membrane pore creation. Comprehensive contouring in one platform.</p>
-            </div>
-        </div>
+  <!-- ============================== PROTOCOL ============================== -->
+  <div class="lf-rule lf-rule--paper">
+    <div class="lf-rule__num">III</div>
+    <div class="lf-rule__bar"></div>
+    <div class="lf-rule__name">The Mili Protocol</div>
+  </div>
+
+  <section class="lf-protocol" id="lfProtocol">
+    <div class="lf-protocol__head">
+      <span class="lf-eyebrow lf-rv">Three steps · One doctor</span>
+      <h2 class="lf-protocol__title lf-rv d1"><em>How a shaping<br>session unfolds.</em></h2>
+      <p class="lf-protocol__lede lf-rv d2">Every body is read before it is treated. Every contour map is drawn before energy is applied. Three steps, every time, by the same doctor — from the first reading to the last session.</p>
     </div>
-</section>
 
-<!-- Detail -->
-<section id="detail" class="tx-feature">
-    <div class="tx-feature-inner">
-        <div class="tx-feature-left">
-            <div class="section-eyebrow">In Detail</div>
-            <h2>Beyond the injection — a complete program.</h2>
-            <p>Body Shaping at Mili Clinic Sinchon is not a single procedure but an orchestrated program. The Mili-FIT injection suite addresses different fat patterns: Mili ZERO for steroid-free general care, Mili-FIT Mini for delicate areas, and Mili-FIT Section for stubborn cellulite zones. Wegovy adds appetite control and metabolic support.</p>
-            <p>Tune Body uses 3D stereoscopic ultrasound to generate mechanical and thermal energy simultaneously, targeting fat cell apoptosis while continuously monitoring skin surface temperature — safe, painless, bloodless. For larger fat deposits or advanced cellulite, we combine Tune Body with HIFU, Low-Level Laser Therapy, Medium Frequency Therapy, Radiofrequency, and our exclusive Mili-FIT injections.</p>
-            <p>Medical lymphatic massage with RET technology complements the program — generating deep heat for elasticity and contour while supporting fat metabolism and lymphatic drainage. The result is contour from multiple angles, not just one.</p>
+    <div class="lf-protocol__steps">
+
+      <article class="lf-protocol__step">
+        <div class="lf-protocol__media">
+          <img src="../assets/images/lifting/protocol-01.jpg" alt="">
         </div>
-        <div class="tx-feature-right">
-            <img src="/assets/images/body-shaping/feature.jpg" alt="Body Shaping Treatment Detail">
+        <div class="lf-protocol__text">
+          <div class="lf-protocol__step-top">
+            <span class="lf-protocol__step-num">Step 01 / 03</span>
+            <span class="lf-protocol__step-time">15 – 20 min</span>
+          </div>
+          <h3 class="lf-protocol__step-name"><em>Body reading<br>&amp; consultation.</em></h3>
+          <p class="lf-protocol__step-desc">We measure what your scale cannot — fat layer thickness, skin elasticity, muscle definition, posture imbalance. Photography and clinical assessment guide which areas need shaping, and which are best left alone.</p>
+          <div class="lf-protocol__step-meta">Body composition analysis · Photography · 20–30 minutes</div>
         </div>
+      </article>
+
+      <article class="lf-protocol__step">
+        <div class="lf-protocol__media">
+          <img src="../assets/images/lifting/protocol-02.jpg" alt="">
+        </div>
+        <div class="lf-protocol__text">
+          <div class="lf-protocol__step-top">
+            <span class="lf-protocol__step-num">Step 02 / 03</span>
+            <span class="lf-protocol__step-time">Custom layering</span>
+          </div>
+          <h3 class="lf-protocol__step-name"><em>Contour<br>mapping.</em></h3>
+          <p class="lf-protocol__step-desc">The doctor marks the treatment area directly on the body — every zone, every depth, every energy level. The plan is visible on your skin before any device is turned on. Nothing is improvised.</p>
+          <div class="lf-protocol__step-meta">Treatment zoning · Depth calculation · Symmetry check</div>
+        </div>
+      </article>
+
+      <article class="lf-protocol__step">
+        <div class="lf-protocol__media">
+          <img src="../assets/images/lifting/protocol-03.jpg" alt="">
+        </div>
+        <div class="lf-protocol__text">
+          <div class="lf-protocol__step-top">
+            <span class="lf-protocol__step-num">Step 03 / 03</span>
+            <span class="lf-protocol__step-time">40 – 80 min</span>
+          </div>
+          <h3 class="lf-protocol__step-name"><em>Sculpting<br>session.</em></h3>
+          <p class="lf-protocol__step-desc">Treatment is delivered by trained body specialists under direct physician supervision. The protocol is followed precisely, with the doctor available to adjust if the body responds differently than mapped.</p>
+          <div class="lf-protocol__step-meta">Supervised by attending physician · 30–60 minutes per session</div>
+        </div>
+      </article>
+
     </div>
-</section>
+  </section>
 
-<!-- Benefits -->
-<section id="benefits" class="tx-benefits">
-    <div class="tx-benefits-inner">
-        <div class="tx-benefits-head">
-            <div class="section-eyebrow">Benefits</div>
-            <h2>Why patients choose Mili Body Shaping.</h2>
+
+  <!-- ============================== FAQ ============================== -->
+  <div class="lf-rule lf-rule--paper">
+    <div class="lf-rule__num">IV</div>
+    <div class="lf-rule__bar"></div>
+    <div class="lf-rule__name">FAQ</div>
+  </div>
+
+  <section class="lf-faq">
+    <div class="lf-faq__inner">
+      <div class="lf-faq__head">
+        <div class="lf-rv">
+          <span class="lf-eyebrow">Five questions</span>
+          <h2 class="lf-faq__title"><em>Answered<br>plainly.</em></h2>
         </div>
-        <div class="tx-benefits-grid">
-            <div class="benefit-item">
-                <div class="benefit-num">01</div>
-                <h3>Cellulite &amp; Localized Fat</h3>
-                <p>Effectively treats fat-related skin lumps. Especially effective for female-pattern fat distribution and lower-body obesity — areas where diet alone falls short.</p>
+        <p class="lf-faq__note lf-rv d1">Five common questions about body shaping at Mili Clinic Sinchon. More specific concerns are best addressed during consultation.</p>
+      </div>
+
+      <div class="lf-faq__list">
+
+        <div class="lf-faq__item">
+          <button class="lf-faq__q" type="button">
+            <span class="lf-faq__q-num">01</span>
+            <span><em>Is body shaping the same as weight loss?</em></span>
+            <span class="lf-faq__plus" aria-hidden="true"></span>
+          </button>
+          <div class="lf-faq__a">
+            <div class="lf-faq__a-inner">
+              <span></span>
+              <div>No. Body shaping is for localized fat reduction and contour refinement — the specific areas diet and exercise cannot reach. It is not a substitute for weight management, and it is not intended for significant weight loss. The best results come for patients close to their target weight who want to refine specific areas.</div>
+              <span></span>
             </div>
-            <div class="benefit-item">
-                <div class="benefit-num">02</div>
-                <h3>Edema Treatment</h3>
-                <p>Highly effective for edema caused by surgery, post-treatment recovery, or lymphatic disorders. Restores fluid balance and circulation.</p>
-            </div>
-            <div class="benefit-item">
-                <div class="benefit-num">03</div>
-                <h3>Blood Circulation</h3>
-                <p>Promotes blood circulation by redistributing fat cells adhered to blood and lymphatic vessels — rapidly eliminating accumulated waste and improving overall metabolic flow.</p>
-            </div>
-            <div class="benefit-item">
-                <div class="benefit-num">04</div>
-                <h3>Skin Elasticity</h3>
-                <p>Enhances skin firmness through vacuum negative pressure lifting alongside fat reduction. The body that emerges is not just smaller — it's firmer.</p>
-            </div>
+          </div>
         </div>
+
+        <div class="lf-faq__item">
+          <button class="lf-faq__q" type="button">
+            <span class="lf-faq__q-num">02</span>
+            <span><em>How much downtime should I expect?</em></span>
+            <span class="lf-faq__plus" aria-hidden="true"></span>
+          </button>
+          <div class="lf-faq__a">
+            <div class="lf-faq__a-inner">
+              <span></span>
+              <div>Most shaping sessions have minimal downtime — mild swelling, redness, or numbness in the treated area for 1–3 days. Bruising is possible but uncommon. You can return to work immediately. Avoid intense exercise and saunas for 48 hours.</div>
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lf-faq__item">
+          <button class="lf-faq__q" type="button">
+            <span class="lf-faq__q-num">03</span>
+            <span><em>When will I see results?</em></span>
+            <span class="lf-faq__plus" aria-hidden="true"></span>
+          </button>
+          <div class="lf-faq__a">
+            <div class="lf-faq__a-inner">
+              <span></span>
+              <div>Initial reduction is visible 3–4 weeks after the first session. Significant contour change builds over 8–12 weeks as treated fat cells are metabolized by the body. Final result usually settles at the 3-month mark, with continued refinement up to 6 months.</div>
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lf-faq__item">
+          <button class="lf-faq__q" type="button">
+            <span class="lf-faq__q-num">04</span>
+            <span><em>Is the treatment painful?</em></span>
+            <span class="lf-faq__plus" aria-hidden="true"></span>
+          </button>
+          <div class="lf-faq__a">
+            <div class="lf-faq__a-inner">
+              <span></span>
+              <div>Sensation varies by technology. Cryolipolysis (fat freezing) feels cold and tight for the first 10 minutes, then numbs. Focused ultrasound feels like warm pressure. RF feels like a deep massage. Most patients tolerate the sessions easily. Sore-muscle sensation is common 1–2 days after.</div>
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lf-faq__item">
+          <button class="lf-faq__q" type="button">
+            <span class="lf-faq__q-num">05</span>
+            <span><em>How many sessions will I need?</em></span>
+            <span class="lf-faq__plus" aria-hidden="true"></span>
+          </button>
+          <div class="lf-faq__a">
+            <div class="lf-faq__a-inner">
+              <span></span>
+              <div>Most areas reach target contour in 3–6 sessions, spaced 4–6 weeks apart. The exact number depends on the area, the technology used, and your body's response. Results are long-lasting if your weight stays stable — treated fat cells do not regenerate.</div>
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- Area -->
-<section id="area" class="tx-area">
-    <div class="tx-area-inner">
-        <div class="tx-area-left">
-            <div class="section-eyebrow">Treatment Areas</div>
-            <h2>Eight handpieces, any area you choose.</h2>
-            <p>Noble Shape comes with two size options and eight specialized handpieces — applicable to any body area you want to address. Combined with Tune Body's targeted approach and our injection suite, no region is out of reach.</p>
-        </div>
-        <div class="tx-area-tags">
-            <span class="area-tag">Abdomen</span>
-            <span class="area-tag">Flanks (love handles)</span>
-            <span class="area-tag">Upper arms</span>
-            <span class="area-tag">Thighs (inner / outer)</span>
-            <span class="area-tag">Buttocks</span>
-            <span class="area-tag">Back / Bra line</span>
-            <span class="area-tag">Underarms</span>
-            <span class="area-tag">Neck</span>
-            <span class="area-tag">Calves</span>
-            <span class="area-tag">Ankles</span>
-        </div>
+  <!-- ============================== CTA ============================== -->
+  <section class="lf-cta">
+    <div class="lf-cta__media"></div>
+    <div class="lf-cta__inner">
+      <span class="lf-eyebrow lf-eyebrow--light">Begin with a reading</span>
+      <h2 class="lf-cta__title"><em>Shaping begins<br>with your body,<br>not the goal.</em></h2>
+      <p class="lf-cta__sub">Book a diagnostic consultation. The first thirty minutes are spent on the face — not on the menu.</p>
+      <div class="lf-cta__actions">
+        <a class="lf-cta__btn lf-cta__btn--solid" href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener">Reserve Consultation</a>
+        <a class="lf-cta__btn" href="https://pf.kakao.com/_mxadwxb" target="_blank" rel="noopener">KakaoTalk</a>
+        <a class="lf-cta__btn" href="https://api.whatsapp.com/send/?phone=821023834697" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
     </div>
-</section>
 
-<!-- Tips -->
-<section id="tip" class="tx-tip">
-    <div class="tx-tip-inner">
-        <div class="section-eyebrow">Aftercare</div>
-        <h2>How to optimize program results.</h2>
-        <div class="tip-grid">
-            <div class="tip-item">
-                <div class="tip-num">01</div>
-                <p>Maintain adequate hydration. Increased water intake supports the elimination of broken-down fat cells through the lymphatic system.</p>
-            </div>
-            <div class="tip-item">
-                <div class="tip-num">02</div>
-                <p>Follow the nutrition plan provided by your medical team. The program works best when paired with sustainable dietary changes — not extreme restriction.</p>
-            </div>
-            <div class="tip-item">
-                <div class="tip-num">03</div>
-                <p>Light to moderate exercise enhances results. Walking, light cardio, or gentle resistance training supports metabolic flow and muscle preservation.</p>
-            </div>
-            <div class="tip-item">
-                <div class="tip-num">04</div>
-                <p>Consistency matters more than intensity. Most patients see visible results within 3 sessions, with optimal outcomes from completing the recommended program duration.</p>
-            </div>
-        </div>
+    <div class="lf-cta__foot">
+      <div><span>Phone</span>+82 2-6337-1212</div>
+      <div><span>Address</span>3F, 104 Sinchon-ro, Mapo-gu, Seoul</div>
+      <div><span>Hours</span>Mon · Wed · Fri 10:00 – 19:00</div>
     </div>
-</section>
+  </section>
 
-<!-- FAQ -->
-<section id="faq" class="tx-faq">
-    <div class="tx-faq-inner">
-        <div class="section-eyebrow">FAQ</div>
-        <h2>Frequently asked questions.</h2>
-        <div class="faq-list">
-            <details>
-                <summary>How long does a treatment session take?</summary>
-                <p>Treatment time is approximately 20 minutes. Anesthesia is not required. Most patients can resume daily activities immediately after the session.</p>
-            </details>
-            <details>
-                <summary>When will I see results?</summary>
-                <p>Results are usually visible within 3 sessions, though this varies by individual. The program is designed for cumulative improvement — consistency over a series of sessions produces the most reliable outcomes.</p>
-            </details>
-            <details>
-                <summary>Is the procedure painful?</summary>
-                <p>The procedures are virtually pain-free. Tune Body continuously monitors skin surface temperature to prevent burns and ensure a safe, painless, bloodless experience. Most patients find the sessions comfortable and relaxing.</p>
-            </details>
-            <details>
-                <summary>What's the difference between Mili-FIT, Mili-FIT Mini, and Mili ZERO?</summary>
-                <p>Mili-FIT Section is our proprietary formula for stubborn fat areas (flanks, abdomen, thighs). Mili-FIT Mini is for delicate areas (underarms, neck, ankles). Mili ZERO is a steroid-free option suitable for sensitive patients or those preferring no steroidal ingredients.</p>
-            </details>
-            <details>
-                <summary>Is the program suitable for everyone?</summary>
-                <p>The Body Shaping program is designed for those seeking healthy, sustainable weight management — not for severe obesity or medical conditions requiring specialized care. A thorough medical consultation determines program suitability for each individual.</p>
-            </details>
-        </div>
-    </div>
-</section>
+</main>
 
-<!-- Related treatments -->
-<section class="tx-related">
-    <div class="tx-related-inner">
-        <div class="section-eyebrow">— Related Treatments</div>
-        <h2>Complementary care.</h2>
-        <div class="related-grid">
-            <a href="/en/inmode.html" class="related-card">
-                <div class="related-card-eyebrow">RF Body Contouring</div>
-                <h3>InMode</h3>
-                <p>RF-based body contouring with FX phase for fat reduction and FORMA phase for skin tightening — complements Body Shaping for advanced contour care.</p>
-            </a>
-            <a href="/en/skin-booster.html" class="related-card">
-                <div class="related-card-eyebrow">Skin Quality</div>
-                <h3>Skin Booster</h3>
-                <p>Skin quality and hydration program — supports the skin's appearance as your body silhouette changes through the Body Shaping program.</p>
-            </a>
-            <a href="/en/laser-hair-removal.html" class="related-card">
-                <div class="related-card-eyebrow">Body Smoothing</div>
-                <h3>Laser Hair Removal</h3>
-                <p>Smooth, long-term hair-free skin alongside body contouring — pairs naturally for those seeking complete body confidence.</p>
-            </a>
-        </div>
-    </div>
-</section>
-
-작업 완료 후:
-git add . && git commit -m "Update body-shaping.html with Bipoworks Mili Body Shaping copy in Dosan thermage structure" && git push
-</user_query>
-
-<!-- Footer -->
-<footer class="mili-footer">
-    <div class="mili-footer-inner">
-        <div class="mili-footer-top">
-            <div class="mili-footer-brand">
-                <div class="mili-footer-logo"><img src="/assets/images/logo/logo.png" alt="Mili Clinic Sinchon"></div>
-                <p class="mili-footer-tagline">The flagship of the Mili Clinic brand. Beyond the remedy &mdash; a quiet sanctuary in Dosan for restoration and refinement.</p>
-                <p class="mili-footer-slogan">"Enhancing Beauty with Just a 1mm Change."</p>
-            </div>
-            <div class="mili-footer-col">
-                <h5>Treatments</h5>
-                <ul>
-                    <li><a href="/en/ulthera.html">Ulthera</a></li>
-                    <li><a href="/en/tuneface.html">TuneFace</a></li>
-                    <li><a href="/en/oligio-x.html">OligioX</a></li>
-                    <li><a href="/en/inmode.html">InMode</a></li>
-                    <li><a href="/en/shurink.html">Shurink</a></li>
-                    <li><a href="/en/titanium.html">Titanium</a></li>
-                    <li><a href="/en/eve-titan.html">Eve Titan</a></li>
-                    <li><a href="/en/minimal-surgery.html">Minimal Surgery</a></li>
-                    <li><a href="/en/skin-care.html">Skin Care</a></li>
-                    <li><a href="/en/laser-hair-removal.html">Laser Hair Removal</a></li>
-                    <li><a href="/en/body-shaping.html">Body Shaping</a></li>
-                </ul>
-            </div>
-            <div class="mili-footer-col">
-                <h5>Visit</h5>
-                <ul>
-                    <li><a href="/en/location.html">Location</a></li>
-                    <li><a href="/en/schedule.html">Schedule</a></li>
-                    <li><a href="https://naver.me/GLAXm15o" target="_blank" rel="noopener">Naver Map</a></li>
-                    <li><a href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener">Naver Booking</a></li>
-                    <li><a href="tel:+82263371212">+82 2&middot;6337&middot;1212</a></li>
-                </ul>
-            </div>
-            <div class="mili-footer-col">
-                <h5>Network</h5>
-                <ul>
-                    <li><a href="/en/promotion.html">Promotion</a></li>
-                    <li><a href="https://www.youtube.com/@Dr.ShinMillimeter" target="_blank" rel="noopener">YouTube</a></li>
-                    <li><a href="https://dosan.miliclinic.co.kr" target="_blank" rel="noopener">Mili Dosan</a></li>
-                    <li><a href="http://miliclinic.com" target="_blank" rel="noopener">Mili Global</a></li>
-                    <li><a href="https://sinchon.miliclinic.co.kr">&#54620;&#44397;&#50612; &#49324;&#51060;&#53944;</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="mili-footer-messengers">
-            <a href="https://api.whatsapp.com/send/?phone=821023834697&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mili-msg" aria-label="WhatsApp">
-                <svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375c-.99-1.575-1.516-3.391-1.516-5.26 0-5.445 4.455-9.885 9.942-9.885 2.654 0 5.145 1.035 7.021 2.91 1.875 1.875 2.909 4.371 2.909 7.026-.004 5.444-4.46 9.885-9.935 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411"/></svg>
-                <span class="mili-msg-name">WhatsApp</span>
-            </a>
-            <a href="https://mp.weixin.qq.com/s/U3J4SX5NmHNIuaYASOZ-XA" target="_blank" rel="noopener" class="mili-msg" aria-label="WeChat">
-                <svg viewBox="0 0 24 24" fill="#7BB32E"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.328.328 0 0 0 .166-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.594-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.475-1.78 5.687.91 2.214 3.337 3.6 6.116 3.6.453 0 .92-.069 1.386-.205a.79.79 0 0 1 .677.069l1.625 1.05a.36.36 0 0 0 .184.061c.16 0 .29-.132.29-.295 0-.071-.027-.142-.038-.213l-.336-1.245a.66.66 0 0 1-.026-.218.625.625 0 0 1 .25-.499C21.546 17.474 22.5 15.852 22.5 13.94c0-3.213-3.045-5.78-6.572-5.85zm-2.379 2.493c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897zm4.625 0c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897z"/></svg>
-                <span class="mili-msg-name">WeChat</span>
-            </a>
-            <a href="https://lin.ee/X7C7bMh" target="_blank" rel="noopener" class="mili-msg" aria-label="LINE">
-                <svg viewBox="0 0 24 24" fill="#06C755"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                <span class="mili-msg-name">LINE</span>
-            </a>
-            <a href="https://pf.kakao.com/_mxadwxb/chat" target="_blank" rel="noopener" class="mili-msg" aria-label="KakaoTalk">
-                <svg viewBox="0 0 24 24" fill="#FEE500"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.7 6.8L5.6 21.4c-.1.3.2.5.5.4l4.4-2.9c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/><path d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.7 6.8L5.6 21.4c-.1.3.2.5.5.4l4.4-2.9c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8s-4.5-8-10-8z" stroke="#1A1A1A" stroke-width="0.4" fill="#FEE500"/></svg>
-                <span class="mili-msg-name">KakaoTalk</span>
-            </a>
-            <a href="https://www.instagram.com/sinchon.miliclinic/" target="_blank" rel="noopener" class="mili-msg" aria-label="Instagram">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="#1A1A1A"/></svg>
-                <span class="mili-msg-name">Instagram</span>
-            </a>
-        </div>
-
-        <div class="mili-footer-business">
-            <div>
-                <p><strong>Company</strong> Mili Clinic Sinchon (&#48128;&#47532;&#51032;&#50896; &#46020;&#49328;)</p>
-                <p><strong>Director</strong> Kim Hye-won, M.D.</p>
-                <p><strong>Business No.</strong> 166-18-01231</p>
-                <p><strong>Information Manager</strong> Kim Hye-won</p>
-            </div>
-            <div>
-                <p><strong>Address</strong> 3F, 104 Sinchon-ro, Mapo-gu, Seoul, Korea</p>
-                <p><strong>Hours</strong> Mon&middot;Wed&middot;Fri 10:00&ndash;19:00 / Tue&middot;Thu 10:00&ndash;21:00 / Sat 10:00&ndash;16:00</p>
-                <p><strong>Closed</strong> Sundays &amp; Public Holidays</p>
-                <p><strong>Lunch</strong> 13:00&ndash;14:00</p>
-            </div>
-        </div>
-
-        <div class="mili-footer-bottom">
-            <div>&copy; 2026 Mili Clinic Sinchon. All Rights Reserved.</div>
-            <div class="mili-footer-policies">
-                <a href="/en/privacy.html">Privacy Policy</a>
-                <a href="/en/non-covered.html">Non-Covered Items</a>
-            </div>
-        </div>
-    </div>
+<!-- ===========================================
+     FOOTER — DO NOT MODIFY (Trimmed for review preview;
+     production uses the full footer from the source file)
+=========================================== -->
+<footer class="mili-footer" data-footer-placeholder>
+  <div class="mili-footer-inner" style="padding:60px var(--lf-gut, 64px); text-align:center; color:#8a8a8c; font-family:'Inter',sans-serif; font-size:12px; letter-spacing:0.16em; text-transform:uppercase;">
+    Footer · preserved from production
+  </div>
 </footer>
-
-<!-- Floating -->
-<div class="mili-float">
-    <a href="https://pf.kakao.com/_mxadwxb/chat" target="_blank" rel="noopener" class="mili-float-btn kakao" aria-label="KakaoTalk">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.7 6.8L5.6 21.4c-.1.3.2.5.5.4l4.4-2.9c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/></svg>
-    </a>
-    <a href="https://mp.weixin.qq.com/s/U3J4SX5NmHNIuaYASOZ-XA" target="_blank" rel="noopener" class="mili-float-btn wechat" aria-label="WeChat">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.328.328 0 0 0 .166-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.594-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.475-1.78 5.687.91 2.214 3.337 3.6 6.116 3.6.453 0 .92-.069 1.386-.205a.79.79 0 0 1 .677.069l1.625 1.05a.36.36 0 0 0 .184.061c.16 0 .29-.132.29-.295 0-.071-.027-.142-.038-.213l-.336-1.245a.66.66 0 0 1-.026-.218.625.625 0 0 1 .25-.499C21.546 17.474 22.5 15.852 22.5 13.94c0-3.213-3.045-5.78-6.572-5.85zm-2.379 2.493c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897zm4.625 0c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897z"/></svg>
-    </a>
-    <a href="https://lin.ee/X7C7bMh" target="_blank" rel="noopener" class="mili-float-btn line" aria-label="LINE">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-    </a>
-    <a href="https://api.whatsapp.com/send/?phone=821023834697&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mili-float-btn whatsapp" aria-label="WhatsApp">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375c-.99-1.575-1.516-3.391-1.516-5.26 0-5.445 4.455-9.885 9.942-9.885 2.654 0 5.145 1.035 7.021 2.91 1.875 1.875 2.909 4.371 2.909 7.026-.004 5.444-4.46 9.885-9.935 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411"/></svg>
-    </a>
-    <a href="https://www.instagram.com/sinchon.miliclinic/" target="_blank" rel="noopener" class="mili-float-btn instagram" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
-    </a>
-</div>
-<script>
-// FAQ accordion
-document.querySelectorAll('.faq-item').forEach(item => {
-    item.addEventListener('click', () => item.classList.toggle('open'));
-});
-
-document.querySelectorAll('.tx-feature-video[data-video-id]').forEach(el => {
-    el.addEventListener('click', function handleClick() {
-        const videoId = this.getAttribute('data-video-id');
-        const iframe = document.createElement('iframe');
-        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-        iframe.allowFullscreen = true;
-        this.innerHTML = '';
-        this.appendChild(iframe);
-        this.classList.add('playing');
-        this.removeEventListener('click', handleClick);
-    });
-});
-
-// Active sub-nav on scroll
-(function(){
-    const links = document.querySelectorAll('.tx-subnav a');
-    const sections = [...links].map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-            if(e.isIntersecting){
-                links.forEach(l => l.classList.remove('active'));
-                const active = document.querySelector('.tx-subnav a[href="#' + e.target.id + '"]');
-                if(active) active.classList.add('active');
-            }
-        });
-    }, {rootMargin: '-30% 0px -60% 0px'});
-    sections.forEach(s => observer.observe(s));
-})();
-</script>
-<script>
-(function(){
-    const wraps = document.querySelectorAll('.tx-point-wrap[data-area]');
-    const tags = document.querySelectorAll('.area-tag[data-area]');
-    function setActive(area){
-        wraps.forEach(w => w.classList.toggle('active', w.getAttribute('data-area') === area));
-        tags.forEach(t => t.classList.toggle('active', t.getAttribute('data-area') === area));
-    }
-    function clearActive(){
-        wraps.forEach(w => w.classList.remove('active'));
-        tags.forEach(t => t.classList.remove('active'));
-    }
-    wraps.forEach(w => {
-        w.addEventListener('mouseenter', () => setActive(w.getAttribute('data-area')));
-        w.addEventListener('mouseleave', clearActive);
-        w.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const area = w.getAttribute('data-area');
-            const isActive = w.classList.contains('active');
-            clearActive();
-            if (!isActive) setActive(area);
-        });
-    });
-    tags.forEach(t => {
-        t.addEventListener('mouseenter', () => setActive(t.getAttribute('data-area')));
-        t.addEventListener('mouseleave', clearActive);
-        t.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const area = t.getAttribute('data-area');
-            if (!area) return;
-            const isActive = t.classList.contains('active');
-            clearActive();
-            if (!isActive) setActive(area);
-        });
-    });
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.tx-point-wrap') && !e.target.closest('.area-tag')) {
-            clearActive();
-        }
-    });
-})();
-</script>
 
 <script data-mobile-nav-accordion>
 (function(){
-    const items = document.querySelectorAll('.mili-mobile-nav-list > li');
-    items.forEach(li => {
-        const span = li.querySelector(':scope > span');
-        if (!span) return;
-        span.addEventListener('click', (e) => {
-            e.stopPropagation();
-            li.classList.toggle('open');
-        });
+  const items = document.querySelectorAll('.mili-mobile-nav-list > li');
+  items.forEach(li => {
+    const span = li.querySelector(':scope > span');
+    if (!span) return;
+    span.addEventListener('click', (e) => {
+      e.stopPropagation();
+      li.classList.toggle('open');
     });
+  });
 })();
 </script>
 <script data-mili-lang>
 (function(){
-document.querySelectorAll('.mili-lang-toggle').forEach(function(btn){
-  btn.addEventListener('click', function(e){
-    e.stopPropagation();
-    var root = btn.closest('.mili-lang');
-    var open = !root.classList.contains('open');
+  document.querySelectorAll('.mili-lang-toggle').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var root = btn.closest('.mili-lang');
+      var open = !root.classList.contains('open');
+      document.querySelectorAll('.mili-lang.open').forEach(function(el){
+        el.classList.remove('open');
+        var t = el.querySelector('.mili-lang-toggle');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      });
+      if (open) {
+        root.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+  document.addEventListener('click', function(){
     document.querySelectorAll('.mili-lang.open').forEach(function(el){
       el.classList.remove('open');
       var t = el.querySelector('.mili-lang-toggle');
       if (t) t.setAttribute('aria-expanded', 'false');
     });
-    if (open) {
-      root.classList.add('open');
-      btn.setAttribute('aria-expanded', 'true');
+  });
+})();
+</script>
+
+<script>
+// ============================================
+// Hero — scroll-driven blur + scale + fade
+// ============================================
+(function(){
+  const hero = document.querySelector('.lf-hero');
+  const media = document.querySelector('.lf-hero__media');
+  const title = document.querySelector('.lf-hero__title');
+  if (!hero || !media || !title) return;
+
+  let ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const rect = hero.getBoundingClientRect();
+      const winH = window.innerHeight;
+      const progress = Math.max(0, Math.min(1, -rect.top / winH));
+      media.style.filter = `blur(${progress * 14}px) brightness(${1 - progress * 0.15})`;
+      media.style.transform = `scale(${1.06 + progress * 0.08})`;
+      title.style.opacity = String(1 - progress * 1.2);
+      title.style.transform = `translateY(${-progress * 60}px)`;
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+
+// ====================================================
+// 1) Reveal on scroll
+// ====================================================
+(function(){
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.lf-rv').forEach(el => io.observe(el));
+})();
+
+// ====================================================
+// 2) Philosophy — smooth lerped horizontal scroll
+//    Vertical scroll progress → horizontal translateX
+//    rAF lerp so it never feels glued to the scroll wheel
+// ====================================================
+(function(){
+  const section = document.getElementById('lfPhilosophy');
+  const track   = document.getElementById('lfPhilosophyTrack');
+  const fill    = document.getElementById('lfPhilosophyFill');
+  const cur     = document.getElementById('lfPhilosophyCurrent');
+  if (!section || !track) return;
+
+  // Speed: how many viewports of vertical travel per horizontal viewport.
+  // 0.9 = a little faster than 1:1 (track moves slightly ahead of scroll).
+  const SPEED = 0.95;
+  // Lerp smoothing — 0 = no smoothing, 1 = no movement. 0.12 is buttery.
+  const LERP  = 0.12;
+
+  let maxScroll = 0;
+  let targetX   = 0;
+  let currentX  = 0;
+  let progress  = 0;
+  let raf       = 0;
+  let measured  = false;
+
+  function isMobile() { return window.innerWidth <= 880; }
+
+  function measure() {
+    if (isMobile()) {
+      track.style.transform = '';
+      section.style.height = '';
+      measured = false;
+      return;
+    }
+    const trackWidth = track.scrollWidth;
+    const vw         = window.innerWidth;
+    maxScroll = Math.max(0, trackWidth - vw);
+    const requiredHeight = window.innerHeight + (maxScroll * SPEED);
+    section.style.height = requiredHeight + 'px';
+    measured = true;
+    sample();
+  }
+
+  function sample() {
+    if (!measured) return;
+    const rect = section.getBoundingClientRect();
+    const winH = window.innerHeight;
+    const total = section.offsetHeight - winH;
+    if (total <= 0) return;
+
+    let p = (-rect.top) / total;
+    p = Math.max(0, Math.min(1, p));
+    progress = p;
+    targetX = -p * maxScroll;
+  }
+
+  function tick() {
+    if (measured) {
+      currentX += (targetX - currentX) * LERP;
+      if (Math.abs(targetX - currentX) < 0.05) currentX = targetX;
+      track.style.transform = 'translate3d(' + currentX.toFixed(2) + 'px, 0, 0)';
+
+      if (fill) fill.style.width = (progress * 100).toFixed(1) + '%';
+      if (cur) {
+        // 5 stages, scale visually around progress
+        const stage = Math.min(5, Math.max(1, Math.ceil(progress * 5) || 1));
+        const label = String(stage).padStart(2, '0');
+        if (cur.textContent !== label) cur.textContent = label;
+      }
+    }
+    raf = requestAnimationFrame(tick);
+  }
+
+  function onScroll(){ sample(); }
+  function onResize(){ measure(); }
+
+  measure();
+  window.addEventListener('load', measure);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+  track.querySelectorAll('img').forEach(img => {
+    if (!img.complete) {
+      img.addEventListener('load',  measure, { once: true });
+      img.addEventListener('error', measure, { once: true });
     }
   });
-});
-document.addEventListener('click', function(){
-  document.querySelectorAll('.mili-lang.open').forEach(function(el){
-    el.classList.remove('open');
-    var t = el.querySelector('.mili-lang-toggle');
-    if (t) t.setAttribute('aria-expanded', 'false');
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onResize);
+  tick();
+})();
+
+// ====================================================
+// 4) Protocol — reveal each step
+// ====================================================
+(function(){
+  const steps = document.querySelectorAll('.lf-protocol__step');
+  if (!steps.length) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-in'); });
+  }, { threshold: 0.22 });
+  steps.forEach(s => io.observe(s));
+})();
+
+// ====================================================
+// 5) FAQ — accordion
+// ====================================================
+(function(){
+  document.querySelectorAll('.lf-faq__item').forEach(item => {
+    const btn = item.querySelector('.lf-faq__q');
+    const ans = item.querySelector('.lf-faq__a');
+    if (!btn || !ans) return;
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('is-open');
+      if (isOpen) {
+        item.classList.remove('is-open');
+        ans.style.maxHeight = '0px';
+      } else {
+        item.classList.add('is-open');
+        ans.style.maxHeight = ans.scrollHeight + 'px';
+      }
+    });
   });
-});
 })();
 </script>
 
