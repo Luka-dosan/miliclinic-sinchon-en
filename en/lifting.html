@@ -198,12 +198,11 @@
 }
 .lf-hero__title {
   font-family: var(--lf-sans);
-  
-  font-weight: 300;
-  font-size: clamp(96px, 17vw, 280px);
-  line-height: 0.88;
-  letter-spacing: -0.025em;
-  margin: 0 0 clamp(28px, 4vh, 56px);
+  font-weight: 200;
+  font-size: clamp(120px, 22vw, 360px);
+  line-height: 0.82;
+  letter-spacing: -0.045em;
+  margin: 0 0 clamp(36px, 5vh, 64px);
   text-wrap: balance;
 }
 .lf-hero__title small {
@@ -219,14 +218,51 @@
 }
 .lf-hero__copy {
   font-family: var(--lf-sans);
-  font-weight: 400;
-  font-size: clamp(17px, 1.2vw, 21px);
-  line-height: 1.55;
-  letter-spacing: -0.014em;
+  font-weight: 300;
+  font-size: clamp(19px, 1.5vw, 26px);
+  line-height: 1.45;
+  letter-spacing: -0.018em;
   color: var(--lf-ink);
-  max-width: 460px;
+  max-width: 560px;
+  margin-bottom: clamp(48px, 7vh, 80px);
 }
 .lf-hero__copy em { font-style: normal; color: var(--lf-ink); }
+.lf-hero__copy strong {
+  font-weight: 500;
+  color: var(--lf-ink);
+}
+
+.lf-hero__stats {
+  display: flex;
+  gap: clamp(48px, 7vw, 96px);
+  align-items: baseline;
+  margin-top: clamp(40px, 5vh, 64px);
+}
+.lf-hero__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.lf-hero__stat-num {
+  font-family: var(--lf-sans);
+  font-weight: 200;
+  font-size: clamp(48px, 5vw, 80px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--lf-ink);
+}
+.lf-hero__stat-label {
+  font-family: var(--lf-sans);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--lf-ink-3);
+}
+@media (max-width: 720px) {
+  .lf-hero__stats { gap: 32px; }
+  .lf-hero__stat-num { font-size: 36px; }
+}
 
 .lf-hero__foot {
   position: absolute;
@@ -524,155 +560,138 @@
 }
 
 /* =========================================================
-   LAYERED APPROACH — sticky cross-section, mono
+   STRATA — 5-band full-bleed depth diagram
    ========================================================= */
 .lf-layered {
   position: relative;
   width: 100vw;
   background: var(--lf-white);
-  padding: clamp(120px, 18vh, 200px) var(--lf-gut) clamp(140px, 22vh, 240px);
+  padding: clamp(100px, 14vh, 160px) 0 0;
 }
 .lf-layered__head {
-  max-width: 760px;
-  margin: 0 0 clamp(80px, 12vh, 140px);
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+  padding: 0 var(--lf-gut);
+  margin-bottom: clamp(80px, 11vh, 140px);
+  max-width: 980px;
 }
 .lf-layered__title {
   font-family: var(--lf-sans);
-  
   font-weight: 300;
-  font-size: clamp(46px, 6vw, 96px);
-  line-height: 1.0;
-  letter-spacing: -0.018em;
+  font-size: clamp(44px, 5.6vw, 84px);
+  line-height: 1.04;
+  letter-spacing: -0.028em;
+  margin: 32px 0 32px;
   color: var(--lf-ink);
 }
 .lf-layered__lede {
   font-family: var(--lf-sans);
   font-weight: 400;
-  font-size: clamp(17px, 1.15vw, 19px);
-  line-height: 1.6;
+  font-size: clamp(17px, 1.2vw, 21px);
+  line-height: 1.65;
   color: var(--lf-ink-3);
   max-width: 560px;
   letter-spacing: -0.014em;
 }
 
-.lf-layered__body {
-  display: block;
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 0 var(--lf-gut);
-}
-
-/* =========================================================
-   DEPTH DIAGRAM — replaces svg cross-section
-   ========================================================= */
-.lf-depth {
+.lf-strata {
   position: relative;
-  padding: 40px 0;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
 }
-.lf-depth__spine {
-  position: absolute;
-  top: 60px;
-  bottom: 60px;
-  left: 140px;
-  width: 1px;
-  background: var(--lf-line);
-}
-.lf-depth__row {
+.lf-strata__band {
   position: relative;
+  width: 100%;
+  min-height: 28vh;
+  padding: clamp(48px, 7vh, 80px) var(--lf-gut);
   display: grid;
-  grid-template-columns: 110px 30px 1fr;
+  grid-template-columns: 180px 1fr 1fr;
   align-items: center;
-  gap: 0;
-  padding: clamp(24px, 4vh, 44px) 0;
-  opacity: 0.35;
-  transition: opacity 0.6s var(--lf-ease);
+  gap: clamp(24px, 4vw, 80px);
+  border-top: 1px solid rgba(0,0,0,0.08);
+  transition: background 0.8s var(--lf-ease);
 }
-.lf-depth__row.is-active { opacity: 1; }
+/* Gradient palette — top is lightest, bottom is deepest */
+.lf-strata__band[data-depth="0"] { background: #FBF8F4; }
+.lf-strata__band[data-depth="1"] { background: #F2E9DC; }
+.lf-strata__band[data-depth="2"] { background: #E5D5BD; }
+.lf-strata__band[data-depth="3"] { background: #D4BC9A; }
+.lf-strata__band[data-depth="4"] { background: #B8997A; color: #FFFFFF; }
 
-.lf-depth__measure {
+.lf-strata__band[data-depth="4"] .lf-strata__layer,
+.lf-strata__band[data-depth="4"] .lf-strata__depth,
+.lf-strata__band[data-depth="4"] .lf-strata__sublabel {
+  color: #FFFFFF;
+}
+.lf-strata__band[data-depth="4"] .lf-strata__device {
+  border-color: rgba(255,255,255,0.45);
+  color: #FFFFFF;
+}
+
+.lf-strata__depth {
   font-family: var(--lf-sans);
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  color: var(--lf-ink-3);
-  text-align: right;
-  padding-right: 24px;
-}
-.lf-depth__row.is-active .lf-depth__measure {
+  font-weight: 300;
+  font-size: clamp(40px, 5vw, 76px);
+  line-height: 1;
+  letter-spacing: -0.04em;
   color: var(--lf-ink);
-  font-weight: 500;
 }
-
-.lf-depth__node {
-  width: 9px; height: 9px;
-  border-radius: 50%;
-  background: var(--lf-mute-2);
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-  transition: background 0.5s var(--lf-ease), transform 0.5s var(--lf-ease);
-}
-.lf-depth__node--lg {
-  width: 13px; height: 13px;
-}
-.lf-depth__row.is-active .lf-depth__node {
-  background: var(--lf-ink);
-  transform: scale(1.15);
-}
-
-.lf-depth__info {
-  padding-left: 32px;
+.lf-strata__center {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-.lf-depth__layer {
-  font-family: var(--lf-sans);
-  font-size: clamp(20px, 1.8vw, 26px);
-  font-weight: 400;
-  letter-spacing: -0.014em;
-  color: var(--lf-ink);
-  line-height: 1.2;
-}
-.lf-depth__label {
+.lf-strata__sublabel {
   font-family: var(--lf-sans);
   font-size: 11px;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: var(--lf-mute);
+  color: var(--lf-ink-3);
+  font-weight: 400;
 }
-.lf-depth__devices {
+.lf-strata__layer {
+  font-family: var(--lf-sans);
+  font-weight: 400;
+  font-size: clamp(26px, 2.4vw, 38px);
+  line-height: 1.1;
+  letter-spacing: -0.018em;
+  color: var(--lf-ink);
+}
+.lf-strata__devices {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 14px;
-  margin-top: 6px;
+  gap: 10px;
+  justify-content: flex-start;
 }
-.lf-depth__devices span {
+.lf-strata__device {
   font-family: var(--lf-sans);
   font-size: 13px;
   font-weight: 400;
-  color: var(--lf-ink-3);
   letter-spacing: 0.02em;
-  padding: 6px 14px;
-  border: 1px solid var(--lf-line);
+  padding: 9px 18px;
+  border: 1px solid rgba(0,0,0,0.18);
   border-radius: var(--lf-r-pill);
-  transition: border-color 0.5s var(--lf-ease), color 0.5s var(--lf-ease), background 0.5s var(--lf-ease);
-}
-.lf-depth__row.is-active .lf-depth__devices span {
-  border-color: var(--lf-ink);
   color: var(--lf-ink);
-  background: var(--lf-white);
+  background: transparent;
+  transition: background 0.4s var(--lf-ease);
+}
+.lf-strata__device--empty {
+  border-style: dashed;
+  opacity: 0.5;
+  font-style: italic;
 }
 
-@media (max-width: 720px) {
-  .lf-depth__spine { left: 90px; }
-  .lf-depth__row { grid-template-columns: 70px 30px 1fr; }
-  .lf-depth__measure { font-size: 12px; padding-right: 14px; }
-  .lf-depth__info { padding-left: 20px; }
-  .lf-depth__layer { font-size: 19px; }
+@media (max-width: 880px) {
+  .lf-strata__band {
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: auto auto;
+    min-height: auto;
+    padding: 40px 24px;
+    gap: 16px;
+  }
+  .lf-strata__depth { font-size: 32px; grid-row: span 2; }
+  .lf-strata__center { grid-column: 2; }
+  .lf-strata__devices { grid-column: 1 / -1; }
+  .lf-strata__layer { font-size: 22px; }
 }
 
 /* =========================================================
@@ -1383,13 +1402,25 @@
     </div>
 
     <div class="lf-hero__inner">
-      <h1 class="lf-hero__title">
-        <em>Lifting,</em>
-      </h1>
+      <h1 class="lf-hero__title">Lifting</h1>
       <p class="lf-hero__copy">
         Time is the only thing<br>that doesn't lift back.<br>
-        <em>We do the rest.</em>
+        <strong>We do the rest.</strong>
       </p>
+      <div class="lf-hero__stats">
+        <div class="lf-hero__stat">
+          <div class="lf-hero__stat-num">07</div>
+          <div class="lf-hero__stat-label">Technologies</div>
+        </div>
+        <div class="lf-hero__stat">
+          <div class="lf-hero__stat-num">01</div>
+          <div class="lf-hero__stat-label">Doctor</div>
+        </div>
+        <div class="lf-hero__stat">
+          <div class="lf-hero__stat-num">04</div>
+          <div class="lf-hero__stat-label">Skin Depths</div>
+        </div>
+      </div>
     </div>
 
     <div class="lf-hero__foot">
@@ -1523,70 +1554,67 @@
       <p class="lf-layered__lede lf-rv d2">Skin is built in layers — and each layer ages differently. A single device cannot reach all of them. We read each layer separately and choose the energy that belongs to it.</p>
     </div>
 
-    <div class="lf-layered__body">
-      <div class="lf-depth">
-        <!-- Ruler / spine -->
-        <div class="lf-depth__spine"></div>
+    <div class="lf-strata">
 
-        <!-- Layer rows -->
-        <div class="lf-depth__row" data-layer="0">
-          <div class="lf-depth__measure">0.1 mm</div>
-          <div class="lf-depth__node"></div>
-          <div class="lf-depth__info">
-            <div class="lf-depth__layer">Epidermis</div>
-            <div class="lf-depth__label">Surface</div>
-          </div>
+      <div class="lf-strata__band" data-depth="0">
+        <div class="lf-strata__depth">0.1mm</div>
+        <div class="lf-strata__center">
+          <div class="lf-strata__sublabel">Surface</div>
+          <div class="lf-strata__layer">Epidermis</div>
         </div>
-
-        <div class="lf-depth__row" data-layer="1">
-          <div class="lf-depth__measure">1.5 mm</div>
-          <div class="lf-depth__node"></div>
-          <div class="lf-depth__info">
-            <div class="lf-depth__layer">Dermis · Upper</div>
-            <div class="lf-depth__devices">
-              <span>Thermage</span>
-              <span>Oligio</span>
-              <span>Titanium</span>
-            </div>
-          </div>
+        <div class="lf-strata__devices">
+          <span class="lf-strata__device lf-strata__device--empty">Conditioning · Recovery</span>
         </div>
-
-        <div class="lf-depth__row" data-layer="2">
-          <div class="lf-depth__measure">3.0 mm</div>
-          <div class="lf-depth__node"></div>
-          <div class="lf-depth__info">
-            <div class="lf-depth__layer">Dermis · Lower</div>
-            <div class="lf-depth__devices">
-              <span>TuneFace</span>
-              <span>InMode</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="lf-depth__row" data-layer="3">
-          <div class="lf-depth__measure">4.5 mm</div>
-          <div class="lf-depth__node lf-depth__node--lg"></div>
-          <div class="lf-depth__info">
-            <div class="lf-depth__layer">SMAS</div>
-            <div class="lf-depth__devices">
-              <span>Ulthera</span>
-              <span>Shurink</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="lf-depth__row" data-layer="4">
-          <div class="lf-depth__measure">Deep</div>
-          <div class="lf-depth__node"></div>
-          <div class="lf-depth__info">
-            <div class="lf-depth__layer">Fascia &amp; Volume</div>
-            <div class="lf-depth__devices">
-              <span>Eve Titan</span>
-            </div>
-          </div>
-        </div>
-
       </div>
+
+      <div class="lf-strata__band" data-depth="1">
+        <div class="lf-strata__depth">1.5mm</div>
+        <div class="lf-strata__center">
+          <div class="lf-strata__sublabel">Mid-depth</div>
+          <div class="lf-strata__layer">Dermis · Upper</div>
+        </div>
+        <div class="lf-strata__devices">
+          <span class="lf-strata__device">Thermage</span>
+          <span class="lf-strata__device">Oligio</span>
+          <span class="lf-strata__device">Titanium</span>
+        </div>
+      </div>
+
+      <div class="lf-strata__band" data-depth="2">
+        <div class="lf-strata__depth">3.0mm</div>
+        <div class="lf-strata__center">
+          <div class="lf-strata__sublabel">Deeper dermis</div>
+          <div class="lf-strata__layer">Dermis · Lower</div>
+        </div>
+        <div class="lf-strata__devices">
+          <span class="lf-strata__device">TuneFace</span>
+          <span class="lf-strata__device">InMode</span>
+        </div>
+      </div>
+
+      <div class="lf-strata__band" data-depth="3">
+        <div class="lf-strata__depth">4.5mm</div>
+        <div class="lf-strata__center">
+          <div class="lf-strata__sublabel">Structural</div>
+          <div class="lf-strata__layer">SMAS</div>
+        </div>
+        <div class="lf-strata__devices">
+          <span class="lf-strata__device">Ulthera</span>
+          <span class="lf-strata__device">Shurink</span>
+        </div>
+      </div>
+
+      <div class="lf-strata__band" data-depth="4">
+        <div class="lf-strata__depth">Deep</div>
+        <div class="lf-strata__center">
+          <div class="lf-strata__sublabel">Volumetric</div>
+          <div class="lf-strata__layer">Fascia &amp; Volume</div>
+        </div>
+        <div class="lf-strata__devices">
+          <span class="lf-strata__device">Eve Titan</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -2044,37 +2072,6 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onResize);
   tick();
-})();
-
-// ====================================================
-// 3) Layered — sync diagram with list scroll
-// ====================================================
-(function(){
-  const items   = document.querySelectorAll('.lf-depth__row');
-  const fills   = [];
-  const brackets= [];
-  const labels  = [];
-  const depths  = [];
-  if (!items.length) return;
-
-  function activate(i) {
-    items.forEach((el, k) => el.classList.toggle('is-active', k === i));
-    fills.forEach(el => el.classList.toggle('is-active', +el.dataset.layer === i));
-    brackets.forEach(el => el.classList.toggle('is-active', +el.dataset.layer === i));
-    labels.forEach(el => el.classList.toggle('is-active', +el.dataset.label === i));
-    depths.forEach(el => el.classList.toggle('is-active', +el.dataset.depth === i));
-  }
-  activate(0);
-
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting && e.intersectionRatio > 0.5) {
-        const idx = Array.from(items).indexOf(e.target);
-        if (idx >= 0) activate(idx);
-      }
-    });
-  }, { threshold: [0.5, 0.6, 0.7], rootMargin: '-30% 0px -30% 0px' });
-  items.forEach(it => io.observe(it));
 })();
 
 // ====================================================
