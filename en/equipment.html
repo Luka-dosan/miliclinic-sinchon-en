@@ -213,58 +213,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     .page-hero-grid .right{padding-bottom: 0}
 }
 
-/* ——— Category Filter Nav ——— */
-.cat-nav{
-    padding: clamp(80px, 10vw, 120px) 0 40px;
-    border-bottom: 1px solid var(--line);
-    position: sticky;
-    top: 72px;
-    background: var(--paper);
-    z-index: 50;
-}
-@media (max-width: 700px) {
-    .cat-nav { top: 56px; padding: clamp(48px, 12vw, 72px) 0 14px; }
-}
-
-.cat-nav-inner{
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    max-width: var(--container);
-    margin: 0 auto;
-    padding: 0 var(--pad-x);
-    align-items: center;
-}
-.cat-nav-label{
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-right: 24px;
-}
-.cat-pill{
-    display: inline-flex;
-    align-items: center;
-    padding: 10px 16px;
-    border: 1px solid var(--line);
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--ink);
-    cursor: pointer;
-    transition: background .2s, color .2s, border-color .2s;
-}
-.cat-pill:hover, .cat-pill.active{
-    background: var(--ink);
-    color: var(--paper);
-    border-color: var(--ink);
-}
-.cat-pill .count{
-    margin-left: 8px;
-    opacity: .6;
-    font-size: 10px;
-}
-
 /* ——— Category section ——— */
 .category{
     padding: clamp(60px, 10vw, 120px) 0;
@@ -632,12 +580,6 @@ a.mili-lang-item{text-decoration:none}
     font-size:clamp(40px,12vw,68px);line-height:1.05}
     .page-subtitle{display:none}
 
-    /* Cat Nav 모바일 가로 스크롤 */
-    .cat-nav{overflow-x:auto;-webkit-overflow-scrolling:touch}
-    .cat-nav-inner{flex-wrap:nowrap;padding:16px var(--pad-x);gap:8px;min-width:max-content}
-    .cat-nav-label{font-size:10px}
-    .cat-pill{font-size:11px;padding:8px 14px;white-space:nowrap}
-
     /* 섹션 padding 완화 */
     .category,
     .principle{padding-top:clamp(60px,14vw,100px) !important;padding-bottom:clamp(60px,14vw,100px) !important}
@@ -774,18 +716,6 @@ em, cite { font-style: normal; }
         </div>
     </div>
 </header>
-
-<!-- Category Nav -->
-<nav class="cat-nav">
-    <div class="cat-nav-inner">
-        <span class="cat-nav-label">— Jump to</span>
-        <a href="#lifting" class="cat-pill">Lifting <span class="count">· 06</span></a>
-        <a href="#laser" class="cat-pill">Laser <span class="count">· 05</span></a>
-        <a href="#boostermts" class="cat-pill">Booster &amp; MTS <span class="count">· 03</span></a>
-        <a href="#body" class="cat-pill">Body <span class="count">· 02</span></lass="cat-pill">Diagnostics <span class="count">· 01</span></a>
-        <a href="#skincare" class="cat-pill">Skin Care <span class="count">· 05</span></a>
-    </div>
-</nav>
 
 <!-- LIFTING -->
 <section id="lifting" class="category">
@@ -1200,23 +1130,6 @@ em, cite { font-style: normal; }
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
     </a>
 </div>
-<script>
-// Active cat-pill on scroll
-(function(){
-    const pills = document.querySelectorAll('.cat-pill');
-    const sections = document.querySelectorAll('.category');
-    const observer = new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{
-            if(e.isIntersecting){
-                pills.forEach(p=>p.classList.remove('active'));
-                const pill = document.querySelector('.cat-pill[href="#'+e.target.id+'"]');
-                if(pill) pill.classList.add('active');
-            }
-        });
-    }, {rootMargin: '-30% 0px -60% 0px'});
-    sections.forEach(s=>observer.observe(s));
-})();
-</script>
 <script data-mobile-nav-accordion>
 (function(){
     const items = document.querySelectorAll('.mili-mobile-nav-list > li');
