@@ -269,16 +269,22 @@ em, cite { font-style: normal; }
   .mc-hero__title { font-size: clamp(56px, 18vw, 120px); }
 }
 
-/* Section 2: Statement */
+/* Section 2: Statement (sticky pin) */
 .mc-statement {
   position: relative;
-  min-height: 180vh;
+  width: 100%;
+  height: 220vh;
+  background: #FAFBFC;
+}
+.mc-statement__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #FAFBFC;
-  padding: 160px 32px;
+  padding: 0 32px;
 }
 .mc-statement__inner {
   max-width: 1400px;
@@ -330,9 +336,8 @@ em, cite { font-style: normal; }
 }
 
 @media (max-width: 768px) {
-  .mc-statement {
-    padding: 100px 24px;
-    min-height: 90vh;
+  .mc-statement__sticky {
+    padding: 0 24px;
   }
   .mc-statement__lede {
     margin-bottom: 48px;
@@ -738,6 +743,7 @@ em, cite { font-style: normal; }
 
   <!-- ===== Section 2: Statement ===== -->
   <section class="mc-statement" id="mc-statement">
+    <div class="mc-statement__sticky">
     <div class="mc-statement__inner">
       <p class="mc-statement__lede">— Our Philosophy</p>
       <h2 class="mc-statement__text" aria-label="Becoming more beautiful with a mere 1mm change.">
@@ -750,6 +756,7 @@ em, cite { font-style: normal; }
         <span class="word mc-statement__accent" data-i="6">1mm</span>
         <span class="word" data-i="7">change.</span>
       </h2>
+    </div>
     </div>
   </section>
 
@@ -988,17 +995,27 @@ document.addEventListener('click', function(){
     const rect = statement.getBoundingClientRect();
     const windowH = window.innerHeight;
     
-    // 섹션이 화면 중앙에 가까워질 때부터 인터랙션 시작
-    // rect.top이 화면 상단(0)에 도달했을 때 progress 0
-    // rect.bottom이 화면 상단을 벗어났을 때 progress 1
-    const start = windowH * 0.5;  // 화면의 절반 지점부터 시작
-    const end = -rect.height * 0.3;  // 섹션이 70% 지났을 때 완료
+    // sticky 전체 진행 거리
+    const scrollableDistance = statement.offsetHeight - windowH;
     
-    let progress = (start - rect.top) / (start - end);
-    progress = Math.max(0, Math.min(1, progress));
+    // raw progress (0~1)
+    let rawProgress = -rect.top / scrollableDistance;
+    rawProgress = Math.max(0, Math.min(1, rawProgress));
     
-    // 진행도에 따라 단어를 순차 활성화 (1.0 배수 - 정확히 진행도에 맞춤)
-    const activeCount = Math.ceil(progress * words.length);
+    // 활성화 구간: 30%~80% 사이에서만 단어 등장
+    // 0~30%: 모든 단어 흐림 (글자가 아래쪽에서 위로 올라오는 동안)
+    // 30~80%: 단어 순차 활성화
+    // 80~100%: 모든 단어 활성화 + 다음 섹션으로 넘어가기 전 여유
+    const START = 0.30;
+    const END = 0.80;
+    
+    let activeProgress = 0;
+    if (rawProgress > START) {
+      activeProgress = Math.min(1, (rawProgress - START) / (END - START));
+    }
+    
+    // 진행도에 따라 단어 순차 활성화
+    const activeCount = Math.ceil(activeProgress * words.length);
     
     words.forEach((word, i) => {
       if (i < activeCount) {
