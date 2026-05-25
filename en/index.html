@@ -345,7 +345,7 @@ em, cite { font-style: normal; }
   width: 100%;
   background: #0A0A0A;
   color: #FFFFFF;
-  height: 200vh;
+  /* height set by JS based on track width */
 }
 .mc-philo__sticky {
   position: sticky;
@@ -508,6 +508,117 @@ em, cite { font-style: normal; }
 
 @media (max-width: 768px) {
   .mc-space__content { padding: 0 24px; }
+}
+
+/* Section 5: CTA */
+.mc-cta {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0A0A0A;
+  color: #FFFFFF;
+  padding: 120px 32px;
+}
+.mc-cta__inner {
+  max-width: 1100px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mc-cta__eyebrow {
+  font-family: var(--display);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  margin: 0 0 48px;
+}
+.mc-cta__title {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(40px, 6vw, 96px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin: 0 0 32px;
+}
+.mc-cta__desc {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(16px, 1.4vw, 19px);
+  line-height: 1.65;
+  color: rgba(255,255,255,0.75);
+  max-width: 600px;
+  margin: 0 0 64px;
+}
+.mc-cta__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.mc-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 32px;
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+  border-radius: 2px;
+}
+.mc-cta__btn i {
+  width: 14px;
+  height: 1px;
+  background: currentColor;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.mc-cta__btn i::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 6px;
+  height: 1px;
+  background: currentColor;
+  transform: translateY(-50%) rotate(45deg);
+  transform-origin: right center;
+}
+.mc-cta__btn:hover i { transform: translateX(4px); }
+.mc-cta__btn--primary {
+  background: #FFFFFF;
+  color: #0A0A0A;
+  border: 1px solid #FFFFFF;
+}
+.mc-cta__btn--primary:hover {
+  background: #E5E5E7;
+  border-color: #E5E5E7;
+}
+.mc-cta__btn--ghost {
+  background: transparent;
+  color: #FFFFFF;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+.mc-cta__btn--ghost:hover {
+  border-color: #FFFFFF;
+  background: rgba(255,255,255,0.05);
+}
+
+@media (max-width: 768px) {
+  .mc-cta { padding: 80px 24px; }
+  .mc-cta__actions { flex-direction: column; width: 100%; }
+  .mc-cta__btn { width: 100%; justify-content: center; }
 }
 
 /* ============================== END NEW INDEX STYLES ============================== */
@@ -680,6 +791,25 @@ em, cite { font-style: normal; }
         <p class="mc-space__eyebrow">— The Space</p>
         <h2 class="mc-space__title">Designed for<br>stillness.</h2>
         <p class="mc-space__desc">Every room shaped around a single patient at a time. No rush. No overlap. No audience.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section 5: CTA ===== -->
+  <section class="mc-cta" id="mc-cta">
+    <div class="mc-cta__inner">
+      <p class="mc-cta__eyebrow">— Begin Your Visit</p>
+      <h2 class="mc-cta__title">A clinic that begins<br>with a conversation.</h2>
+      <p class="mc-cta__desc">Every visit starts with a 30-minute diagnostic consultation. No procedure scheduled until we have read your skin together.</p>
+      <div class="mc-cta__actions">
+        <a class="mc-cta__btn mc-cta__btn--primary" href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener">
+          Reserve a Visit
+          <i></i>
+        </a>
+        <a class="mc-cta__btn mc-cta__btn--ghost" href="/en/location.html">
+          See Location
+          <i></i>
+        </a>
       </div>
     </div>
   </section>
@@ -884,40 +1014,63 @@ document.addEventListener('click', function(){
   updateWords();
 })();
 
-/* ===== Section 3: Philosophy horizontal scroll on vertical scroll ===== */
+/* ===== Section 3: Philosophy horizontal scroll (Lifting logic) ===== */
 (function() {
-  const philo = document.getElementById('mc-philo');
-  if (!philo) return;
+  const section = document.getElementById('mc-philo');
+  const track = section ? section.querySelector('.mc-philo__track') : null;
+  if (!section || !track) return;
   
-  const track = philo.querySelector('.mc-philo__track');
-  const sticky = philo.querySelector('.mc-philo__sticky');
-  if (!track || !sticky) return;
-
-  function updateTrack() {
-    const rect = philo.getBoundingClientRect();
-    const windowH = window.innerHeight;
-    
-    // sticky 진행 거리
-    const scrollableDistance = philo.offsetHeight - windowH;
-    
-    // 현재 진행도 (0 ~ 1)
-    let progress = -rect.top / scrollableDistance;
-    progress = Math.max(0, Math.min(1, progress));
-    
-    // 트랙이 가로로 움직일 거리 = 트랙 전체 너비 - viewport 너비
-    const maxTranslate = track.scrollWidth - window.innerWidth;
-    
-    // 가로 이동 (마이너스 방향)
-    const translateX = -progress * maxTranslate;
-    track.style.transform = `translateX(${translateX}px)`;
+  const SPEED = 0.95;
+  const LERP = 0.12;
+  let maxScroll = 0;
+  let targetX = 0;
+  let currentX = 0;
+  let measured = false;
+  let raf = 0;
+  
+  function isMobile() { return window.innerWidth <= 880; }
+  
+  function measure() {
+    if (isMobile()) {
+      track.style.transform = '';
+      section.style.height = '';
+      measured = false;
+      return;
+    }
+    const trackWidth = track.scrollWidth;
+    const vw = window.innerWidth;
+    maxScroll = Math.max(0, trackWidth - vw);
+    const requiredHeight = window.innerHeight + (maxScroll * SPEED);
+    section.style.height = requiredHeight + 'px';
+    measured = true;
+    sample();
   }
-
-  window.addEventListener('scroll', updateTrack, { passive: true });
-  window.addEventListener('resize', updateTrack);
   
-  // 이미지/폰트 로드 후 재계산
-  window.addEventListener('load', updateTrack);
-  setTimeout(updateTrack, 500);
+  function sample() {
+    if (!measured) return;
+    const rect = section.getBoundingClientRect();
+    const winH = window.innerHeight;
+    const total = section.offsetHeight - winH;
+    if (total <= 0) return;
+    let p = (-rect.top) / total;
+    p = Math.max(0, Math.min(1, p));
+    targetX = -p * maxScroll;
+  }
+  
+  function tick() {
+    if (measured) {
+      currentX += (targetX - currentX) * LERP;
+      track.style.transform = 'translateX(' + currentX + 'px)';
+    }
+    raf = requestAnimationFrame(tick);
+  }
+  
+  window.addEventListener('scroll', sample, { passive: true });
+  window.addEventListener('resize', measure);
+  window.addEventListener('load', measure);
+  setTimeout(measure, 100);
+  setTimeout(measure, 500);
+  tick();
 })();
 
 /* ===== Section 4: Space image sequence ===== */
