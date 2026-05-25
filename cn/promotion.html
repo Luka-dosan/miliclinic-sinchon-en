@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>促销活动 — 密龄皮肤科 道山店</title>
-<meta name="description" content="密龄皮肤科道山店当下推广方案 — Aligned Beauty、MILI Reborn Cell、Fides Care 安全镇静方案。">
+<title>Promotion — Mili Clinic Sinchon</title>
+<meta name="description" content="Mili Clinic Sinchon — A private aesthetic clinic in Seoul.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mili Clinic Sinchon">
 <meta property="og:title" content="Mili Clinic Sinchon">
@@ -12,8 +12,8 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Mili Clinic Sinchon">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:url" content="https://miliclinic-sinchon-en.vercel.app/cn/promotion.html">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://miliclinic-sinchon-en.vercel.app/promotion.html">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Mili Clinic Sinchon">
@@ -27,7 +27,7 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-:root{--ink:#0F0F10;--bone:#F4F1EB;--paper:#FAF8F4;--white:#FFFFFF;--muted:#8A867F;--line:#DEDAD1;--accent:#4338CA;--gold:#A89668;--pad-x:clamp(24px,5vw,96px);--container:1440px;
+:root{--ink:#0F0F10;--bone:#F1F2F5;--paper:#F8F9FB;--white:#FFFFFF;--muted:#8A867F;--line:#DEDAD1;--accent:#4338CA;--gold:#A89668;--pad-x:clamp(24px,5vw,96px);--container:1440px;
     --display: "SF Pro Display", system-ui, -apple-system, "Inter", sans-serif;
 }
 body{font-family: "SF Pro Text", system-ui, -apple-system, "Inter", sans-serif;color:var(--ink);background:var(--paper);font-weight:400;line-height:1.55;letter-spacing:-0.01em;-webkit-font-smoothing:antialiased}
@@ -113,6 +113,25 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .promo-card-title em{font-style: normal;font-weight:300}
 .promo-card-divider{width:32px;height:1px;background:var(--gold);margin-bottom:20px}
 .promo-card-desc{font-size:14px;font-weight:300;line-height:1.75;color:var(--ink);opacity:.85;margin-bottom:28px;flex-grow:1}
+.promo-hero{padding:clamp(80px,12vw,140px) 0 clamp(60px,8vw,100px);text-align:center}
+.promo-hero-inner{max-width:880px;margin:0 auto;padding:0 var(--pad-x)}
+.promo-hero-eyebrow{font-size:12px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-bottom:24px}
+.promo-hero-title{font-family:var(--display);font-size:clamp(40px,5.5vw,72px);font-weight:300;line-height:1.1;letter-spacing:-0.02em;margin-bottom:32px;color:var(--ink)}
+.promo-hero-title em{font-style:normal;font-weight:300}
+.promo-hero-desc{font-size:16px;font-weight:300;line-height:1.8;color:var(--ink);opacity:0.85}
+.promo-grid-head{margin-bottom:clamp(48px,6vw,72px)}
+.promo-card-price{margin-top:20px;padding-top:18px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:4px}
+.price-now{font-size:18px;font-weight:400;color:var(--ink);letter-spacing:-0.01em}
+.price-was{font-size:13px;font-weight:300;color:var(--muted);text-decoration:line-through}
+.promo-reserve-inner{max-width:900px;margin:0 auto;padding:0 var(--pad-x);text-align:center}
+.promo-reserve h2{font-family:var(--display);font-size:clamp(28px,3.5vw,42px);font-weight:300;line-height:1.25;letter-spacing:-0.015em;margin-bottom:24px}
+.promo-reserve h2 em{font-style:normal;font-weight:300}
+.promo-reserve-desc{font-size:14px;font-weight:300;line-height:1.7;color:var(--ink);opacity:0.75;margin-bottom:40px;max-width:680px;margin-left:auto;margin-right:auto}
+.promo-reserve-actions{display:flex;gap:32px;justify-content:center;flex-wrap:wrap}
+.promo-reserve-actions a{font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);padding-bottom:6px;border-bottom:1px solid var(--ink);transition:opacity .25s}
+.promo-reserve-actions a:hover{opacity:0.6}
+@media (max-width:900px){.promo-grid{grid-template-columns:1fr}}
+@media (min-width:901px) and (max-width:1200px){.promo-grid{grid-template-columns:repeat(2,1fr)}}
 .promo-card-cta{display:inline-flex;align-items:center;justify-content:space-between;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;font-weight:500;color:var(--ink);padding-top:18px;border-top:1px solid var(--line);width:100%}
 .promo-card-cta svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5;transition:transform .3s}
 .promo-card.active .promo-card-cta svg{transform:rotate(180deg)}
@@ -209,7 +228,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 @media (max-width:1100px){.mili-nav-list{gap:11px}.mili-nav-link{font-size:9.5px;letter-spacing:0.06em}.mili-header-inner{gap:10px;padding:14px 20px}.mili-cta{padding:7px 12px;font-size:8.5px}}
 @media (max-width:980px){.mili-nav,.mili-cta,.mili-lang{display:none}.mili-burger{display:block}}@media (max-width:768px){.mili-logo{height:32px}}
 
-/* === Language switcher === */
+/* === 语言 switcher === */
 .mili-lang{position:relative;margin-right:16px}
 .mili-lang-toggle{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid var(--line);color:var(--ink);padding:9px 14px;font:400 11px/1 var(--display);letter-spacing:0.16em;text-transform:uppercase;border-radius:980px;cursor:pointer;transition:border-color .2s}
 .mili-lang-toggle:hover{border-color:var(--ink)}
@@ -274,57 +293,35 @@ a.mili-lang-item{text-decoration:none}
 
 em, cite { font-style: normal; }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Chinese font */
+:root { --cn-sans: "Noto Sans SC", "SF Pro Display", system-ui, -apple-system, sans-serif; }
+body, .lf, .mc-index { font-family: var(--cn-sans) !important; }
+</style>
 </head>
 <body>
+
 <header class="mili-header">
     <div class="mili-header-inner">
-        <a href="/cn/index.html" class="mili-logo" aria-label="密龄皮肤科 道山店"><img src="/assets/images/logo/logo.png" alt="密龄皮肤科 道山店"></a>
+        <a href="/cn/index.html" class="mili-logo" aria-label="Mili Clinic Sinchon"><img src="/assets/images/logo/logo.png" alt="Mili Clinic Sinchon"></a>
         <nav class="mili-nav">
             <ul class="mili-nav-list">
-                <li class="mili-nav-item"><a href="/cn/about.html" class="mili-nav-link">密龄皮肤科<span class="mili-nav-caret"></span></a>
+                <li class="mili-nav-item"><a href="/cn/about.html" class="mili-nav-link">米利诊所 新村<span class="mili-nav-caret"></span></a>
                     <div class="mili-dropdown">
-                        <a href="/cn/about.html">关于道山</a>
-                        <a href="/cn/brand-story.html">品牌故事</a>
-                        <a href="/cn/tour.html">诊所参观</a>
-                        <a href="/cn/equipment.html">施术设备</a>
-                        <a href="/cn/schedule.html">诊疗时间</a>
-                        <a href="/cn/location.html">来院路线</a>
+                        <a href="/cn/about.html">关于诊所</a>
+                        <a href="/cn/tour.html">院内参观</a>
+                        <a href="/cn/equipment.html">医疗设备</a>
+                        <a href="/cn/location.html">位置交通</a>
+                        <a href="/cn/schedule.html">门诊时间</a>
                     </div>
                 </li>
-                <li class="mili-nav-item"><span class="mili-nav-link">光电提升<span class="mili-nav-caret"></span></span>
-                    <div class="mili-dropdown">
-                        <a href="/cn/ulthera.html">超声刀</a>
-                        <a href="/cn/thermage.html">热玛吉</a>
-                        <a href="/cn/tuneface.html">TuneFace</a>
-                    </div>
-                </li>
-                <li class="mili-nav-item"><a href="/cn/reborn-cell.html" class="mili-nav-link">重生细胞</a></li>
-                <li class="mili-nav-item"><a href="/cn/fit-culptra.html" class="mili-nav-link">Fit&middot;Culptra</a></li>
-                <li class="mili-nav-item"><span class="mili-nav-link">注射/线雕<span class="mili-nav-caret"></span></span>
-                    <div class="mili-dropdown">
-                        <a href="/cn/silhouette-soft.html">线雕</a>
-                        <a href="/cn/sculptra.html">Sculptra 童颜针</a>
-                        <a href="/cn/juvelook.html">Juvelook</a>
-                        <a href="/cn/juvederm.html">乔雅登</a>
-                    </div>
-                </li>
-                <li class="mili-nav-item"><span class="mili-nav-link">皮肤修复<span class="mili-nav-caret"></span></span>
-                    <div class="mili-dropdown">
-                        <a href="/cn/skin-booster.html">1:1 水光针</a>
-                        <a href="/cn/all-in-one-brightening.html">美白焕肤</a>
-                        <a href="/cn/derma-renewal.html">毛孔 / 疤痕</a>
-                        <a href="/cn/anti-trouble.html">痤疮 / 色斑</a>
-                    </div>
-                </li>
+                <li class="mili-nav-item"><a href="/cn/lifting.html" class="mili-nav-link">提升</a></li>
+                <li class="mili-nav-item"><a href="/cn/minimal-surgery.html" class="mili-nav-link">微整形</a></li>
+                <li class="mili-nav-item"><a href="/cn/skin-care.html" class="mili-nav-link">皮肤护理</a></li>
                 <li class="mili-nav-item"><a href="/cn/laser-hair-removal.html" class="mili-nav-link">激光脱毛</a></li>
-                <li class="mili-nav-item"><span class="mili-nav-link">皮肤管理<span class="mili-nav-caret"></span></span>
-                    <div class="mili-dropdown">
-                        <a href="/cn/medispa.html">MEDI-SPA</a>
-                        <a href="/cn/highend-medispa.html">HIGH-END MEDI-SPA</a>
-                        <a href="/cn/antioxidant-iv.html">尊享抗氧化点滴</a>
-                    </div>
-                </li>
-                <li class="mili-nav-item"><a href="/cn/promotion.html" class="mili-nav-link active">促销活动</a></li>
+                <li class="mili-nav-item"><a href="/cn/body-shaping.html" class="mili-nav-link">身体塑形</a></li>
+                <li class="mili-nav-item"><a href="/cn/promotion.html" class="mili-nav-link">优惠活动</a></li>
             </ul>
         </nav>
         <div class="mili-lang">
@@ -333,442 +330,246 @@ em, cite { font-style: normal; }
             </button>
             <div class="mili-lang-menu">
                 <a href="/en/promotion.html" class="mili-lang-item">EN</a>
-                <a href="https://dosan.miliclinic.co.kr" target="_blank" rel="noopener" class="mili-lang-item">KO</a>
-                <a href="#" class="mili-lang-item active">CN</a>
+                <a href="https://sinchon.miliclinic.co.kr" target="_blank" rel="noopener" class="mili-lang-item">KO</a>
+                <a href="/cn/promotion.html" class="mili-lang-item active">CN</a>
                 <a href="/jp/promotion.html" class="mili-lang-item">JP</a>
             </div>
         </div>
-        <a href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener" class="mili-cta">RESERVE<svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-        <button class="mili-burger" aria-label="Menu" onclick="document.getElementById('mili-mobile-nav').classList.add('open');document.body.style.overflow='hidden'"><span></span><span></span><span></span></button>
+        <a href="https://map.naver.com/p/entry/place/1113713455?c=15.43,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202605251045&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener" class="mili-cta">预约<svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <button class="mili-burger" aria-label="菜单" onclick="document.getElementById('mili-mobile-nav').classList.add('open');document.body.style.overflow='hidden'"><span></span><span></span><span></span></button>
     </div>
     <div class="mili-mobile-nav" id="mili-mobile-nav">
         <button class="mili-mobile-nav-close" onclick="document.getElementById('mili-mobile-nav').classList.remove('open');document.body.style.overflow=''">&times;</button>
         <ul class="mili-mobile-nav-list">
-            <li><span>密龄皮肤科</span>
+            <li><span>米利诊所 新村</span>
                 <ul class="mili-mobile-sub">
-                    <li><a href="/cn/about.html">关于道山</a></li>
-                    <li><a href="/cn/brand-story.html">品牌故事</a></li>
-                    <li><a href="/cn/tour.html">诊所参观</a></li>
-                    <li><a href="/cn/equipment.html">施术设备</a></li>
-                    <li><a href="/cn/schedule.html">诊疗时间</a></li>
-                    <li><a href="/cn/location.html">来院路线</a></li>
+                    <li><a href="/cn/about.html">关于诊所</a></li>
+                    <li><a href="/cn/tour.html">院内参观</a></li>
+                    <li><a href="/cn/equipment.html">医疗设备</a></li>
+                    <li><a href="/cn/schedule.html">门诊时间</a></li>
+                    <li><a href="/cn/location.html">位置交通</a></li>
                 </ul>
             </li>
-            <li><span>光电提升</span>
-                <ul class="mili-mobile-sub">
-                    <li><a href="/cn/ulthera.html">超声刀</a></li>
-                    <li><a href="/cn/thermage.html">热玛吉</a></li>
-                    <li><a href="/cn/tuneface.html">TuneFace</a></li>
-                </ul>
-            </li>
-            <li><a href="/cn/reborn-cell.html">重生细胞</a></li>
-            <li><a href="/cn/fit-culptra.html">Fit&middot;Culptra</a></li>
-            <li><span>注射/线雕</span>
-                <ul class="mili-mobile-sub">
-                    <li><a href="/cn/silhouette-soft.html">线雕</a></li>
-                    <li><a href="/cn/sculptra.html">Sculptra 童颜针</a></li>
-                    <li><a href="/cn/juvelook.html">Juvelook</a></li>
-                    <li><a href="/cn/juvederm.html">乔雅登</a></li>
-                </ul>
-            </li>
-            <li><span>皮肤修复</span>
-                <ul class="mili-mobile-sub">
-                    <li><a href="/cn/skin-booster.html">1:1 水光针</a></li>
-                    <li><a href="/cn/all-in-one-brightening.html">美白焕肤</a></li>
-                    <li><a href="/cn/derma-renewal.html">毛孔 / 疤痕</a></li>
-                    <li><a href="/cn/anti-trouble.html">痤疮 / 色斑</a></li>
-                </ul>
-            </li>
+            <li><a href="/cn/lifting.html">提升</a></li>
+            <li><a href="/cn/minimal-surgery.html">微整形</a></li>
+            <li><a href="/cn/skin-care.html">皮肤护理</a></li>
             <li><a href="/cn/laser-hair-removal.html">激光脱毛</a></li>
-            <li><span>皮肤管理</span>
-                <ul class="mili-mobile-sub">
-                    <li><a href="/cn/medispa.html">MEDI-SPA</a></li>
-                    <li><a href="/cn/highend-medispa.html">HIGH-END MEDI-SPA</a></li>
-                    <li><a href="/cn/antioxidant-iv.html">尊享抗氧化点滴</a></li>
-                </ul>
-            </li>
-            <li><a href="/cn/promotion.html">促销活动</a></li>
-            <li><a href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener">RESERVE</a></li>
+            <li><a href="/cn/body-shaping.html">身体塑形</a></li>
+            <li><a href="/cn/promotion.html">优惠活动</a></li>
+            <li><a href="https://map.naver.com/p/entry/place/1113713455?c=15.43,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202605251045&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener">预约</a></li>
         </ul>
+
         <div class="mili-mobile-lang">
-            <span class="mili-mobile-lang-label">Language</span>
+            <span class="mili-mobile-lang-label">语言</span>
             <div class="mili-mobile-lang-list">
                 <a href="/en/promotion.html" class="mili-mobile-lang-item">EN</a>
-                <a href="https://dosan.miliclinic.co.kr" target="_blank" rel="noopener" class="mili-mobile-lang-item">KO</a>
-                <a href="#" class="mili-mobile-lang-item active">CN</a>
+                <a href="https://sinchon.miliclinic.co.kr" target="_blank" rel="noopener" class="mili-mobile-lang-item">KO</a>
+                <a href="/cn/promotion.html" class="mili-mobile-lang-item active">CN</a>
                 <a href="/jp/promotion.html" class="mili-mobile-lang-item">JP</a>
             </div>
         </div>
     </div>
 </header>
 
+<!-- Hero -->
+<section class="promo-hero">
+    <div class="promo-hero-inner">
+        <div class="promo-hero-eyebrow">— 2026.01.26 ~</div>
+        <h1 class="promo-hero-title">
+            A Year of Radiant Fortune —<br>
+            <em>Full Line Up Package.</em>
+        </h1>
+        <p class="promo-hero-desc">
+            As we welcome the Year of the Fire Horse and a new beginning, Mili Clinic Sinchon wishes you a year of radiant fortune. May this season of new starts bring you closer to the version of yourself you have been waiting for — refined, restored, renewed.
+        </p>
+    </div>
+</section>
 
-<!-- Promotion Cards Grid -->
+<!-- Promotion Packages Grid -->
 <section class="promo-grid-section">
     <div class="promo-grid-inner">
+        <div class="promo-grid-head">
+            <div class="section-eyebrow">— Promotion 诊疗项目</div>
+            <h2 class="promo-details-title">Nine packages, <em>shaped for your moment</em>.</h2>
+        </div>
         <div class="promo-grid">
 
-            <!-- 01 Aligned Beauty -->
-            <div class="promo-card" data-target="details-aligned">
-                <div class="promo-card-image">
-                    <img src="/assets/images/promotion/aligned-beauty.jpg" alt="Aligned Beauty">
-                </div>
+            <article class="promo-card">
                 <div class="promo-card-body">
-                    <div class="promo-card-period">2026.02 —</div>
-                    <h3 class="promo-card-title"><em>Aligned</em> Beauty</h3>
+                    <div class="promo-card-period">— Water Glow Lifting</div>
+                    <h3 class="promo-card-title">Water Glow <em>Lifting Package</em></h3>
                     <div class="promo-card-divider"></div>
-                    <p class="promo-card-desc">不为改变面部 — 而是修复天然平衡。TuneFace、超声刀与精选水光的搭配，唤回静谧的和谐感。</p>
-                    <span class="promo-card-cta">
-                        查看详情
-                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-                    </span>
+                    <p class="promo-card-desc">TuneFace 60kJ + Titanium 40kJ + Water Botox + LDM Water-Drop Lifting</p>
+                    <div class="promo-card-price">
+                        <span class="price-now">1,530,000 KRW</span>
+                        <span class="price-was">1,750,000</span>
+                    </div>
                 </div>
-            </div>
+            </article>
 
-            <!-- 02 MILI REBORN CELL -->
-            <div class="promo-card" data-target="details-reborn">
-                <div class="promo-card-image">
-                    <img src="/assets/images/promotion/reborn-cell.jpg" alt="MILI Reborn Cell">
-                </div>
+            <article class="promo-card">
                 <div class="promo-card-body">
-                    <div class="promo-card-period">2025.09 —</div>
-                    <h3 class="promo-card-title"><em>MILI</em> Reborn Cell</h3>
+                    <div class="promo-card-period">— Mid-Face Tightening</div>
+                    <h3 class="promo-card-title">Mid-Face <em>Tightening Package</em></h3>
                     <div class="promo-card-divider"></div>
-                    <p class="promo-card-desc">以干细胞疗法唤醒肌肤天然的再生力 — 唤起身体本源的修复能量。</p>
-                    <span class="promo-card-cta">
-                        查看详情
-                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-                    </span>
+                    <p class="promo-card-desc">Ulthera 300 shots + Titanium 40kJ + Fasella Meridian Massage</p>
+                    <div class="promo-card-price">
+                        <span class="price-now">1,770,000 KRW</span>
+                        <span class="price-was">1,950,000</span>
+                    </div>
                 </div>
-            </div>
+            </article>
 
-            <!-- 03 Safe Sedation -->
-            <div class="promo-card" data-target="details-sedation">
-                <div class="promo-card-image">
-                    <img src="/assets/images/promotion/safe-sedation.png" alt="Safe Sedation">
-                </div>
+            <article class="promo-card">
                 <div class="promo-card-body">
-                    <div class="promo-card-period">2025.01 —</div>
-                    <h3 class="promo-card-title"><em>Fides</em> Care.</h3>
+                    <div class="promo-card-period">— Pore Care</div>
+                    <h3 class="promo-card-title">Pore <em>Care Package</em></h3>
                     <div class="promo-card-divider"></div>
-                    <p class="promo-card-desc">在您休憩之时仍清醒守护的信任。安全镇静方案，全程围绕您的舒适与绝对安全设计。</p>
-                    <span class="promo-card-cta">
-                        查看详情
-                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-                    </span>
+                    <p class="promo-card-desc">Oligio X 300 shots + Rejuran Skin Booster + DermaShine + LHALA Peel + LDM Calming &amp; Regeneration</p>
+                    <div class="promo-card-price">
+                        <span class="price-now">1,200,000 KRW</span>
+                        <span class="price-was">1,370,000</span>
+                    </div>
                 </div>
-            </div>
+            </article>
+
+            <article class="promo-card">
+                <div class="promo-card-body">
+                    <div class="promo-card-period">— Non-Invasive Eye Contour</div>
+                    <h3 class="promo-card-title">Non-Invasive <em>Eye Contour Package</em></h3>
+                    <div class="promo-card-divider"></div>
+                    <p class="promo-card-desc">Eye Ulthera 200 shots + TuneEyes + Fasella Eye Contouring</p>
+                    <div class="promo-card-price">
+                        <span class="price-now">1,100,000 KRW</span>
+                        <span class="price-was">1,360,000</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="promo-card">
+                <div class="promo-card-body">
+                    <div class="promo-card-period">— Porcelain Skin</div>
+                    <h3 class="promo-card-title">Porcelain <em>Skin Package</em></h3>
+                    <div class="promo-card-divider"></div>
+                    <p class="promo-card-desc">Dual Hyaluronic Acid + DermaShine + Oxygen Peel + Pico Toning + Genesis Laser + Brightening Iontophoresis</p>
+                    <div class="promo-card-price">
+                        <span class="price-now">550,000 KRW</span>
+                        <span class="price-was">690,000</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="promo-card">
+                <div class="promo-card-body">
+                    <div class="promo-card-period">— Winter Redness Relief</div>
+                    <h3 class="promo-card-title">Winter <em>Redness Relief</em></h3>
+                    <div class="promo-card-divider"></div>
+                    <p class="promo-card-desc">Pink Peel + Astrodome + Genesis Laser + LDM Redness Care</p>
+                    <div class="promo-card-price">
+                        <span class="price-now">540,000 KRW</span>
+                        <span class="price-was">570,000</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="promo-card">
+                <div class="promo-card-body">
+                    <div class="promo-card-period">— Inflammatory Acne</div>
+                    <h3 class="promo-card-title">Emergency <em>Inflammatory Acne Care</em></h3>
+                    <div class="promo-card-divider"></div>
+                    <p class="promo-card-desc">Potenza + ExoHealer + Acne Peel + Extraction + Plasonic + Sono Calming Care</p>
+                    <div class="promo-card-price">
+                        <span class="price-now">710,000 KRW</span>
+                        <span class="price-was">790,000</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="promo-card">
+                <div class="promo-card-body">
+                    <div class="promo-card-period">— Premium Barrier</div>
+                    <h3 class="promo-card-title">Premium <em>Skin Barrier Care</em></h3>
+                    <div class="promo-card-divider"></div>
+                    <p class="promo-card-desc">YF Peel + Full-Face Extraction + Gold PTT &amp; Genesis + LDM</p>
+                    <div class="promo-card-price">
+                        <span class="price-now">490,000 KRW</span>
+                        <span class="price-was">600,000</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="promo-card">
+                <div class="promo-card-body">
+                    <div class="promo-card-period">— 5-Session Pass</div>
+                    <h3 class="promo-card-title">MILI Signature <em>Premium Care 5-Session Pass</em></h3>
+                    <div class="promo-card-divider"></div>
+                    <p class="promo-card-desc">Premium signature care across five sessions, customized to your skin's evolving condition.</p>
+                    <div class="promo-card-price">
+                        <span class="price-now">800,000 KRW</span>
+                        <span class="price-was">1,000,000</span>
+                    </div>
+                </div>
+            </article>
 
         </div>
     </div>
 </section>
 
-<!-- Accordion Details: 01 Aligned Beauty -->
-<div class="promo-details" id="details-aligned">
-    <div class="promo-details-inner">
-        <div class="promo-details-head">
-            <div class="promo-details-eyebrow">— Aligned Beauty · 2026.02 —</div>
-            <h2 class="promo-details-title">十二款 <em>静谧调律</em> 方案。</h2>
-            <p class="promo-details-desc">Aligned Beauty 不为改变面容，而为尊重您天然的平衡，温柔修复肌肤与整体气质。TuneFace、超声刀、美白、肉毒与玻尿酸、水光针 — 共同完成自然的和谐。</p>
-            <p class="promo-details-note">* 所有施术另收 10% VAT。</p>
-        </div>
-        <div class="promo-packages">
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Tune Body + MiliFit 200 + AccuCurve 或 NobleShape</div>
-                    <div class="promo-package-sub">Tune Body (1 部位) · MiliFit 200 · AccuCurve 或 NobleShape 任选 1</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">1,020,000 韩元</span>
-                    <span class="promo-package-final">900,000 韩元</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Tune Dual + Sculptra 1 vial</div>
-                    <div class="promo-package-sub">双重提升 + 胶原再生剂</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">2,100,000 韩元</span>
-                    <span class="promo-package-final">1,700,000 韩元</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Tune Triple + Potenza + Sono Styler</div>
-                    <div class="promo-package-sub">三重调律 · Potenza (毛孔探头) · Sono Styler</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">2,250,000 韩元</span>
-                    <span class="promo-package-final">1,800,000 韩元</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Tune Triple + 水光针 + Sono Styler</div>
-                    <div class="promo-package-sub">Rejuran、Exosome、Filorga 或 Juvelook · Sono Styler</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">2,500,000 韩元</span>
-                    <span class="promo-package-final">2,000,000 韩元</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Tune Triple + Juvelook Volume + Potenza + 水光针</div>
-                    <div class="promo-package-sub">Juvelook Volume 1 vial · Potenza · 加配水光针</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">3,250,000 韩元</span>
-                    <span class="promo-package-final">2,700,000 韩元</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Tune Triple + 干细胞疗法 + Sono Styler</div>
-                    <div class="promo-package-sub">干细胞疗法 30cc · Sono Styler</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">3,500,000 韩元</span>
-                    <span class="promo-package-final">3,100,000 韩元</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">超声刀 300 发 + Millicut 12cc + 医学经络疗法</div>
-                    <div class="promo-package-sub">深层提升 · 排毒导向身体护理</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">1,860,000 韩元</span>
-                    <span class="promo-package-final">1,700,000 韩元</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Lorien / Filorga 水光针 + 1-Day Toning + Rejuran 提亮 + Rejuran 面膜</div>
-                    <div class="promo-package-sub">完整水光疗程 + 调色与面膜</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">1,000,000 韩元</span>
-                    <span class="promo-package-final">700,000 韩元</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">颈纹填充 (Belotero) + Tune Red 或 Coaxipolar</div>
-                    <div class="promo-package-sub">Belotero 2cc · Tune Red 或 Coaxipolar 任选 1</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">1,500,000 韩元</span>
-                    <span class="promo-package-final">1,200,000 韩元</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">除皱肉毒 + 水光肉毒</div>
-                    <div class="promo-package-sub">3 部位除皱肉毒 · 全脸水光肉毒 · Xeomin</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">660,000 韩元</span>
-                    <span class="promo-package-final">450,000 韩元</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Rejuran 全套 + Sono Styler</div>
-                    <div class="promo-package-sub">Rejuran 4cc · 眼部 Rejuran 2cc · 唇部 Rejuran 1cc · Sono Styler</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">2,000,000 韩元</span>
-                    <span class="promo-package-final">1,500,000 韩元</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Juvelook 水光针 + Juvelook Volume</div>
-                    <div class="promo-package-sub">Juvelook 水光针 · Juvelook Volume 1 vial</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">1,000,000 韩元</span>
-                    <span class="promo-package-final">890,000 韩元</span>
-                </div>
-            </div>
-
-        </div>
-        <div class="promo-details-cta">
-            <a href="https://pf.kakao.com/_xehXRG/chat" target="_blank" rel="noopener">
-                通过 KakaoTalk 咨询
-                <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-            </a>
-        </div>
-    </div>
-</div>
-
-<!-- Accordion Details: 02 MILI Reborn Cell -->
-<div class="promo-details" id="details-reborn">
-    <div class="promo-details-inner">
-        <div class="promo-details-head">
-            <div class="promo-details-eyebrow">— MILI Reborn Cell · 2025.09 —</div>
-            <h2 class="promo-details-title">从本源 <em>重生</em>。</h2>
-            <p class="promo-details-desc">身体在细胞的不息循环中延续。在死亡与重生的流转之间，干细胞蕴藏着最深处的本源之力。干细胞疗法唤醒这股潜藏的能量，重启肌肤天然的再生之力。</p>
-            <p class="promo-details-note">* 所有施术另收 10% VAT。</p>
-        </div>
-        <div class="promo-packages">
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Basic 基础</div>
-                    <div class="promo-package-sub">REBORN CELL 30cc (全脸) · 胎盘素注射 · REBORN CELL 礼品 · 干细胞 3cc + 水光针 2cc 全脸 Dermashine 5cc · PRP 超声导入护理 · LED 再生激光 · 模型面膜</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">1,650,000 韩元</span>
-                    <span class="promo-package-final">1,400,000 韩元</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Standard 标准</div>
-                    <div class="promo-package-sub">REBORN CELL 120cc (全脸 + 静脉点滴) · Tune Triple 提升 · 胎盘素注射 · REBORN CELL 礼品 · 干细胞 3cc + 水光针 2cc 全脸 Dermashine 5cc · 静脉点滴 9cc · PRP 超声导入护理 · LED 再生激光 · 模型面膜</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">6,150,000 韩元</span>
-                    <span class="promo-package-final">4,000,000 韩元</span>
-                </div>
-            </div>
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">High-end 至臻</div>
-                    <div class="promo-package-sub">REBORN CELL 240cc (全脸 + 颈部 + 静脉点滴) · 热玛吉 900 发 · 水光肉毒 · 镇静麻醉 · 胎盘素注射 · REBORN CELL 礼品 · 干细胞 6cc + 水光针 4cc 全脸 Dermashine 10cc · 静脉点滴 18cc · PRP 超声导入护理 · LED 再生激光 · 模型面膜</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-original">11,900,000 韩元</span>
-                    <span class="promo-package-final">9,000,000 韩元</span>
-                </div>
-            </div>
-
-        </div>
-        <div class="promo-details-cta">
-            <a href="https://pf.kakao.com/_xehXRG/chat" target="_blank" rel="noopener">
-                通过 KakaoTalk 咨询
-                <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-            </a>
-        </div>
-    </div>
-</div>
-
-<!-- Accordion Details: 03 Fides Care -->
-<div class="promo-details" id="details-sedation">
-    <div class="promo-details-inner">
-        <div class="promo-details-head">
-            <div class="promo-details-eyebrow">— Fides Care · 2025.01 —</div>
-            <h2 class="promo-details-title">在您 <em>休憩之时仍清醒守护</em> 的信任。</h2>
-            <p class="promo-details-desc">密龄皮肤科为您呈现安全镇静方案，将您的舒适与安全置于首位。每一次施术都由麻醉专科医师量身校准，从始至终为您打造静谧、可控的体验。</p>
-        </div>
-        <div class="promo-packages">
-
-            <div class="promo-package">
-                <div class="promo-package-info">
-                    <div class="promo-package-name">Fides Care · 安全镇静方案</div>
-                    <div class="promo-package-sub">以舒适为先的镇静方案，依据每位求美者的生理状况与施术范围个性化设定</div>
-                </div>
-                <div class="promo-package-prices">
-                    <span class="promo-package-final">200,000 韩元</span>
-                </div>
-            </div>
-
-        </div>
-        <div class="promo-details-cta">
-            <a href="https://pf.kakao.com/_xehXRG/chat" target="_blank" rel="noopener">
-                通过 KakaoTalk 咨询
-                <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-            </a>
-        </div>
-    </div>
-</div>
-
-<!-- Reservation CTA -->
+<!-- Reserve CTA -->
 <section class="promo-reserve">
     <div class="promo-reserve-inner">
-        <div class="promo-reserve-eyebrow">— 咨询</div>
-        <h2>如需了解最新价格与档期，<em>请直接联系我们</em>。</h2>
-        <p>了解最新方案详情，最快的方式是通过 KakaoTalk 或电话咨询。我们的团队将以最新信息回复您，并协助您安排合适的咨询时间。</p>
+        <h2>For current pricing and availability, <em>reach out directly</em>.</h2>
+        <p class="promo-reserve-desc">Promotion pricing reflects current period rates. Final pricing may vary based on consultation outcomes. For details and to reserve your visit, please contact Mili Clinic Sinchon.</p>
         <div class="promo-reserve-actions">
-            <a href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener" class="promo-reserve-btn primary">
-                预约咨询
-                <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-            </a>
-            <a href="https://pf.kakao.com/_xehXRG/chat" target="_blank" rel="noopener" class="promo-reserve-btn secondary">
-                KakaoTalk 咨询
-                <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-            </a>
+            <a href="https://pf.kakao.com/_mxadwxb" target="_blank" rel="noopener">KakaoTalk &rarr;</a>
+            <a href="https://api.whatsapp.com/send/?phone=821023834697&amp;text&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">WhatsApp &rarr;</a>
+            <a href="mailto:sinchon@miliclinic.com">Email &rarr;</a>
         </div>
     </div>
 </section>
 
+<!-- Footer -->
 <footer class="mili-footer">
     <div class="mili-footer-inner">
         <div class="mili-footer-top">
             <div class="mili-footer-brand">
-                <div class="mili-footer-logo"><img src="/assets/images/logo/logo.png" alt="密龄皮肤科道山店"></div>
-                <p class="mili-footer-tagline">密龄皮肤科道山店旗舰院区 — 超越治疗本身，于静谧中完成修复与焕新。</p>
-                <p class="mili-footer-slogan">“仅凭1mm的变化焕发美丽。”</p>
+                <div class="mili-footer-logo"><img src="/assets/images/logo/logo.png" alt="Mili Clinic Sinchon"></div>
+                <p class="mili-footer-tagline">米利诊所品牌的旗舰店。超越治疗 — 一处位于新村的静谧庇护所,致力于修复与精进。</p>
+                <p class="mili-footer-slogan">"仅以1毫米的变化,绽放美丽。"</p>
             </div>
             <div class="mili-footer-col">
-                <h5>核心项目</h5>
+                <h5>诊疗项目</h5>
                 <ul>
-                    <li><a href="/cn/ulthera.html">超声刀</a></li>
-                    <li><a href="/cn/thermage.html">热玛吉</a></li>
-                    <li><a href="/cn/tuneface.html">TuneFace</a></li>
-                    <li><a href="/cn/reborn-cell.html">重生细胞</a></li>
-                    <li><a href="/cn/fit-culptra.html">Fit&middot;Culptra</a></li>
-                    <li><a href="/cn/sculptra.html">注射/线雕</a></li>
-                    <li><a href="/cn/skin-booster.html">皮肤修复</a></li>
+                    <li><a href="/cn/lifting.html">提升</a></li>
+                    <li><a href="/cn/minimal-surgery.html">微整形</a></li>
+                    <li><a href="/cn/skin-care.html">皮肤护理</a></li>
                     <li><a href="/cn/laser-hair-removal.html">激光脱毛</a></li>
-                    <li><a href="/cn/medispa.html">皮肤管理</a></li>
+                    <li><a href="/cn/body-shaping.html">身体塑形</a></li>
                 </ul>
             </div>
             <div class="mili-footer-col">
-                <h5>来访信息</h5>
+                <h5>来访</h5>
                 <ul>
-                    <li><a href="/cn/location.html">来院路线</a></li>
-                    <li><a href="/cn/schedule.html">诊疗时间</a></li>
-                    <li><a href="https://naver.me/GLAXm15o" target="_blank" rel="noopener">Naver Map</a></li>
-                    <li><a href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener">立即预约</a></li>
-                    <li><a href="tel:+82263671212">+82 2&middot;6367&middot;1212</a></li>
+                    <li><a href="/cn/location.html">位置交通</a></li>
+                    <li><a href="/cn/schedule.html">门诊时间</a></li>
                 </ul>
             </div>
             <div class="mili-footer-col">
-                <h5>资讯渠道</h5>
+                <h5>网络</h5>
                 <ul>
-                    <li><a href="/cn/promotion.html">促销活动</a></li>
-                    <li><a href="https://www.youtube.com/@Dr.ShinMillimeter" target="_blank" rel="noopener">YouTube</a></li>
-                    <li><a href="https://sinchon.miliclinic.co.kr" target="_blank" rel="noopener">Mili 新村</a></li>
-                    <li><a href="http://miliclinic.com" target="_blank" rel="noopener">Mili Global</a></li>
-                    <li><a href="https://dosan.miliclinic.co.kr">韩文官网</a></li>
+                    <li><a href="/cn/promotion.html">优惠活动</a></li>
+                    <li><a href="http://miliclinic.com" target="_blank" rel="noopener">米利全球</a></li>
+                    <li><a href="https://sinchon.miliclinic.co.kr">韩文网站</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="mili-footer-messengers">
-            <a href="https://wa.me/821058616367" target="_blank" rel="noopener" class="mili-msg" aria-label="WhatsApp">
+            <a href="https://api.whatsapp.com/send/?phone=821023834697&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mili-msg" aria-label="WhatsApp">
                 <svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375c-.99-1.575-1.516-3.391-1.516-5.26 0-5.445 4.455-9.885 9.942-9.885 2.654 0 5.145 1.035 7.021 2.91 1.875 1.875 2.909 4.371 2.909 7.026-.004 5.444-4.46 9.885-9.935 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411"/></svg>
                 <span class="mili-msg-name">WhatsApp</span>
             </a>
-            <a href="https://mp.weixin.qq.com/s/4ruAKbgP8m5kkttIQ18uvg" target="_blank" rel="noopener" class="mili-msg" aria-label="WeChat">
+            <a href="https://mp.weixin.qq.com/s/U3J4SX5NmHNIuaYASOZ-XA" target="_blank" rel="noopener" class="mili-msg" aria-label="WeChat">
                 <svg viewBox="0 0 24 24" fill="#7BB32E"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.328.328 0 0 0 .166-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.594-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.475-1.78 5.687.91 2.214 3.337 3.6 6.116 3.6.453 0 .92-.069 1.386-.205a.79.79 0 0 1 .677.069l1.625 1.05a.36.36 0 0 0 .184.061c.16 0 .29-.132.29-.295 0-.071-.027-.142-.038-.213l-.336-1.245a.66.66 0 0 1-.026-.218.625.625 0 0 1 .25-.499C21.546 17.474 22.5 15.852 22.5 13.94c0-3.213-3.045-5.78-6.572-5.85zm-2.379 2.493c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897zm4.625 0c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897z"/></svg>
                 <span class="mili-msg-name">WeChat</span>
             </a>
@@ -776,11 +577,11 @@ em, cite { font-style: normal; }
                 <svg viewBox="0 0 24 24" fill="#06C755"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
                 <span class="mili-msg-name">LINE</span>
             </a>
-            <a href="https://pf.kakao.com/_xehXRG/chat" target="_blank" rel="noopener" class="mili-msg" aria-label="KakaoTalk">
+            <a href="https://pf.kakao.com/_mxadwxb/chat" target="_blank" rel="noopener" class="mili-msg" aria-label="KakaoTalk">
                 <svg viewBox="0 0 24 24" fill="#FEE500"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.7 6.8L5.6 21.4c-.1.3.2.5.5.4l4.4-2.9c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/><path d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.7 6.8L5.6 21.4c-.1.3.2.5.5.4l4.4-2.9c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8s-4.5-8-10-8z" stroke="#1A1A1A" stroke-width="0.4" fill="#FEE500"/></svg>
                 <span class="mili-msg-name">KakaoTalk</span>
             </a>
-            <a href="https://www.instagram.com/dosan.miliclinic/" target="_blank" rel="noopener" class="mili-msg" aria-label="Instagram">
+            <a href="https://www.instagram.com/sinchon.miliclinic/" target="_blank" rel="noopener" class="mili-msg" aria-label="Instagram">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="#1A1A1A"/></svg>
                 <span class="mili-msg-name">Instagram</span>
             </a>
@@ -788,20 +589,21 @@ em, cite { font-style: normal; }
 
         <div class="mili-footer-business">
             <div>
-                <p><strong>商号名</strong> MiliClinic, 岛山</p>
-                <p><strong>营业执照编号</strong> 457-47-00860</p>
-                <p><strong>代表</strong> 申东河</p>
-                <p><strong>个人信息保护负责人</strong> 申东河, jungyi@mlcl.co.kr</p>
+                <p><strong>公司名称</strong> Mili Clinic Sinchon (&#48128;&#47532;&#51032;&#50896; &#49888;&#52916;)</p>
+                <p><strong>院长</strong> Kim Hye-won, M.D.</p>
+                <p><strong>事业者编号</strong> 166-18-01231</p>
+                <p><strong>信息管理负责人</strong> Kim Hye-won</p>
             </div>
             <div>
-                <p><strong>地址</strong> 首尔江南区岛山大路45街17号 3楼</p>
-                <p><strong>诊疗时间</strong> [周一·周三·周五] AM 10:00 – PM 07:00<br>[周二·周四] AM 10:00 – PM 09:00<br>[周六] AM 10:00 – PM 04:00<br>周日休诊</p>
-                <p><strong>午休</strong> 13:00–14:00</p>
+                <p><strong>地址</strong> 首尔特别市 麻浦区 新村路 104号 3楼</p>
+                <p><strong>门诊时间</strong> 周一·三·五 10:00–19:00 / 周二·四 10:00–21:00 / 周六 10:00–16:00</p>
+                <p><strong>休诊日</strong> 周日及公共假日</p>
+                <p><strong>午休</strong> 13:00&ndash;14:00</p>
             </div>
         </div>
 
         <div class="mili-footer-bottom">
-            <div>&copy; 2026 Mili Clinic Sinchon. 版权所有。</div>
+            <div>&copy; 2026 Mili Clinic Sinchon. All Rights Reserved.</div>
             <div class="mili-footer-policies">
                 <a href="/cn/privacy.html">隐私政策</a>
                 <a href="/cn/non-covered.html">非医保项目</a>
@@ -809,6 +611,25 @@ em, cite { font-style: normal; }
         </div>
     </div>
 </footer>
+
+<!-- Floating -->
+<div class="mili-float">
+    <a href="https://pf.kakao.com/_mxadwxb/chat" target="_blank" rel="noopener" class="mili-float-btn kakao" aria-label="KakaoTalk">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.7 6.8L5.6 21.4c-.1.3.2.5.5.4l4.4-2.9c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/></svg>
+    </a>
+    <a href="https://mp.weixin.qq.com/s/U3J4SX5NmHNIuaYASOZ-XA" target="_blank" rel="noopener" class="mili-float-btn wechat" aria-label="WeChat">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.328.328 0 0 0 .166-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.594-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.475-1.78 5.687.91 2.214 3.337 3.6 6.116 3.6.453 0 .92-.069 1.386-.205a.79.79 0 0 1 .677.069l1.625 1.05a.36.36 0 0 0 .184.061c.16 0 .29-.132.29-.295 0-.071-.027-.142-.038-.213l-.336-1.245a.66.66 0 0 1-.026-.218.625.625 0 0 1 .25-.499C21.546 17.474 22.5 15.852 22.5 13.94c0-3.213-3.045-5.78-6.572-5.85zm-2.379 2.493c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897zm4.625 0c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897z"/></svg>
+    </a>
+    <a href="https://lin.ee/X7C7bMh" target="_blank" rel="noopener" class="mili-float-btn line" aria-label="LINE">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    </a>
+    <a href="https://api.whatsapp.com/send/?phone=821023834697&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mili-float-btn whatsapp" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375c-.99-1.575-1.516-3.391-1.516-5.26 0-5.445 4.455-9.885 9.942-9.885 2.654 0 5.145 1.035 7.021 2.91 1.875 1.875 2.909 4.371 2.909 7.026-.004 5.444-4.46 9.885-9.935 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411"/></svg>
+    </a>
+    <a href="https://www.instagram.com/sinchon.miliclinic/" target="_blank" rel="noopener" class="mili-float-btn instagram" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+    </a>
+</div>
 
 <script>
 (function(){

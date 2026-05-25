@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>施术设备 — 密龄皮肤科 道山店</title>
-<meta name="description" content="密龄皮肤科道山店设备一览 — 提升、激光、水光、身体、诊断、皮肤管理。每一台设备均为正式渠道引进正品。">
+<title>Equipment | Mili Clinic Sinchon</title>
+<meta name="description" content="Mili Clinic Sinchon operates 22 clinical-grade platforms across lifting, laser, booster, body, diagnostic, and skin care categories.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mili Clinic Sinchon">
 <meta property="og:title" content="Mili Clinic Sinchon">
@@ -12,8 +12,8 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Mili Clinic Sinchon">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:url" content="https://miliclinic-sinchon-en.vercel.app/cn/equipment.html">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://miliclinic-sinchon-en.vercel.app/equipment.html">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Mili Clinic Sinchon">
@@ -30,8 +30,8 @@ html{scroll-behavior:smooth}
 
 :root{
     --ink: #0F0F10;
-    --bone: #F4F1EB;
-    --paper: #FAF8F4;
+    --bone: #F1F2F5;
+    --paper: #F8F9FB;
     --white: #FFFFFF;
     --muted: #8A867F;
     --line: #DEDAD1;
@@ -211,58 +211,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 @media (max-width: 900px){
     .page-hero-grid{grid-template-columns: 1fr; gap: 32px}
     .page-hero-grid .right{padding-bottom: 0}
-}
-
-/* ——— Category Filter Nav ——— */
-.cat-nav{
-    padding: clamp(80px, 10vw, 120px) 0 40px;
-    border-bottom: 1px solid var(--line);
-    position: sticky;
-    top: 72px;
-    background: var(--paper);
-    z-index: 50;
-}
-@media (max-width: 700px) {
-    .cat-nav { top: 56px; padding: clamp(48px, 12vw, 72px) 0 14px; }
-}
-
-.cat-nav-inner{
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    max-width: var(--container);
-    margin: 0 auto;
-    padding: 0 var(--pad-x);
-    align-items: center;
-}
-.cat-nav-label{
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-right: 24px;
-}
-.cat-pill{
-    display: inline-flex;
-    align-items: center;
-    padding: 10px 16px;
-    border: 1px solid var(--line);
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--ink);
-    cursor: pointer;
-    transition: background .2s, color .2s, border-color .2s;
-}
-.cat-pill:hover, .cat-pill.active{
-    background: var(--ink);
-    color: var(--paper);
-    border-color: var(--ink);
-}
-.cat-pill .count{
-    margin-left: 8px;
-    opacity: .6;
-    font-size: 10px;
 }
 
 /* ——— Category section ——— */
@@ -555,7 +503,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 @media (max-width:1100px){.mili-nav-list{gap:14px}.mili-nav-link{font-size:10px}}
 @media (max-width:980px){.mili-nav,.mili-cta,.mili-lang{display:none}.mili-burger{display:block}}@media (max-width:768px){.mili-logo{height:32px}}
 
-/* === Language switcher === */
+/* === 语言 switcher === */
 .mili-lang{position:relative;margin-right:16px}
 .mili-lang-toggle{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid var(--line);color:var(--ink);padding:9px 14px;font:400 11px/1 var(--display);letter-spacing:0.16em;text-transform:uppercase;border-radius:980px;cursor:pointer;transition:border-color .2s}
 .mili-lang-toggle:hover{border-color:var(--ink)}
@@ -632,12 +580,6 @@ a.mili-lang-item{text-decoration:none}
     font-size:clamp(40px,12vw,68px);line-height:1.05}
     .page-subtitle{display:none}
 
-    /* Cat Nav 모바일 가로 스크롤 */
-    .cat-nav{overflow-x:auto;-webkit-overflow-scrolling:touch}
-    .cat-nav-inner{flex-wrap:nowrap;padding:16px var(--pad-x);gap:8px;min-width:max-content}
-    .cat-nav-label{font-size:10px}
-    .cat-pill{font-size:11px;padding:8px 14px;white-space:nowrap}
-
     /* 섹션 padding 완화 */
     .category,
     .principle{padding-top:clamp(60px,14vw,100px) !important;padding-bottom:clamp(60px,14vw,100px) !important}
@@ -666,57 +608,39 @@ a.mili-lang-item{text-decoration:none}
 
 em, cite { font-style: normal; }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Chinese font */
+:root { --cn-sans: "Noto Sans SC", "SF Pro Display", system-ui, -apple-system, sans-serif; }
+body, .lf, .mc-index { font-family: var(--cn-sans) !important; }
+</style>
 </head>
 <body>
+
+<!-- Top Bar -->
+</div>
+
+<!-- Header -->
 <header class="mili-header">
     <div class="mili-header-inner">
-        <a href="/cn/index.html" class="mili-logo" aria-label="密龄皮肤科 道山店"><img src="/assets/images/logo/logo.png" alt="密龄皮肤科 道山店"></a>
+        <a href="/cn/index.html" class="mili-logo" aria-label="Mili Clinic Sinchon"><img src="/assets/images/logo/logo.png" alt="Mili Clinic Sinchon"></a>
         <nav class="mili-nav">
             <ul class="mili-nav-list">
-                <li class="mili-nav-item"><a href="/cn/about.html" class="mili-nav-link active">密龄皮肤科<span class="mili-nav-caret"></span></a>
+                <li class="mili-nav-item"><a href="/cn/about.html" class="mili-nav-link">米利诊所 新村<span class="mili-nav-caret"></span></a>
                     <div class="mili-dropdown">
-                        <a href="/cn/about.html">关于道山</a>
-                        <a href="/cn/brand-story.html">品牌故事</a>
-                        <a href="/cn/tour.html">诊所参观</a>
-                        <a href="/cn/equipment.html" class="active-sub">施术设备</a>
-                        <a href="/cn/schedule.html">诊疗时间</a>
-                        <a href="/cn/location.html">来院路线</a>
+                        <a href="/cn/about.html">关于诊所</a>
+                        <a href="/cn/tour.html">院内参观</a>
+                        <a href="/cn/equipment.html">医疗设备</a>
+                        <a href="/cn/location.html">位置交通</a>
+                        <a href="/cn/schedule.html">门诊时间</a>
                     </div>
                 </li>
-                <li class="mili-nav-item"><span class="mili-nav-link">光电提升<span class="mili-nav-caret"></span></span>
-                    <div class="mili-dropdown">
-                        <a href="/cn/ulthera.html">超声刀</a>
-                        <a href="/cn/thermage.html">热玛吉</a>
-                        <a href="/cn/tuneface.html">TuneFace</a>
-                    </div>
-                </li>
-                <li class="mili-nav-item"><a href="/cn/reborn-cell.html" class="mili-nav-link">重生细胞</a></li>
-                <li class="mili-nav-item"><a href="/cn/fit-culptra.html" class="mili-nav-link">Fit&middot;Culptra</a></li>
-                <li class="mili-nav-item"><span class="mili-nav-link">注射/线雕<span class="mili-nav-caret"></span></span>
-                    <div class="mili-dropdown">
-                        <a href="/cn/silhouette-soft.html">线雕</a>
-                        <a href="/cn/sculptra.html">Sculptra 童颜针</a>
-                        <a href="/cn/juvelook.html">Juvelook</a>
-                        <a href="/cn/juvederm.html">乔雅登</a>
-                    </div>
-                </li>
-                <li class="mili-nav-item"><span class="mili-nav-link">皮肤修复<span class="mili-nav-caret"></span></span>
-                    <div class="mili-dropdown">
-                        <a href="/cn/skin-booster.html">1:1 水光针</a>
-                        <a href="/cn/all-in-one-brightening.html">美白焕肤</a>
-                        <a href="/cn/derma-renewal.html">毛孔 / 疤痕</a>
-                        <a href="/cn/anti-trouble.html">痤疮 / 色斑</a>
-                    </div>
-                </li>
+                <li class="mili-nav-item"><a href="/cn/lifting.html" class="mili-nav-link">提升</a></li>
+                <li class="mili-nav-item"><a href="/cn/minimal-surgery.html" class="mili-nav-link">微整形</a></li>
+                <li class="mili-nav-item"><a href="/cn/skin-care.html" class="mili-nav-link">皮肤护理</a></li>
                 <li class="mili-nav-item"><a href="/cn/laser-hair-removal.html" class="mili-nav-link">激光脱毛</a></li>
-                <li class="mili-nav-item"><span class="mili-nav-link">皮肤管理<span class="mili-nav-caret"></span></span>
-                    <div class="mili-dropdown">
-                        <a href="/cn/medispa.html">MEDI-SPA</a>
-                        <a href="/cn/highend-medispa.html">HIGH-END MEDI-SPA</a>
-                        <a href="/cn/antioxidant-iv.html">尊享抗氧化点滴</a>
-                    </div>
-                </li>
-                <li class="mili-nav-item"><a href="/cn/promotion.html" class="mili-nav-link">促销活动</a></li>
+                <li class="mili-nav-item"><a href="/cn/body-shaping.html" class="mili-nav-link">身体塑形</a></li>
+                <li class="mili-nav-item"><a href="/cn/promotion.html" class="mili-nav-link">优惠活动</a></li>
             </ul>
         </nav>
         <div class="mili-lang">
@@ -725,126 +649,109 @@ em, cite { font-style: normal; }
             </button>
             <div class="mili-lang-menu">
                 <a href="/en/equipment.html" class="mili-lang-item">EN</a>
-                <a href="https://dosan.miliclinic.co.kr" target="_blank" rel="noopener" class="mili-lang-item">KO</a>
-                <a href="#" class="mili-lang-item active">CN</a>
+                <a href="https://sinchon.miliclinic.co.kr" target="_blank" rel="noopener" class="mili-lang-item">KO</a>
+                <a href="/cn/equipment.html" class="mili-lang-item active">CN</a>
                 <a href="/jp/equipment.html" class="mili-lang-item">JP</a>
             </div>
         </div>
-        <a href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener" class="mili-cta">RESERVE<svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-        <button class="mili-burger" aria-label="Menu" onclick="document.getElementById('mili-mobile-nav').classList.add('open');document.body.style.overflow='hidden'"><span></span><span></span><span></span></button>
+        <a href="https://map.naver.com/p/entry/place/1113713455?c=15.43,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202605251045&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener" class="mili-cta">预约<svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <button class="mili-burger" aria-label="菜单" onclick="document.getElementById('mili-mobile-nav').classList.add('open');document.body.style.overflow='hidden'"><span></span><span></span><span></span></button>
     </div>
     <div class="mili-mobile-nav" id="mili-mobile-nav">
         <button class="mili-mobile-nav-close" onclick="document.getElementById('mili-mobile-nav').classList.remove('open');document.body.style.overflow=''">&times;</button>
         <ul class="mili-mobile-nav-list">
-            <li><span>密龄皮肤科</span>
+            <li><span>米利诊所 新村</span>
                 <ul class="mili-mobile-sub">
-                    <li><a href="/cn/about.html">关于道山</a></li>
-                    <li><a href="/cn/brand-story.html">品牌故事</a></li>
-                    <li><a href="/cn/tour.html">诊所参观</a></li>
-                    <li><a href="/cn/equipment.html">施术设备</a></li>
-                    <li><a href="/cn/schedule.html">诊疗时间</a></li>
-                    <li><a href="/cn/location.html">来院路线</a></li>
+                    <li><a href="/cn/about.html">关于诊所</a></li>
+                    <li><a href="/cn/tour.html">院内参观</a></li>
+                    <li><a href="/cn/equipment.html">医疗设备</a></li>
+                    <li><a href="/cn/schedule.html">门诊时间</a></li>
+                    <li><a href="/cn/location.html">位置交通</a></li>
                 </ul>
             </li>
-            <li><span>光电提升</span>
-                <ul class="mili-mobile-sub">
-                    <li><a href="/cn/ulthera.html">超声刀</a></li>
-                    <li><a href="/cn/thermage.html">热玛吉</a></li>
-                    <li><a href="/cn/tuneface.html">TuneFace</a></li>
-                </ul>
-            </li>
-            <li><a href="/cn/reborn-cell.html">重生细胞</a></li>
-            <li><a href="/cn/fit-culptra.html">Fit&middot;Culptra</a></li>
-            <li><span>注射/线雕</span>
-                <ul class="mili-mobile-sub">
-                    <li><a href="/cn/silhouette-soft.html">线雕</a></li>
-                    <li><a href="/cn/sculptra.html">Sculptra 童颜针</a></li>
-                    <li><a href="/cn/juvelook.html">Juvelook</a></li>
-                    <li><a href="/cn/juvederm.html">乔雅登</a></li>
-                </ul>
-            </li>
-            <li><span>皮肤修复</span>
-                <ul class="mili-mobile-sub">
-                    <li><a href="/cn/skin-booster.html">1:1 水光针</a></li>
-                    <li><a href="/cn/all-in-one-brightening.html">美白焕肤</a></li>
-                    <li><a href="/cn/derma-renewal.html">毛孔 / 疤痕</a></li>
-                    <li><a href="/cn/anti-trouble.html">痤疮 / 色斑</a></li>
-                </ul>
-            </li>
+            <li><a href="/cn/lifting.html">提升</a></li>
+            <li><a href="/cn/minimal-surgery.html">微整形</a></li>
+            <li><a href="/cn/skin-care.html">皮肤护理</a></li>
             <li><a href="/cn/laser-hair-removal.html">激光脱毛</a></li>
-            <li><span>皮肤管理</span>
-                <ul class="mili-mobile-sub">
-                    <li><a href="/cn/medispa.html">MEDI-SPA</a></li>
-                    <li><a href="/cn/highend-medispa.html">HIGH-END MEDI-SPA</a></li>
-                    <li><a href="/cn/antioxidant-iv.html">尊享抗氧化点滴</a></li>
-                </ul>
-            </li>
-            <li><a href="/cn/promotion.html">促销活动</a></li>
-            <li><a href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener">RESERVE</a></li>
+            <li><a href="/cn/body-shaping.html">身体塑形</a></li>
+            <li><a href="/cn/promotion.html">优惠活动</a></li>
+            <li><a href="https://map.naver.com/p/entry/place/1113713455?c=15.43,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202605251045&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener">预约</a></li>
         </ul>
+
         <div class="mili-mobile-lang">
-            <span class="mili-mobile-lang-label">Language</span>
+            <span class="mili-mobile-lang-label">语言</span>
             <div class="mili-mobile-lang-list">
                 <a href="/en/equipment.html" class="mili-mobile-lang-item">EN</a>
-                <a href="https://dosan.miliclinic.co.kr" target="_blank" rel="noopener" class="mili-mobile-lang-item">KO</a>
-                <a href="#" class="mili-mobile-lang-item active">CN</a>
+                <a href="https://sinchon.miliclinic.co.kr" target="_blank" rel="noopener" class="mili-mobile-lang-item">KO</a>
+                <a href="/cn/equipment.html" class="mili-mobile-lang-item active">CN</a>
                 <a href="/jp/equipment.html" class="mili-mobile-lang-item">JP</a>
             </div>
         </div>
     </div>
 </header>
 
-
-
-
-<!-- Category Nav -->
-<nav class="cat-nav">
-    <div class="cat-nav-inner">
-        <span class="cat-nav-label">— 跳转至</span>
-        <a href="#lifting" class="cat-pill">提升 <span class="count">· 03</span></a>
-        <a href="#laser" class="cat-pill">激光 <span class="count">· 05</span></a>
-        <a href="#booster" class="cat-pill">水光 &amp; MTS <span class="count">· 03</span></a>
-        <a href="#body" class="cat-pill">身体 <span class="count">· 03</span></a>
-        <a href="#diagnostic" class="cat-pill">诊断 <span class="count">· 02</span></a>
-        <a href="#skincare" class="cat-pill">皮肤管理 <span class="count">· 06</span></a>
-    </div>
-</nav>
-
 <!-- LIFTING -->
 <section id="lifting" class="category">
     <div class="container">
         <div class="category-head">
             <div>
-                <div class="cat-num">— 类别 01</div>
-                <h2>提升。</h2>
+                <div class="cat-num">— Category 01</div>
+                <h2>Lifting.</h2>
             </div>
-            <p>超声与射频平台，由内重塑根基结构 — 各自作用于皮肤的不同层次，叠加出自然的累积成果。</p>
+            <p>Ultrasound and radiofrequency platforms that restore foundational structure — each targeting a different skin layer for a cumulative, natural result.</p>
         </div>
         <div class="eq-grid">
             <article class="eq-card">
-                <div class="eq-card-img"><img src="/assets/images/equipment/lifting/ulthera.jpg" alt="超声刀"></div>
+                <div class="eq-card-img"><img src="/assets/images/equipment/ulthera.png" alt="Ulthera"></div>
                 <div class="eq-card-meta">
                     <div>
-                        <div class="eq-card-name">Ulthera 超声刀</div>
-                        <div class="eq-card-sub">HIFU 提升 · Merz</div>
+                        <div class="eq-card-name">Ulthera</div>
+                        <div class="eq-card-sub">HIFU Lifting · Merz</div>
                     </div>
                 </div>
             </article>
             <article class="eq-card">
-                <div class="eq-card-img"><img src="/assets/images/equipment/lifting/thermage.jpg" alt="热玛吉 FLX"></div>
+                <div class="eq-card-img"><img src="/assets/images/equipment/tuneface.jpg" alt="TuneFace / TuneLiner / TuneBody"></div>
                 <div class="eq-card-meta">
                     <div>
-                        <div class="eq-card-name">Thermage FLX 热玛吉</div>
-                        <div class="eq-card-sub">RF 紧致 · Solta</div>
+                        <div class="eq-card-name">TuneFace / TuneLiner / TuneBody</div>
+                        <div class="eq-card-sub">RF Lifting · ALMA</div>
                     </div>
                 </div>
             </article>
             <article class="eq-card">
-                <div class="eq-card-img"><img src="/assets/images/equipment/lifting/tuneface.jpg" alt="TuneFace"></div>
+                <div class="eq-card-img"><img src="/assets/images/equipment/oligio-x.png" alt="Oligio X"></div>
                 <div class="eq-card-meta">
                     <div>
-                        <div class="eq-card-name">TuneFace</div>
-                        <div class="eq-card-sub">RF 提升 · ALMA</div>
+                        <div class="eq-card-name">Oligio X</div>
+                        <div class="eq-card-sub">Monopolar RF · Jeisys</div>
+                    </div>
+                </div>
+            </article>
+            <article class="eq-card">
+                <div class="eq-card-img"><img src="/assets/images/equipment/inmode.jpg" alt="InMode"></div>
+                <div class="eq-card-meta">
+                    <div>
+                        <div class="eq-card-name">InMode</div>
+                        <div class="eq-card-sub">Bipolar RF · InMode</div>
+                    </div>
+                </div>
+            </article>
+            <article class="eq-card">
+                <div class="eq-card-img"><img src="/assets/images/equipment/shurink.jpg" alt="Shurink"></div>
+                <div class="eq-card-meta">
+                    <div>
+                        <div class="eq-card-name">Shurink</div>
+                        <div class="eq-card-sub">HIFU Lifting · Classys</div>
+                    </div>
+                </div>
+            </article>
+            <article class="eq-card">
+                <div class="eq-card-img"><img src="/assets/images/equipment/titanium.png" alt="Titanium"></div>
+                <div class="eq-card-meta">
+                    <div>
+                        <div class="eq-card-name">Titanium</div>
+                        <div class="eq-card-sub">Multi-Wave Lifting</div>
                     </div>
                 </div>
             </article>
@@ -857,106 +764,96 @@ em, cite { font-style: normal; }
     <div class="container">
         <div class="category-head">
             <div>
-                <div class="cat-num">— 类别 02</div>
-                <h2>激光。</h2>
+                <div class="cat-num">— Category 02</div>
+                <h2>Laser.</h2>
             </div>
-            <p>针对色素、血管病变、表层重塑与脱毛的特定波长激光平台 — 依临床指征选用，而非随风跟潮。</p>
+            <p>Wavelength-specific lasers for pigmentation, vascular concerns, and overall tone refinement — calibrated for Asian skin.</p>
         </div>
         <div class="eq-grid">
             <article class="eq-card">
-                <div class="eq-card-img"><img src="/assets/images/equipment/laser/revlite.jpg" alt="RevLite"></div>
-                <div class="eq-card-meta">
-                    <div>
-                        <div class="eq-card-name">RevLite</div>
-                        <div class="eq-card-sub">Q 开关 Nd:YAG 激光</div>
-                    </div>
-                </div>
-            </article>
-            <article class="eq-card">
-                <div class="eq-card-img"><img src="/assets/images/equipment/laser/neobeam.jpg" alt="Neobeam"></div>
-                <div class="eq-card-meta">
-                    <div>
-                        <div class="eq-card-name">Neobeam</div>
-                        <div class="eq-card-sub">痤疮专用激光</div>
-                    </div>
-                </div>
-            </article>
-            <article class="eq-card">
-                <div class="eq-card-img"><img src="/assets/images/equipment/laser/gentlemax-pro-plus.jpg" alt="GentleMax Pro Plus"></div>
+                <div class="eq-card-img"><img src="/assets/images/equipment/gentlemax-pro-plus.jpg" alt="GentleMax Pro Plus"></div>
                 <div class="eq-card-meta">
                     <div>
                         <div class="eq-card-name">GentleMax Pro Plus</div>
-                        <div class="eq-card-sub">紫翠玉 &amp; Nd:YAG 激光</div>
+                        <div class="eq-card-sub">Alexandrite & Nd:YAG · Candela</div>
                     </div>
                 </div>
             </article>
             <article class="eq-card">
-                <div class="eq-card-img"><img src="/assets/images/equipment/laser/picoplus.jpg" alt="PicoPlus"></div>
+                <div class="eq-card-img"><img src="/assets/images/equipment/picoplus.jpg" alt="PicoPlus"></div>
                 <div class="eq-card-meta">
                     <div>
                         <div class="eq-card-name">PicoPlus</div>
-                        <div class="eq-card-sub">皮秒激光</div>
+                        <div class="eq-card-sub">Picosecond Laser · Lutronic</div>
                     </div>
                 </div>
             </article>
             <article class="eq-card">
-                <div class="eq-card-img"><img src="/assets/images/equipment/laser/enpulse.jpg" alt="enPulse"></div>
+                <div class="eq-card-img"><img src="/assets/images/equipment/spectra-plus.jpg" alt="Spectra Plus"></div>
                 <div class="eq-card-meta">
                     <div>
-                        <div class="eq-card-name">enPulse</div>
-                        <div class="eq-card-sub">CO2 点阵激光</div>
+                        <div class="eq-card-name">Spectra Plus</div>
+                        <div class="eq-card-sub">Q-Switched Nd:YAG · Lutronic</div>
                     </div>
                 </div>
             </article>
-        </div>
-    </div>
-</section>
-
-<!-- Principle Band -->
-<section class="principle">
-    <div class="principle-inner">
-        <div class="principle-eyebrow">— 我们的原则</div>
-        <div class="principle-text">
-            密龄道山店的每一台仪器都是 <strong>正式渠道引进的正品</strong>，依临床指征选用 — <em>绝不追随潮流</em>，绝不为利润妥协。
+            <article class="eq-card">
+                <div class="eq-card-img"><img src="/assets/images/equipment/capri.jpg" alt="Capri"></div>
+                <div class="eq-card-meta">
+                    <div>
+                        <div class="eq-card-name">Capri</div>
+                        <div class="eq-card-sub">Fractional Laser · Alma</div>
+                    </div>
+                </div>
+            </article>
+            <article class="eq-card">
+                <div class="eq-card-img"><img src="/assets/images/equipment/action-2.jpg" alt="Action 2"></div>
+                <div class="eq-card-meta">
+                    <div>
+                        <div class="eq-card-name">Action 2</div>
+                        <div class="eq-card-sub">Plasma & MTS</div>
+                    </div>
+                </div>
+            </article>
         </div>
     </div>
 </section>
 
 <!-- BOOSTER & MTS -->
-<section id="booster" class="category">
+<section id="boostermts" class="category">
     <div class="container">
         <div class="category-head">
             <div>
-                <div class="cat-num">— 类别 03</div>
-                <h2>水光 &amp; MTS。</h2>
+                <div class="cat-num">— Category 03</div>
+                <h2>Booster & MTS.</h2>
             </div>
-            <p>微针与微注射系统，将活性成分精准送达真皮层 — 由内重塑肤质与肤色。</p>
+            <p>Microneedling and energy-based delivery systems that drive active ingredients deep into the dermis for sustained skin renewal.</p>
         </div>
         <div class="eq-grid">
             <article class="eq-card">
-                <div class="eq-card-img"><img src="/assets/images/equipment/booster/potenza.jpg" alt="Potenza"></div>
+                <div class="eq-card-img"><img src="/assets/images/equipment/secret.jpg" alt="Secret RF"></div>
+                <div class="eq-card-meta">
+                    <div>
+                        <div class="eq-card-name">Secret RF</div>
+                        <div class="eq-card-sub">RF Microneedling · Cutera</div>
+                    </div>
+                </div>
+            </article>
+            <article class="eq-card">
+                <div class="eq-card-img"><img src="/assets/images/equipment/duet-rf.jpg" alt="DUET RF"></div>
+                <div class="eq-card-meta">
+                    <div>
+                        <div class="eq-card-name">DUET RF</div>
+                        <div class="eq-card-sub">Dual RF · Jeisys</div>
+                    </div>
+                </div>
+            </article>
+            <article class="eq-card">
+                <div class="eq-card-img"><img src="/assets/images/equipment/potenza.jpg" alt="Potenza"></div>
                 <div class="eq-card-meta">
                     <div>
                         <div class="eq-card-name">Potenza</div>
-                        <div class="eq-card-sub">RF 微针</div>
-                    </div>
-                </div>
-            </article>
-            <article class="eq-card">
-                <div class="eq-card-img"><img src="/assets/images/equipment/booster/sonostyler.jpg" alt="Sonostyler"></div>
-                <div class="eq-card-meta">
-                    <div>
-                        <div class="eq-card-name">Sonostyler</div>
-                        <div class="eq-card-sub">超声导入</div>
-                    </div>
-                </div>
-            </article>
-            <article class="eq-card">
-                <div class="eq-card-img"><img src="/assets/images/equipment/booster/dermashine-pro.jpg" alt="Dermashine Pro"></div>
-                <div class="eq-card-meta">
-                    <div>
-                        <div class="eq-card-name">Dermashine Pro</div>
-                        <div class="eq-card-sub">自动微注射器</div>
+                        <div class="eq-card-sub">Multi-Mode RF · Jeisys</div>
                     </div>
                 </div>
             </article>
@@ -969,36 +866,36 @@ em, cite { font-style: normal; }
     <div class="container">
         <div class="category-head">
             <div>
-                <div class="cat-num">— 类别 04</div>
-                <h2>身体。</h2>
+                <div class="cat-num">— Category 04</div>
+                <h2>Body.</h2>
             </div>
-            <p>非侵入式塑形 — 无需手术即可作用于围度、脂肪与体态平衡的仪器。</p>
+            <p>Non-invasive body contouring platforms — from cryolipolysis to focused ultrasound — for measured, lasting reshaping.</p>
         </div>
         <div class="eq-grid">
             <article class="eq-card">
-                <div class="eq-card-img"><img src="/assets/images/equipment/body/noble-shape.jpg" alt="Noble Shape"></div>
+                <div class="eq-card-img"><img src="/assets/images/equipment/nobleshape.jpg" alt="NobleShape"></div>
                 <div class="eq-card-meta">
                     <div>
-                        <div class="eq-card-name">Noble Shape</div>
-                        <div class="eq-card-sub">身体塑形</div>
+                        <div class="eq-card-name">NobleShape</div>
+                        <div class="eq-card-sub">Body Lifting & Contouring</div>
                     </div>
                 </div>
             </article>
             <article class="eq-card">
-                <div class="eq-card-img"><img src="/assets/images/equipment/body/fascella.jpg" alt="Fascella"></div>
+                <div class="eq-card-img"><img src="/assets/images/equipment/cryocell.jpg" alt="CryoCell"></div>
+                <div class="eq-card-meta">
+                    <div>
+                        <div class="eq-card-name">CryoCell</div>
+                        <div class="eq-card-sub">Cryolipolysis Fat Reduction</div>
+                    </div>
+                </div>
+            </article>
+            <article class="eq-card">
+                <div class="eq-card-img"><img src="/assets/images/equipment/fascella.jpg" alt="Fascella"></div>
                 <div class="eq-card-meta">
                     <div>
                         <div class="eq-card-name">Fascella</div>
-                        <div class="eq-card-sub">筋膜疗法</div>
-                    </div>
-                </div>
-            </article>
-            <article class="eq-card">
-                <div class="eq-card-img"><img src="/assets/images/equipment/body/accucurve.jpg" alt="AccuCurve"></div>
-                <div class="eq-card-meta">
-                    <div>
-                        <div class="eq-card-name">AccuCurve</div>
-                        <div class="eq-card-sub">非侵入式雕塑</div>
+                        <div class="eq-card-sub">Body Tightening</div>
                     </div>
                 </div>
             </article>
@@ -1011,27 +908,18 @@ em, cite { font-style: normal; }
     <div class="container">
         <div class="category-head">
             <div>
-                <div class="cat-num">— 类别 05</div>
-                <h2>诊断。</h2>
+                <div class="cat-num">— Category 05</div>
+                <h2>Diagnostic.</h2>
             </div>
-            <p>影像与测量系统，为施术前的每一项决策提供依据 — 因为精准的护理，始于精准的理解。</p>
+            <p>Precision skin diagnostics that ground every treatment plan in objective data, not assumption.</p>
         </div>
         <div class="eq-grid">
             <article class="eq-card">
-                <div class="eq-card-img"><img src="/assets/images/equipment/diagnostics/metaview.jpg" alt="MetaView"></div>
+                <div class="eq-card-img"><img src="/assets/images/equipment/meta-view.jpg" alt="Meta-view"></div>
                 <div class="eq-card-meta">
                     <div>
-                        <div class="eq-card-name">MetaView</div>
-                        <div class="eq-card-sub">皮肤影像系统</div>
-                    </div>
-                </div>
-            </article>
-            <article class="eq-card">
-                <div class="eq-card-img"><img src="/assets/images/equipment/diagnostics/inbody.jpg" alt="InBody"></div>
-                <div class="eq-card-meta">
-                    <div>
-                        <div class="eq-card-name">InBody</div>
-                        <div class="eq-card-sub">人体成分分析</div>
+                        <div class="eq-card-name">Meta-view</div>
+                        <div class="eq-card-sub">Advanced Skin Analysis</div>
                     </div>
                 </div>
             </article>
@@ -1044,63 +932,45 @@ em, cite { font-style: normal; }
     <div class="container">
         <div class="category-head">
             <div>
-                <div class="cat-num">— 类别 06</div>
-                <h2>皮肤管理。</h2>
+                <div class="cat-num">— Category 06</div>
+                <h2>Skin Care.</h2>
             </div>
-            <p>融入 MEDI-SPA 项目的专业皮肤管理系统 — 围绕日常状态而设，而非一次性结果。</p>
+            <p>Gentle, regenerative platforms that complement clinical treatments — for daily skin health and post-procedure recovery.</p>
         </div>
         <div class="eq-grid">
             <article class="eq-card">
-                <div class="eq-card-img"><img src="/assets/images/equipment/care/environ.jpg" alt="Environ"></div>
-                <div class="eq-card-meta">
-                    <div>
-                        <div class="eq-card-name">Environ</div>
-                        <div class="eq-card-sub">药妆护理</div>
-                    </div>
-                </div>
-            </article>
-            <article class="eq-card">
-                <div class="eq-card-img"><img src="/assets/images/equipment/care/derma-s-ultra.jpg" alt="Derma S Ultra"></div>
+                <div class="eq-card-img"><img src="/assets/images/equipment/derma-s-ultra.jpg" alt="Derma S Ultra"></div>
                 <div class="eq-card-meta">
                     <div>
                         <div class="eq-card-name">Derma S Ultra</div>
-                        <div class="eq-card-sub">深层补水系统</div>
+                        <div class="eq-card-sub">Ultrasonic Skincare</div>
                     </div>
                 </div>
             </article>
             <article class="eq-card">
-                <div class="eq-card-img"><img src="/assets/images/equipment/care/astrodome.jpg" alt="Astrodome"></div>
+                <div class="eq-card-img"><img src="/assets/images/equipment/ldm.jpg" alt="LDM"></div>
                 <div class="eq-card-meta">
                     <div>
-                        <div class="eq-card-name">Astrodome</div>
-                        <div class="eq-card-sub">LED 光疗</div>
+                        <div class="eq-card-name">LDM</div>
+                        <div class="eq-card-sub">Local Dynamic Micromassage</div>
                     </div>
                 </div>
             </article>
             <article class="eq-card">
-                <div class="eq-card-img"><img src="/assets/images/equipment/care/transkin.jpg" alt="Transkin"></div>
+                <div class="eq-card-img"><img src="/assets/images/equipment/plasonic.jpg" alt="Plasonic"></div>
                 <div class="eq-card-meta">
                     <div>
-                        <div class="eq-card-name">Transkin</div>
-                        <div class="eq-card-sub">肌肤再生</div>
+                        <div class="eq-card-name">Plasonic</div>
+                        <div class="eq-card-sub">Plasma Skin Care</div>
                     </div>
                 </div>
             </article>
             <article class="eq-card">
-                <div class="eq-card-img"><img src="/assets/images/equipment/care/cryocell.jpg" alt="CryoCell"></div>
+                <div class="eq-card-img"><img src="/assets/images/equipment/aqua-peel.jpg" alt="Aqua Peel"></div>
                 <div class="eq-card-meta">
                     <div>
-                        <div class="eq-card-name">CryoCell</div>
-                        <div class="eq-card-sub">冷冻面部疗法</div>
-                    </div>
-                </div>
-            </article>
-            <article class="eq-card">
-                <div class="eq-card-img"><img src="/assets/images/equipment/care/aquapeel.jpg" alt="AquaPeel"></div>
-                <div class="eq-card-meta">
-                    <div>
-                        <div class="eq-card-name">AquaPeel</div>
-                        <div class="eq-card-sub">水合焕肤</div>
+                        <div class="eq-card-name">Aqua Peel</div>
+                        <div class="eq-card-sub">Hydra Cleansing</div>
                     </div>
                 </div>
             </article>
@@ -1108,57 +978,55 @@ em, cite { font-style: normal; }
     </div>
 </section>
 
+<!-- Principle Band -->
+<section class="principle">
+    <div class="container">
+        <p>Equipment alone does not make a treatment work. <strong>Judgment does.</strong> Every device at Mili Sinchon is paired with a physician's reading of your skin — what it needs, when, and how much.</p>
+    </div>
+</section>
 
+<!-- Footer -->
 <footer class="mili-footer">
     <div class="mili-footer-inner">
         <div class="mili-footer-top">
             <div class="mili-footer-brand">
-                <div class="mili-footer-logo"><img src="/assets/images/logo/logo.png" alt="密龄皮肤科道山店"></div>
-                <p class="mili-footer-tagline">密龄皮肤科道山店旗舰院区 — 超越治疗本身，于静谧中完成修复与焕新。</p>
-                <p class="mili-footer-slogan">“仅凭1mm的变化焕发美丽。”</p>
+                <div class="mili-footer-logo"><img src="/assets/images/logo/logo.png" alt="Mili Clinic Sinchon"></div>
+                <p class="mili-footer-tagline">米利诊所品牌的旗舰店。超越治疗 — 一处位于新村的静谧庇护所,致力于修复与精进。</p>
+                <p class="mili-footer-slogan">"仅以1毫米的变化,绽放美丽。"</p>
             </div>
             <div class="mili-footer-col">
-                <h5>核心项目</h5>
+                <h5>诊疗项目</h5>
                 <ul>
-                    <li><a href="/cn/ulthera.html">超声刀</a></li>
-                    <li><a href="/cn/thermage.html">热玛吉</a></li>
-                    <li><a href="/cn/tuneface.html">TuneFace</a></li>
-                    <li><a href="/cn/reborn-cell.html">重生细胞</a></li>
-                    <li><a href="/cn/fit-culptra.html">Fit&middot;Culptra</a></li>
-                    <li><a href="/cn/sculptra.html">注射/线雕</a></li>
-                    <li><a href="/cn/skin-booster.html">皮肤修复</a></li>
+                    <li><a href="/cn/lifting.html">提升</a></li>
+                    <li><a href="/cn/minimal-surgery.html">微整形</a></li>
+                    <li><a href="/cn/skin-care.html">皮肤护理</a></li>
                     <li><a href="/cn/laser-hair-removal.html">激光脱毛</a></li>
-                    <li><a href="/cn/medispa.html">皮肤管理</a></li>
+                    <li><a href="/cn/body-shaping.html">身体塑形</a></li>
                 </ul>
             </div>
             <div class="mili-footer-col">
-                <h5>来访信息</h5>
+                <h5>来访</h5>
                 <ul>
-                    <li><a href="/cn/location.html">来院路线</a></li>
-                    <li><a href="/cn/schedule.html">诊疗时间</a></li>
-                    <li><a href="https://naver.me/GLAXm15o" target="_blank" rel="noopener">Naver Map</a></li>
-                    <li><a href="https://booking.naver.com/booking/13/bizes/965440" target="_blank" rel="noopener">立即预约</a></li>
-                    <li><a href="tel:+82263671212">+82 2&middot;6367&middot;1212</a></li>
+                    <li><a href="/cn/location.html">位置交通</a></li>
+                    <li><a href="/cn/schedule.html">门诊时间</a></li>
                 </ul>
             </div>
             <div class="mili-footer-col">
-                <h5>资讯渠道</h5>
+                <h5>网络</h5>
                 <ul>
-                    <li><a href="/cn/promotion.html">促销活动</a></li>
-                    <li><a href="https://www.youtube.com/@Dr.ShinMillimeter" target="_blank" rel="noopener">YouTube</a></li>
-                    <li><a href="https://sinchon.miliclinic.co.kr" target="_blank" rel="noopener">Mili 新村</a></li>
-                    <li><a href="http://miliclinic.com" target="_blank" rel="noopener">Mili Global</a></li>
-                    <li><a href="https://dosan.miliclinic.co.kr">韩文官网</a></li>
+                    <li><a href="/cn/promotion.html">优惠活动</a></li>
+                    <li><a href="http://miliclinic.com" target="_blank" rel="noopener">米利全球</a></li>
+                    <li><a href="https://sinchon.miliclinic.co.kr">韩文网站</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="mili-footer-messengers">
-            <a href="https://wa.me/821058616367" target="_blank" rel="noopener" class="mili-msg" aria-label="WhatsApp">
+            <a href="https://api.whatsapp.com/send/?phone=821023834697&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mili-msg" aria-label="WhatsApp">
                 <svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375c-.99-1.575-1.516-3.391-1.516-5.26 0-5.445 4.455-9.885 9.942-9.885 2.654 0 5.145 1.035 7.021 2.91 1.875 1.875 2.909 4.371 2.909 7.026-.004 5.444-4.46 9.885-9.935 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411"/></svg>
                 <span class="mili-msg-name">WhatsApp</span>
             </a>
-            <a href="https://mp.weixin.qq.com/s/4ruAKbgP8m5kkttIQ18uvg" target="_blank" rel="noopener" class="mili-msg" aria-label="WeChat">
+            <a href="https://mp.weixin.qq.com/s/U3J4SX5NmHNIuaYASOZ-XA" target="_blank" rel="noopener" class="mili-msg" aria-label="WeChat">
                 <svg viewBox="0 0 24 24" fill="#7BB32E"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.328.328 0 0 0 .166-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.594-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.475-1.78 5.687.91 2.214 3.337 3.6 6.116 3.6.453 0 .92-.069 1.386-.205a.79.79 0 0 1 .677.069l1.625 1.05a.36.36 0 0 0 .184.061c.16 0 .29-.132.29-.295 0-.071-.027-.142-.038-.213l-.336-1.245a.66.66 0 0 1-.026-.218.625.625 0 0 1 .25-.499C21.546 17.474 22.5 15.852 22.5 13.94c0-3.213-3.045-5.78-6.572-5.85zm-2.379 2.493c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897zm4.625 0c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897z"/></svg>
                 <span class="mili-msg-name">WeChat</span>
             </a>
@@ -1166,11 +1034,11 @@ em, cite { font-style: normal; }
                 <svg viewBox="0 0 24 24" fill="#06C755"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
                 <span class="mili-msg-name">LINE</span>
             </a>
-            <a href="https://pf.kakao.com/_xehXRG/chat" target="_blank" rel="noopener" class="mili-msg" aria-label="KakaoTalk">
+            <a href="https://pf.kakao.com/_mxadwxb/chat" target="_blank" rel="noopener" class="mili-msg" aria-label="KakaoTalk">
                 <svg viewBox="0 0 24 24" fill="#FEE500"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.7 6.8L5.6 21.4c-.1.3.2.5.5.4l4.4-2.9c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/><path d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.7 6.8L5.6 21.4c-.1.3.2.5.5.4l4.4-2.9c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8s-4.5-8-10-8z" stroke="#1A1A1A" stroke-width="0.4" fill="#FEE500"/></svg>
                 <span class="mili-msg-name">KakaoTalk</span>
             </a>
-            <a href="https://www.instagram.com/dosan.miliclinic/" target="_blank" rel="noopener" class="mili-msg" aria-label="Instagram">
+            <a href="https://www.instagram.com/sinchon.miliclinic/" target="_blank" rel="noopener" class="mili-msg" aria-label="Instagram">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="#1A1A1A"/></svg>
                 <span class="mili-msg-name">Instagram</span>
             </a>
@@ -1178,20 +1046,21 @@ em, cite { font-style: normal; }
 
         <div class="mili-footer-business">
             <div>
-                <p><strong>商号名</strong> MiliClinic, 岛山</p>
-                <p><strong>营业执照编号</strong> 457-47-00860</p>
-                <p><strong>代表</strong> 申东河</p>
-                <p><strong>个人信息保护负责人</strong> 申东河, jungyi@mlcl.co.kr</p>
+                <p><strong>公司名称</strong> Mili Clinic Sinchon (&#48128;&#47532;&#51032;&#50896; &#49888;&#52916;)</p>
+                <p><strong>院长</strong> Kim Hye-won, M.D.</p>
+                <p><strong>事业者编号</strong> 166-18-01231</p>
+                <p><strong>信息管理负责人</strong> Kim Hye-won</p>
             </div>
             <div>
-                <p><strong>地址</strong> 首尔江南区岛山大路45街17号 3楼</p>
-                <p><strong>诊疗时间</strong> [周一·周三·周五] AM 10:00 – PM 07:00<br>[周二·周四] AM 10:00 – PM 09:00<br>[周六] AM 10:00 – PM 04:00<br>周日休诊</p>
-                <p><strong>午休</strong> 13:00–14:00</p>
+                <p><strong>地址</strong> 首尔特别市 麻浦区 新村路 104号 3楼</p>
+                <p><strong>门诊时间</strong> 周一·三·五 10:00–19:00 / 周二·四 10:00–21:00 / 周六 10:00–16:00</p>
+                <p><strong>休诊日</strong> 周日及公共假日</p>
+                <p><strong>午休</strong> 13:00&ndash;14:00</p>
             </div>
         </div>
 
         <div class="mili-footer-bottom">
-            <div>&copy; 2026 Mili Clinic Sinchon. 版权所有。</div>
+            <div>&copy; 2026 Mili Clinic Sinchon. All Rights Reserved.</div>
             <div class="mili-footer-policies">
                 <a href="/cn/privacy.html">隐私政策</a>
                 <a href="/cn/non-covered.html">非医保项目</a>
@@ -1200,23 +1069,24 @@ em, cite { font-style: normal; }
     </div>
 </footer>
 
-<script>
-// Active cat-pill on scroll
-(function(){
-    const pills = document.querySelectorAll('.cat-pill');
-    const sections = document.querySelectorAll('.category');
-    const observer = new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{
-            if(e.isIntersecting){
-                pills.forEach(p=>p.classList.remove('active'));
-                const pill = document.querySelector('.cat-pill[href="#'+e.target.id+'"]');
-                if(pill) pill.classList.add('active');
-            }
-        });
-    }, {rootMargin: '-30% 0px -60% 0px'});
-    sections.forEach(s=>observer.observe(s));
-})();
-</script>
+<!-- Floating -->
+<div class="mili-float">
+    <a href="https://pf.kakao.com/_mxadwxb/chat" target="_blank" rel="noopener" class="mili-float-btn kakao" aria-label="KakaoTalk">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.7 6.8L5.6 21.4c-.1.3.2.5.5.4l4.4-2.9c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/></svg>
+    </a>
+    <a href="https://mp.weixin.qq.com/s/U3J4SX5NmHNIuaYASOZ-XA" target="_blank" rel="noopener" class="mili-float-btn wechat" aria-label="WeChat">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.328.328 0 0 0 .166-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.594-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.475-1.78 5.687.91 2.214 3.337 3.6 6.116 3.6.453 0 .92-.069 1.386-.205a.79.79 0 0 1 .677.069l1.625 1.05a.36.36 0 0 0 .184.061c.16 0 .29-.132.29-.295 0-.071-.027-.142-.038-.213l-.336-1.245a.66.66 0 0 1-.026-.218.625.625 0 0 1 .25-.499C21.546 17.474 22.5 15.852 22.5 13.94c0-3.213-3.045-5.78-6.572-5.85zm-2.379 2.493c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897zm4.625 0c.49 0 .885.401.885.897 0 .495-.395.896-.885.896-.49 0-.885-.401-.885-.896 0-.496.395-.897.885-.897z"/></svg>
+    </a>
+    <a href="https://lin.ee/X7C7bMh" target="_blank" rel="noopener" class="mili-float-btn line" aria-label="LINE">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    </a>
+    <a href="https://api.whatsapp.com/send/?phone=821023834697&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mili-float-btn whatsapp" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375c-.99-1.575-1.516-3.391-1.516-5.26 0-5.445 4.455-9.885 9.942-9.885 2.654 0 5.145 1.035 7.021 2.91 1.875 1.875 2.909 4.371 2.909 7.026-.004 5.444-4.46 9.885-9.935 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411"/></svg>
+    </a>
+    <a href="https://www.instagram.com/sinchon.miliclinic/" target="_blank" rel="noopener" class="mili-float-btn instagram" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+    </a>
+</div>
 <script data-mobile-nav-accordion>
 (function(){
     const items = document.querySelectorAll('.mili-mobile-nav-list > li');
