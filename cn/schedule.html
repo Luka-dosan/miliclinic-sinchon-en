@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Schedule — Mili Clinic Sinchon</title>
-<meta name="description" content="Mili Clinic Sinchon — A private aesthetic clinic in Seoul.">
+<title>门诊时间 | 米利诊所 新村</title>
+<meta name="description" content="米利诊所 新村门诊时间与月历。预约制运营,请参考当月日程。">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mili Clinic Sinchon">
 <meta property="og:title" content="Mili Clinic Sinchon">
@@ -797,14 +797,14 @@ body, .lf, .mc-index { font-family: var(--cn-sans) !important; }
     <div class="container">
         <div class="schedule-head">
             <div class="schedule-head-left">
-                <div class="tag">— At a Glance</div>
-                <h2>This month &amp; next.</h2>
+                <div class="tag">— 一览</div>
+                <h2>本月与下月。</h2>
             </div>
             <div class="schedule-head-right">
-                <button class="btn-nav" aria-label="Previous month">
+                <button class="btn-nav" aria-label="上一月">
                     <svg viewBox="0 0 16 16"><path d="M10 4L6 8l4 4"/></svg>
                 </button>
-                <button class="btn-nav" aria-label="Next month">
+                <button class="btn-nav" aria-label="下一月">
                     <svg viewBox="0 0 16 16"><path d="M6 4l4 4-4 4"/></svg>
                 </button>
             </div>
@@ -817,8 +817,8 @@ body, .lf, .mc-index { font-family: var(--cn-sans) !important; }
                     <div class="label" id="label-current"></div>
                 </div>
                 <div class="schedule-card-img" data-src="/assets/images/schedule/current-month.jpg">
-                    <div class="schedule-placeholder">Calendar image will be updated monthly.</div>
-                    <div class="zoom-hint">Click to Enlarge</div>
+                    <div class="schedule-placeholder">月历图片每月更新。</div>
+                    <div class="zoom-hint">点击放大</div>
                 </div>
             </div>
             <div class="schedule-card">
@@ -827,8 +827,8 @@ body, .lf, .mc-index { font-family: var(--cn-sans) !important; }
                     <div class="label" id="label-next"></div>
                 </div>
                 <div class="schedule-card-img" data-src="/assets/images/schedule/next-month.jpg">
-                    <div class="schedule-placeholder">Calendar image will be updated monthly.</div>
-                    <div class="zoom-hint">Click to Enlarge</div>
+                    <div class="schedule-placeholder">月历图片每月更新。</div>
+                    <div class="zoom-hint">点击放大</div>
                 </div>
             </div>
         </div>
@@ -841,35 +841,35 @@ body, .lf, .mc-index { font-family: var(--cn-sans) !important; }
         <div class="hours-grid">
             <div class="hours-left">
                 <div class="section-eyebrow">门诊时间</div>
-                <h2>Our regular hours of operation.</h2>
+                <h2>常规门诊时间。</h2>
                 <p>
-                    Mili Clinic Sinchon operates by reservation. For same-day availability or schedule changes, please refer to the monthly calendar above or contact us directly.
+                    米利诊所 新村采用预约制运营。当日预约情况或日程变更,请参考上方的月历,或直接与我们联系。
                 </p>
             </div>
             <div class="hours-right">
                 <div class="hours-table">
                     <div class="hours-row">
-                        <div class="day">Mon · Tue · Wed · Thu · Fri</div>
+                        <div class="day">周一 · 周二 · 周三 · 周四 · 周五</div>
                         <div class="time">10:00 — 20:00</div>
-                        <div class="note">By Reservation</div>
+                        <div class="note">预约制</div>
                     </div>
                     <div class="hours-row">
-                        <div class="day">Saturday</div>
+                        <div class="day">周六</div>
                         <div class="time">10:00 — 16:00</div>
-                        <div class="note">By Reservation</div>
+                        <div class="note">预约制</div>
                     </div>
                     <div class="hours-row closed">
-                        <div class="day">Sunday</div>
+                        <div class="day">周日</div>
                         <div class="time">休诊日</div>
                         <div class="note">—</div>
                     </div>
                     <div class="hours-row closed">
-                        <div class="day">Holidays</div>
+                        <div class="day">公共假日</div>
                         <div class="time">休诊日</div>
                         <div class="note">—</div>
                     </div>
                 </div>
-                <p class="hours-note">Hours may vary on certain weeks. Please refer to the current month's schedule above for the most accurate information.</p>
+                <p class="hours-note">某些周次的门诊时间可能有所调整。最准确的信息,请参考上方当月的日程表。</p>
             </div>
         </div>
     </div>
@@ -980,7 +980,7 @@ body, .lf, .mc-index { font-family: var(--cn-sans) !important; }
 <script>
 (function() {
     // 월 이름 자동 표시
-    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const months = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'];
     const now = new Date();
     const curYear = now.getFullYear();
     const curMonth = now.getMonth();
@@ -991,10 +991,7 @@ body, .lf, .mc-index { font-family: var(--cn-sans) !important; }
     function pad(n) { return String(n).padStart(2, '0'); }
 
     function setHeader(prefix, year, month) {
-        const name = months[month];
-        const initial = name.charAt(0);
-        const rest = name.slice(1);
-        document.getElementById('month-' + prefix).innerHTML = '' + initial + '' + rest + ' ' + year;
+        document.getElementById('month-' + prefix).textContent = year + '年' + months[month];
         document.getElementById('label-' + prefix).textContent = '— ' + String(year).slice(2) + '.' + pad(month + 1);
     }
 
