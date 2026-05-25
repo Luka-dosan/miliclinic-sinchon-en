@@ -345,7 +345,7 @@ em, cite { font-style: normal; }
   width: 100%;
   background: #0A0A0A;
   color: #FFFFFF;
-  height: 350vh;
+  height: 200vh;
 }
 .mc-philo__sticky {
   position: sticky;
@@ -430,6 +430,84 @@ em, cite { font-style: normal; }
   .mc-philo__head { padding: 60px 24px 32px; }
   .mc-philo__track { padding: 0 24px; gap: 32px; }
   .mc-philo__card { width: 80vw; padding: 40px 32px; }
+}
+
+/* Section 4: Space (image sequence) */
+.mc-space {
+  position: relative;
+  width: 100%;
+  height: 250vh;
+  background: #000000;
+}
+.mc-space__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+.mc-space__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  z-index: 1;
+}
+.mc-space__bg.is-active {
+  opacity: 1;
+}
+.mc-space__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.55) 100%);
+  z-index: 2;
+}
+.mc-space__content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 clamp(40px, 8vw, 120px);
+  color: #FFFFFF;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.mc-space__eyebrow {
+  font-family: var(--display);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  margin: 0 0 32px;
+}
+.mc-space__title {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(48px, 7vw, 120px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin: 0 0 32px;
+}
+.mc-space__desc {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(16px, 1.5vw, 22px);
+  line-height: 1.6;
+  color: rgba(255,255,255,0.85);
+  max-width: 560px;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .mc-space__content { padding: 0 24px; }
 }
 
 /* ============================== END NEW INDEX STYLES ============================== */
@@ -587,6 +665,21 @@ em, cite { font-style: normal; }
           <h3 class="mc-philo__name">Three commitments.</h3>
           <p class="mc-philo__desc">Sincere consultation. Delicate practice. Lasting rest. Three promises we make to every patient, every visit, without compromise.</p>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section 4: Space (image sequence) ===== -->
+  <section class="mc-space" id="mc-space">
+    <div class="mc-space__sticky">
+      <div class="mc-space__bg" data-i="0" style="background-image:url('/assets/images/hero/space-01.jpg')"></div>
+      <div class="mc-space__bg" data-i="1" style="background-image:url('/assets/images/hero/space-02.jpg')"></div>
+      <div class="mc-space__bg" data-i="2" style="background-image:url('/assets/images/hero/space-03.jpg')"></div>
+      <div class="mc-space__overlay"></div>
+      <div class="mc-space__content">
+        <p class="mc-space__eyebrow">— The Space</p>
+        <h2 class="mc-space__title">Designed for<br>stillness.</h2>
+        <p class="mc-space__desc">Every room shaped around a single patient at a time. No rush. No overlap. No audience.</p>
       </div>
     </div>
   </section>
@@ -825,6 +918,45 @@ document.addEventListener('click', function(){
   // 이미지/폰트 로드 후 재계산
   window.addEventListener('load', updateTrack);
   setTimeout(updateTrack, 500);
+})();
+
+/* ===== Section 4: Space image sequence ===== */
+(function() {
+  const space = document.getElementById('mc-space');
+  if (!space) return;
+  
+  const bgs = space.querySelectorAll('.mc-space__bg');
+  if (!bgs.length) return;
+
+  function updateSpace() {
+    const rect = space.getBoundingClientRect();
+    const windowH = window.innerHeight;
+    
+    const scrollableDistance = space.offsetHeight - windowH;
+    let progress = -rect.top / scrollableDistance;
+    progress = Math.max(0, Math.min(1, progress));
+    
+    // 진행도에 따라 활성 이미지 결정 (0, 1, 2)
+    const activeIndex = Math.min(
+      bgs.length - 1,
+      Math.floor(progress * bgs.length)
+    );
+    
+    bgs.forEach((bg, i) => {
+      if (i === activeIndex) {
+        bg.classList.add('is-active');
+      } else {
+        bg.classList.remove('is-active');
+      }
+    });
+  }
+
+  // 초기 첫 이미지 활성화
+  if (bgs[0]) bgs[0].classList.add('is-active');
+  
+  window.addEventListener('scroll', updateSpace, { passive: true });
+  window.addEventListener('resize', updateSpace);
+  updateSpace();
 })();
 </script>
 </body>
