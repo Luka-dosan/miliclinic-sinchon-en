@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Mili Clinic Sinchon</title>
+  <script>
+    (function() {
+      var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      var target;
+      if (lang.startsWith('ko')) {
+        target = 'https://sinchon.miliclinic.co.kr';
+      } else if (lang.startsWith('ja')) {
+        target = '/jp/index.html';
+      } else if (lang.startsWith('zh')) {
+        target = '/cn/index.html';
+      } else {
+        target = '/en/index.html';
+      }
+      window.location.replace(target);
+    })();
+  </script>
+  <meta http-equiv="refresh" content="0; url=/en/index.html">
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
