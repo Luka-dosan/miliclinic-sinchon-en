@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Laser Hair Removal | Mili Clinic Sinchon</title>
-<meta name="description" content="Laser Hair Removal at Mili Clinic Sinchon. Clinical precision, low downtime, designed for Asian skin types.">
+<title>Skin Care | Mili Clinic Sinchon</title>
+<meta name="description" content="Skin Care at Mili Clinic Sinchon. Booster, brightening, acne and pore programs — designed for the skin you live in every day.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- common.css is host-served on production. Comment out below if previewing standalone. -->
@@ -203,7 +203,7 @@
   z-index: 5;
   font-family: var(--lf-sans);
   font-weight: 600;
-  font-size: clamp(40px, 7vw, 120px);
+  font-size: clamp(54px, 10vw, 160px);
   line-height: 0.92;
   letter-spacing: -0.025em;
   margin: 0;
@@ -220,24 +220,15 @@
   filter: blur(8px);
   animation: lfTitleLetterIn 1.1s var(--lf-ease-out) forwards;
 }
-.lf-hero__title span:nth-child(1)  { animation-delay: 0.30s; }
-.lf-hero__title span:nth-child(2)  { animation-delay: 0.38s; }
-.lf-hero__title span:nth-child(3)  { animation-delay: 0.46s; }
-.lf-hero__title span:nth-child(4)  { animation-delay: 0.54s; }
-.lf-hero__title span:nth-child(5)  { animation-delay: 0.62s; }
-.lf-hero__title span:nth-child(6)  { animation-delay: 0.70s; }
-.lf-hero__title span:nth-child(7)  { animation-delay: 0.78s; }
-.lf-hero__title span:nth-child(8)  { animation-delay: 0.86s; }
-.lf-hero__title span:nth-child(9)  { animation-delay: 0.94s; }
-.lf-hero__title span:nth-child(10) { animation-delay: 1.02s; }
-.lf-hero__title span:nth-child(11) { animation-delay: 1.10s; }
-.lf-hero__title span:nth-child(12) { animation-delay: 1.18s; }
-.lf-hero__title span:nth-child(13) { animation-delay: 1.26s; }
-.lf-hero__title span:nth-child(14) { animation-delay: 1.34s; }
-.lf-hero__title span:nth-child(15) { animation-delay: 1.42s; }
-.lf-hero__title span:nth-child(16) { animation-delay: 1.50s; }
-.lf-hero__title span:nth-child(17) { animation-delay: 1.58s; }
-.lf-hero__title span:nth-child(18) { animation-delay: 1.66s; }
+.lf-hero__title span:nth-child(1) { animation-delay: 0.30s; }
+.lf-hero__title span:nth-child(2) { animation-delay: 0.40s; }
+.lf-hero__title span:nth-child(3) { animation-delay: 0.50s; }
+.lf-hero__title span:nth-child(4) { animation-delay: 0.60s; }
+.lf-hero__title span:nth-child(5) { animation-delay: 0.70s; }
+.lf-hero__title span:nth-child(6) { animation-delay: 0.80s; }
+.lf-hero__title span:nth-child(7) { animation-delay: 0.90s; }
+.lf-hero__title span:nth-child(8) { animation-delay: 1.00s; }
+.lf-hero__title span:nth-child(9) { animation-delay: 1.10s; }
 
 @keyframes lfTitleLetterIn {
   to {
@@ -653,11 +644,14 @@
   transition: background 0.8s var(--lf-ease);
 }
 /* Gradient palette — top is lightest, bottom is deepest */
-.lf-strata__band[data-depth="0"] { background: #FBF8F4; }
-.lf-strata__band[data-depth="1"] { background: #F2E9DC; }
-.lf-strata__band[data-depth="2"] { background: #E5D5BD; }
-.lf-strata__band[data-depth="3"] { background: #D4BC9A; }
-.lf-strata__band[data-depth="4"] { background: #B8997A; color: #FFFFFF; }
+.lf-strata__band {
+  grid-template-columns: minmax(200px, 18%) 1fr 1fr !important;
+}
+.lf-strata__band[data-depth="0"] { background: #FFFAF6; }
+.lf-strata__band[data-depth="1"] { background: #FBEEE5; }
+.lf-strata__band[data-depth="2"] { background: #F2D9C6; }
+.lf-strata__band[data-depth="3"] { background: #E4B89E; }
+.lf-strata__band[data-depth="4"] { background: #C8927A; color: #FFFFFF; }
 
 .lf-strata__band[data-depth="4"] .lf-strata__layer,
 .lf-strata__band[data-depth="4"] .lf-strata__depth,
@@ -672,6 +666,8 @@
 .lf-strata__depth {
   font-family: var(--lf-sans);
   font-weight: 600;
+  min-width: 200px;
+  white-space: nowrap;
   font-size: clamp(40px, 5vw, 76px);
   line-height: 1;
   letter-spacing: -0.04em;
@@ -724,7 +720,7 @@
 
 @media (max-width: 880px) {
   .lf-strata__band {
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: minmax(140px, 42%) 1fr !important;
     grid-template-rows: auto auto;
     min-height: auto;
     padding: 40px 24px;
@@ -913,10 +909,10 @@
 
 .lf-lineup__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   border-top: 1px solid rgba(255,255,255,0.12);
   border-left: 1px solid rgba(255,255,255,0.12);
-  margin: 0 var(--lf-gut);
+  margin: 0 clamp(40px, 8vw, 160px);
 }
 .lf-lineup__card {
   position: relative;
@@ -1010,11 +1006,8 @@
 }
 .lf-lineup__card-meta dd { margin: 0; color: rgba(255,255,255,0.9); }
 
-@media (max-width: 1100px) {
-  .lf-lineup__grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 720px) {
-  .lf-lineup__grid { grid-template-columns: 1fr; margin: 0 24px; }
+@media (max-width: 640px) {
+  .lf-lineup__grid { grid-template-columns: 1fr; }
   .lf-lineup__card { min-height: 0; padding: 56px 28px; }
 }
 
@@ -1377,8 +1370,9 @@ body, .lf, .mc-index { font-family: var(--jp-sans) !important; }
                 </li>
                 <li class="mili-nav-item"><a href="/jp/lifting.html" class="mili-nav-link">リフティング</a></li>
                 <li class="mili-nav-item"><a href="/jp/minimal-surgery.html" class="mili-nav-link">ミニマルサージェリー</a></li>
-                <li class="mili-nav-item"><a href="/jp/skin-care.html" class="mili-nav-link">スキンケア</a></li>
-                <li class="mili-nav-item"><a href="/jp/laser-hair-removal.html" class="mili-nav-link active">レーザー脱毛</a></li>
+                <li class="mili-nav-item"><a href="/jp/skin-care.html" class="mili-nav-link active">スキンケア</a><span style="display:none" class="mili-nav-caret"></span>
+                </li>
+                <li class="mili-nav-item"><a href="/jp/laser-hair-removal.html" class="mili-nav-link">レーザー脱毛</a></li>
                 <li class="mili-nav-item"><a href="/jp/body-shaping.html" class="mili-nav-link">ボディシェイピング</a></li>
                 <li class="mili-nav-item"><a href="/jp/promotion.html" class="mili-nav-link">プロモーション</a></li>
             </ul>
@@ -1437,12 +1431,12 @@ body, .lf, .mc-index { font-family: var(--jp-sans) !important; }
     <div class="lf-hero__media"></div>
 
     <div class="lf-hero__top">
-      <div class="lf-hero__crumb"><span>ミリクリニック 新村</span><i></i><span>レーザー脱毛</span></div>
+      <div class="lf-hero__crumb"><span>ミリクリニック 新村</span><i></i><span>スキンケア</span></div>
     </div>
 
     <div class="lf-hero__inner">
-      <h1 class="lf-hero__title" aria-label="Laser Hair Removal">
-        <span>L</span><span>a</span><span>s</span><span>e</span><span>r</span><span>&nbsp;</span><span>H</span><span>a</span><span>i</span><span>r</span><span>&nbsp;</span><span>R</span><span>e</span><span>m</span><span>o</span><span>v</span><span>a</span><span>l</span>
+      <h1 class="lf-hero__title" aria-label="Skin Care">
+        <span>S</span><span>k</span><span>i</span><span>n</span><span>&nbsp;</span><span>C</span><span>a</span><span>r</span><span>e</span>
       </h1>
     </div>
     <div class="lf-hero__foot">
@@ -1460,13 +1454,13 @@ body, .lf, .mc-index { font-family: var(--jp-sans) !important; }
   <section class="lf-intro">
     <div class="lf-intro__grid">
       <h2 class="lf-intro__lead lf-rv">
-        <em>Laser is not a&nbsp;treatment.</em><br>
-        It is a clinical&nbsp;protocol —<br>
-        read the skin, calibrate, repeat&nbsp;in&nbsp;cycles.
+        <em>Skin care is not a&nbsp;moment.</em><br>
+        It is a rhythm of&nbsp;decisions —<br>
+        read first, layer&nbsp;gently, repeat&nbsp;with&nbsp;care.
       </h2>
       <div>
-        <p class="lf-intro__body lf-rv d1">At Mili Clinic Sinchon, hair removal is medical, not cosmetic. The skin is read before the energy is set. Wavelength, pulse duration, and fluence — calibrated to your skin type, hair density, and growth cycle.</p>
-        <p class="lf-intro__body lf-rv d2">Every session is supervised by the attending physician, and every protocol is built around the cycles your hair actually follows — not a fixed calendar.</p>
+        <p class="lf-intro__body lf-rv d1">At Mili Clinic Sinchon, no two skin programs are identical. The skin is read before the treatment is chosen. Care is layered gently, never overloaded. Patience is part of the design.</p>
+        <p class="lf-intro__body lf-rv d2">Every program is supervised by the attending physician, and every session ends where the skin says it has had enough.</p>
       </div>
     </div>
   </section>
@@ -1492,8 +1486,8 @@ body, .lf, .mc-index { font-family: var(--jp-sans) !important; }
         <div class="lf-philosophy__track" id="lfPhilosophyTrack">
 
           <div class="lf-philosophy__panel lf-philosophy__intro">
-            <h2 class="lf-philosophy__intro-title"><em>Why laser,</em><br>done at&nbsp;Mili.</h2>
-            <p class="lf-philosophy__intro-body">Hair removal is a precise medical procedure — not a routine cosmetic service. Five principles guide every laser protocol at Mili Clinic Sinchon.</p>
+            <h2 class="lf-philosophy__intro-title"><em>Why skin care,</em><br>done at&nbsp;Mili.</h2>
+            <p class="lf-philosophy__intro-body">Skin care is not a moment. It is a rhythm built over weeks, not minutes. Five principles guide every program at Mili Clinic Sinchon.</p>
           </div>
 
           <article class="lf-philosophy__panel lf-philosophy__card">
@@ -1501,8 +1495,8 @@ body, .lf, .mc-index { font-family: var(--jp-sans) !important; }
               <img src="../assets/images/lifting/philosophy-01.jpg" alt="">
             </div>
             <div class="lf-philosophy__num">— 01 / 05</div>
-            <h3 class="lf-philosophy__name"><em>Skin read&nbsp;first.</em></h3>
-            <p class="lf-philosophy__desc">Asian skin requires different settings than the studies most lasers are calibrated for. We measure your skin tone, hair density, and follicle depth before the first pulse — no factory presets.</p>
+            <h3 class="lf-philosophy__name"><em>Skin reads&nbsp;first.</em></h3>
+            <p class="lf-philosophy__desc">We read the skin before we plan the program. Hydration level, pore condition, pigmentation, sebum balance — analyzed first, treated second. No program runs without a reading.</p>
           </article>
 
           <article class="lf-philosophy__panel lf-philosophy__card">
@@ -1510,8 +1504,8 @@ body, .lf, .mc-index { font-family: var(--jp-sans) !important; }
               <img src="../assets/images/lifting/philosophy-02.png" alt="">
             </div>
             <div class="lf-philosophy__num">— 02 / 05</div>
-            <h3 class="lf-philosophy__name"><em>Wavelength<br>that matches.</em></h3>
-            <p class="lf-philosophy__desc">Diode for body, Alexandrite for fine hair, Nd:YAG for darker skin. The right wavelength reaches the follicle without burning the skin around it. The wrong wavelength means wasted shots and added risk.</p>
+            <h3 class="lf-philosophy__name"><em>Layered care.</em></h3>
+            <p class="lf-philosophy__desc">Hydration, exfoliation, regeneration — each addresses a different need. We combine programs the way a gardener tends seasons: timed, patient, layered. Care that builds on itself.</p>
           </article>
 
           <article class="lf-philosophy__panel lf-philosophy__card">
@@ -1519,8 +1513,8 @@ body, .lf, .mc-index { font-family: var(--jp-sans) !important; }
               <img src="../assets/images/lifting/philosophy-03.jpg" alt="">
             </div>
             <div class="lf-philosophy__num">— 03 / 05</div>
-            <h3 class="lf-philosophy__name"><em>Doctor-supervised,<br>every cycle.</em></h3>
-            <p class="lf-philosophy__desc">Settings are set by the physician for every session. Trained staff perform the treatment under direct supervision — your skin's response is reviewed and recalibrated every visit.</p>
+            <h3 class="lf-philosophy__name"><em>Doctor-led,<br>every time.</em></h3>
+            <p class="lf-philosophy__desc">Every program is designed and supervised by the physician. Aestheticians work under direct guidance — the eye that reads the skin is the eye that adjusts the plan, every session.</p>
           </article>
 
           <article class="lf-philosophy__panel lf-philosophy__card">
@@ -1528,8 +1522,8 @@ body, .lf, .mc-index { font-family: var(--jp-sans) !important; }
               <img src="../assets/images/lifting/philosophy-04.jpg" alt="">
             </div>
             <div class="lf-philosophy__num">— 04 / 05</div>
-            <h3 class="lf-philosophy__name"><em>Cycles, not<br>calendar.</em></h3>
-            <p class="lf-philosophy__desc">Hair grows in three phases — and only one is responsive to laser. We schedule around your follicle cycles, not a fixed "every 4 weeks" template. Faster results, fewer wasted sessions.</p>
+            <h3 class="lf-philosophy__name"><em>Maintenance<br>over miracle.</em></h3>
+            <p class="lf-philosophy__desc">Great skin is not the result of one heroic session. It is the result of patient, consistent care — small inputs, repeated over time. We design for the long arc, not the dramatic moment.</p>
           </article>
 
           <article class="lf-philosophy__panel lf-philosophy__card">
@@ -1537,14 +1531,14 @@ body, .lf, .mc-index { font-family: var(--jp-sans) !important; }
               <img src="../assets/images/lifting/philosophy-05.jpg" alt="">
             </div>
             <div class="lf-philosophy__num">— 05 / 05</div>
-            <h3 class="lf-philosophy__name"><em>Skin stays<br>untouched.</em></h3>
-            <p class="lf-philosophy__desc">Done right, laser hair removal leaves the skin exactly as it was — minus the hair. No burns, no pigmentation, no scarring. The goal is invisible removal, not visible aftermath.</p>
+            <h3 class="lf-philosophy__name"><em>The skin you<br>live in.</em></h3>
+            <p class="lf-philosophy__desc">The goal is not perfection. It is comfort. Skin that feels right under your own hand, looks even in any light, and asks nothing of you. The skin you live in, every day.</p>
           </article>
 
           <aside class="lf-philosophy__panel lf-philosophy__tail">
             <span class="lf-eyebrow">End of section</span>
-            <h3><em>Five principles,<br>one&nbsp;laser.</em></h3>
-            <p>How those principles address the skin — area by area — is what follows.</p>
+            <h3><em>Five principles,<br>four&nbsp;programs.</em></h3>
+            <p>How those principles meet the skin — layer by layer — is what follows.</p>
           </aside>
 
         </div>
@@ -1562,9 +1556,86 @@ body, .lf, .mc-index { font-family: var(--jp-sans) !important; }
     </div>
   </section>
 
+  <!-- ============================== LAYERED APPROACH ============================== -->
+  <div class="lf-rule">
+    <div class="lf-rule__num">III</div>
+    <div class="lf-rule__bar"></div>
+    <div class="lf-rule__name">Layered Approach</div>
+  </div>
+
+  <section class="lf-layered" id="lfLayered">
+    <div class="lf-layered__head">
+      <span class="lf-eyebrow lf-rv">Five stages</span>
+      <h2 class="lf-layered__title lf-rv d1"><em>Skin changes<br>in&nbsp;rhythm.</em></h2>
+      <p class="lf-layered__lede lf-rv d2">Real skin care doesn't happen in one visit. It unfolds — slowly, predictably — as the skin renews itself from within. This is the rhythm we design around, and what to expect along the way.</p>
+    </div>
+
+    <div class="lf-strata">
+
+      <div class="lf-strata__band" data-depth="0">
+        <div class="lf-strata__depth">Day 1</div>
+        <div class="lf-strata__center">
+          <div class="lf-strata__sublabel">Reading</div>
+          <div class="lf-strata__layer">Diagnosis &amp; first program</div>
+        </div>
+        <div class="lf-strata__devices">
+          <span class="lf-strata__device lf-strata__device--empty">Analysis · Planning</span>
+        </div>
+      </div>
+
+      <div class="lf-strata__band" data-depth="1">
+        <div class="lf-strata__depth">Week 2</div>
+        <div class="lf-strata__center">
+          <div class="lf-strata__sublabel">Surface</div>
+          <div class="lf-strata__layer">First visible changes</div>
+        </div>
+        <div class="lf-strata__devices">
+          <span class="lf-strata__device">Texture softens</span>
+          <span class="lf-strata__device">Tone evens</span>
+        </div>
+      </div>
+
+      <div class="lf-strata__band" data-depth="2">
+        <div class="lf-strata__depth">Week 6</div>
+        <div class="lf-strata__center">
+          <div class="lf-strata__sublabel">Dermal</div>
+          <div class="lf-strata__layer">Deeper renewal begins</div>
+        </div>
+        <div class="lf-strata__devices">
+          <span class="lf-strata__device">Pores refine</span>
+          <span class="lf-strata__device">Hydration holds</span>
+        </div>
+      </div>
+
+      <div class="lf-strata__band" data-depth="3">
+        <div class="lf-strata__depth">Month 3</div>
+        <div class="lf-strata__center">
+          <div class="lf-strata__sublabel">Stabilizing</div>
+          <div class="lf-strata__layer">The new baseline</div>
+        </div>
+        <div class="lf-strata__devices">
+          <span class="lf-strata__device">Elasticity returns</span>
+          <span class="lf-strata__device">Clarity settles</span>
+        </div>
+      </div>
+
+      <div class="lf-strata__band" data-depth="4">
+        <div class="lf-strata__depth">Ongoing</div>
+        <div class="lf-strata__center">
+          <div class="lf-strata__sublabel">Maintenance</div>
+          <div class="lf-strata__layer">The skin you live in</div>
+        </div>
+        <div class="lf-strata__devices">
+          <span class="lf-strata__device">Quarterly visits keep it</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ============================== PROTOCOL ============================== -->
   <div class="lf-rule lf-rule--paper">
-    <div class="lf-rule__num">III</div>
+    <div class="lf-rule__num">IV</div>
     <div class="lf-rule__bar"></div>
     <div class="lf-rule__name">The Mili Protocol</div>
   </div>
@@ -1572,8 +1643,8 @@ body, .lf, .mc-index { font-family: var(--jp-sans) !important; }
   <section class="lf-protocol" id="lfProtocol">
     <div class="lf-protocol__head">
       <span class="lf-eyebrow lf-rv">Three steps · One doctor</span>
-      <h2 class="lf-protocol__title lf-rv d1"><em>How a laser<br>session unfolds.</em></h2>
-      <p class="lf-protocol__lede lf-rv d2">Every skin is read before the laser is calibrated. Every cycle is planned to follow your hair's natural growth phases. Three steps, every time — from the first reading to the last pulse.</p>
+      <h2 class="lf-protocol__title lf-rv d1"><em>How a care<br>program unfolds.</em></h2>
+      <p class="lf-protocol__lede lf-rv d2">Every skin is read before any program begins. Every plan is personal — designed for the skin in front of us, not borrowed from a template. Three steps, every time, by the same doctor — from the first reading to the long arc of care.</p>
     </div>
 
     <div class="lf-protocol__steps">
@@ -1587,9 +1658,9 @@ body, .lf, .mc-index { font-family: var(--jp-sans) !important; }
             <span class="lf-protocol__step-num">Step 01 / 03</span>
             <span class="lf-protocol__step-time">15 – 20 min</span>
           </div>
-          <h3 class="lf-protocol__step-name"><em>Skin reading<br>&amp; calibration.</em></h3>
-          <p class="lf-protocol__step-desc">We measure your skin's melanin level, hair density, and follicle depth. Based on this, the laser's wavelength, fluence, and pulse duration are set specifically for you — never a default preset.</p>
-          <div class="lf-protocol__step-meta">Skin analysis · Laser calibration · 10–15 minutes</div>
+          <h3 class="lf-protocol__step-name"><em>Skin reading<br>&amp; consultation.</em></h3>
+          <p class="lf-protocol__step-desc">We measure what you cannot see in the mirror — hydration level, sebum balance, pore condition, pigmentation, sensitivity. The skin is studied with diagnostic imaging and a clinician's eye before any program is designed.</p>
+          <div class="lf-protocol__step-meta">Diagnostic imaging · Lifestyle review · 20–30 minutes</div>
         </div>
       </article>
 
@@ -1602,9 +1673,9 @@ body, .lf, .mc-index { font-family: var(--jp-sans) !important; }
             <span class="lf-protocol__step-num">Step 02 / 03</span>
             <span class="lf-protocol__step-time">Custom layering</span>
           </div>
-          <h3 class="lf-protocol__step-name"><em>Cycle<br>planning.</em></h3>
-          <p class="lf-protocol__step-desc">Hair grows in three phases — only one responds to laser. The doctor maps your hair cycles and schedules sessions to catch each follicle in its active phase. The right timing makes 8 sessions feel like 12.</p>
-          <div class="lf-protocol__step-meta">Follicle mapping · Cycle calendar · Session scheduling</div>
+          <h3 class="lf-protocol__step-name"><em>Personal<br>program.</em></h3>
+          <p class="lf-protocol__step-desc">From four available programs, the doctor designs the right combination and sequence for this skin. Booster, brightening, acne and pore, or medi-spa — chosen and layered to address what this skin actually needs, in what order.</p>
+          <div class="lf-protocol__step-meta">Program selection · Session schedule · Home care plan</div>
         </div>
       </article>
 
@@ -1617,9 +1688,88 @@ body, .lf, .mc-index { font-family: var(--jp-sans) !important; }
             <span class="lf-protocol__step-num">Step 03 / 03</span>
             <span class="lf-protocol__step-time">40 – 80 min</span>
           </div>
-          <h3 class="lf-protocol__step-name"><em>Supervised<br>treatment.</em></h3>
-          <p class="lf-protocol__step-desc">Trained laser specialists deliver the session under direct physician supervision. Settings are reviewed every visit — your skin's response, hair regrowth pattern, and any sensitivity are reassessed before each cycle.</p>
-          <div class="lf-protocol__step-meta">Supervised by attending physician · 15–60 minutes per session depending on area</div>
+          <h3 class="lf-protocol__step-name"><em>Ongoing<br>care.</em></h3>
+          <p class="lf-protocol__step-desc">Every session is supervised by the physician, with the plan adjusted as the skin responds. The program evolves with you — what works in spring may shift in autumn. Skin care is a relationship, not a transaction.</p>
+          <div class="lf-protocol__step-meta">Supervised by attending physician · 30–60 minutes per session</div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============================== LINEUP ============================== -->
+  <div class="lf-rule lf-rule--dark">
+    <div class="lf-rule__num">V</div>
+    <div class="lf-rule__bar"></div>
+    <div class="lf-rule__name">Treatment Programs</div>
+  </div>
+
+  <section class="lf-lineup">
+    <div class="lf-lineup__head">
+      <span class="lf-eyebrow lf-eyebrow--light lf-rv">Six devices · One room</span>
+      <h2 class="lf-lineup__title lf-rv d1"><em>Four programs.<br>One philosophy.</em></h2>
+      <p class="lf-lineup__lede lf-rv d2">Four programs, each designed for a different concern, each built on the same principle — patient, layered, supervised. Used alone or in combination, never as a one-size template.</p>
+    </div>
+
+    <div class="lf-lineup__grid">
+
+      <article class="lf-lineup__card">
+        <div class="lf-lineup__card-top">
+          <div class="lf-lineup__card-num">01</div>
+          <div class="lf-lineup__card-depth">Hydration · 30 min</div>
+        </div>
+        <div>
+          <h3 class="lf-lineup__card-name"><em>Skin Booster</em></h3>
+          <p class="lf-lineup__card-tagline">Microinjections of hyaluronic acid delivered directly into the dermis. Hydration that doesn't sit on the surface but lives where skin actually holds water.</p>
+        </div>
+        <div class="lf-lineup__card-meta">
+          <b>Use</b> · Deep hydration, fine line softening<br>
+          <b>Course</b> · 3 sessions, 4 weeks apart
+        </div>
+      </article>
+
+      <article class="lf-lineup__card">
+        <div class="lf-lineup__card-top">
+          <div class="lf-lineup__card-num">02</div>
+          <div class="lf-lineup__card-depth">Pores · 45 min</div>
+        </div>
+        <div>
+          <h3 class="lf-lineup__card-name"><em>Acne &amp; Pore</em></h3>
+          <p class="lf-lineup__card-tagline">A combined program for active breakouts and the pores they leave behind. Inflammation calmed, oil regulated, texture refined — without aggressive resurfacing.</p>
+        </div>
+        <div class="lf-lineup__card-meta">
+          <b>Use</b> · Active acne, pore visibility, post-acne marks<br>
+          <b>Course</b> · 4–8 sessions depending on severity
+        </div>
+      </article>
+
+      <article class="lf-lineup__card">
+        <div class="lf-lineup__card-top">
+          <div class="lf-lineup__card-num">03</div>
+          <div class="lf-lineup__card-depth">Tone · 40 min</div>
+        </div>
+        <div>
+          <h3 class="lf-lineup__card-name"><em>All-in-One<br>Brightening</em></h3>
+          <p class="lf-lineup__card-tagline">A layered approach to uneven tone — pigmentation, redness, and dullness addressed in one program. Brightening that builds, not bleaches.</p>
+        </div>
+        <div class="lf-lineup__card-meta">
+          <b>Use</b> · Pigmentation, redness, overall tone<br>
+          <b>Course</b> · 5 sessions, 3 weeks apart
+        </div>
+      </article>
+
+      <article class="lf-lineup__card">
+        <div class="lf-lineup__card-top">
+          <div class="lf-lineup__card-num">04</div>
+          <div class="lf-lineup__card-depth">Care · 60 min</div>
+        </div>
+        <div>
+          <h3 class="lf-lineup__card-name"><em>Medi-Spa</em></h3>
+          <p class="lf-lineup__card-tagline">Clinical care delivered with the calm of a spa. Deep cleansing, regenerative serums, gentle resurfacing — all clinically dosed, under physician supervision.</p>
+        </div>
+        <div class="lf-lineup__card-meta">
+          <b>Use</b> · Maintenance, recovery, monthly care<br>
+          <b>Course</b> · Monthly or quarterly
         </div>
       </article>
 
@@ -1629,7 +1779,7 @@ body, .lf, .mc-index { font-family: var(--jp-sans) !important; }
 
   <!-- ============================== FAQ ============================== -->
   <div class="lf-rule lf-rule--paper">
-    <div class="lf-rule__num">IV</div>
+    <div class="lf-rule__num">VI</div>
     <div class="lf-rule__bar"></div>
     <div class="lf-rule__name">FAQ</div>
   </div>
@@ -1641,7 +1791,7 @@ body, .lf, .mc-index { font-family: var(--jp-sans) !important; }
           <span class="lf-eyebrow">Five questions</span>
           <h2 class="lf-faq__title"><em>Answered<br>plainly.</em></h2>
         </div>
-        <p class="lf-faq__note lf-rv d1">Five common questions about laser hair removal at Mili Clinic Sinchon. More specific concerns are best addressed during consultation.</p>
+        <p class="lf-faq__note lf-rv d1">Five common questions about skin care at Mili Clinic Sinchon. More specific concerns are best addressed during consultation.</p>
       </div>
 
       <div class="lf-faq__list">
@@ -1649,13 +1799,13 @@ body, .lf, .mc-index { font-family: var(--jp-sans) !important; }
         <div class="lf-faq__item">
           <button class="lf-faq__q" type="button">
             <span class="lf-faq__q-num">01</span>
-            <span><em>How many sessions will I need?</em></span>
+            <span><em>Can multiple programs be combined?</em></span>
             <span class="lf-faq__plus" aria-hidden="true"></span>
           </button>
           <div class="lf-faq__a">
             <div class="lf-faq__a-inner">
               <span></span>
-              <div>Most areas reach near-permanent reduction in 6–10 sessions. Body areas (legs, underarms, bikini) typically need fewer; facial hair often needs more. Your hair cycle, density, and color determine the exact number — assessed at consultation.</div>
+              <div>Yes — and often the most effective skin programs do exactly this. Hydration, brightening, and pore care can run in parallel or sequence. The doctor designs the right combination and timing based on your skin's current condition and goals.</div>
               <span></span>
             </div>
           </div>
@@ -1670,7 +1820,7 @@ body, .lf, .mc-index { font-family: var(--jp-sans) !important; }
           <div class="lf-faq__a">
             <div class="lf-faq__a-inner">
               <span></span>
-              <div>Mild redness or warmth for 1–4 hours after treatment. Some areas (face, bikini) may show slight bumps around follicles that fade within a day. You can return to work immediately. Avoid hot showers, saunas, and direct sun for 24 hours.</div>
+              <div>Most skin care programs have minimal downtime — mild redness for a few hours, occasionally subtle pinpoint marks from injection programs that fade within a day. We design programs around your schedule so visible recovery is rare.</div>
               <span></span>
             </div>
           </div>
@@ -1685,7 +1835,7 @@ body, .lf, .mc-index { font-family: var(--jp-sans) !important; }
           <div class="lf-faq__a">
             <div class="lf-faq__a-inner">
               <span></span>
-              <div>Treated hairs shed within 1–3 weeks. Visible reduction begins after 2–3 sessions. Significant reduction by session 5–6. Most patients reach their target reduction at sessions 8–10, with annual maintenance after.</div>
+              <div>First visible changes appear within 1–2 weeks — usually in texture and tone. Deeper changes (hydration retention, pore refinement, pigment fading) build over 6–12 weeks across the program. The skin you see at the end is not the same skin you brought in.</div>
               <span></span>
             </div>
           </div>
@@ -1700,7 +1850,7 @@ body, .lf, .mc-index { font-family: var(--jp-sans) !important; }
           <div class="lf-faq__a">
             <div class="lf-faq__a-inner">
               <span></span>
-              <div>Modern lasers with cooling systems make most sessions tolerable — a brief warm snap with each pulse. Sensitive areas (upper lip, bikini line) feel sharper. Topical numbing cream is available on request. We adjust intensity throughout based on your tolerance.</div>
+              <div>Most skin care programs are gentle. Injection-based programs (skin booster, brightening) include topical anaesthetic; the sensation is a brief pinch. Spa and care programs are relaxing rather than painful. We adjust intensity based on your sensitivity throughout.</div>
               <span></span>
             </div>
           </div>
@@ -1709,13 +1859,13 @@ body, .lf, .mc-index { font-family: var(--jp-sans) !important; }
         <div class="lf-faq__item">
           <button class="lf-faq__q" type="button">
             <span class="lf-faq__q-num">05</span>
-            <span><em>How often should sessions be scheduled?</em></span>
+            <span><em>How often should programs be repeated?</em></span>
             <span class="lf-faq__plus" aria-hidden="true"></span>
           </button>
           <div class="lf-faq__a">
             <div class="lf-faq__a-inner">
               <span></span>
-              <div>Initial course: every 4–6 weeks for body areas, every 3–4 weeks for face. After reaching target reduction, annual maintenance is usually enough. Spacing is set by your hair's actual growth cycle, not a fixed template.</div>
+              <div>Skin Booster: 3 sessions every 4 weeks initially, then quarterly maintenance. Brightening: 5 sessions every 3 weeks, then seasonal touch-ups. Acne & Pore: 4–8 sessions during active phase, then preventive monthly visits. Medi-Spa: monthly or quarterly, ongoing.</div>
               <span></span>
             </div>
           </div>
@@ -1730,7 +1880,7 @@ body, .lf, .mc-index { font-family: var(--jp-sans) !important; }
     <div class="lf-cta__media"></div>
     <div class="lf-cta__inner">
       <span class="lf-eyebrow lf-eyebrow--light">Begin with a reading</span>
-      <h2 class="lf-cta__title"><em>Laser begins<br>with the skin,<br>not the setting.</em></h2>
+      <h2 class="lf-cta__title"><em>Skin care begins<br>with the skin,<br>not the program.</em></h2>
       <p class="lf-cta__sub">Book a diagnostic consultation. The first thirty minutes are spent on the face — not on the menu.</p>
       <div class="lf-cta__actions">
         <a class="lf-cta__btn lf-cta__btn--solid" href="https://map.naver.com/p/entry/place/1113713455?c=15.43,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202605251045&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener">Reserve Consultation</a>
