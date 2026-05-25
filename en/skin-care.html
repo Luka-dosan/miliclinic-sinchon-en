@@ -2086,12 +2086,6 @@
   function isMobile() { return window.innerWidth <= 880; }
 
   function measure() {
-    if (isMobile()) {
-      track.style.transform = '';
-      section.style.height = '';
-      measured = false;
-      return;
-    }
     const trackWidth = track.scrollWidth;
     const vw         = window.innerWidth;
     maxScroll = Math.max(0, trackWidth - vw);
